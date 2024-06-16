@@ -1,0 +1,25 @@
+.tableContainer {
+  box-shadow:
+    0 30px 40px -1px rgba(147, 45, 158, 0.5),
+    0 30px 100px -1px rgba(50, 48, 175, 0.818);
+}
+
+table tr.last-text:hover td:last-child {
+  color: rgb(201, 177, 213);
+  /* color: white; */
+}
+
+.no-hover:hover {
+  background-color: inherit; /* o qualsiasi altro stile che desideri mantenere */
+}
+
+/* tableCamminoSq.css */
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: 10px; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}

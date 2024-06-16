@@ -1,0 +1,76 @@
+/* File style.css */
+
+.vertical-dashed-line {
+    /* Aggiustato per rimuovere position: absolute */
+    border-left: 1px dashed black;
+    height: 100%; 
+    z-index: 10;
+}
+
+.sq-column {
+    font-weight: bold;
+    height: 100%;
+}
+
+table {
+    /* Proprietà non commentate per gestire il layout della tabella */
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+th, td {
+    /* Aumentato min-width per una migliore gestione delle colonne */
+    min-width: 20px; /* Ajusta questo valore secondo necessità */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* .underline-redd {
+    text-decoration: underline;
+    text-decoration-color: rgb(145, 16, 16); /* Colore rosso per l'underline
+    text-decoration-thickness: 3px;
+    overflow:hidden;
+} */
+
+.underlineW {
+    text-decoration: underline;
+    text-decoration-color: #c013b7; /* Colore rosso per l'underline */
+    text-decoration-thickness: 3px;
+    overflow:hidden;
+    /* filter: brightness(75%); */
+    /* opacity:1; */
+}
+
+.underlineX {
+    text-decoration: underline;
+    text-decoration-color: rgb(145, 145, 73); /* Colore rosso per l'underline */
+    text-decoration-thickness: 3px;
+    overflow:hidden;
+    /* filter: brightness(75%); */
+}
+
+.underlineL {
+    /* text-decoration: underline;
+    text-decoration-color: none; /* Colore rosso per l'underline
+    text-decoration-thickness: 2px; */
+    overflow:hidden;
+    /* filter: brightness(75%); */
+}
+
+.underlineCoppiaRegSel{
+    text-decoration: underline;
+    text-decoration-color: hsl(216, 45%, 34%);
+    text-decoration-thickness: 3px;
+    
+}
+
+
+.borderAlto {
+    border-top-width: 2px;
+    
+}
+
+.brightnessScura {
+    filter: brightness(65%);
+    /* opacity: 1;  */
+}

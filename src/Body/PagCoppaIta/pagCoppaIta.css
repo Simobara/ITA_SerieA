@@ -1,0 +1,16 @@
+.grid-cols-11 {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    gap: 4px;
+    height: 100%;
+  }
+  
+  .col-span-1 {
+    background-color: #444; /* colore di sfondo delle colonne */
+    color: #fff; /* testo bianco */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  

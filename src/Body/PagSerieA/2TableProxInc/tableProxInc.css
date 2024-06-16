@@ -1,0 +1,16 @@
+/* .scroll-container {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; //Aggiungi questa proprietà per il supporto iOS 
+  white-space: nowrap;
+}
+
+.scroll-item {
+  scroll-snap-align: start;
+  display: inline-block;
+} */
+
+.brightness-35 {
+  filter: brightness(0.2); /* Riduce la luminosità al 25% */
+}

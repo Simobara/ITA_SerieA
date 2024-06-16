@@ -1,0 +1,11 @@
+/* Nascondi le barre di scorrimento in modo che non siano visibili, ma il contenuto è ancora scrollabile */
+.scroll-hidden::-webkit-scrollbar {
+    display: none;  /* per Chrome, Safari, e Opera */
+}
+
+.scroll-hidden {
+    -ms-overflow-style: none;  /* per IE e Edge */
+    scrollbar-width: none;  /* per Firefox */
+    overflow-y: scroll;  /* Mantenere lo scorrimento verticale se necessario */
+}
+
