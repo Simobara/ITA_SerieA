@@ -1,13 +1,15 @@
-# Specifica che i file .js, .jsx, .ts, .tsx sono codice sorgente React
-*.js linguist-language=JavaScript
+# Forza il riconoscimento di file .jsx come JSX (React)
 *.jsx linguist-language=JSX
-*.ts linguist-language=TypeScript
+
+# Forza il riconoscimento di file .tsx come TypeScript con JSX (React)
 *.tsx linguist-language=TSX
 
 # Impostazioni globali per tutti i file di testo
 * text=auto
 
 # Impostazioni specifiche per file di configurazione e script
+*.js      text eol=lf
+*.ts      text eol=lf
 *.json    text eol=lf
 *.css     text eol=lf
 *.scss    text eol=lf
