@@ -10,9 +10,10 @@
 # Forza il riconoscimento di file .ts come TypeScript
 *.ts linguist-language=TypeScript
 
-# Ignora file CSS e non considerarli nella rilevazione del linguaggio
+# Ignora file CSS e Tailwind dal calcolo del linguaggio
 *.css linguist-vendored
 *.scss linguist-vendored
+tailwind.config.js linguist-vendored
 
 # Impostazioni globali per tutti i file di testo
 * text=auto
