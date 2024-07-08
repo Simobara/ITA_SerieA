@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useContext } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 // import { DndProvider } from "react-dnd";
 // import { HTML5Backend } from "react-dnd-html5-backend";
 // import { initialPartite } from "../../../../START/START";
@@ -45,7 +45,7 @@ const Partite = ({ resetAll, occhioApertoPartita, setOcchioApertoPartita }) => {
 
   return (
     // <DndProvider backend={HTML5Backend}>
-    <div className=" relative flex flex-col items-left overflow-x-hidden overflow-y-auto xs:text-xs sm:text-xl border border-x-0 rounded-3xl border-pink-800 py-[5%]">
+    <div className=" relative flex flex-col items-left overflow-x-hidden overflow-y-auto xs:text-xs sm:text-xl border border-x-0 rounded-3xl border-pink-800 py-[4%]">
       {/* <Day title="Mar" partite={partitePerGiorno.ven} day="mar" resetAll={resetAll} occhioApertoPartita={occhioApertoPartita} setOcchioApertoPartita={setOcchioApertoPartita} />
 			<Day title="Mer" partite={partitePerGiorno.ven} day="mer" resetAll={resetAll} occhioApertoPartita={occhioApertoPartita} setOcchioApertoPartita={setOcchioApertoPartita} />
 			<Day title="Gio" partite={partitePerGiorno.ven} day="gio" resetAll={resetAll} occhioApertoPartita={occhioApertoPartita} setOcchioApertoPartita={setOcchioApertoPartita} /> */}

@@ -1,10 +1,10 @@
-import { useEffect, useState, useContext } from "react";
-import { GiornataClouContext } from "../../../Glob/global/";
-import { ATeams, BTeams } from "../../../../START/otheers/functions/functions";
+import { useContext, useEffect, useState } from "react";
 import { calendario, giornataN } from "../../../../START/app/0SerieAMatches";
-import "./tableCamminoSq.css";
-import { IndexSelectedContext } from "../../../Glob/global";
+import { ATeams, BTeams } from "../../../../START/otheers/functions/functions";
 import { ts } from "../../../../START/otheers/styles/0CssMainStyle";
+import { IndexSelectedContext } from "../../../Glob/global";
+import { GiornataClouContext } from "../../../Glob/global/";
+import "./tableCamminoSq.css";
 
 const TableCamminoSq = ({ squadra, datiSquadra }) => {
   const [isMobile, setIsMobile] = useState(
@@ -163,7 +163,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
 
               let borderStyle = "";
               if (index === selectedIndexGiornata) {
-                borderStyle = "border-b-4 border-fuchsia-400";
+                borderStyle = "border-b-4 border-fuchsia-900 ";
               }
 
               // Converti il nome della squadra: prima lettera maiuscola, resto minuscolo

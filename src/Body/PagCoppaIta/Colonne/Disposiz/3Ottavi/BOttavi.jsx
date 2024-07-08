@@ -5,7 +5,7 @@ const BOttavi = ({ width = "70px", height = "24px" }) => {
   const boxStyle = `flex items-center justify-start bg-white text-black font-bold mr-4 pl-1 overflow-hidden`;
   const teamStyle = {
     backgroundColor: "#7f1d1d", // bg-red-900 equivalent
-    color: "white",
+    color: "yellow",
     // color: 'yellow',
     filter: "brightness(60%)",
     paddingLeft: "0.25rem",

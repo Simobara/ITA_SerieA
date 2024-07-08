@@ -1,25 +1,24 @@
-import { useState, useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 // import { useDrag, useDrop } from "react-dnd";
 import {
-  CompleteDataContext,
-  IndexSelectedContext,
-  SquadraContext,
-} from "../../../../../Glob/global";
-import { CoppiaPartitaContext } from "../../../../../Glob/global";
-import { CoppiaPartitaRegistrataContext } from "../../../../../Glob/global";
-import { GiornataClouContext } from "../../../../../Glob/global";
-import { PartiteDefinNoModContext } from "../../../../../Glob/global";
-import { ButtonResetContext } from "../../../../../Glob/global";
+  giornataN
+} from "../../../../../../START/app/0SerieAMatches";
 import {
   ATeams,
   BTeams,
 } from "../../../../../../START/otheers/functions/functions";
-import "./partita.css";
-import {
-  calendario,
-  giornataN,
-} from "../../../../../../START/app/0SerieAMatches";
 import { ts } from "../../../../../../START/otheers/styles/0CssMainStyle";
+import {
+  ButtonResetContext,
+  CompleteDataContext,
+  CoppiaPartitaContext,
+  CoppiaPartitaRegistrataContext,
+  GiornataClouContext,
+  IndexSelectedContext,
+  PartiteDefinNoModContext,
+  SquadraContext,
+} from "../../../../../Glob/global";
+import "./partita.css";
 
 const Partita = ({
   partita,
@@ -516,7 +515,7 @@ const Partita = ({
               <div
                 className={`absolute ml-[2%] sm:pl-[10%] sm:ml-[-1.5rem] z-[20] bg-black ${!isPartitaModificabile ? "unselectable" : ""}`}
               >
-                <div className="cursor-pointer" onClick={toggleSymbol}>
+                <div className="hover:cursor-pointer" onClick={toggleSymbol}>
                   {" "}
                   {isKQBtnActive ? "📍" : "✔️"}{" "}
                 </div>
@@ -528,7 +527,7 @@ const Partita = ({
               <div
                 className={`max-w-[9rem] whitespace-nowrap overflow-hidden z-[1]
                                 ${getTextTeam(partita.team1)} 
-                                ${isKQBtnActive ? "hover:cursor-not-allowed unselectable" : ""}
+                                ${isKQBtnActive ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}
                                 ${isBigTeam(partita.team1) ? `my-1 ${ts.ATeamText} ${ts.ATeamBg} font-bold` : ""} 
                                 ${underlineTeam("1")}`}
                 onClick={() => {

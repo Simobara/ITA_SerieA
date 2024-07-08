@@ -1,12 +1,12 @@
-import React, { useRef, useState, useContext, useEffect } from "react";
-import { GiornataClouContext } from "../../../Glob/global/";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { giornataClou, giornataN } from "../../../../START/app/0SerieAMatches";
 import {
+  ButtonResetContext,
   CompleteDataContext,
+  IndexSelectedContext,
   PartiteDefinNoModContext,
 } from "../../../Glob/global";
-import { ButtonResetContext } from "../../../Glob/global";
-import { IndexSelectedContext } from "../../../Glob/global";
-import { giornataClou, giornataN } from "../../../../START/app/0SerieAMatches";
+import { GiornataClouContext } from "../../../Glob/global/";
 import "./calGiorn.css";
 
 const CalGiorn = ({ onReset }) => {
@@ -153,7 +153,7 @@ const CalGiorn = ({ onReset }) => {
       <button
         onClick={() => scroll("left")}
         disabled={indexSelected === 1} // Disabilita se selected è 1
-        className={`text-sky-600/60 p-2 hover:bg-fuchsia-900 focus:outline-none ${indexSelected === 1 ? "opacity-20 cursor-not-allowed" : ""}`}
+        className={`text-gray-900 p-2 hover:bg-sky-800 hover:text-white focus:outline-none ${indexSelected === 1 ? "opacity-10 cursor-not-allowed" : ""}`}
       >
         &#9664;
       </button>
@@ -169,11 +169,11 @@ const CalGiorn = ({ onReset }) => {
               onClick={() => handleSelectNumber(number)}
               className={`w-12 h-12 flex items-center justify-center m-1 cursor-pointer 
                             ${indexSelected === number ? "bg-black" : "bg-black"} 
-                            ${Math.abs(indexSelected - number) <= 3 && indexSelected !== number ? "hover:bg-sky-800 text-white" : ""}`}
+                            ${Math.abs(indexSelected - number) <= 3 && indexSelected !== number ? "hover:bg-sky-800" : ""}`}
             >
               <span
                 className={`text-md font-semibold 
-                            ${indexSelected === number ? "text-sky-950 font-bold text-4xl" : "text-gray-800"}`}
+                            ${indexSelected === number ? "text-sky-800 font-bold text-4xl" : "text-gray-800"}`}
               >
                 {number}
               </span>
@@ -184,7 +184,7 @@ const CalGiorn = ({ onReset }) => {
       <button
         onClick={() => scroll("right")}
         disabled={indexSelected === 38} // Disabilita se selected è 38
-        className={`text-sky-600/60 p-2 hover:bg-fuchsia-900 focus:outline-none ${indexSelected === 38 ? "opacity-20 cursor-not-allowed" : ""}`}
+        className={`text-gray-900 p-2 hover:bg-sky-800 hover:text-white focus:outline-none ${indexSelected === 38 ? "opacity-20 cursor-not-allowed" : ""}`}
       >
         &#9654;
       </button>
