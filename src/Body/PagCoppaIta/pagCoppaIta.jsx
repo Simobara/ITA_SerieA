@@ -1,7 +1,7 @@
-import React 				from 'react';
-import LogoSfondoTabellone 	from './asst/LogoSfondoTabellone.png';
-import LogoCoppaItaHeader 	from './asst/LogoCoppaItaHeader.png';
-import Colonne 				from './Colonne/colonne';
+import React from 'react';
+import LogoCoppaItaHeader from './asst/LogoCoppaItaHeader.png';
+import LogoSfondoTabellone from './asst/LogoSfondoTabellone.png';
+import Colonne from './Colonne/colonne';
 
 export const colonneVoci = [
 	{ id:  1, title: 'TRENTADUESIMI',		IdN: '1' },
@@ -19,21 +19,21 @@ export const colonneVoci = [
 
 const PagCoppaIta = ({ onClose }) => {
 	return (
-		<div className="fixed inset-0 flex items-end justify-end mb-2 z-50 bg-gray-900 bg-opacity-50">
-			<div className="relative w-full h-[95vh] shadow-xxxl rounded-lg overflow-x-hidden overflow-y-auto border-4 border-sky-900 bg-black">
-				<div className="absolute top-0 left-0 right-0 bg-gray-950 z-20">
+		<div className="fixed inset-0 flex items-center justify-center z-50 bg-gray-900 bg-opacity-50">
+			<div className="relative w-full h-full max-w-[1500px] shadow-xxxl rounded-lg border-4 border-sky-900 bg-black overflow-x-auto overflow-y-hidden">
+				<div className="absolute top-0 left-0 right-0 bg-gray-950 z-20 w-full">
 					<button className="text-3xl leading-none text-sky-700 w-full hover:bg-sky-800 hover:text-white" onClick={onClose}>
 						X
 					</button>
 				</div>
-				<div className="absolute inset-0 left-1/2 transform -translate-x-1/2 w-[1500px] max-h-[950px]">
-					<div className="absolute inset-0 bg-cover bg-no-repeat brightness-[40%]" style={{ backgroundImage: `url(${LogoSfondoTabellone})` }}></div>
-					<div className="absolute top-40 left-1/2 transform -translate-x-1/2 w-[95rem] max-w-[1555px] h-[82%] grid grid-cols-11 gap-4 px-6 ">
+				<div className="relative w-full h-full pb-2 pt-[75px] overflow-x-auto min-h-[650px] overflow-y-hidden">
+					<div className="absolute inset-0 min-w-[1260px] h-full bg-cover bg-no-repeat brightness-[40%]" style={{ backgroundImage: `url(${LogoSfondoTabellone})` }}></div>
+					<div className="relative top-[10px] min-w-[1260px] h-[98%] grid grid-cols-11 gap-0 px-4">
 						{colonneVoci.map((column) => (
 							<Colonne key={column.id} colonneTitle={column.title} colonneIdN={column.IdN} />
 						))}
 					</div>
-					<div className="absolute top-15 left-1/2 transform -translate-x-1/2 w-full max-w-[1495px] h-[120px] mt-7" style={{ backgroundImage: `url(${LogoCoppaItaHeader})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}></div>
+					<div className="absolute top-[4px] w-full min-w-[1260px] h-full mb-7" style={{ backgroundImage: `url(${LogoCoppaItaHeader})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}></div>
 				</div>
 			</div>
 		</div>
