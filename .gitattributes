@@ -1,14 +1,26 @@
+# Forza il riconoscimento di file .jsx come JavaScript
+*.jsx linguist-language=JavaScript
+
+# Forza il riconoscimento di file .tsx come TypeScript
+*.tsx linguist-language=TypeScript
+
+# Forza il riconoscimento di file .js come JavaScript
+*.js linguist-language=JavaScript
+
+# Forza il riconoscimento di file .ts come TypeScript
+*.ts linguist-language=TypeScript
+
+# Ignora file di configurazione e CSS/Tailwind
+*.css linguist-vendored
+*.scss linguist-vendored
+tailwind.config.js linguist-vendored
+postcss.config.js linguist-vendored
+
 # Impostazioni globali per tutti i file di testo
 * text=auto
 
 # Impostazioni specifiche per file di configurazione e script
-*.js      text eol=lf
-*.jsx     text eol=lf
-*.ts      text eol=lf
-*.tsx     text eol=lf
 *.json    text eol=lf
-*.css     text eol=lf
-*.scss    text eol=lf
 *.html    text eol=lf
 *.md      text eol=lf
 *.yml     text eol=lf

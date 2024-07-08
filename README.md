@@ -50,6 +50,10 @@
 
 ## Dependencies
 
+<details >
+<a name="top1"></a>
+   <summary> Click </summary>
+
 ```sh
 ├─┬ @vitejs/plugin-react@4.2.1
 │ ├─┬ @babel/core@7.23.6
@@ -853,6 +857,8 @@
   ├── UNMET OPTIONAL DEPENDENCY sugarss@*
   └── UNMET OPTIONAL DEPENDENCY terser@^5.4.0
 ```
+[⤴️ top1](#top)
+</details>
 
 ## License
 
