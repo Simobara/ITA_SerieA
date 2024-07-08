@@ -42,7 +42,7 @@
 ## Installation
 
 ```sh
-  git clone https://github.com/Simobara/F_ITA_SerieA.git
+  git clone https://github.com/Simobara/ITA_SerieA.git
   cd ITA_SerieA
   npm install
   npm run dev
