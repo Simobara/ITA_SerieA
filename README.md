@@ -20,6 +20,13 @@
 ![Finished App](ITA_SerieA.png)
 
 ---
+## Tech stack
+
+- React
+- Vite
+- Node.js
+- TailwindCSS
+
 
 ## Getting Started
 
