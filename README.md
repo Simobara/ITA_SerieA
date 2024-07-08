@@ -20,13 +20,13 @@
 ![Finished App](ITA_SerieA.png)
 
 ---
+
 ## Tech stack
 
 - React
 - Vite
 - Node.js
 - TailwindCSS
-
 
 ## Getting Started
 
@@ -857,7 +857,8 @@
   ├── UNMET OPTIONAL DEPENDENCY sugarss@*
   └── UNMET OPTIONAL DEPENDENCY terser@^5.4.0
 ```
-[⤴️ top1](#top)
+
+[⤴️ top1](#top1)
 </details>
 
 ## License
