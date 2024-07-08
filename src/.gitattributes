@@ -1,0 +1,53 @@
+# Impostazioni globali per tutti i file di testo
+* text=auto
+
+# Impostazioni specifiche per file di configurazione e script
+*.js      text eol=lf
+*.jsx     text eol=lf
+*.ts      text eol=lf
+*.tsx     text eol=lf
+*.json    text eol=lf
+*.css     text eol=lf
+*.scss    text eol=lf
+*.html    text eol=lf
+*.md      text eol=lf
+*.yml     text eol=lf
+*.yaml    text eol=lf
+*.sh      text eol=lf
+
+# Impostazioni per immagini binarie
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.gif     binary
+*.ico     binary
+*.svg     binary
+
+# Impostazioni per file font binari
+*.woff    binary
+*.woff2   binary
+*.ttf     binary
+*.otf     binary
+
+# Impostazioni per file multimediali binari
+*.mp4     binary
+*.mp3     binary
+*.wav     binary
+
+# Impostazioni per file di archiviazione binari
+*.zip     binary
+*.gz      binary
+*.tar     binary
+*.rar     binary
+
+# Gestione delle differenze per lockfile
+package-lock.json merge=union
+yarn.lock merge=union
+
+# Ignora i cambiamenti di permessi eseguibili
+*.sh -crlf -diff
+*.bat -crlf -diff
+
+# Assicurarsi che i file di configurazione Git siano trattati correttamente
+.gitattributes export-ignore
+.gitignore export-ignore
