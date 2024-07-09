@@ -29,7 +29,7 @@ const PagCalendar = ({ onClose }) => {
 						X
 					</button>
 				</div>
-				<div className="relative md:overflow-x-scroll sm:overflow-scroll " style={{ maxWidth: '3000px', maxHeight:'100%' }}>
+				<div className="relative" style={{ maxWidth: '3000px', maxHeight:'100%' }}>
 					<section className="flex bg-black">
 						{mesiAnno.map((month, index) => (
 							<div
@@ -37,7 +37,7 @@ const PagCalendar = ({ onClose }) => {
 								className={`bg-black h-full flex flex-col ${openIndex.includes(index) ? 'open-month' : 'closed-month'}`}
 								onClick={(event) => handleMonthClick(index, event)}
 							>
-								<div className="cursor-pointer p-2">{month}</div>
+								<div className="cursor-pointer lg:p-2 md:p-0"></div>
 								<MeseView month={month} openIndex={openIndex} />
 							</div>
 						))}

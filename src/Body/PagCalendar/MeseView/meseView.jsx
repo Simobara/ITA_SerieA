@@ -47,10 +47,12 @@ const MeseView = React.memo(({ month, openIndex }) => {
 	};
 
 	return (
-		<div className={`flex flex-col h-full mb-[6rem] ml-[0.5rem] mr-[0.5rem] md:ml-[0rem] sm:mr-[2rem] lg:overflow-hidden md:overflow-x-scroll sm:overflow-x-scroll`}>
-		<div className={`justify-start items-start text-gray-700 text-2xl font-bold h-10 z-10 ${openIndex ? '' : ''}`}>{month}</div>
+		<div className={`flex flex-col h-full mb-[6rem] lg:ml-[1rem] lg:mr-[2rem] md:ml-[-2rem] md:mr-[0rem] overflow-hidden`}>
+		<div className={`text-gray-700 lg:text-2xl md:text-lg font-bold h-10 z-10 lg:ml-[.2rem] md:ml-[2rem] ${openIndex ? '' : ''}`}>
+  			{window.innerWidth >= 768 && window.innerWidth < 1024 ? month.slice(0, 3) : month}
+		</div>
 		{daysInMonth.map((day, index) => (
-			<div key={index} className={`relative flex items-center justify-between w-[20.5rem] text-gray-500 py-2 ${day.isWeekend ? 'bg-sky-950' : ''}`}>
+			<div key={index} className={`relative flex items-start justify-start lg:w-[20.5rem] md:w-[20rem]  text-gray-500 py-2 ${day.isWeekend ? 'bg-sky-950' : ''}`}>
 				<span className="text-left">{day.dayName}</span>
 				<div className="absolute left-[2.4rem]">{day.dayNumber}</div>
 				{eventLogos.map((event, i) => {
