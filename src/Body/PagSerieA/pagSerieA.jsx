@@ -14,7 +14,7 @@ const PagSerieA = () => {
       {/* <div className="w-6 bg-black"></div> */}
       {/* </div> */}
       <div className=" xl:flex h-[95vh] lg:w-[1299px] overflow-x-auto">
-        <div className="md:max-h-[100%] sm:h-2/5 sm:overflow-y-scroll sm:max-w-[100%]  md:w-[100%]  md:max-w-[100%] lg:w-[100%] lg:max-w-[100%]  xl:w-[25%] xl:max-w-[30%]   bg-black pb-6 m-2 mt-0">
+        <div className="md:max-h-[100%]  sm:max-w-[100%]  md:w-[100%]  md:max-w-[100%] lg:w-[100%] lg:max-w-[100%]  xl:w-[25%] xl:max-w-[30%]   bg-black pb-6 m-2 mt-0">
           <div className="overflow-y-auto overflow-x-hidden  h-[90vh]  md:h-[90vh]  lg:h-[90vh]  xl:h-[100%] border border-r-0 rounded-[20px] border-gray-900 bg-black  unselectable m-2">
             <TableClass />
           </div>

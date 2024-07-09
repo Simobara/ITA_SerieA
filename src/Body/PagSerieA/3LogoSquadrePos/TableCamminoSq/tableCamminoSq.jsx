@@ -163,7 +163,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
 
               let borderStyle = "";
               if (index === selectedIndexGiornata) {
-                borderStyle = "border-b-4 border-fuchsia-900 ";
+                borderStyle = "border-b-4 border-fuchsia-900";
               }
 
               // Converti il nome della squadra: prima lettera maiuscola, resto minuscolo
