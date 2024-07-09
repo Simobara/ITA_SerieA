@@ -558,7 +558,7 @@ const Partita = ({
               {/* Contenuto del div */}
             </div>
             <div
-              className={`absolute flex flex-row ml-[20%] sm:ml-[42%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
+              className={`absolute flex flex-row ml-[20%] md:!ml-[60%] sm:ml-[60%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
             >
               <div
                 className={`max-w-[9rem] whitespace-nowrap overflow-hidden md:ml-[1rem] 
@@ -584,7 +584,7 @@ const Partita = ({
                     </div>
                 </div> */}
         <button
-          className="bg-black text-gray-800 hover:bg-sky-600 font-bold z-[10] hover:cursor-pointer select-none"
+          className="bg-black text-gray-800 hover:bg-sky-600 sm:mr-[10%] font-bold z-[10] hover:cursor-pointer select-none"
           onClick={() => toggleEye()}
           data-partita-numero={partita.numero}
         >
