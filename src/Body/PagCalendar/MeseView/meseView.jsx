@@ -52,7 +52,7 @@ const MeseView = React.memo(({ month, openIndex }) => {
     };
 
     return (
-        <div className={`flex flex-col h-full mb-[6rem] lg:ml-[2.5rem] lg:mr-[-2rem] md:ml-[-2rem] md:mr-[-11rem] ${(isMobile) ? "ml-[0.68rem]":"" } `}>
+        <div className={`flex flex-col h-full mb-[6rem] lg:ml-[2.5rem] lg:mr-[-2rem] md:ml-[-2rem] md:mr-[-11rem] ${(isMobile) ? "ml-[0.7rem]":"" } `}>
             <div className={`text-left text-gray-700 lg:text-2xl md:text-lg font-bold h-10 z-10 lg:ml-[0.3rem] md:ml-[2rem] ${openIndex.includes(month) ? '' : ''}`}>
                 {(openIndex.includes(month)) ? month : month.slice(0, 3)}
             </div>
