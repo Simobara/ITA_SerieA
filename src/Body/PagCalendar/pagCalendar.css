@@ -12,55 +12,39 @@
 
 /* Transizione quando il mese è aperto */
 .open-month {
-    width: 3800px;
+    width: 450px;
     transition: width 1s;
     z-index: 5;
-    max-width: 100%;
     overflow: hidden;
-    
-
 }
 
 /* Transizione quando il mese è chiuso */
 .closed-month {
-    width: 700px;
+    width: 100px;
     transition: width 1s;
     z-index: 10;
     overflow: hidden;
-
 }
-/* Media query per large screen (>= 1024px) */
-@media (min-width: 1024px) {
-    .open-month {
-        width: 3800px;
-        
-    }
 
-    .closed-month {
-        width: 700px;
-        
-    }
-}
 
 /* Media query per tablet (>= 768px e < 1024px) */
 @media (min-width: 768px) and (max-width: 1023px) {
     .open-month {
-        width: 3850px;
-        
+        width: 2500px;
+        margin-right: -11rem;  
     }
-
     .closed-month {
-        width: 620px;
+        width: 300px;
     }
 }
 
 /* Media query per mobile (< 768px) */
 @media (max-width: 767px) {
     .open-month {
-        width: 100%;
+        width: 1300px;
+        margin-left: 1rem;  
     }
-
     .closed-month {
-        width: 100%;
+        width: 300px;
     }
 }
