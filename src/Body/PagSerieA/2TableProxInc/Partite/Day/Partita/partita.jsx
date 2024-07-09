@@ -557,11 +557,12 @@ const Partita = ({
             >
               {/* Contenuto del div */}
             </div>
-            <div
-              className={`absolute flex flex-row ml-[20%] md:!ml-[60%] sm:ml-[60%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
+            <div4
+              className={`absolute flex flex-row ml-[55%] md:ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
+
             >
               <div
-                className={`max-w-[9rem] whitespace-nowrap overflow-hidden md:ml-[1rem] 
+                className={`max-w-[9rem] whitespace-nowrap overflow-hidden ml-[1rem] 
                                 ${getTextTeam(partita.team2)} 
                                 ${isKQBtnActive ? "hover:cursor-not-allowed unselectable" : ""}
                                 ${isBigTeam(partita.team2) ? "font-bold" : ""} 
@@ -575,7 +576,7 @@ const Partita = ({
                 {isMobile == true ? partita.team2.slice(0, 3) : partita.team2}
                 {/* {partita.team2} */}
               </div>
-            </div>
+            </div4>
           </div>
         </div>
         {/* <div className="sm:pl-1 sm: mr-[0.5rem] z-[20] bg-black">
