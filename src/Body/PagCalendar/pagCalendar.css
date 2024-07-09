@@ -30,8 +30,8 @@
 /* Media query per tablet (>= 768px e < 1024px) */
 @media (min-width: 768px) and (max-width: 1023px) {
     .open-month {
-        width: 2500px;
-        margin-right: -11rem;  
+        width: 2800px;
+        margin-right: -2rem;  
     }
     .closed-month {
         width: 300px;
@@ -41,8 +41,9 @@
 /* Media query per mobile (< 768px) */
 @media (max-width: 767px) {
     .open-month {
-        width: 1300px;
-        margin-left: 1rem;  
+        width: 1100px;
+        margin-right: 10px;
+        margin-left: 1rem;
     }
     .closed-month {
         width: 300px;

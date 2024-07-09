@@ -23,7 +23,7 @@ const PagCalendar = ({ onClose }) => {
 
 	return (
 		<div className="fixed flex inset-0 items-start justify-start mb-2 mr-2 z-50 bg-gray-900 bg-opacity-50">
-			<div className="relative w-[100%] h-[95vh] py-8 shadow-xxxl rounded-lg overflow-y-scroll md:overflow-auto border-4 border-sky-900 bg-black z-[15]">
+			<div className="relative w-[100%] h-[95vh] py-8 shadow-xxxl rounded-lg overflow-y-scroll md:overflow-auto sm:overflow-hidden border-4 border-sky-900 bg-black z-[15]">
 				<div className="absolute top-0 left-0 right-0 bg-gray-900">
 					<button className="text-3xl leading-none text-sky-700 w-full hover:bg-sky-800 hover:text-white" onClick={onClose}>
 						X
