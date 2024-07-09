@@ -5,34 +5,44 @@ import './pagCalendar.css';
 
 const PagCalendar = ({ onClose }) => {
 	const currentDate = new Date();
-	currentDate.setMonth(currentDate.getMonth() + 5); // Aggiungi 5mesi
-	const currentMonthIndex = currentDate.getMonth(); //Calcolo mese di apertura
+	currentDate.setMonth(currentDate.getMonth() + 5); // Aggiungi 5 mesi
+	const currentMonthIndex = currentDate.getMonth(); // Calcolo mese di apertura
 
 	const [openIndex, setOpenIndex] = useState([currentMonthIndex]);
-	const [lastOpenIndex, setLastOpenIndex] = useState(currentMonthIndex);
 
-	const handleMonthClick = (index) => {
-		if (index === lastOpenIndex) return;
-		setOpenIndex([index]);
-		setLastOpenIndex(index);
+	const handleMonthClick = (index, event) => {
+		const clickX = event.clientX;
+		const elementX = event.currentTarget.getBoundingClientRect().left;
+
+		if (clickX > elementX + 50) return;
+
+		if (!openIndex.includes(index)) {
+			setOpenIndex([index]);
+		}
 	};
 
 	return (
-		<div className="fixed flex inset-0 items-end justify-end mb-2 mr-2 z-50 bg-gray-900 bg-opacity-50">
-			<div className="relative w-[100%] h-[95vh] shadow-xxxl p-8 rounded-lg overflow-x-hidden overflow-y-auto border-4 border-sky-900 bg-black z-[15]">
-				<div className="absolute top-0 left-0 right-0 bg-gray-900 ">
+		<div className="fixed flex inset-0 items-start justify-start mb-2 mr-2 z-50 bg-gray-900 bg-opacity-50">
+			<div className="relative w-[100%] h-[95vh] py-8 shadow-xxxl rounded-lg lg:overflow-hidden lg:overflow-y-auto md:overflow-auto sm:overflow-scroll border-4 border-sky-900 bg-black z-[15]">
+				<div className="absolute top-0 left-0 right-0 bg-gray-900">
 					<button className="text-3xl leading-none text-sky-700 w-full hover:bg-sky-800 hover:text-white" onClick={onClose}>
 						X
 					</button>
 				</div>
-				<section className="flex absolute left-0 gap-2 bg-black">
-					{mesiAnno.map((month, index) => (
-						<div key={index} className={`bg-black h-full max-w-[100%] flex flex-col ${openIndex.includes(index) ? 'open-month' : 'closed-month'}`} onClick={() => handleMonthClick(index)}>
-							<div className="cursor-pointer text-white p-2"></div>
-							<MeseView month={month} openIndex={openIndex} />
-						</div>
-					))}
-				</section>
+				<div className="relative md:overflow-x-scroll sm:overflow-scroll " style={{ maxWidth: '3000px', maxHeight:'100%' }}>
+					<section className="flex bg-black">
+						{mesiAnno.map((month, index) => (
+							<div
+								key={index}
+								className={`bg-black h-full flex flex-col ${openIndex.includes(index) ? 'open-month' : 'closed-month'}`}
+								onClick={(event) => handleMonthClick(index, event)}
+							>
+								<div className="cursor-pointer p-2">{month}</div>
+								<MeseView month={month} openIndex={openIndex} />
+							</div>
+						))}
+					</section>
+				</div>
 			</div>
 		</div>
 	);

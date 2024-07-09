@@ -6,24 +6,25 @@
 .scroll-hidden {
     -ms-overflow-style: none;  /* per IE e Edge */
     scrollbar-width: none;  /* per Firefox */
-    overflow-y: scroll;  
+    overflow: hidden;  
     /* Mantenere lo scorrimento verticale se necessario */
 }
 
 /* Transizione quando il mese è aperto */
 .open-month {
-    width: 15%;
-    transition: width 2s;
+    width: 3500px;
+    transition: width 1s;
     z-index: 5;
     max-width: 100%;
     overflow: hidden;
+
 }
 
 /* Transizione quando il mese è chiuso */
 .closed-month {
-    width: 2.2%;
-    transition: width 2s;
+    width: 700px;
+    transition: width 1s;
     z-index: 10;
-    overflow: hidden;
+    overflow-y: hidden;
 
 }

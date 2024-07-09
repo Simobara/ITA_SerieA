@@ -20,13 +20,13 @@ export const colonneVoci = [
 const PagCoppaIta = ({ onClose }) => {
 	return (
 		<div className="fixed inset-0 flex items-center justify-center z-50 bg-gray-900 bg-opacity-50">
-			<div className="relative w-full h-full max-w-[1500px] shadow-xxxl rounded-lg border-4 border-sky-900 bg-black overflow-x-auto overflow-y-hidden">
+			<div className="relative w-full h-full max-w-[1500px] shadow-xxxl rounded-lg border-4 border-sky-900 bg-black overflow-x-auto overflow-y-auto">
 				<div className="absolute top-0 left-0 right-0 bg-gray-950 z-20 w-full">
 					<button className="text-3xl leading-none text-sky-700 w-full hover:bg-sky-800 hover:text-white" onClick={onClose}>
 						X
 					</button>
 				</div>
-				<div className="relative w-full h-full pb-2 pt-[75px] overflow-x-auto min-h-[650px] overflow-y-hidden">
+				<div className="relative w-full h-full pb-2 pt-[75px] overflow-x-scroll md:overflow-y-scroll">
 					<div className="absolute inset-0 min-w-[1260px] h-full bg-cover bg-no-repeat brightness-[40%]" style={{ backgroundImage: `url(${LogoSfondoTabellone})` }}></div>
 					<div className="relative top-[10px] min-w-[1260px] h-[98%] grid grid-cols-11 gap-0 px-4">
 						{colonneVoci.map((column) => (
