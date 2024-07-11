@@ -27,7 +27,7 @@ const Partita = ({
   setOcchioApertoPartita,
 }) => {
   const [isMobile, setIsMobile] = useState(
-    window.matchMedia("(min-width: 830px)").matches
+    window.matchMedia("(max-width: 830px)").matches
   );
   const [isButtonClickable, setIsButtonClickable] = useState(false);
   const [isKQBtnActive, setIsKQBtnActive] = useState(false);
