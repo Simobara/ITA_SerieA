@@ -217,10 +217,9 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
                     {partita.fuori}
                   </td>
                   <td className={`sm:w-[50%] pl-4 text-xl ${sqVsClass} `}>
-                    {/* {isMobile == true */}
-                      {/* ? sqVsFormatted.slice(0, 3) */}
-                      {/* :  */}
-                      {sqVsFormatted}
+                    {isMobile == true
+                      ? sqVsFormatted.slice(0, 3)
+                     : sqVsFormatted}
                   </td>
                 </tr>
               );

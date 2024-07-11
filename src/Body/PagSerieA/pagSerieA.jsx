@@ -19,12 +19,12 @@ const PagSerieA = () => {
             <TableClass />
         </div>
     </div>
-    <div className="overflow-y-auto min-w-[45vh] sm:min-w-[22rem] sm:max-h-[50vh]  md:max-w-[30rem] md:max-h-[50vh] lg:min-w-[30rem] lg:min-h-[95vh] xl:max-w-[100%] xl:max-h-[95vh] max-w-[15rem] max-h-[50vh]">
+    <div className="overflow-y-auto min-w-[70vw] sm:min-w-[22rem] sm:max-h-[50vh]  md:max-w-[30rem] md:max-h-[50vh] lg:min-w-[30rem] lg:min-h-[95vh] xl:max-w-[100%] xl:max-h-[95vh] max-w-[15rem] max-h-[50vh]">
         <div className="border-2 rounded-[20px] border-gray-900 bg-black mt-2">
             <TableProxInc />
         </div>
     </div>
-    <div className="overflow-x-hidden overflow-y-auto min-w-[45vh] sm:min-w-full sm:max-h-[50vh] md:min-w-[75.6vh] md:max-h-[50vh] lg:min-w-[30rem] lg:min-h-[95vh] lg:w-auto xl:max-w-[100%] xl:max-h-[95vh] max-w-[15rem] max-h-[50vh]">
+    <div className="overflow-x-hidden overflow-y-auto min-w-[70vw] sm:min-w-full sm:max-h-[50vh] md:min-w-[75.6vh] md:max-h-[50vh] lg:min-w-[30rem] lg:min-h-[95vh] lg:w-auto xl:max-w-[100%] xl:max-h-[95vh] max-w-[15rem] max-h-[50vh]">
         <div className="border border-l-0 rounded-[20px] border-gray-900 bg-black unselectable pb-4 mt-1">
             <LogoSquadrePos />
         </div>
