@@ -27,7 +27,7 @@ const Partita = ({
   setOcchioApertoPartita,
 }) => {
   const [isMobile, setIsMobile] = useState(
-    window.matchMedia("(max-width: 600px)").matches
+    window.matchMedia("(min-width: 830px)").matches
   );
   const [isButtonClickable, setIsButtonClickable] = useState(false);
   const [isKQBtnActive, setIsKQBtnActive] = useState(false);
@@ -351,7 +351,7 @@ const Partita = ({
   //resize
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.matchMedia("(max-width: 600px)").matches);
+      setIsMobile(window.matchMedia("(max-width: 768px)").matches);
     }; // Attach the event listener when the component mounts
     window.addEventListener("resize", handleResize);
     return () => {
@@ -471,7 +471,7 @@ const Partita = ({
   return (
     <>
       <div
-        className={`font-bold flex items-center justify-center sm:mx-[1rem] 
+        className={`font-bold flex items-center justify-center mx-[1rem] 
                 ${isPartitaModificabile ? "" : "unselectable"}`}
       >
         <div className="flex items-center justify-center xs:text-xs sm:text-sm relative">
@@ -546,7 +546,7 @@ const Partita = ({
               </div>
             </div>
             <div
-              className={`absolute flex flex-row ml-[38%]  rounded-lg bg-gray-900 mt-3 w-6 pt-[0.7rem] z-[4] 
+              className={`absolute flex flex-row ml-[4rem] sm:ml-[4rem] md:ml-[8rem] lg:ml-[8rem] rounded-lg bg-gray-900 mt-3 w-6 pt-[0.7rem] z-[4] 
                                 ${isKQBtnActive || !isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"} 
                                 ${selection === "X" ? "text-yellow-500/50" : ""}`}
               onClick={() =>
@@ -558,7 +558,7 @@ const Partita = ({
               {/* Contenuto del div */}
             </div>
             <div4
-              className={`absolute flex flex-row ml-[55%] md:ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
+              className={`absolute flex flex-row ml-[5rem] md:ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
 
             >
               <div
@@ -585,7 +585,7 @@ const Partita = ({
                     </div>
                 </div> */}
         <button
-          className="bg-black text-gray-800 hover:bg-sky-600 sm:mr-[10%] font-bold z-[10] hover:cursor-pointer select-none"
+          className="bg-black text-gray-800 hover:bg-sky-600  mr-[0] sm:mr-[1rem] md:mr-[2rem] lg:mr-[0] xl:mr-[0] font-bold z-[10] hover:cursor-pointer select-none"
           onClick={() => toggleEye()}
           data-partita-numero={partita.numero}
         >

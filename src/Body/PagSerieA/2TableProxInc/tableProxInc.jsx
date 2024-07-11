@@ -1,18 +1,18 @@
-import { useState, useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
+import { calendario1, giornataN } from "../../../START/app/0SerieAMatches";
+import { nomiSquadre } from "../../../START/app/1main";
+import { ATeams, BTeams } from "../../../START/otheers/functions/functions";
+import serieAItalia from "../../../assts/ChartSerieAItalia/serieAItalia.png";
 import {
+  ButtonResetContext,
   CompleteDataContext,
   CoppiaPartitaContext,
   GiornataClouContext,
   IndexSelectedContext,
 } from "../../Glob/global";
-import { ButtonResetContext } from "../../Glob/global";
-import { ATeams, BTeams } from "../../../START/otheers/functions/functions";
-import { nomiSquadre } from "../../../START/app/1main";
-import serieAItalia from "../../../assts/ChartSerieAItalia/serieAItalia.png";
-import Partite from "./Partite/partite";
 import CalGiorn from "./CalGiorn/calGiorn";
+import Partite from "./Partite/partite";
 import "./tableProxInc.css";
-import { calendario1, giornataN } from "../../../START/app/0SerieAMatches";
 
 // import { squadreConfig } from '../../../START/components/2NomiSquadre/nomiSquadre';
 // import { calendario } from "../../../START/Matches/matches"
@@ -195,7 +195,7 @@ const TableProxInc = () => {
 
   return (
     <>
-      <div className="relative ">
+      <div className="relative">
         <div className="flex justify-center h-[25.45rem]">
           <div className="relative overflow-hidden w-[120rem] ml-[-3rem]">
             <img
@@ -380,7 +380,7 @@ const TableProxInc = () => {
               // style={{ transform: 'rotate(180deg)' }}
               onClick={() => setIsModalInserOpen(true)}
             > 📝 </button> */}
-        <div className="sticky flex flex-col overflow-y-hidden h-[33.2rem] bg-black mt-[-1.2rem] z-[4]">
+        <div className="sticky flex flex-col overflow-y-hidden h-[33rem] bg-black z-[4]">
           <CalGiorn onReset={resetAll} />
           <Partite
             resetAll={resetAll}

@@ -1,20 +1,15 @@
-import { useContext, useState, useEffect, useCallback, useMemo } from "react";
-import { CompleteDataContext, SquadraContext } from "../../Glob/global";
-import { CoppiaPartitaContext } from "../../Glob/global";
-import { CoppiaPartitaRegistrataContext } from "../../Glob/global";
-import { GiornataClouContext } from "../../Glob/global";
-import { IndexSelectedContext } from "../../Glob/global";
+import { useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { giornataN } from "../../../START/app/0SerieAMatches";
 import {
-  creaRisSq,
-  calcPntSq,
   ATeams,
   BTeams,
+  calcPntSq,
+  creaRisSq,
 } from "../../../START/otheers/functions/functions";
-import { calendario, giornataN } from "../../../START/app/0SerieAMatches";
+import { CompleteDataContext, CoppiaPartitaContext, CoppiaPartitaRegistrataContext, GiornataClouContext, IndexSelectedContext, SquadraContext } from "../../Glob/global";
 // import { squadrePunt } from '../../../START/app/main';
 import { nomiSquadre } from "../../../START/app/1main";
-import { s } from "../../../START/otheers/styles/0CssMainStyle";
-import { ts } from "../../../START/otheers/styles/0CssMainStyle";
+import { s, ts } from "../../../START/otheers/styles/0CssMainStyle";
 
 import "./tableClass.css";
 
@@ -401,15 +396,15 @@ const TableClass = () => {
   }, [coppiaRegSelected, completeClouSelected]); // Aggiungi le dipendenze necessarie qui
   // console.log(differenzePunti, "coppiaRegSelected");
   // -------------------------------------------------------------------------------------------------
-  console.log(squadreOrdinate, "squadreOrdinate");
+  // console.log(squadreOrdinate, "squadreOrdinate");
   return (
-    <table className="relative h-[57.4rem] w-full max-w-[100%] mb-[-4]">
+    <table className="relative overflow-auto lg:min-h-[57.4rem]">
       <thead>
-        <tr className="bg-black text-gray-600 py-1 text-center">
-          <th className=" w-[2%]" style={{ whiteSpace: "nowrap" }}></th>
-          <th className=" w-[10%]">--- SQUADRA ---</th>
-          <th className=" w-[1%] xs:pl-0">?</th>
-          <th className=" w-[2%] pr-[2rem]  text-left">PTS</th>
+        <tr className="bg-black text-gray-600 text-center">
+          <th className=" w-[0.5rem]"style={{ whiteSpace: "nowrap" }}></th>
+          <th className=" w-[1rem] sm:pl-[1rem] md:pl-[0]                   lg:pl-[1rem] lg:pr-[1rem]">--- SQUADRA ---</th>
+          <th className=" w-[1rem] sm:pl-[1rem] md:pl-[2rem]                lg:pl-[1rem] lg:pr-[1rem] ">?</th>
+          <th className=" w-[1rem] sm:pl-[1rem] md:pl-[0] md:text-center lg:pl-[0] text-right">PTS</th>
           {/* <th className=" w-[2%]"> </th> */}
           {/* Altre colonne commentate */}
         </tr>
@@ -425,7 +420,7 @@ const TableClass = () => {
             </td>
             {/* { COLONNA SQUADRE} */}
             <td
-              className={`w-[100%] bg-black xs:pl-0 sm:pl-32 lg:pl-36 xl:px-6 flex justify-start relative sq-column text-xl 
+              className={`w-[100%] bg-black xs:pl-[0] sm:pl-[1rem] md:pl-[1.5rem] md:pr-[1rem]  py-[.8px] sm:py-1 md:py-2 md:text-md  lg:text-lg xl:px-4 flex justify-start relative sq-column
             ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ${s.BaseText1}` : ""}
 
             ${isTeamMarkedWithX(squadra.name) ? `${s.Filter4} underlineX ` : sqSelected.includes(squadra.name + "Z") ? `${s.Filter4} underlineW` : sqSelected.includes(squadra.name + "Y") ? `${s.Filter4} underlineL` : ""}
@@ -457,16 +452,16 @@ const TableClass = () => {
             </td>
             {/* { COLONNA ?} */}
             <td
-              className={`sm:pr-0 md:pl-1 lg:pl-2 xl:pl-0 text-right font-extrabold bg-black text-cyan-500/80 text-xl z-4	${indiciDiffQ.includes(index) ? "borderAlto border-white" : ""}`}
+              className={`sm:pl-[1rem] md:pl-[2rem] lg:pl-[0.5rem] xl:pl-0 text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	${indiciDiffQ.includes(index) ? "borderAlto border-white" : ""}`}
             >
-              <div className="absolute transform -translate-x-4/3 -translate-y-7 text-center text-lg text-white mx-8 my-[-10] z-[10]">
+              <div className="absolute transform -translate-x-4/3 -translate-y-7 text-left text-lg text-white mx-8 my-[-10] z-[10]">
                 {numeriIndiciBorderWhite[index]}
               </div>
               {getPunteggioColonnaDomanda(squadra)}
             </td>
             {/* { COLONNA PTS} */}
             <td
-              className={`sm:pl-16 lg:pl-2 xl:mr-4 sm:pr-2 text-left font-bold bg-black text-xl
+              className={`sm:pl-[1.5rem] sm:pr-[1rem] md:pl-[1rem] lg:pl-2 xl:mr-4   text-left font-bold bg-black md:text-md  lg:text-lg
               ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ` : ""}
 
               ${indiciDiffPts.includes(index) ? "borderAlto border-gray-600/80 " : ""}
@@ -476,7 +471,6 @@ const TableClass = () => {
               ${isLosingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}
               ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""} 
 							`}
-              style={{ overflow: "visible" }}
             >
               <div className="innerBorder"></div>
               <div

@@ -14,7 +14,7 @@ const Day = ({
 
   return (
     <>
-      <div className="text-sky-900 bg-gray-900 text-sm font-bold uppercase text-start ml-[3%] mr-[3%] pl-8 w-[20%]">
+      <div className="text-sky-900 bg-gray-900 text-sm font-bold uppercase text-start ml-[1rem] md:ml-[2rem] xl:ml-[2rem] pl-[0.5rem] w-[4.5rem]">
         {title}
         {/* <div className="h-px bg-transparent "></div> */}
       </div>

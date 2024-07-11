@@ -12,7 +12,7 @@ export const s = {
   Filter4: "filter brightness-[80%]", //colonna SQ - se ha gia' giocato
 
   BaseText: "text-gray-700",
-  BaseText1: "text-2xl font-bold",
+  BaseText1: "md:text-md font-bold",
 };
 
 //sezione classifica - sezione3

@@ -1,15 +1,15 @@
-import { useState, useRef, useContext, useEffect } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 // import { squadrePunt } from '../../../START/app/main';
-import TableCamminoSq from "./TableCamminoSq/tableCamminoSq";
-import { CoppiaPartitaContext } from "../../Glob/global";
 import {
   nomiSquadre,
   SqEndGruppo1,
   SqEndGruppo2,
 } from "../../../START/app/1main";
+import { CoppiaPartitaContext } from "../../Glob/global";
+import TableCamminoSq from "./TableCamminoSq/tableCamminoSq";
 // import { camSquadre } from '../../../START/components/4CamSquadre/camSquadre';
-import { creaRisSq } from "../../../START/otheers/functions/functions";
 import { calendario1 } from "../../../START/app/0SerieAMatches";
+import { creaRisSq } from "../../../START/otheers/functions/functions";
 
 const LogoSquadrePos = () => {
   const [squadraAttiva1, setSquadraAttiva1] = useState("");
@@ -129,10 +129,10 @@ const LogoSquadrePos = () => {
 
   return (
     <>
-      <div className=" bg-black text-white">
-        <div className="mt-[0rem] mb-[2rem] overflow-hidden z-2 sticky">
+      <div className=" bg-black text-white hidden sm:hidden md:hidden lg:block">
+        <div className="mt-[0rem] mb-[2rem] overflow-hidden z-2 ">
           <div className="w-[40rem] mx-auto items-center h-1 bg-gray-600/80 text-gray-900 ">
-            <div className="pl-1 border border-2 border-sky-800/70 w-5 bg-gray-800 text-sky-700/70 sm:text-md font-extrabold uppercase">
+            <div className="pl-1 border-2 border-sky-800/70 w-5 bg-gray-800 text-sky-700/70 sm:text-md font-extrabold uppercase">
               1
             </div>
           </div>
@@ -152,7 +152,7 @@ const LogoSquadrePos = () => {
             {renderLinea(SqEndGruppo1, SqEndGruppo2)}
           </div>
         </div>
-        <div className="mt-[-2rem] mb-[0rem] overflow-visible z-4 sticky">
+        <div className="mt-[-2rem] mb-[0rem] z-4 sticky">
           <div className="w-[40rem] mx-auto items-center h-1 bg-gray-600/80 text-gray-900">
             <div className="pl-1 border-2 border-sky-800/80 w-5 bg-gray-800 text-sky-700/70 sm:text-md font-extrabold uppercase">
               3
@@ -164,7 +164,7 @@ const LogoSquadrePos = () => {
           </div>
         </div>
       </div>
-      <div ref={refContainer} className=" flex sticky mt-[5px] ">
+      <div ref={refContainer} className=" flex sticky mt-[5px]">
         {squadraAttiva1 && (
           <div className="bg-sky-900 text-black  w-[50%] max-w-[50%] overflow-x-hidden overflow-y-auto z-1">
             <TableCamminoSq

@@ -13,24 +13,26 @@ const PagSerieA = () => {
                 </div> */}
       {/* <div className="w-6 bg-black"></div> */}
       {/* </div> */}
-      <div className=" xl:flex h-[95vh] lg:w-[1299px] overflow-x-auto">
-        <div className="md:max-h-[100%]  sm:max-w-[100%]  md:w-[100%]  md:max-w-[100%] lg:w-[100%] lg:max-w-[100%]  xl:w-[25%] xl:max-w-[30%]   bg-black pb-6 m-2 mt-0">
-          <div className="overflow-y-auto overflow-x-hidden  h-[90vh]  md:h-[90vh]  lg:h-[90vh]  xl:h-[100%] border border-r-0 rounded-[20px] border-gray-900 bg-black  unselectable m-2">
+      <div className="overflow-hidden lg:w-[1299px] flex flex-wrap md:flex-wrap lg:flex-nowrap">
+    <div className="overflow-y-auto min-w-[35%] min-h-full sm:min-w-[17rem] sm:max-h-[50vh] md:min-w-[17rem] md:min-h-full lg:min-w-[18rem] lg:min-h-[95vh] xl:max-w-[100%] xl:max-h-[95vh] max-w-[15rem] max-h-[50vh]">
+        <div className="border border-r-0 rounded-[20px] border-gray-900 bg-black unselectable pb-2 mt-0">
             <TableClass />
-          </div>
         </div>
-        <div className="md:max-h-[100%]  sm:w-[100%] sm:max-w-[100%]  md:w-[100%] md:max-w-[100%]  lg:w-[100%] lg:max-w-[100%] xl:w-[35%] xl:max-w-[55%] ml-[-1.1rem] sm:ml-[-1rem]  xl:ml-[-1.1rem] bg-black mt-0  mr-[1rem] sm:mr-[1rem] md:mr-[2rem] xl:[0rem] pb-4 mb-4">
-          <div className="overflow-y-auto overflow-x-hidden h-[100vh] sm:h-[100vh] md:h-[100vh] lg:h-[90vh] xl:h-[100%] border-2 rounded-[20px] border-gray-900 bg-black text-white mx-1 my-2">
+    </div>
+    <div className="overflow-y-auto min-w-[55%] sm:min-w-[22rem] sm:max-h-[50vh]  md:max-w-[30rem] md:max-h-[50vh] lg:min-w-[30rem] lg:min-h-[95vh] xl:max-w-[100%] xl:max-h-[95vh] max-w-[15rem] max-h-[50vh]">
+        <div className="border-2 rounded-[20px] border-gray-900 bg-black mt-2">
             <TableProxInc />
-          </div>
         </div>
-        <div className="md:max-h-[100%]  sm:w-[100%] sm:max-w-[100%] sm:min-w-[100%] lg:w-[100%] lg:min-w-[100%]  xl:w-[40%] xl:min-w-[40%] ml-[0.6rem]  sm:ml-[1rem]  lg:ml-[1.3rem] xl:ml-[-2.1rem] flex-1 bg-black pb-4 m-2">
-          <div className="overflow-y-auto overflow-x-hidden h-[100%] border border-l-0  rounded-[20px] border-gray-900 bg-black unselectable mr-[0.3rem] sm:mr-[0.4rem] md:mr-[0.6rem]">
+    </div>
+    <div className="overflow-x-hidden overflow-y-auto min-w-full sm:min-w-full sm:max-h-[50vh] md:min-w-[75.6vh] md:max-h-[50vh] lg:min-w-[30rem] lg:min-h-[95vh] lg:w-auto xl:max-w-[100%] xl:max-h-[95vh] max-w-[15rem] max-h-[50vh]">
+        <div className="border border-l-0 rounded-[20px] border-gray-900 bg-black unselectable pb-4 mt-1">
             <LogoSquadrePos />
-          </div>
         </div>
-      </div>
+    </div>
+</div>
     </>
   );
 };
 export default PagSerieA;
+
+
