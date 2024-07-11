@@ -613,7 +613,7 @@ const calendario25 = {
 //   //NOTE: di norma 2 grandi vincono, 1-2 pareggiano (casa),  1 perde (di solito fuori) 
   //*---                                           AGOSTO                                                                      ---  1
   giornata1: [
-    { numero: 1,  day: 'sab', time: '18:30',          team1: 'Genoa',       team2: 'Inter',            pron: '', results: '' }, 
+    { numero: 1,  day: 'sab', time: '18:30',          team1: 'Genoa',       team2: 'Inter',            pron: '1', results: '' }, 
     { numero: 2,  day: 'sab', time: '18:30',          team1: 'Parma',       team2: 'Fiorentina',       pron: '', results: '' },
     { numero: 3,  day: 'sab', time: '20:45',          team1: 'Empoli',      team2: 'Monza',            pron: '', results: '' },
     { numero: 4,  day: 'sab', time: '20:45',          team1: 'Milan',       team2: 'Torino',           pron: '', results: '' },
