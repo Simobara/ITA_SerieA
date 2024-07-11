@@ -1,5 +1,4 @@
 import { nomiSquadre } from "../../app/1main";
-import { calendario, giornataN } from "../../app/0SerieAMatches";
 
 // ------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------
@@ -34,6 +33,7 @@ export function calcPntSq(puntiSquadra) {
 export function creaRisSq(calendario, nomeSquadra, number) {
   const risultatiSquadra = [];
   let giornataSpecialeInserita = false;
+  console.log("risultati squadra",risultatiSquadra)
   // console.log(number, "numbernumber");
   let value = number ? number : 38;
   for (let i = 1; i <= value; i++) {

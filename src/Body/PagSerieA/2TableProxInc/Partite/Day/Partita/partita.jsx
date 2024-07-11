@@ -1,12 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 // import { useDrag, useDrop } from "react-dnd";
-import {
-  giornataN
-} from "../../../../../../START/app/0SerieAMatches";
-import {
-  ATeams,
-  BTeams,
-} from "../../../../../../START/otheers/functions/functions";
+import { giornataN } from "../../../../../../START/app/0SerieAMatches";
+import { ATeams, BTeams, } from "../../../../../../START/otheers/functions/functions";
 import { ts } from "../../../../../../START/otheers/styles/0CssMainStyle";
 import {
   ButtonResetContext,
@@ -91,7 +86,7 @@ const Partita = ({
       toggleSymbol();
     }
   };
-  console.log(isKQBtnActive, "isKQBtnActive");
+  // console.log(isKQBtnActive, "isKQBtnActive");
   const toggleSymbol = () => {
     if (partita.results && partita.rank) {
       setButtonResetIsResetting(true);
@@ -557,7 +552,7 @@ const Partita = ({
             >
               {/* Contenuto del div */}
             </div>
-            <div4
+            <div
               className={`absolute flex flex-row ml-[5rem] md:ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
 
             >
@@ -576,7 +571,7 @@ const Partita = ({
                 {isMobile == true ? partita.team2.slice(0, 3) : partita.team2}
                 {/* {partita.team2} */}
               </div>
-            </div4>
+            </div>
           </div>
         </div>
         {/* <div className="sm:pl-1 sm: mr-[0.5rem] z-[20] bg-black">

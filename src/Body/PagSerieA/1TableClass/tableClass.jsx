@@ -79,7 +79,7 @@ const TableClass = () => {
         return getPunteggioVirtuale(squadra);
       else if (sqSelected.includes(squadra.name + "Y"))
         return squadra.punteggio;
-      return " ";
+      return "";
     },
     [sqSelected, getPunteggioVirtuale, completeClouSelected]
   );
@@ -91,6 +91,7 @@ const TableClass = () => {
       punteggioVirtuale: getPunteggioVirtuale(squadra),
     }));
   }, [ArrayNomiSquadre, sqSelected, getPunteggioVirtuale]);
+
   useEffect(() => {
     Object.keys(nomiSquadre).forEach((key) => {
       const squadra = nomiSquadre[key];
@@ -101,17 +102,20 @@ const TableClass = () => {
         squadra.name,
         number
       );
+// Log per vedere i risultati della squadra corrente
+      
       console.log(squadra.name, calcPntSq(risultatiSquadra), "nommiiiii");
       const punteggio = calcPntSq(risultatiSquadra);
-      console.log(squadra.name, squadra.punteggio, "abcd");
+      
 
       squadra.punteggio = punteggio; // Aggiunge il punteggio direttamente all'oggetto della squadra
-      console.log(squadra.name, squadra.punteggio, "abcd1");
+      console.log(squadra.name, squadra.punteggio, "punteggioInizialeSquadra");
     });
 
     // Forza un aggiornamento dello stato per riflettere i nuovi punteggi nel rendering del componente
     setPunteggiAggiornati((prevPunteggi) => [...prevPunteggi]); // Assicurati che questa logica abbia senso nel tuo contesto
   }, [indexSel, completeClouSelected]);
+  
   const squadreOrdinate = useMemo(() => {
     // alert("");
     console.log(nomiSquadre, "nomiSquadre");

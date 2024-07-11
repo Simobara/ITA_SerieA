@@ -15,15 +15,10 @@ const CalGiorn = ({ onReset }) => {
   const { indexSel, setIndexSel } = useContext(IndexSelectedContext);
   const [indexSelected, setIndexSelected] = useState(null);
   const [matches, setMatches] = useState([]);
-  const { giornataClouSelected, setGiornataClouSelected } =
-    useContext(GiornataClouContext);
-  const { partiteDefinNoMod, setPartiteDefinNoMod } = useContext(
-    PartiteDefinNoModContext
-  );
-  const { completeClouSelected, setCompleteClouSelected } =
-    useContext(CompleteDataContext);
-  const { buttonResetIsResetting, setButtonResetIsResetting } =
-    useContext(ButtonResetContext);
+  const { giornataClouSelected, setGiornataClouSelected } = useContext(GiornataClouContext);
+  const { partiteDefinNoMod, setPartiteDefinNoMod } = useContext( PartiteDefinNoModContext  );
+  const { completeClouSelected, setCompleteClouSelected } = useContext(CompleteDataContext);
+  const { buttonResetIsResetting, setButtonResetIsResetting } = useContext(ButtonResetContext);
 
   //Crea un ref per ciascuna casella
   const boxRefs = useRef([]);

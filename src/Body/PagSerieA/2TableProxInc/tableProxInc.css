@@ -12,5 +12,5 @@
 } */
 
 .brightness-35 {
-  filter: brightness(0.2); /* Riduce la luminosità al 25% */
+  filter: brightness(0.3); /* Riduce la luminosità al 25% */
 }
