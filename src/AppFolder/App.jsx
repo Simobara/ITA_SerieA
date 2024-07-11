@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Body from '../Body/Body.jsx';
 import Footer from '../Footer/footer.jsx';
 import Header from '../Header/header.jsx';
+import LoginPage from '../LoginPage/loginPageNormal.jsx';
 import './App.css';
 
 const App = () => {
@@ -20,8 +21,7 @@ const App = () => {
           <Footer />
         </>
       ) : (
-        <Body />
-        // <LoginPage onLogin={handleLogin} />
+        <LoginPage onLogin={handleLogin} />
       )}
     </div>
   );
