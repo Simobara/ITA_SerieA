@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Body from '../Body/Body.jsx';
 import Footer from '../Footer/footer.jsx';
 import Header from '../Header/header.jsx';
-import LoginPage from '../LoginPage/loginPageNormal.jsx';
 import './App.css';
 
 const App = () => {
@@ -14,15 +13,15 @@ const App = () => {
 
   return (
     <div className="h-screen xl:overflow-hidden">
-      {isAuthenticated ? (
+      {/* {isAuthenticated ? ( */}
         <>
           <Header />
           <Body />
           <Footer />
         </>
-      ) : (
+      {/* ) : (
         <LoginPage onLogin={handleLogin} />
-      )}
+      )} */}
     </div>
   );
 };
