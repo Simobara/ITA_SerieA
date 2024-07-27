@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { currentYear } from '../../../START/app/0SerieAMatches';
 import { DateIncontri } from '../../../START/app/2dateMatches';
-import { generateMonthDays } from '../FunctCalcolo/0CalcCalend';
+import { generateMonthDays } from '../funct/calcCalend';
 
 import LogoEuroChampionsLeague from '../assts/LogoEuroChampionsLeague.png';
 import LogoEuroConferenceLeague from '../assts/LogoEuroConferenceLeague.png';
@@ -20,15 +20,26 @@ const MeseView = React.memo(({ month, openIndex }) => {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
     const eventLogos = [
-        { key: 'ItaSerieA', logo: LogoItaSerieA, offset: 0 },
-        { key: 'ItaCoppaItalia', logo: LogoItaCoppaItalia, offset: 35 },
-        { key: 'EuroChampionsLeague', logo: LogoEuroChampionsLeague, offset: 70 },
-        { key: 'EuroEuropaLeague', logo: LogoEuroEuropaLeague, offset: 105 },
-        { key: 'EuroConferenceLeague', logo: LogoEuroConferenceLeague, offset: 140 },
-        { key: 'Nazionale', logo: LogoNazionale, offset: 175 },
-        { key: 'EuroSuperCoppaUefa', logo: LogoEuroSupercoppaUefa, offset: 70 },
-        { key: 'ItaSupercoppa', logo: LogoItaSupercoppa, offset: 175 },
+        { key: 'ItaSerieA',             logo: LogoItaSerieA,            offset: 0   },
+        { key: 'ItaCoppaItalia',        logo: LogoItaCoppaItalia,       offset: 35  },
+        { key: 'EuroChampionsLeague',   logo: LogoEuroChampionsLeague,  offset: 70  },
+        { key: 'EuroEuropaLeague',      logo: LogoEuroEuropaLeague,     offset: 105 },
+        { key: 'EuroConferenceLeague',  logo: LogoEuroConferenceLeague, offset: 140 },
+        { key: 'Nazionale',             logo: LogoNazionale,            offset: 175 },
+        { key: 'EuroSuperCoppaUefa',    logo: LogoEuroSupercoppaUefa,   offset: 70  },
+        { key: 'ItaSupercoppa',         logo: LogoItaSupercoppa,        offset: 175 },
     ];
+
+    
+    const getEventDetails = (day, eventKey) => {
+        const monthData = DateIncontri[0][month];
+        if (!monthData) {
+            return null;
+        }
+        const events = monthData[eventKey];
+        return events && events.find((event) => event.date === day.dayNumber);
+    };
+
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -42,14 +53,7 @@ const MeseView = React.memo(({ month, openIndex }) => {
         setDaysInMonth(generateMonthDays(yearForMonth, month));
     }, [month, currentYear]);
 
-    const getEventDetails = (day, eventKey) => {
-        const monthData = DateIncontri[0][month];
-        if (!monthData) {
-            return null;
-        }
-        const events = monthData[eventKey];
-        return events && events.find((event) => event.date === day.dayNumber);
-    };
+
 
     return (
         <div className={`flex flex-col h-full mb-[6rem] lg:ml-[2.5rem] lg:mr-[-2rem] md:ml-[-2rem] md:mr-[-11rem] ${(isMobile) ? "ml-[0.7rem]":"" } `}>

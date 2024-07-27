@@ -1,4 +1,4 @@
-import { calendario, currentYear } from "../../../START/app/0SerieAMatches";
+// import { calendario, currentYear } from "../../../app/0SerieAMatches";
 
 //------------------------------------------------------------------------ PER SERIE A
 export function calculateYear(month) {
@@ -83,37 +83,9 @@ export function extractMonthNumberFromDateIncontri(dataIncontri, month) {
   return monthMapping[monthName];
 }
 
-//------------------------------------------------------------------------ PER ALTRE COMPETIZIONI
-const otherCompetitions = [
-  "ItaCoppaItalia",
-  "EuroChampionsLeague",
-  "EuroEuropaLeague",
-  "EuroConferenceLeague",
-  "Nazionale",
-  "EuroSuperCoppaUefa",
-];
-export const updateCompetitionDetails = (year, monthNumber, competition) => {
-  if (competition) {
-    competition.forEach((match) => {
-      if (match && match.details && match.details.event) {
-        const giornata = match.details.event.includes("giornata")
-          ? `giornata${match.details.event.split("giornata")[1]}`
-          : match.details.event;
-        const matchesOnDate = getMatchesForDate(
-          year,
-          monthNumber,
-          match.date,
-          giornata
-        );
-        match.details.teams = `<ul>${matchesOnDate}</ul>`;
-      }
-    });
-  }
-};
-
 // Itera su tutti i mesi e aggiorna le competizioni
 async function initializeAndProcessDateIncontri() {
-  const { DateIncontri } = await import("../../../START/app/2dateMatches");
+  const { DateIncontri } = await import("../../../app/2dateMatches");
   // Itera su tutti i mesi e aggiorna le competizioni
   Object.keys(DateIncontri[0])?.forEach((month) => {
     const monthNumber = extractMonthNumberFromDateIncontri(DateIncontri, month);
