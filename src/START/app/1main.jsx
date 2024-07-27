@@ -20,10 +20,6 @@ import LogoMonza from '../otherss/assets/0LogoSquadre/Monza.png';
 import LogoParma from '../otherss/assets/0LogoSquadre/Parma.png';
 import LogoVenezia from '../otherss/assets/0LogoSquadre/Venezia.png';
 import LogoVerona from '../otherss/assets/0LogoSquadre/Verona.png';
-//---dalla serie B
-// import LogoSassuolo 		from '../otherss/assets/0LogoSquadre/Sassuolo.png';
-// import LogoFrosinone 		from '../otherss/assets/0LogoSquadre/Frosinone.png';
-// import LogoSalernitana 	    from '../otherss/assets/0LogoSquadre/Salernitana.png';
 //?--- --- --- --- --- --- --- --- --- ---AGGIORNA SQUADRE E A+B E GLI ANNI DI +1(Consct)
 //?NB note: 2 delle squadre medie fanno A, 1 va B. 1 della B rimane in A 2+ anni. 3 va B.
 
@@ -51,11 +47,11 @@ export const nomiSquadre = {
     Com:    { name: 'Como',       isTeam: 'B',     AnniA: { Consct:  0, Ult: 2025 },       logo: LogoComo,         style: {top: '3.6%',   left: '22.5%'},    link: ''},
     Ven:    { name: 'Venezia',    isTeam: 'B',     AnniA: { Consct:  0, Ult: 2025 },       logo: LogoVenezia,      style: {top: '11.1%', left: '46.5%' },    link: ''}, 
     //SERIE B
-    // Sal:    { name: 'Salernitana',isTeam: 'B',     AnniA: { Consct:  2, Ult: 2022 },       logo: LogoSalernitana,  style: {top: '85.9%', left: '66.6%' },    link: ''},
-    // Sas:    { name: 'Sassuolo',   isTeam: '',      AnniA: { Consct: 10, Ult: 2014 },       logo: LogoSassuolo,     style: {top: '25%',   left: '35%'   },    link: ''},
-    // Fro:    { name: 'Frosinone',  isTeam: 'B',     AnniA: { Consct:  0, Ult: 2024 },       logo: LogoFrosinone,    style: {top: '70.6%', left: '55%'   },    link: ''},
+    // Sal: { name: 'Salernitana',isTeam: 'B',     AnniA: { Consct:  2, Ult: 2022 },       logo: LogoSalernitana,  style: {top: '85.9%', left: '66.6%' },    link: ''},
+    // Sas: { name: 'Sassuolo',   isTeam: '',      AnniA: { Consct: 10, Ult: 2014 },       logo: LogoSassuolo,     style: {top: '25%',   left: '35%'   },    link: ''},
+    // Fro: { name: 'Frosinone',  isTeam: 'B',     AnniA: { Consct:  0, Ult: 2024 },       logo: LogoFrosinone,    style: {top: '70.6%', left: '55%'   },    link: ''},
 };
+//! -------------------------------------------------------------------------------------- -------------------------------------------
 export const SqEndGruppo1 = 6; //taglio della fine prima linea
 export const SqEndGruppo2 = 12; //taglio della fine seconda linea
-
-
+//! -------------------------------------------------------------------------------------- -------------------------------------------

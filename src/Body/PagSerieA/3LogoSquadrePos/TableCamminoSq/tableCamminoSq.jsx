@@ -50,9 +50,9 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
     }
     const conditions = ["+", "-", "=", "..."];
     if (conditions.includes(partita.casa)) {
-      return `hover:bg-green-950`;
+      return `${ts.TabHoverHome}`;
     } else if (conditions.includes(partita.fuori)) {
-      return `hover:bg-red-950`;
+      return `${ts.TabHoverAway}`;
     }
     return " ";
   };

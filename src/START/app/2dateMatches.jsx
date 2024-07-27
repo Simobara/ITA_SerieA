@@ -1,6 +1,7 @@
 
-//?--- --- --- --- --- METTERE A POSTO I NUMERI DELLE DATE
-// const DateIncontri24 = [
+ //?--- --- --- --- --- METTERE A POSTO I NUMERI DELLE DATE
+
+//const DateIncontri24 = [
 //     {
 //         //*                          ---AGOSTO---
 // 	Agosto: {
@@ -428,7 +429,7 @@
 // ];
 
 const DateIncontri25 = [
-    {
+{
     //*                           ---AGOSTO---
 	Agosto: {
 		ItaSerieA: [
@@ -511,7 +512,7 @@ const DateIncontri25 = [
         ],
         EuroEuropaLeague: [
             { date: 25, details: { event: '2giornata',          teams: '' } },
-            { date: 26, details: { event: '2giornata',           teams: '' } },
+            { date: 26, details: { event: '2giornata',          teams: '' } },
         ],
         EuroConferenceLeague: [
             { date: 25, details: { event: '2giornata',          teams: '' } },
@@ -839,48 +840,45 @@ const DateIncontri25 = [
     //*                           ---MAGGIO---
 	Maggio: {
 		ItaSerieA: [
-			{ date:  3, details: { event: 'giornata35', teams: '' } },
-			{ date:  4, details: { event: 'giornata35', teams: '' } },
-            { date:  5, details: { event: 'giornata35', teams: '' } },
+			{ date:  3, details: { event: 'giornata35',         teams: '' } },
+			{ date:  4, details: { event: 'giornata35',         teams: '' } },
+            { date:  5, details: { event: 'giornata35',         teams: '' } },
                 
-            { date: 10, details: { event: 'giornata36', teams: '' } },
-			{ date: 11, details: { event: 'giornata36', teams: '' } },
-			{ date: 12, details: { event: 'giornata36', teams: '' } },
+            { date: 10, details: { event: 'giornata36',         teams: '' } },
+			{ date: 11, details: { event: 'giornata36',         teams: '' } },
+			{ date: 12, details: { event: 'giornata36',         teams: '' } },
                 
-			{ date: 16, details: { event: 'giornata37', teams: '' } },	
-            { date: 17, details: { event: 'giornata37', teams: '' } },
-			{ date: 18, details: { event: 'giornata37', teams: '' } },
-            { date: 19, details: { event: 'giornata37', teams: '' } },
+			{ date: 16, details: { event: 'giornata37',         teams: '' } },	
+            { date: 17, details: { event: 'giornata37',         teams: '' } },
+			{ date: 18, details: { event: 'giornata37',         teams: '' } },
+            { date: 19, details: { event: 'giornata37',         teams: '' } },
                 
-			{ date: 23, details: { event: 'giornata38', teams: '' } },	
-            { date: 24, details: { event: 'giornata38', teams: '' } },    
-            { date: 25, details: { event: 'giornata38', teams: '' } },
+			{ date: 23, details: { event: 'giornata38',         teams: '' } },	
+            { date: 24, details: { event: 'giornata38',         teams: '' } },    
+            { date: 25, details: { event: 'giornata38',         teams: '' } },
 		],
 		ItaCoppaItalia: [
-			{ date: 14, details: { event: 'FINALE',     teams: '' } },
+			{ date: 14, details: { event: 'FINALE',             teams: '' } },
 		],
 		EuroChampionsLeague: [
-			{ date:  6, details: { event: 'Semifinali', teams: '' } },
-			{ date:  7, details: { event: 'Semifinali', teams: '' } },
-                
-            { date: 31, details: { event: 'FINALE',     teams: '' } }
+			{ date:  6, details: { event: 'Semifinali',         teams: '' } },
+			{ date:  7, details: { event: 'Semifinali',         teams: '' } },
+            { date: 31, details: { event: 'FINALE',             teams: '' } }
 		],
 		EuroEuropaLeague: [
-			{ date:  1, details: { event: 'Semifinali', teams: '' } },
-            { date:  8, details: { event: 'Semifinali', teams: '' } },
-			{ date: 21, details: { event: 'FINALE   ',  teams: '' } },
+			{ date:  1, details: { event: 'Semifinali',         teams: '' } },
+            { date:  8, details: { event: 'Semifinali',         teams: '' } },
+			{ date: 21, details: { event: 'FINALE   ',          teams: '' } },
 		],
 		EuroConferenceLeague: [
-			{ date:  1, details: { event: 'Semifinali', teams: '' } },
-
-                { date:  8, details: { event: 'Semifinali', teams: '' } },
-
-				{ date: 28, details: { event: 'FINALE',     teams: '' } },
+			{ date:  1, details: { event: 'Semifinali',         teams: '' } },
+            { date:  8, details: { event: 'Semifinali',         teams: '' } },
+			{ date: 28, details: { event: 'FINALE',             teams: '' } },
 			],
-			Nazionale: [
-				// Aggiungi qui eventuali date e dettagli se presenti
-			],
-        },
+		Nazionale: [
+			{}
+		],
+    },
     //*                           ---GIUGNO---
     Giugno: {
         ItaSerieA: [
@@ -899,9 +897,10 @@ const DateIncontri25 = [
             {}
         ],
         Nazionale: [
-            {}],
+            {}
+        ],
     },
-    },
+},
 ];
 
 //! -------------------------------------------------------------------------------------- -------------------------------------------

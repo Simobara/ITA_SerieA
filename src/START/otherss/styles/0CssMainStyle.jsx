@@ -35,14 +35,17 @@ export const ts = {
   ColResHome: "!text-red-900 font-semibold",
   ColResAway: "text-smoke-500 font-light",
 
+  TabHoverHome: "hover:bg-green-900",
+  TabHoverAway: "hover:bg-red-900",
+
   WinBg: "bg-green-600 border-b-2 border-green-950",
   WinText: "!text-green-600",
 
   DrawBg: "bg-sky-900 border-b-2 border-sky-950",
   DrawText: "!text-sky-900",
 
-  LoseBg: "bg-black",
-  LoseText: "!text-gray-700",
+  LoseBg: "border-2 border-gray-700 bg-black",
+  LoseText: "!text-gray-700/20",
 
   HoverSqHome: "bg-red-700",
   HoverSqAway: "bg-sky-800",
