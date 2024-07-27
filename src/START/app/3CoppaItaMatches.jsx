@@ -129,62 +129,62 @@ const Tornei25 = {
 	// //*------------------------------------------------------------------------------	16
 
     SqASedicesimi: [
-        { id: 1, pos: '10%', 			team1: '', 	team2: '', 		ris: '' },
-        { id: 2, pos: '35%', 			team1: '', 	team2: '', 		ris: '' },
-        { id: 3, pos: '31%', 			team1: '', 	team2: '', 		ris: '' },
-        { id: 4, pos: '6%', 			team1: '', 	team2: '', 		ris: '' },
+        { id: 1, pos: '10%', 			team1: '', 	        team2: '', 	            ris: '' },
+        { id: 2, pos: '35%', 			team1: '', 	        team2: '', 		        ris: '' },
+        { id: 3, pos: '31%', 			team1: '', 	        team2: '', 		        ris: '' },
+        { id: 4, pos: '6%', 			team1: '', 	        team2: '', 		        ris: '' },
     ],
     SqBSedicesimi: [
-        { id: 1, pos: '10%', 			team1: '', 	team2: '', 		ris: '' },
-        { id: 2, pos: '35%', 			team1: '', 	team2: '', 		ris: '' },
-        { id: 3, pos: '31%', 			team1: '',  team2: '',  	ris: '' },
-        { id: 4, pos: '6%', 			team1: '',  team2: '', 		ris: '' },
+        { id: 1, pos: '10%', 			team1: 'Lecce', 	team2: 'Sassuolo', 	    ris: '' },
+        { id: 2, pos: '35%', 			team1: 'Genoa', 	team2: 'COM', 		    ris: '' },
+        { id: 3, pos: '31%', 			team1: 'Napoli',    team2: 'PAR',  	        ris: '' },
+        { id: 4, pos: '6%', 			team1: '',          team2: '', 		        ris: '' },
     ],
 
 	// //*------------------------------------------------------------------------------ 8
 
     SqAOttavi: [
-        { id: 1, pos: '8%', 			team1: 'Juve',      team2: '',      date: 20, 	ris: '' },
-        { id: 2, pos: '32%', 			team1: 'Fiorentina',team2: '', 	    date: 6, 	ris: '' },
-        { id: 3, pos: '33%', 			team1: 'Atalanta', 	team2: '', 	    date: 3, 	ris: '' },
-        { id: 4, pos: '9%', 			team1: 'Bologna', 	team2: '', 	    date: 2, 	ris: '' },
+        { id: 1, pos: '8%', 			team1: 'Juve',      team2: '',       	    ris: '' },
+        { id: 2, pos: '32%', 			team1: 'Fiorentina',team2: '', 	     	    ris: '' },
+        { id: 3, pos: '33%', 			team1: 'Atalanta', 	team2: '', 	     	    ris: '' },
+        { id: 4, pos: '9%', 			team1: 'Bologna', 	team2: '', 	     	    ris: '' },
     ],
     SqBOttavi: [
-        { id: 1, pos: '8%', 			team1: 'Milan', 	team2: '', 	    date: 5, 	ris: '' },
-        { id: 2, pos: '32%', 			team1: 'Roma', 		team2: '',      date: 3, 	ris: '' },
-        { id: 3, pos: '33%', 			team1: 'Inter', 	team2: '',      date: 4, 	ris: '' },
-        { id: 4, pos: '9%', 			team1: 'Lazio', 	team2: '',      date: 19, 	ris: '' },
+        { id: 1, pos: '8%', 			team1: 'Milan', 	team2: 'Lecce',  	    ris: '' },
+        { id: 2, pos: '32%', 			team1: 'Roma', 		team2: 'COM',    	    ris: '' },
+        { id: 3, pos: '33%', 			team1: 'Inter', 	team2: 'PAR-Nap', 	    ris: '' },
+        { id: 4, pos: '9%', 			team1: 'Lazio', 	team2: '',       	    ris: '' },
     ],
 
 	// //*------------------------------------------------------------------------------ 4
 
     SqAQuarti: [
-        { id: 1, pos: '20%', 			team1: '',  team2: '', 	        ris: '' },
-        { id: 2, pos: '70%', 			team1: '',  team2: '', 	        ris: '' },
+        { id: 1, pos: '20%', 			team1: '',          team2: '', 	            ris: '' },
+        { id: 2, pos: '70%', 			team1: '',          team2: '', 	            ris: '' },
     ],
     SqBQuarti: [
-        { id: 1, pos: '20%', 			team1: '',  team2: '', 	       	ris: '' },
-        { id: 2, pos: '70%', 			team1: '', 	team2: '',     		ris: '' },
+        { id: 1, pos: '20%', 			team1: '',          team2: '', 	       	    ris: '' },
+        { id: 2, pos: '70%', 			team1: '', 	        team2: '',     		    ris: '' },
     ],
 
 	// //*------------------------------------------------------------------------------ 2
 
     SqASemifinali: [
-        { id: 1, pos: '', 				team1: '', 	team2: '',   		ris: '' },
+        { id: 1, pos: '', 				team1: '', 	        team2: '',   		    ris: '' },
     ],
     SqBSemifinali: [
-        { id: 1, pos: '', 				team1: '', 	team2: '', 			ris: '' },
+        { id: 1, pos: '', 				team1: '', 	        team2: '', 			    ris: '' },
     ],
 
 	// //*------------------------------------------------------------------------------ 1
 
     Finale: [
-        { id: 1, pos: '', 				team1: '', 	team2: '', 			ris: '' },
+        { id: 1, pos: '', 				team1: '', 	        team2: '', 			    ris: '' },
     ],
 };
 // //*------------------------------------------------------------------------------ 
 
 
-// -------------------------------------------------------------------------------------- -------------------------------------------
+//! -------------------------------------------------------------------------------------- -------------------------------------------
 export const Tornei = Tornei25
-// -------------------------------------------------------------------------------------- -------------------------------------------
+//! -------------------------------------------------------------------------------------- -------------------------------------------

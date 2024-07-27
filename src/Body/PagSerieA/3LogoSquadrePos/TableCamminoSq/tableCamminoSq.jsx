@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { calendario, giornataN } from "../../../../START/app/0SerieAMatches";
-import { ATeams, BTeams } from "../../../../START/otheers/functions/functions";
-import { ts } from "../../../../START/otheers/styles/0CssMainStyle";
+import { ATeams, BTeams } from "../../../../START/funct/FilterTeamByCat";
+import { ts } from "../../../../START/otherss/styles/0CssMainStyle";
 import { IndexSelectedContext } from "../../../Glob/global";
 import { GiornataClouContext } from "../../../Glob/global/";
 import "./tableCamminoSq.css";
@@ -219,7 +219,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
                   <td className={`sm:w-[50%] pl-4 text-xl ${sqVsClass} `}>
                     {isMobile == true
                       ? sqVsFormatted.slice(0, 3)
-                     : sqVsFormatted}
+                      : sqVsFormatted}
                   </td>
                 </tr>
               );

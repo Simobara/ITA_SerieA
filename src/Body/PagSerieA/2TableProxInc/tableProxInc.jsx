@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { calendario1, giornataN } from "../../../START/app/0SerieAMatches";
 import { nomiSquadre } from "../../../START/app/1main";
-import { ATeams, BTeams } from "../../../START/otheers/functions/functions";
+import { ATeams, BTeams } from "../../../START/funct/FilterTeamByCat";
 import serieAItalia from "../../../assts/ChartSerieAItalia/serieAItalia.png";
 import {
   ButtonResetContext,
@@ -227,19 +227,20 @@ const TableProxInc = () => {
               </div>
               {occhioApertoPartita && (
                 <div className="absolute text-sm mt-8">
-                    
-                    
-                    
-                    {isATeam(coppiaSelected.team1) && isATeam(coppiaSelected.team2) && (                                          //FORTE FORTE
-                        <pre>SCONTRO TOP VANTAGGIOCasa</pre>
+                  {isATeam(coppiaSelected.team1) &&
+                    isATeam(coppiaSelected.team2) && ( //FORTE FORTE
+                      <pre>SCONTRO TOP VANTAGGIOCasa</pre>
                     )}
-                    {isATeam(coppiaSelected.team1) && isBTeam(coppiaSelected.team2) && (                                          //FORTE DEBOLE
+                  {isATeam(coppiaSelected.team1) &&
+                    isBTeam(coppiaSelected.team2) && ( //FORTE DEBOLE
                       <>
                         <pre>DEVE VINCERE</pre>
                         <pre>I Tifosi: vedere vincere</pre>
                       </>
                     )}
-                    { (isATeam(coppiaSelected.team1) && !isATeam(coppiaSelected.team2) && !isBTeam(coppiaSelected.team2)) && (    //FORTE MEDIA
+                  {isATeam(coppiaSelected.team1) &&
+                    !isATeam(coppiaSelected.team2) &&
+                    !isBTeam(coppiaSelected.team2) && ( //FORTE MEDIA
                       <>
                         <pre>DEVE VINCERE</pre>
                         <pre>I Tifosi: vedere vincere</pre>
@@ -247,57 +248,60 @@ const TableProxInc = () => {
                       </>
                     )}
 
-
-
-                    { (isBTeam(coppiaSelected.team1) && isBTeam(coppiaSelected.team2) ) && (                                      //DEBOLE DEBOLE
-                       <>
-                         <pre>SCONTRO RETROC VANTAGGIOCasa</pre>
-                         <pre>Se NextMatch SqForte: vince</pre> 
-                         <pre>PosClass?</pre>
-                       </>
-                    )}
-                    { (isBTeam(coppiaSelected.team1) && isATeam(coppiaSelected.team2)) && (                                       //DEBOLE FORTE
-                       <>
-                        <pre>SeProxInc MediaDebole:lascia</pre>        
+                  {isBTeam(coppiaSelected.team1) &&
+                    isBTeam(coppiaSelected.team2) && ( //DEBOLE DEBOLE
+                      <>
+                        <pre>SCONTRO RETROC VANTAGGIOCasa</pre>
+                        <pre>Se NextMatch SqForte: vince</pre>
                         <pre>PosClass?</pre>
-                        
-                       </>
+                      </>
                     )}
-                    { (isBTeam(coppiaSelected.team1) && (!isBTeam(coppiaSelected.team2) && !isATeam(coppiaSelected.team2))) && (  //DEBOLE MEDIA
+                  {isBTeam(coppiaSelected.team1) &&
+                    isATeam(coppiaSelected.team2) && ( //DEBOLE FORTE
+                      <>
+                        <pre>SeProxInc MediaDebole:lascia</pre>
+                        <pre>PosClass?</pre>
+                      </>
+                    )}
+                  {isBTeam(coppiaSelected.team1) &&
+                    !isBTeam(coppiaSelected.team2) &&
+                    !isATeam(coppiaSelected.team2) && ( //DEBOLE MEDIA
                       <>
                         <pre>barbatrucco?</pre>
                         <pre>Se NextMatch SqForte: vince</pre>
-                        <pre>Se NextMatch SCONTRO: lascia</pre>
+                        <pre>Se NextMatch SCONTRO: </pre>
                         <pre>PosClass?</pre>
                       </>
                     )}
 
-
-
-                    { ((!isATeam(coppiaSelected.team1) && (!isBTeam(coppiaSelected.team1))) && (isATeam(coppiaSelected.team2))) && (                                      //MEDIA FORTE
+                  {!isATeam(coppiaSelected.team1) &&
+                    !isBTeam(coppiaSelected.team1) &&
+                    isATeam(coppiaSelected.team2) && ( //MEDIA FORTE
                       <>
-                        <pre>Puo' Anche Perdere</pre>   
-                        <pre>Se NextMatch SqDebole: lascia</pre>   
+                        <pre>Puo' Anche Perdere</pre>
+                        <pre>Se NextMatch SqDebole: lascia</pre>
                         <pre>PosClass?</pre>
                       </>
                     )}
-                    { ((!isATeam(coppiaSelected.team1) && (!isBTeam(coppiaSelected.team1))) && (isBTeam(coppiaSelected.team2))) && (                                       //MEDIA DEBOLE
+                  {!isATeam(coppiaSelected.team1) &&
+                    !isBTeam(coppiaSelected.team1) &&
+                    isBTeam(coppiaSelected.team2) && ( //MEDIA DEBOLE
                       <>
                         <pre>DEVE VINCERE</pre>
                         <pre>I Tifosi: vedere vincere</pre>
                       </>
                     )}
-                    { (((!isATeam(coppiaSelected.team1) && (!isBTeam(coppiaSelected.team1)) &&  (!isATeam(coppiaSelected.team2) && (!isBTeam(coppiaSelected.team2)))) && (  //MEDIA MEDIA                           //MEDIA MEDIA
+                  {!isATeam(coppiaSelected.team1) &&
+                    !isBTeam(coppiaSelected.team1) &&
+                    !isATeam(coppiaSelected.team2) &&
+                    !isBTeam(coppiaSelected.team2) && ( //MEDIA MEDIA                           //MEDIA MEDIA
                       <>
                         <pre>barbatrucco?</pre>
                         <pre>SCONTROEuropa VANTAGGIOCasa</pre>
                         <pre>-Se NextMatch SqForte, vince</pre>
                         <pre>PosClass?</pre>
                       </>
-                    )))}
-
-
-
+                    )}
                 </div>
               )}
               {/* <div className="border-b-4 border-gray-700 w-[70px]"></div> */}
@@ -310,66 +314,77 @@ const TableProxInc = () => {
               </div>
               {occhioApertoPartita && (
                 <div className="absolute text-sm mt-[140px]">
-                {isATeam(coppiaSelected.team1) && isATeam(coppiaSelected.team2) && (                                              //FORTE FORTE
+                  {isATeam(coppiaSelected.team1) &&
+                    isATeam(coppiaSelected.team2) && ( //FORTE FORTE
                       <>
                         <pre>SCONTRO TOP svantaggio</pre>
                         <pre>PosClass?</pre>
                       </>
                     )}
-                    {isATeam(coppiaSelected.team1) && isBTeam(coppiaSelected.team2) && (                                          //FORTE DEBOLE
+                  {isATeam(coppiaSelected.team1) &&
+                    isBTeam(coppiaSelected.team2) && ( //FORTE DEBOLE
                       <>
                         <pre>Pochissime %</pre>
                         <pre>SeProxInc VsDebole: lascia</pre>
                       </>
                     )}
-                    { (isATeam(coppiaSelected.team1) && !isATeam(coppiaSelected.team2) && !isBTeam(coppiaSelected.team2)) && (    //FORTE MEDIA
+                  {isATeam(coppiaSelected.team1) &&
+                    !isATeam(coppiaSelected.team2) &&
+                    !isBTeam(coppiaSelected.team2) && ( //FORTE MEDIA
                       <>
                         <pre>SCONTRO Europa svantaggio</pre>
                         <pre>SeProxInc VsDebole: lascia</pre>
                       </>
                     )}
-                    
 
-
-                    { (isBTeam(coppiaSelected.team1) && isBTeam(coppiaSelected.team2) ) && (                                      //DEBOLE DEBOLE
-                       <>
-                         <pre>SCONTRO RETROCESS svantaggio</pre>
-                         <pre>PosClass?</pre>
-                       </>
+                  {isBTeam(coppiaSelected.team1) &&
+                    isBTeam(coppiaSelected.team2) && ( //DEBOLE DEBOLE
+                      <>
+                        <pre>SCONTRO RETROCESS svantaggio</pre>
+                        <pre>PosClass?</pre>
+                      </>
                     )}
-                    { (isBTeam(coppiaSelected.team1) && isATeam(coppiaSelected.team2)) && (                                       //DEBOLE FORTE
-                       <>
-                         <pre>Puo'Inaspettat Perdere</pre>        
-                       </>
+                  {isBTeam(coppiaSelected.team1) &&
+                    isATeam(coppiaSelected.team2) && ( //DEBOLE FORTE
+                      <>
+                        <pre>Puo'Inaspettat Perdere</pre>
+                      </>
                     )}
-                    { (isBTeam(coppiaSelected.team1) && (!isBTeam(coppiaSelected.team2) && !isATeam(coppiaSelected.team2))) && (  //DEBOLE MEDIA
+                  {isBTeam(coppiaSelected.team1) &&
+                    !isBTeam(coppiaSelected.team2) &&
+                    !isATeam(coppiaSelected.team2) && ( //DEBOLE MEDIA
                       <>
                         <pre>Puo' Perdere</pre>
                         <pre>PosClass?</pre>
                       </>
                     )}
 
-
-
-                    { ((!isATeam(coppiaSelected.team1) && (!isBTeam(coppiaSelected.team1))) && (isATeam(coppiaSelected.team2))) && (                                      //MEDIA FORTE
+                  {!isATeam(coppiaSelected.team1) &&
+                    !isBTeam(coppiaSelected.team1) &&
+                    isATeam(coppiaSelected.team2) && ( //MEDIA FORTE
                       <>
-                        <pre>puo' perdere</pre>       
+                        <pre>puo' perdere</pre>
                         <pre>PosClass?</pre>
                         <pre>SeProx Cs+VsDebole: lascia</pre>
-                     </>
+                      </>
                     )}
 
-                    { ((!isATeam(coppiaSelected.team1) && (!isBTeam(coppiaSelected.team1))) && (isBTeam(coppiaSelected.team2))) && (                                       //MEDIA DEBOLE
+                  {!isATeam(coppiaSelected.team1) &&
+                    !isBTeam(coppiaSelected.team1) &&
+                    isBTeam(coppiaSelected.team2) && ( //MEDIA DEBOLE
                       <>
                         <pre>SeProxInc VsDebole: lascia</pre>
                         <pre>PosClass?</pre>
                       </>
                     )}
 
-                    { (((!isATeam(coppiaSelected.team1) && (!isBTeam(coppiaSelected.team1)) &&  (!isATeam(coppiaSelected.team2) && (!isBTeam(coppiaSelected.team2)))) && (  //MEDIA MEDIA                           //MEDIA MEDIA
-                        <pre>barbatrucco?</pre>
-                    )))}
-              </div>
+                  {!isATeam(coppiaSelected.team1) &&
+                    !isBTeam(coppiaSelected.team1) &&
+                    !isATeam(coppiaSelected.team2) &&
+                    !isBTeam(coppiaSelected.team2) && ( //MEDIA MEDIA                           //MEDIA MEDIA
+                      <pre>barbatrucco?</pre>
+                    )}
+                </div>
               )}
             </div>
             {/* <div className="absolute top-[26%] left-[49.5%]">1 -📊 </div>

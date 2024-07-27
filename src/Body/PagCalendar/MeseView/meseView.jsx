@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { currentYear } from '../../../START/app/0SerieAMatches';
-import { DateIncontri } from '../../../START/app/2dateMatch';
+import { DateIncontri } from '../../../START/app/2dateMatches';
 import { generateMonthDays } from '../FunctCalcolo/0CalcCalend';
 
 import LogoEuroChampionsLeague from '../assts/LogoEuroChampionsLeague.png';

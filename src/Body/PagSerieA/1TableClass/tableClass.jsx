@@ -1,16 +1,19 @@
 import { useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { giornataN } from "../../../START/app/0SerieAMatches";
+import { ATeams, BTeams } from "../../../START/funct/FilterTeamByCat";
 import {
-  ATeams,
-  BTeams,
-  calcPntSq,
-  creaRisSq,
-} from "../../../START/otheers/functions/functions";
-import { CompleteDataContext, CoppiaPartitaContext, CoppiaPartitaRegistrataContext, GiornataClouContext, IndexSelectedContext, SquadraContext } from "../../Glob/global";
+  CompleteDataContext,
+  CoppiaPartitaContext,
+  CoppiaPartitaRegistrataContext,
+  GiornataClouContext,
+  IndexSelectedContext,
+  SquadraContext,
+} from "../../Glob/global";
 // import { squadrePunt } from '../../../START/app/main';
 import { nomiSquadre } from "../../../START/app/1main";
-import { s, ts } from "../../../START/otheers/styles/0CssMainStyle";
-
+import { s, ts } from "../../../START/otherss/styles/0CssMainStyle";
+import { calcPntSq } from "./function/calcPuntiSq";
+import { creaRisSq } from "./function/creaRisSq";
 import "./tableClass.css";
 
 const TableClass = () => {
@@ -102,11 +105,10 @@ const TableClass = () => {
         squadra.name,
         number
       );
-// Log per vedere i risultati della squadra corrente
-      
+      // Log per vedere i risultati della squadra corrente
+
       console.log(squadra.name, calcPntSq(risultatiSquadra), "nommiiiii");
       const punteggio = calcPntSq(risultatiSquadra);
-      
 
       squadra.punteggio = punteggio; // Aggiunge il punteggio direttamente all'oggetto della squadra
       console.log(squadra.name, squadra.punteggio, "punteggioInizialeSquadra");
@@ -115,7 +117,7 @@ const TableClass = () => {
     // Forza un aggiornamento dello stato per riflettere i nuovi punteggi nel rendering del componente
     setPunteggiAggiornati((prevPunteggi) => [...prevPunteggi]); // Assicurati che questa logica abbia senso nel tuo contesto
   }, [indexSel, completeClouSelected]);
-  
+
   const squadreOrdinate = useMemo(() => {
     // alert("");
     console.log(nomiSquadre, "nomiSquadre");
@@ -405,10 +407,16 @@ const TableClass = () => {
     <table className="relative overflow-auto lg:min-h-[57.4rem]">
       <thead>
         <tr className="bg-black text-gray-600 text-center">
-          <th className=" w-[0.5rem]"style={{ whiteSpace: "nowrap" }}></th>
-          <th className=" w-[1rem] sm:pl-[1rem] md:pl-[0]                   lg:pl-[1rem] lg:pr-[1rem]">--- SQUADRA ---</th>
-          <th className=" w-[1rem] sm:pl-[1rem] md:pl-[2rem]                lg:pl-[1rem] lg:pr-[1rem] ">?</th>
-          <th className=" w-[1rem] sm:pl-[1rem] md:pl-[0] md:text-center lg:pl-[0] text-right">PTS</th>
+          <th className=" w-[0.5rem]" style={{ whiteSpace: "nowrap" }}></th>
+          <th className=" w-[1rem] sm:pl-[1rem] md:pl-[0]                   lg:pl-[1rem] lg:pr-[1rem]">
+            --- SQUADRA ---
+          </th>
+          <th className=" w-[1rem] sm:pl-[1rem] md:pl-[2rem]                lg:pl-[1rem] lg:pr-[1rem] ">
+            ?
+          </th>
+          <th className=" w-[1rem] sm:pl-[1rem] md:pl-[0] md:text-center lg:pl-[0] text-right">
+            PTS
+          </th>
           {/* <th className=" w-[2%]"> </th> */}
           {/* Altre colonne commentate */}
         </tr>

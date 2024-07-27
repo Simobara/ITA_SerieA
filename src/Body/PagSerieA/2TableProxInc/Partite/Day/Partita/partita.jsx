@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 // import { useDrag, useDrop } from "react-dnd";
 import { giornataN } from "../../../../../../START/app/0SerieAMatches";
-import { ATeams, BTeams, } from "../../../../../../START/otheers/functions/functions";
-import { ts } from "../../../../../../START/otheers/styles/0CssMainStyle";
+import { ATeams, BTeams } from "../../../../../../START/funct/FilterTeamByCat";
+import { ts } from "../../../../../../START/otherss/styles/0CssMainStyle";
 import {
   ButtonResetContext,
   CompleteDataContext,
@@ -554,7 +554,6 @@ const Partita = ({
             </div>
             <div
               className={`absolute flex flex-row ml-[5rem] md:ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
-
             >
               <div
                 className={`max-w-[9rem] whitespace-nowrap overflow-hidden ml-[1rem] 

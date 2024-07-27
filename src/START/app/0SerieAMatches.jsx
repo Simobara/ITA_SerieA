@@ -610,7 +610,7 @@
 
 
 const calendario25 = {
-//   //NOTE: di norma 2 grandi vincono, 1-2 pareggiano (casa),  1 perde (di solito fuori) 
+//NOTE: di norma 2 grandi vincono, 1-2 pareggiano (casa),  1 perde (di solito fuori) 
   //*---                                           AGOSTO                                                                      ---  1
   giornata1: [
     { numero: 1,  day: 'sab', time: '18:30',          team1: 'Genoa',       team2: 'Inter',            pron: '', results: '' }, 
@@ -641,8 +641,7 @@ const calendario25 = {
     { numero: 9,  day: 'lun', time: '18:30',          team1: 'Cagliari',    team2: 'Como',             pron: '', results: '' },
     { numero: 10, day: 'lun', time: '20:45',          team1: 'Verona',      team2: 'Juve',             pron: '', results: '' },
 ],
-
-  //*----------------------------------------------SETTEMBRE     -  3 -    -------------------------------------------------------  3
+  //*---  -----                                                                                                                ---  3
 	giornata3: [
     { numero: 1,  day: 'ven', time: '18:30',          team1: 'Venezia',      team2: 'Torino',          pron: '', results: '' },
     { numero: 2,  day: 'ven', time: '20:45',          team1: 'Inter',        team2: 'Atalanta',        pron: '', results: '' },
@@ -657,7 +656,7 @@ const calendario25 = {
     { numero: 9,  day: 'dom', time: '20:45',          team1: 'Juve',         team2: 'Roma',            pron: '', results: '' },
     { numero: 10, day: 'dom', time: '20:45',          team1: 'Udinese',      team2: 'Como',            pron: '', results: '' },
 ],
-  //*---  -----                                                                                                                ---  4
+  //*----------------------------------------------SETTEMBRE     -  3 -    -------------------------------------------------------- 4 
 	giornata4: [
     { numero: 1,  day: 'sab', time: '18:30',          team1: 'Atalanta',     team2: 'Fiorentina',      pron: '', results: '' },
     { numero: 2,  day: 'sab', time: '18:30',          team1: 'Cagliari',     team2: 'Napoli',          pron: '', results: '' },
@@ -1058,7 +1057,7 @@ const calendario25 = {
     { numero: 9,  day: 'dom', time: '18:00',          team1: 'Udinese',       team2: 'Verona',         pron: '', results: '' },
     { numero: 10, day: 'dom', time: '20:45',          team1: 'Venezia',       team2: 'Napoli',         pron: '', results: '' },
 ],
-  //*                                               APRILE     --- 30 ---                                                      --- 30
+  //*---  -----                                                                                                                --- 31
 	giornata30: [
     { numero: 1,  day: 'sab', time: '12:30',          team1: 'Cagliari',      team2: 'Monza',          pron: '', results: '' },
     { numero: 2,  day: 'sab', time: '15:00',          team1: 'Como',          team2: 'Empoli',         pron: '', results: '' },
@@ -1072,7 +1071,7 @@ const calendario25 = {
     { numero: 9,  day: 'lun', time: '18:00',          team1: 'Napoli',        team2: 'Milan',          pron: '', results: '' },
     { numero: 10, day: 'lun', time: '20:45',          team1: 'Venezia',       team2: 'Bologna',        pron: '', results: '' },
 ],
-  //*---  -----                                                                                                                --- 31
+  //*                                               APRILE     --- 30 ---                                                      --- 30
 	giornata31: [
     { numero: 1,  day: 'ven', time: '20:45',          team1: 'Atalanta',      team2: 'Lazio',          pron: '', results: '' },
     
@@ -1201,11 +1200,11 @@ const calendario25 = {
     { numero: 10, day: 'dom', time: '20:45',          team1: 'Venezia',       team2: 'Juve',           pron: '', results: '' },
   ],
 }; 
-// ------------------- ------------------------------------------------------------------- ------------------------------------------
+//! ------------------- ------------------------------------------------------------------- ------------------------------------------
 export const giornataN = 1
-// -------------------------------------------------------------------------------------- -------------------------------------------
+//! -------------------------------------------------------------------------------------- -------------------------------------------
 export const currentYear = 2025;
 export const calendario = JSON.parse(JSON.stringify(calendario25));
 export const calendario1 = JSON.parse(JSON.stringify(calendario25));
 export const giornataClou = calendario[`giornata${giornataN}`];
-// -------------------------------------------------------------------------------------- -------------------------------------------
+//! -------------------------------------------------------------------------------------- -------------------------------------------

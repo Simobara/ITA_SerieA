@@ -1,34 +1,34 @@
-import LogoInter            from '../otheers/assets/0LogoSquadre/Inter.png'
-import LogoJuve 			from '../otheers/assets/0LogoSquadre/Juve.png';
-import LogoMilan 			from '../otheers/assets/0LogoSquadre/Milan.png';
-import LogoAtalanta 		from '../otheers/assets/0LogoSquadre/Atalanta.png';
-import LogoNapoli 			from '../otheers/assets/0LogoSquadre/Napoli.png';
-import LogoRoma             from '../otheers/assets/0LogoSquadre/Roma.png';
+import LogoAtalanta from '../otherss/assets/0LogoSquadre/Atalanta.png';
+import LogoInter from '../otherss/assets/0LogoSquadre/Inter.png';
+import LogoJuve from '../otherss/assets/0LogoSquadre/Juve.png';
+import LogoMilan from '../otherss/assets/0LogoSquadre/Milan.png';
+import LogoNapoli from '../otherss/assets/0LogoSquadre/Napoli.png';
+import LogoRoma from '../otherss/assets/0LogoSquadre/Roma.png';
 //*--- ---- ---
-import LogoLazio 			from '../otheers/assets/0LogoSquadre/Lazio.png';
-import LogoBologna 			from '../otheers/assets/0LogoSquadre/Bologna.png';
-import LogoFiorentina 	    from '../otheers/assets/0LogoSquadre/Fiorentina.png';
-import LogoTorino 			from '../otheers/assets/0LogoSquadre/Torino.png';
-import LogoUdinese 			from '../otheers/assets/0LogoSquadre/Udinese.png';
-import LogoGenoa            from '../otheers/assets/0LogoSquadre/Genoa.png';
+import LogoBologna from '../otherss/assets/0LogoSquadre/Bologna.png';
+import LogoFiorentina from '../otherss/assets/0LogoSquadre/Fiorentina.png';
+import LogoGenoa from '../otherss/assets/0LogoSquadre/Genoa.png';
+import LogoLazio from '../otherss/assets/0LogoSquadre/Lazio.png';
+import LogoTorino from '../otherss/assets/0LogoSquadre/Torino.png';
+import LogoUdinese from '../otherss/assets/0LogoSquadre/Udinese.png';
 //*--- ---- ---
-import LogoMonza 			from '../otheers/assets/0LogoSquadre/Monza.png';
-import LogoLecce 			from '../otheers/assets/0LogoSquadre/Lecce.png';
-import LogoCagliari 		from '../otheers/assets/0LogoSquadre/Cagliari.png';
-import LogoEmpoli 			from '../otheers/assets/0LogoSquadre/Empoli.png';
-import LogoVerona 			from '../otheers/assets/0LogoSquadre/Verona.png';
-import LogoParma 			from '../otheers/assets/0LogoSquadre/Parma.png';
-import LogoComo		 		from '../otheers/assets/0LogoSquadre/Como.png';
-import LogoVenezia 			from '../otheers/assets/0LogoSquadre/Venezia.png';
+import LogoCagliari from '../otherss/assets/0LogoSquadre/Cagliari.png';
+import LogoComo from '../otherss/assets/0LogoSquadre/Como.png';
+import LogoEmpoli from '../otherss/assets/0LogoSquadre/Empoli.png';
+import LogoLecce from '../otherss/assets/0LogoSquadre/Lecce.png';
+import LogoMonza from '../otherss/assets/0LogoSquadre/Monza.png';
+import LogoParma from '../otherss/assets/0LogoSquadre/Parma.png';
+import LogoVenezia from '../otherss/assets/0LogoSquadre/Venezia.png';
+import LogoVerona from '../otherss/assets/0LogoSquadre/Verona.png';
 //*--- ---- ---
 //---dalla serie B
-// import LogoSassuolo 		from '../otheers/assets/0LogoSquadre/Sassuolo.png';
-// import LogoFrosinone 		from '../otheers/assets/0LogoSquadre/Frosinone.png';
-// import LogoSalernitana 	    from '../otheers/assets/0LogoSquadre/Salernitana.png';
+// import LogoSassuolo 		from '../otherss/assets/0LogoSquadre/Sassuolo.png';
+// import LogoFrosinone 		from '../otherss/assets/0LogoSquadre/Frosinone.png';
+// import LogoSalernitana 	    from '../otherss/assets/0LogoSquadre/Salernitana.png';
 
 //TODO?--- --- --- --- --- --- --- --- --- --- ---METTERE A POSTO LE SQUADRE
 //TODO?--- --- --- --- --- --- --- --- --- --- ---AGGIORNA GLI ANNI DI +1(Consct)
-//NB note: 2 delle squadre medie fanno A, 1 va giu. La Prima delle serie B Parma, rimane in serie A almeno 2 anni.
+//TODO NB note: 2 delle squadre medie fanno A, 1 va giu. La Prima delle serie B Parma, rimane in serie A almeno 2 anni.
 
 export const nomiSquadre = {
     Int:    { name: 'Inter',      isTeam: 'A',     AnniA: { Consct: 95, Ult: 1930 },       logo: LogoInter,        style: {top: '10.6%', left: '22.7%' },    link: ''},
@@ -55,7 +55,7 @@ export const nomiSquadre = {
     Ven:    { name: 'Venezia',    isTeam: 'B',     AnniA: { Consct:  0, Ult: 2025 },       logo: LogoVenezia,      style: {top: '11.1%', left: '46.5%' },    link: ''},
     
     
-     //SERIE B
+    //SERIE B
     // Sal:    { name: 'Salernitana',isTeam: 'B',     AnniA: { Consct:  2, Ult: 2022 },       logo: LogoSalernitana,  style: {top: '85.9%', left: '66.6%' },    link: ''},
     // Sas:    { name: 'Sassuolo',   isTeam: '',      AnniA: { Consct: 10, Ult: 2014 },       logo: LogoSassuolo,     style: {top: '25%',   left: '35%'   },    link: ''},
     // Fro:    { name: 'Frosinone',  isTeam: 'B',     AnniA: { Consct:  0, Ult: 2024 },       logo: LogoFrosinone,    style: {top: '70.6%', left: '55%'   },    link: ''},

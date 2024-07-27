@@ -1,3 +1,5 @@
+import { calendario, giornataClou } from "../../START/app/0SerieAMatches";
+
 // SquadraContext.js
 import { createContext, useState } from "react";
 
@@ -47,8 +49,6 @@ export const CoppiaPartitaRegistrataProvider = ({ children }) => {
 
 //-----------------------------------------------------------------------
 
-import { giornataClou } from "../../START/app/0SerieAMatches";
-import { calendario } from "../../START/app/0SerieAMatches";
 export const GiornataClouContext = createContext();
 // eslint-disable-next-line
 export const GiornataClouProvider = ({ children }) => {

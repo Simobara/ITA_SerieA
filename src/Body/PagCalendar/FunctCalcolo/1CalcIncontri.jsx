@@ -113,7 +113,7 @@ export const updateCompetitionDetails = (year, monthNumber, competition) => {
 
 // Itera su tutti i mesi e aggiorna le competizioni
 async function initializeAndProcessDateIncontri() {
-  const { DateIncontri } = await import("../../../START/app/2dateMatch");
+  const { DateIncontri } = await import("../../../START/app/2dateMatches");
   // Itera su tutti i mesi e aggiorna le competizioni
   Object.keys(DateIncontri[0])?.forEach((month) => {
     const monthNumber = extractMonthNumberFromDateIncontri(DateIncontri, month);

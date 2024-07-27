@@ -449,8 +449,8 @@ const DateIncontri25 = [
             { date: 12, details: { event: 'Turno1',             teams: '' } },
         ],
         EuroChampionsLeague: [
-            { date: 6, details: { event: 'III turno Prel',     teams: '' } },
-            { date: 7, details: { event: 'III turno Prel',     teams: '' } },
+            { date: 6, details: { event: 'III turno Prel',      teams: '' } },
+            { date: 7, details: { event: 'III turno Prel',      teams: '' } },
             
             { date: 13, details: { event: 'III turno Prel',     teams: '' } },
 
@@ -467,7 +467,7 @@ const DateIncontri25 = [
 
             { date: 22, details: { event: 'Playoff Andata',     teams: '' } },
 
-            { date: 29, details: { event: 'Playoff Ritorno',     teams: '' } },
+            { date: 29, details: { event: 'Playoff Ritorno',    teams: '' } },
         ],
         EuroConferenceLeague: [
             { date:  8, details: { event: 'III turno Prel',     teams: '' } },
@@ -488,90 +488,90 @@ const DateIncontri25 = [
         },
         //*                          ---SETTEMBRE---
 	Settembre: {
-    ItaSerieA: [
-        { date:  1, details: { event: 'giornata3',      teams: '' } },
+        ItaSerieA: [
+            { date:  1,     details: { event: 'giornata3',          teams: '' } },
        
-        { date: 14, details: { event: 'giornata4',      teams: '' } },
-        { date: 15, details: { event: 'giornata4',      teams: '' } },
-        { date: 16, details: { event: 'giornata4',      teams: '' } },
+            { date: 14,     details: { event: 'giornata4',          teams: '' } },
+            { date: 15,     details: { event: 'giornata4',          teams: '' } },
+            { date: 16,     details: { event: 'giornata4',          teams: '' } },
         
-        { date: 21, details: { event: 'giornata5',      teams: '' } },
-        { date: 22, details: { event: 'giornata5',      teams: '' } },
-        { date: 23, details: { event: 'giornata5',      teams: '' } },
+            { date: 21,     details: { event: 'giornata5',          teams: '' } },
+            { date: 22,     details: { event: 'giornata5',          teams: '' } },
+            { date: 23,     details: { event: 'giornata5',          teams: '' } },
         
-        { date: 28, details: { event: 'giornata6',      teams: '' } },
-        { date: 29, details: { event: 'giornata6',      teams: '' } },
-        { date: 30, details: { event: 'giornata6',      teams: '' } }
-    ],
-    ItaCoppaItalia: [
-        {}
-    ],
-    EuroChampionsLeague: [
-        { date: 17, details: { event: '1giornata',      teams: '' } },
-        { date: 18, details: { event: '1giornata',      teams: '' } },
-    ],
-    EuroEuropaLeague: [
-        { date: 25, details: { event: '2giornata',      teams: '' } },
-        { date: 26, details: { event: '2giornata',      teams: '' } },
-    ],
-    EuroConferenceLeague: [
-        { date: 25, details: { event: '2giornata',      teams: '' } },
-        { date: 26, details: { event: '2giornata',      teams: '' } },
-    ],
-    Nazionale: [
-         { date:  5, details: { event: 'Qualificazioni', teams: '' } },
-         { date:  6, details: { event: 'Qualificazioni', teams: '' } },
-         { date:  7, details: { event: 'Qualificazioni', teams: '' } },
-         { date:  8, details: { event: 'Qualificazioni', teams: '' } },
-         { date:  9, details: { event: 'Qualificazioni', teams: '' } },
-         { date: 10, details: { event: 'Qualificazioni', teams: '' } },
+            { date: 28,     details: { event: 'giornata6',          teams: '' } },
+            { date: 29,     details: { event: 'giornata6',          teams: '' } },
+            { date: 30,     details: { event: 'giornata6',          teams: '' } }
+        ],
+        ItaCoppaItalia: [
+            {}
+        ],
+        EuroChampionsLeague: [
+            { date: 17,     details: { event: '1giornata',          teams: '' } },
+            { date: 18,     details: { event: '1giornata',          teams: '' } },
+        ],
+        EuroEuropaLeague: [
+            { date: 25,     details: { event: '2giornata',          teams: '' } },
+            { date: 26,     details: { event: '2giornata',          teams: '' } },
+        ],
+        EuroConferenceLeague: [
+            { date: 25,     details: { event: '2giornata',          teams: '' } },
+            { date: 26,     details: { event: '2giornata',          teams: '' } },
+        ],
+        Nazionale: [
+            { date:  5,    details: { event: 'Qualificazioni',     teams: '' } },
+            { date:  6,    details: { event: 'Qualificazioni',     teams: '' } },
+            { date:  7,    details: { event: 'Qualificazioni',     teams: '' } },
+            { date:  8,    details: { event: 'Qualificazioni',     teams: '' } },
+            { date:  9,    details: { event: 'Qualificazioni',     teams: '' } },
+            { date: 10,    details: { event: 'Qualificazioni',     teams: '' } },
     ],
         },
     //*                              ---OTTOBRE---
 	Ottobre: {
     ItaSerieA: [
-        { date:  4, details: { event: 'giornata7',          teams: '' } },
-        { date:  5, details: { event: 'giornata7',          teams: '' } },
-        { date:  6, details: { event: 'giornata7',          teams: '' } },
+        { date:  4,     details: { event: 'giornata7',          teams: '' } },
+        { date:  5,     details: { event: 'giornata7',          teams: '' } },
+        { date:  6,     details: { event: 'giornata7',          teams: '' } },
 
-        { date: 19, details: { event: 'giornata8',          teams: '' } },
-        { date: 20, details: { event: 'giornata8',          teams: '' } },
-        { date: 21, details: { event: 'giornata8',          teams: '' } },
+        { date: 19,     details: { event: 'giornata8',          teams: '' } },
+        { date: 20,     details: { event: 'giornata8',          teams: '' } },
+        { date: 21,     details: { event: 'giornata8',          teams: '' } },
         
-        { date: 25, details: { event: 'giornata9',          teams: '' } },
-        { date: 26, details: { event: 'giornata9',          teams: '' } },
-        { date: 27, details: { event: 'giornata9',          teams: '' } },
+        { date: 25,     details: { event: 'giornata9',          teams: '' } },
+        { date: 26,     details: { event: 'giornata9',          teams: '' } },
+        { date: 27,     details: { event: 'giornata9',          teams: '' } },
 
-        { date: 29, details: { event: 'giornata10',         teams: '' } },
-        { date: 30, details: { event: 'giornata10',         teams: '' } },
-        { date: 31, details: { event: 'giornata10',         teams: '' } },
+        { date: 29,     details: { event: 'giornata10',         teams: '' } },
+        { date: 30,     details: { event: 'giornata10',         teams: '' } },
+        { date: 31,     details: { event: 'giornata10',         teams: '' } },
     ],
     ItaCoppaItalia: [
         // { date: 31, details: { event: 'Turno2',             teams: '' } },
     ],
     EuroChampionsLeague: [
-        { date:  1, details: { event: '2giornata',          teams: '' } },
-        { date:  2, details: { event: '2giornata',          teams: '' } },
-        { date: 22, details: { event: '3giornata',          teams: '' } },
-        { date: 23, details: { event: '3giornata',          teams: '' } },
+        { date:  1,     details: { event: '2giornata',          teams: '' } },
+        { date:  2,     details: { event: '2giornata',          teams: '' } },
+        { date: 22,     details: { event: '3giornata',          teams: '' } },
+        { date: 23,     details: { event: '3giornata',          teams: '' } },
     ],
     EuroEuropaLeague: [
-        { date:  3, details: { event: '2giornata',          teams: '' } },
-        { date: 24, details: { event: '3giornata',          teams: '' } },
+        { date:  3,     details: { event: '2giornata',          teams: '' } },
+        { date: 24,     details: { event: '3giornata',          teams: '' } },
         
     ],
     EuroConferenceLeague: [
-        { date:  3, details: { event: '2giornata',          teams: '' } },
-        { date: 24, details: { event: '3giornata',          teams: '' } },
+        { date:  3,     details: { event: '2giornata',          teams: '' } },
+        { date: 24,     details: { event: '3giornata',          teams: '' } },
         
     ],
     Nazionale: [
-         { date: 10, details: { event: 'Qualificazioni', teams: '' } },
-         { date: 11, details: { event: 'Qualificazioni', teams: '' } },
-         { date: 12, details: { event: 'Qualificazioni', teams: '' } },
-         { date: 13, details: { event: 'Qualificazioni', teams: '' } },
-         { date: 14, details: { event: 'Qualificazioni', teams: '' } },
-         { date: 15, details: { event: 'Qualificazioni', teams: '' } },
+         { date: 10,    details: { event: 'Qualificazioni',     teams: '' } },
+         { date: 11,    details: { event: 'Qualificazioni',     teams: '' } },
+         { date: 12,    details: { event: 'Qualificazioni',     teams: '' } },
+         { date: 13,    details: { event: 'Qualificazioni',     teams: '' } },
+         { date: 14,    details: { event: 'Qualificazioni',     teams: '' } },
+         { date: 15,    details: { event: 'Qualificazioni',     teams: '' } },
     ],
         },
     //*                              ---NOVEMBRE---
@@ -642,26 +642,26 @@ const DateIncontri25 = [
         { date: 29, details: { event: 'giornata18',             teams: '' } }
     ],
     ItaCoppaItalia: [
-        { date:  3, details: { event: 'Ottavi',    teams: '' } },
-        { date:  4, details: { event: 'Ottavi',    teams: '' } },
-        { date:  5, details: { event: 'Ottavi',    teams: '' } },
+        { date:  3, details: { event: 'Ottavi',                 teams: '' } },
+        { date:  4, details: { event: 'Ottavi',                 teams: '' } },
+        { date:  5, details: { event: 'Ottavi',                 teams: '' } },
 
-        { date: 17, details: { event: 'Ottavi',    teams: '' } },
-        { date: 18, details: { event: 'Ottavi',    teams: '' } },
+        { date: 17, details: { event: 'Ottavi',                 teams: '' } },
+        { date: 18, details: { event: 'Ottavi',                 teams: '' } },
     ],
     EuroChampionsLeague: [
-        { date: 10, details: { event: '6giornata', teams: '' } },
-        { date: 11, details: { event: '6giornata', teams: '' } },
+        { date: 10, details: { event: '6giornata',              teams: '' } },
+        { date: 11, details: { event: '6giornata',              teams: '' } },
     ],
     EuroEuropaLeague: [
-        { date: 12, details: { event: '5giornata', teams: '' } },
+        { date: 12, details: { event: '5giornata',              teams: '' } },
 
-        { date: 19, details: { event: '6giornata', teams: '' } },
+        { date: 19, details: { event: '6giornata',              teams: '' } },
     ],
     EuroConferenceLeague: [
-        { date: 12, details: { event: '5giornata', teams: '' } },
+        { date: 12, details: { event: '5giornata',              teams: '' } },
 
-        { date: 19, details: { event: '6giornata', teams: '' } },
+        { date: 19, details: { event: '6giornata',              teams: '' } },
     ],
         },
     //*                              ---GENNAIO---
@@ -686,20 +686,20 @@ const DateIncontri25 = [
         { date: 31, details: { event: 'giornata23', teams: '' } },
     ],
     ItaCoppaItalia: [
-        // { date:  2, details: { event: 'Ottavi',     teams: '' } },
-        // { date:  3, details: { event: 'Ottavi',     teams: '' } },
-        // { date:  4, details: { event: 'Ottavi',     teams: '' } },
+        // { date:  , details: { event: '',         teams: '' } },
+        // { date:  , details: { event: '',         teams: '' } },
+        // { date:  , details: { event: '',         teams: '' } },
         
-        // { date:  9, details: { event: 'Quarti',     teams: '' } },
-        // { date: 10, details: { event: 'Quarti',     teams: '' } },
-        // { date: 11, details: { event: 'Quarti',     teams: '' } },
+        // { date:  , details: { event: '',         teams: '' } },
+        // { date:  , details: { event: '',         teams: '' } },
+        // { date:  , details: { event: '',         teams: '' } },
     ],
     EuroChampionsLeague: [
-        { date: 21, details: { event: '7giornata', teams: '' } },
-        { date: 22, details: { event: '7giornata', teams: '' } },
+        { date: 21,     details: { event: '7giornata',  teams: '' } },
+        { date: 22,     details: { event: '7giornata',  teams: '' } },
     ], 
     EuroEuropaLeague: [
-        { date: 23, details: { event: '7giornata', teams: '' } },
+        { date: 23, details: { event: '7giornata',  teams: '' } },
     ], 
     EuroConferenceLeague: [
         { date: 23, details: { event: '7giornata', teams: '' } },

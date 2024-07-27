@@ -12,12 +12,12 @@
 ![Codecov](https://img.shields.io/badge/CodeCov-88%25-blue)
 ![PullReq](https://img.shields.io/badge/PullReq-171%20open-blue)
 
-![Stars](https://img.shields.io/github/stars/Simobara/ITA_SerieA?style=social)
-![Forks](https://img.shields.io/github/forks/Simobara/ITA_SerieA?style=social)
+![Stars](https://img.shields.io/github/stars/Simobara/progMywebsite?style=social)
+![Forks](https://img.shields.io/github/forks/Simobara/progMywebsite?style=social)
 
 ## Demo
 
-![Finished App](ITA_SerieA.png)
+![Finished App](progMywebsite.png)
 
 ---
 
@@ -60,8 +60,8 @@
 ## Installation
 
 ```sh
-  git clone https://github.com/Simobara/ITA_SerieA.git
-  cd ITA_SerieA
+  git clone https://github.com/Simobara/progMywebsite.git
+  cd progMywebsite
   npm install
   npm run dev
 ```

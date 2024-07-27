@@ -9,7 +9,7 @@ import { CoppiaPartitaContext } from "../../Glob/global";
 import TableCamminoSq from "./TableCamminoSq/tableCamminoSq";
 // import { camSquadre } from '../../../START/components/4CamSquadre/camSquadre';
 import { calendario1 } from "../../../START/app/0SerieAMatches";
-import { creaRisSq } from "../../../START/otheers/functions/functions";
+import { creaRisSq } from "../1TableClass/function/creaRisSq";
 
 const LogoSquadrePos = () => {
   const [squadraAttiva1, setSquadraAttiva1] = useState("");
@@ -17,33 +17,6 @@ const LogoSquadrePos = () => {
   const { coppiaSelected } = useContext(CoppiaPartitaContext);
   const logoRefs = useRef({});
   const refContainer = useRef(null);
-
-  // 	//*--- ---- ---
-  // const datiSquadre = {
-  // 	Inter: 			camSquadre.camInter,
-  // 	Juve: 			camSquadre.camJuve,
-  // 	Milan: 			camSquadre.camMilan,
-  // 	Atalanta: 	camSquadre.camAtalanta,
-  // 	Napoli: 		camSquadre.camNapoli,
-  // 	Roma: 			camSquadre.camRoma,
-  // 	//*--- ---- ---
-  // 	Lazio: 			camSquadre.camLazio,
-  // 	Bologna: 		camSquadre.camBologna,
-  // 	Fiorentina: camSquadre.camFiorentina,
-  // 	Torino: 		camSquadre.camTorino,
-  // 	Udinese: 		camSquadre.camUdinese,
-  // 	Genoa: 			camSquadre.camGenoa,
-  // 	//*--- ---- ---
-  // 	Monza: 			camSquadre.camMonza,
-  // 	Sassuolo: 	camSquadre.camSassuolo,
-  // 	Frosinone: 	camSquadre.camFrosinone,
-  // 	Lecce: 			camSquadre.camLecce,
-  // 	Cagliari: 	camSquadre.camCagliari,
-  // 	Empoli: 		camSquadre.camEmpoli,
-  // 	Verona: 		camSquadre.camVerona,
-  // 	Salernitana:camSquadre.camSalernitana,
-  // };
-
   const arraySquadre = Object.values(nomiSquadre);
   const datiSquadre = Object.keys(nomiSquadre).reduce((acc, key) => {
     const squadra = nomiSquadre[key];
