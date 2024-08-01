@@ -1,6 +1,6 @@
 <a name="top"></a>
 
-# ITA_SerieA - The Greatest App
+# ITA_SerieA - The BEsT App
 
 ## Badges
 
@@ -60,8 +60,8 @@
 ## Installation
 
 ```sh
-  git clone https://github.com/Simobara/progMywebsite.git
-  cd progMywebsite
+  git clone https://github.com/Simobara/ITA_SerieA.git
+  cd ITA_SerieA
   npm install
   npm run dev
 ```
