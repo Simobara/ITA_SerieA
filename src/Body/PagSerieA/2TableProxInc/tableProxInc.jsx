@@ -197,7 +197,7 @@ const TableProxInc = () => {
   return (
     <>
       <div className="relative">
-        <div className="flex justify-center h-[27.5rem] overflow-x-hidden">
+        <div className="flex justify-center h-[26.8rem] overflow-x-hidden">
           {/* {nel caso qui metti overflow scroll} */}
           <div className="relative h-[42rem] w-[100rem] ml-[-4rem] mr-[-1rem]">
             <img

@@ -27,13 +27,13 @@ const Partite = ({ resetAll, occhioApertoPartita, setOcchioApertoPartita }) => {
 
   const partitePerGiorno = useMemo(
     () => ({
-      mar: partite.filter((p) => p.day === "mar"),
-      mer: partite.filter((p) => p.day === "mer"),
-      gio: partite.filter((p) => p.day === "gio"),
       ven: partite.filter((p) => p.day === "ven"),
       sab: partite.filter((p) => p.day === "sab"),
       dom: partite.filter((p) => p.day === "dom"),
       lun: partite.filter((p) => p.day === "lun"),
+      mar: partite.filter((p) => p.day === "mar"),
+      mer: partite.filter((p) => p.day === "mer"),
+      gio: partite.filter((p) => p.day === "gio"),
     }),
     [partite]
   );
@@ -45,7 +45,7 @@ const Partite = ({ resetAll, occhioApertoPartita, setOcchioApertoPartita }) => {
 
   return (
     // <DndProvider backend={HTML5Backend}>
-    <div className=" relative overflow-y-hidden flex flex-col items-left overflow-x-hidden xs:text-xs sm:text-xl border border-x-0 rounded-3xl border-pink-900 py-[0.5rem] min-w-[17rem] max-h-[90%]">
+    <div className=" relative overflow-y-hidden flex flex-col items-left overflow-x-hidden xs:text-xs sm:text-xl border border-x-0 rounded-3xl border-lime-400 py-[1rem] min-w-[17rem] max-h-[100%]">
       {/* <Day title="Mar" partite={partitePerGiorno.ven} day="mar" resetAll={resetAll} occhioApertoPartita={occhioApertoPartita} setOcchioApertoPartita={setOcchioApertoPartita} />
 			<Day title="Mer" partite={partitePerGiorno.ven} day="mer" resetAll={resetAll} occhioApertoPartita={occhioApertoPartita} setOcchioApertoPartita={setOcchioApertoPartita} />
 			<Day title="Gio" partite={partitePerGiorno.ven} day="gio" resetAll={resetAll} occhioApertoPartita={occhioApertoPartita} setOcchioApertoPartita={setOcchioApertoPartita} /> */}

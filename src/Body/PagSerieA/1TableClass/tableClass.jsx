@@ -404,7 +404,7 @@ const TableClass = () => {
   // -------------------------------------------------------------------------------------------------
   // console.log(squadreOrdinate, "squadreOrdinate");
   return (
-    <table className="relative overflow-auto lg:min-h-[57rem]">
+    <table className="relative overflow-auto min-h-[57rem]">
       <thead>
         <tr className="bg-black text-gray-600 text-center">
           <th className=" w-[0.5rem]" style={{ whiteSpace: "nowrap" }}></th>

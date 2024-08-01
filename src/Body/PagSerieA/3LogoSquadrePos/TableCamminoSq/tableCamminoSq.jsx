@@ -159,7 +159,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
 
               let borderStyle = "";
               if (index === selectedIndexGiornata) {
-                borderStyle = "border-b-4 border-pink-900";
+                borderStyle = "border-b-4 border-lime-500";
               }
               const formattedSqVs = partita.sqVs.toLowerCase();
               const sqVsFormatted =

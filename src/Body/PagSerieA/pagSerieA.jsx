@@ -20,7 +20,7 @@ const PagSerieA = () => {
           </div>
         </div>
         <div className="overflow-y-scroll sm:overflow-y-auto min-w-[90vw] sm:min-w-[22.5rem] sm:max-h-[50vh]  md:max-w-[30.15rem] md:max-h-[50vh] lg:min-w-[30rem] lg:min-h-[95vh] xl:max-w-[100%] xl:max-h-[95vh] max-w-[15rem] max-h-[40vh]">
-          <div className="border-4 border-l-0 border-r-0 rounded-[20px] border-gray-900 bg-black">
+          <div className="border-4 border-l-0 border-r-0 rounded-[20px] border-pink-900 bg-black">
             <TableProxInc />
           </div>
         </div>
