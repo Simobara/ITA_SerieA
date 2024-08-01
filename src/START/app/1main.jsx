@@ -43,8 +43,8 @@ export const nomiSquadre = {
     Lec:    { name: 'Lecce',      isTeam: 'B',     AnniA: { Consct:  2, Ult: 2023 },       logo: LogoLecce,        style: {top: '88%',   left: '93.4%' },    link: ''},
     Cag:    { name: 'Cagliari',   isTeam: 'B',     AnniA: { Consct:  1, Ult: 2024 },       logo: LogoCagliari,     style: {top: '91%',   left: '21.6%' },    link: ''},
     Gen:    { name: 'Genoa',      isTeam: '',      AnniA: { Consct:  1, Ult: 2024 },       logo: LogoGenoa,        style: {top: '26.9%', left: '20.5%' },    link: ''},
-    Par:    { name: 'Parma',      isTeam: '',      AnniA: { Consct:  0, Ult: 2025 },       logo: LogoParma,        style: {top: '23.5%',  left: '31.5%'},    link: ''},
-    Com:    { name: 'Como',       isTeam: 'B',     AnniA: { Consct:  0, Ult: 2025 },       logo: LogoComo,         style: {top: '3.6%',   left: '22.5%'},    link: ''},
+    Par:    { name: 'Parma',      isTeam: '',      AnniA: { Consct:  0, Ult: 2025 },       logo: LogoParma,        style: {top: '23.5%', left: '31.5%'},     link: ''},
+    Com:    { name: 'Como',       isTeam: 'B',     AnniA: { Consct:  0, Ult: 2025 },       logo: LogoComo,         style: {top: '3.6%',  left: '22.5%'},     link: ''},
     Ven:    { name: 'Venezia',    isTeam: 'B',     AnniA: { Consct:  0, Ult: 2025 },       logo: LogoVenezia,      style: {top: '11.1%', left: '46.5%' },    link: ''}, 
     //SERIE B
     // Sal: { name: 'Salernitana',isTeam: 'B',     AnniA: { Consct:  2, Ult: 2022 },       logo: LogoSalernitana,  style: {top: '85.9%', left: '66.6%' },    link: ''},

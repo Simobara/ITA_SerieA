@@ -396,7 +396,7 @@ const TableProxInc = () => {
               // style={{ transform: 'rotate(180deg)' }}
               onClick={() => setIsModalInserOpen(true)}
             > 📝 </button> */}
-        <div className="sticky flex flex-col overflow-y-hidden h-[33rem] bg-black z-[4]">
+        <div className="sticky flex flex-col overflow-y-hidden h-[32rem] bg-black z-[4]">
           <CalGiorn onReset={resetAll} />
           <Partite
             resetAll={resetAll}

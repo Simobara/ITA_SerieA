@@ -126,12 +126,12 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
       </h1>
       <table>
         <thead>
-          <tr className="bg-black text-white border border-black overflow-x-hidden text-md">
+          <tr className="bg-black text-white border border-black overflow-x-hidden text-xs">
             <th className="text-center text-white w-[12%] sm:w-[15%] xl:w-[12%] "></th>
-            <th className="text-center text-cyan-700 w-[18%] sm:w-[25%] xl:w-[20%] font-bold">
+            <th className="text-center text-cyan-700 w-[18%] sm:w-[25%] xl:w-[20%] font-normal">
               C
             </th>
-            <th className="text-center text-cyan-700 w-[12%] sm:w-[15%] xl:w-[12%] font-bold">
+            <th className="text-center text-cyan-700 w-[12%] sm:w-[15%] xl:w-[12%] font-normal">
               F
             </th>
             <th className="text-center text-white w-full "></th>
@@ -146,16 +146,12 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
             {datiSquadra.map((partita, index) => {
               const casaClass = getClassForCasa(partita.casa);
               const fuoriClass = getClassForFuori(partita.fuori);
-
-              // Dividere il risultato in due parti
-              const risultatoPulito = partita.risultato
+              const risultatoPulito = partita.risultato // Dividere il risultato in due parti
                 .trim()
                 .replace(/\s*-\s*/, "-");
               const risultatoParts = risultatoPulito.split("-");
               const risultatoParte1 = risultatoParts[0]; // Prima parte del risultato
               const risultatoParte2 = risultatoParts[1]; // Seconda parte del risultato
-
-              // Condizione per non visualizzare il risultato se è 9-8, 8-9, o 9-9
               const isPronostico =
                 (risultatoParte1 === "9" && risultatoParte2 === "8") ||
                 (risultatoParte1 === "8" && risultatoParte2 === "9") ||
@@ -165,8 +161,6 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
               if (index === selectedIndexGiornata) {
                 borderStyle = "border-b-4 border-fuchsia-900";
               }
-
-              // Converti il nome della squadra: prima lettera maiuscola, resto minuscolo
               const formattedSqVs = partita.sqVs.toLowerCase();
               const sqVsFormatted =
                 formattedSqVs.charAt(0).toUpperCase() + formattedSqVs.slice(1);
@@ -176,10 +170,10 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
                 : isBTeam(partita.sqVs)
                   ? `font-light ${ts.BTeamText}`
                   : partita.sqVs === "--- --- --- --- --- ---"
-                    ? "font-black text-black" // Imposta il testo nero per questa condizione specifica
+                    ? "font-black text-black"
                     : `${ts.ABTeamText} font-bold `;
               const bgHoverClass = getBgHoverClass(partita);
-              // const textColorClass = getTextColor(partita);
+
               return (
                 <tr
                   key={index}
