@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { calendario1, giornataN } from "../../../START/app/0SerieAMatches";
 import { nomiSquadre } from "../../../START/app/1main";
 import { ATeams, BTeams } from "../../../START/funct/FilterTeamByCat";
+import { s } from "../../../START/otherss/styles/0CssMainStyle";
 import serieAItalia from "../../../assts/ChartSerieAItalia/serieAItalia.png";
 import {
   ButtonResetContext,
@@ -56,9 +57,9 @@ const TableProxInc = () => {
   const getTextTeam = (teamName) => {
     // console.log('teamName:', teamName); // Aggiungi per vedere cosa ricevi effettivamente come input
     if (isATeam(teamName)) {
-      return "text-black font-extrabold text-lg";
+      return `text-black font-extrabold ${s.ImgTextInRoundMd} `;
     } else if (isBTeam(teamName)) {
-      return " text-gray-500  font-light text-lg";
+      return ` text-gray-500  font-light ${s.ImgTextInRoundMd} `;
     } else {
       return "text-sky-600 font-bold";
     }
@@ -215,7 +216,7 @@ const TableProxInc = () => {
             )}
 
             <div
-              className="absolute top-0 left-[55.5%] w-[320px] h-[223px] bg-black flex flex-col items-start justify-start text-white text-lg border border-gray-700 border-3 px-5 overflow-hidden"
+              className="absolute top-0 left-[55.5%] w-[310px] h-[223px] bg-black flex flex-col items-start justify-start text-white text-lg border border-gray-700 border-3 px-1 overflow-hidden z-10"
               style={{ borderRadius: "15%" }}
             >
               <div className="flex-1 flex items-start">
@@ -364,8 +365,8 @@ const TableProxInc = () => {
                     isATeam(coppiaSelected.team2) && ( //MEDIA FORTE
                       <>
                         <pre>puo' perdere</pre>
-                        <pre>PosClass?</pre>
                         <pre>SeProx Cs+VsDebole: lascia</pre>
+                        <pre>PosClass?</pre>
                       </>
                     )}
 

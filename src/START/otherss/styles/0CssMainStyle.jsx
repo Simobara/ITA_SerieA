@@ -13,6 +13,9 @@ export const s = {
 
   BaseText: "text-gray-700",
   BaseText1: "md:text-md font-bold",
+
+  ImgTextInRoundMd: "text-md",
+  ImgTextInRoundSm: "text-sm",
 };
 
 //sezione classifica - sezione3
