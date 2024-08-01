@@ -89,13 +89,13 @@ const TableProxInc = () => {
   return (
     <>
       <div className="relative">
-        <div className="flex justify-center h-[26.8rem] overflow-x-hidden hide-scrollbar">
+        <div className="unselectable flex justify-center h-[26.8rem] overflow-x-hidden hide-scrollbar">
           {/* {nel caso qui metti overflow scroll} */}
           <div className="relative h-[42rem] w-[100rem] ml-[-4rem] mr-[-1rem]">
             <img
               src={serieAItalia}
               alt="serieAItalia"
-              className="relative h-[110%] w-[100%] mt-[-4rem] filter brightness-35 "
+              className=".unselectable relative h-[110%] w-[100%] mt-[-4rem] filter brightness-35 "
             />
             {coppiaSelected && renderSquadre()}
             {buttonResetIsResetting && (
@@ -114,7 +114,7 @@ const TableProxInc = () => {
             >
               <div className="flex-1 flex items-start">
                 <span
-                  className={`${getTextTeam(coppiaSelected.team1)} bg-sky-800`}
+                  className={`${getTextTeam(coppiaSelected.team1)} bg-sky-800 !z-20`}
                   // ${isATeam(coppiaSelected.team1) ? "bg-sky-700/80" : isBTeam(coppiaSelected.team1) ? "bg-gray-600/80" : "bg-sky-500/60"}`
                 >
                   {coppiaSelected.team1}
@@ -123,7 +123,7 @@ const TableProxInc = () => {
               {occhioApertoPartita && <ValCasa />}
               <div className="flex-1 flex items-start mt-1 ">
                 <span
-                  className={`${getTextTeam(coppiaSelected.team2)} bg-sky-500`}
+                  className={`${getTextTeam(coppiaSelected.team2)} bg-sky-500 !z-10`}
                   //  ${isATeam(coppiaSelected.team2) ? "bg-sky-500" : isBTeam(coppiaSelected.team2) ? "bg-sky-500" : "bg-sky-500"}`
                 >
                   {coppiaSelected.team2}

@@ -177,7 +177,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
               return (
                 <tr
                   key={index}
-                  className={`overflow-x-hidden xs:text-lg sm:text-xlllmd ${bgHoverClass} ${borderStyle}`}
+                  className={`overflow-x-hidden xs:text-lg sm:text-md ${bgHoverClass} ${borderStyle}`}
                 >
                   <td
                     className={`w-[5%] sm:w-[15%] xl:w-[5%] text-center font-bold ${ts.ColResLine} ${ts.ColResBg} text-xl`}
