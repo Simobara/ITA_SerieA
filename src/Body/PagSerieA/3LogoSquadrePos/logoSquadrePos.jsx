@@ -106,7 +106,7 @@ const LogoSquadrePos = () => {
         <div className="mt-[0rem] mb-[2rem] overflow-hidden z-2 ">
           <div className="w-[40rem] mx-auto items-center h-1 bg-gray-600/80 text-gray-900 ">
             <div className="pl-1 border-2 border-sky-800/70 w-5 bg-gray-800 text-sky-700/70 sm:text-md font-extrabold uppercase">
-              1
+              {/* 1 */}
             </div>
           </div>
           {/* Aggiunta di max-h-[3rem] e overflow-y-auto */}
@@ -116,9 +116,9 @@ const LogoSquadrePos = () => {
         </div>
         <div className="mt-[-2rem] mb-[1.8rem] overflow-hidden z-3 sticky ">
           <div className="w-[40rem] mx-auto items-center h-1 bg-gray-600/80 text-gray-900">
-            <div className="pl-1 border-2 border-sky-800/80 w-5 bg-gray-800 text-sky-700/70 sm:text-md font-extrabold uppercase">
-              2
-            </div>
+            {/* <div className="pl-1 border-2 border-sky-800/80 w-5 bg-gray-800 text-sky-700/70 sm:text-md font-extrabold uppercase"> */}
+            {/* 2 */}
+            {/* </div> */}
           </div>
           {/* Aggiunta di max-h-[3rem] e overflow-y-auto */}
           <div className="max-h-[3.3rem] sm:max-h-[5rem] xl:max-h-[5rem] overflow-y-hidden">
@@ -128,7 +128,7 @@ const LogoSquadrePos = () => {
         <div className="mt-[-2rem] mb-[0rem] z-4 sticky">
           <div className="w-[40rem] mx-auto items-center h-1 bg-gray-600/80 text-gray-900">
             <div className="pl-1 border-2 border-sky-800/80 w-5 bg-gray-800 text-sky-700/70 sm:text-md font-extrabold uppercase">
-              3
+              {/* 3 */}
             </div>
           </div>
           {/* Aggiunta di max-h-[3rem] e overflow-y-auto */}
@@ -137,7 +137,7 @@ const LogoSquadrePos = () => {
           </div>
         </div>
       </div>
-      <div ref={refContainer} className=" flex sticky mt-[5px]">
+      <div ref={refContainer} className="flex sticky mt-[1rem] mb-[0.5rem]">
         {squadraAttiva1 && (
           <div className="bg-sky-900 text-black  w-[50%] max-w-[50%] overflow-x-hidden overflow-y-auto z-1">
             <TableCamminoSq

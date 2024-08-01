@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 // import { useDrag, useDrop } from "react-dnd";
 import { giornataN } from "../../../../../../START/app/0SerieAMatches";
 import { ATeams, BTeams } from "../../../../../../START/funct/FilterTeamByCat";
-import { ts } from "../../../../../../START/otherss/styles/0CssMainStyle";
+import { ts } from "../../../../../../START/styles/0CssMainStyle";
 import {
   ButtonResetContext,
   CompleteDataContext,

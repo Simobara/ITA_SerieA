@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { calendario1, giornataN } from "../../../START/app/0SerieAMatches";
 import { nomiSquadre } from "../../../START/app/1main";
 import { ATeams, BTeams } from "../../../START/funct/FilterTeamByCat";
-import { s } from "../../../START/otherss/styles/0CssMainStyle";
+import { s } from "../../../START/styles/0CssMainStyle";
 import serieAItalia from "../../../assts/ChartSerieAItalia/serieAItalia.png";
 import {
   ButtonResetContext,
@@ -197,17 +197,18 @@ const TableProxInc = () => {
   return (
     <>
       <div className="relative">
-        <div className="flex justify-center h-[25.45rem]">
-          <div className="relative overflow-hidden w-[120rem] ml-[-3rem]">
+        <div className="flex justify-center h-[27.8rem] overflow-x-hidden">
+          {/* {nel caso qui metti overflow scroll} */}
+          <div className="relative overflow-x-hidden overflow-y-auto h-[40rem] w-[100rem] ml-[-4rem] mr-[-1rem]">
             <img
               src={serieAItalia}
               alt="serieAItalia"
-              className="relative h-[47rem] w-[100%] mt-[-4.4rem] filter brightness-35"
+              className="relative h-[110%] w-[100%] mt-[-4rem] filter brightness-35 "
             />
             {coppiaSelected && renderSquadre()}
             {buttonResetIsResetting && (
               <button
-                className="absolute top-[27%] left-[45%] p-1 font-bold bg-transparent rounded-full hover:bg-red-900 z-10"
+                className="absolute top-[18%] left-[45%] p-1 font-bold bg-transparent rounded-full hover:bg-red-900 z-10"
                 onClick={() => handleReset()}
               >
                 📍
@@ -216,8 +217,8 @@ const TableProxInc = () => {
             )}
 
             <div
-              className="absolute top-0 left-[55.5%] w-[310px] h-[223px] bg-black flex flex-col items-start justify-start text-white text-lg border border-gray-700 border-3 px-1 overflow-hidden z-10"
-              style={{ borderRadius: "15%" }}
+              className="absolute top-[-1%] left-[58.5%] w-[310px] h-[223px] bg-black flex flex-col items-start justify-start text-white text-lg border border-gray-700 border-3 px-1 overflow-hidden z-10"
+              style={{ borderRadius: "5%" }}
             >
               <div className="flex-1 flex items-start">
                 <span
@@ -230,7 +231,7 @@ const TableProxInc = () => {
                 <div className="absolute text-sm mt-8">
                   {isATeam(coppiaSelected.team1) &&
                     isATeam(coppiaSelected.team2) && ( //FORTE FORTE
-                      <pre>SCONTRO TOP VANTAGGIOCasa</pre>
+                      <pre>SCR TOP VANTAGGIOCasa</pre>
                     )}
                   {isATeam(coppiaSelected.team1) &&
                     isBTeam(coppiaSelected.team2) && ( //FORTE DEBOLE
@@ -252,15 +253,15 @@ const TableProxInc = () => {
                   {isBTeam(coppiaSelected.team1) &&
                     isBTeam(coppiaSelected.team2) && ( //DEBOLE DEBOLE
                       <>
-                        <pre>SCONTRO RETROC VANTAGGIOCasa</pre>
-                        <pre>Se NextMatch SqForte: vince</pre>
+                        <pre>SCR RETROC VANTAGGIOCasa</pre>
+                        <pre>Se NextMatch SqForte: vin</pre>
                         <pre>PosClass?</pre>
                       </>
                     )}
                   {isBTeam(coppiaSelected.team1) &&
                     isATeam(coppiaSelected.team2) && ( //DEBOLE FORTE
                       <>
-                        <pre>SeProxInc MediaDebole:lascia</pre>
+                        <pre>SeProxInc MediaDebole:ls</pre>
                         <pre>PosClass?</pre>
                       </>
                     )}
@@ -269,8 +270,8 @@ const TableProxInc = () => {
                     !isATeam(coppiaSelected.team2) && ( //DEBOLE MEDIA
                       <>
                         <pre>barbatrucco?</pre>
-                        <pre>Se NextMatch SqForte: vince</pre>
-                        <pre>Se NextMatch SCONTRO: </pre>
+                        <pre>Se NextMatch SqForte: vin</pre>
+                        <pre>Se NextMatch SCR: </pre>
                         <pre>PosClass?</pre>
                       </>
                     )}
@@ -280,7 +281,7 @@ const TableProxInc = () => {
                     isATeam(coppiaSelected.team2) && ( //MEDIA FORTE
                       <>
                         <pre>Puo' Anche Perdere</pre>
-                        <pre>Se NextMatch SqDebole: lascia</pre>
+                        <pre>Se NextMatch SqDebole: ls</pre>
                         <pre>PosClass?</pre>
                       </>
                     )}
@@ -298,8 +299,8 @@ const TableProxInc = () => {
                     !isBTeam(coppiaSelected.team2) && ( //MEDIA MEDIA                           //MEDIA MEDIA
                       <>
                         <pre>barbatrucco?</pre>
-                        <pre>SCONTROEuropa VANTAGGIOCasa</pre>
-                        <pre>-Se NextMatch SqForte, vince</pre>
+                        <pre>SCR Europa VANTAGGIOCasa</pre>
+                        <pre>-Se NextMatch SqForte, vin</pre>
                         <pre>PosClass?</pre>
                       </>
                     )}
@@ -318,7 +319,7 @@ const TableProxInc = () => {
                   {isATeam(coppiaSelected.team1) &&
                     isATeam(coppiaSelected.team2) && ( //FORTE FORTE
                       <>
-                        <pre>SCONTRO TOP svantaggio</pre>
+                        <pre>SCR TOP svantaggio</pre>
                         <pre>PosClass?</pre>
                       </>
                     )}
@@ -326,22 +327,22 @@ const TableProxInc = () => {
                     isBTeam(coppiaSelected.team2) && ( //FORTE DEBOLE
                       <>
                         <pre>Pochissime %</pre>
-                        <pre>SeProxInc VsDebole: lascia</pre>
+                        <pre>SeProxInc VsDebole: ls</pre>
                       </>
                     )}
                   {isATeam(coppiaSelected.team1) &&
                     !isATeam(coppiaSelected.team2) &&
                     !isBTeam(coppiaSelected.team2) && ( //FORTE MEDIA
                       <>
-                        <pre>SCONTRO Europa svantaggio</pre>
-                        <pre>SeProxInc VsDebole: lascia</pre>
+                        <pre>SCR Europa svantaggio</pre>
+                        <pre>SeProxInc VsDebole: ls</pre>
                       </>
                     )}
 
                   {isBTeam(coppiaSelected.team1) &&
                     isBTeam(coppiaSelected.team2) && ( //DEBOLE DEBOLE
                       <>
-                        <pre>SCONTRO RETROCESS svantaggio</pre>
+                        <pre>SCR RETROCESS svantaggio</pre>
                         <pre>PosClass?</pre>
                       </>
                     )}
@@ -365,7 +366,7 @@ const TableProxInc = () => {
                     isATeam(coppiaSelected.team2) && ( //MEDIA FORTE
                       <>
                         <pre>puo' perdere</pre>
-                        <pre>SeProx Cs+VsDebole: lascia</pre>
+                        <pre>SeProx Cs+VsDebole: ls</pre>
                         <pre>PosClass?</pre>
                       </>
                     )}
@@ -374,7 +375,7 @@ const TableProxInc = () => {
                     !isBTeam(coppiaSelected.team1) &&
                     isBTeam(coppiaSelected.team2) && ( //MEDIA DEBOLE
                       <>
-                        <pre>SeProxInc VsDebole: lascia</pre>
+                        <pre>SeProxInc VsDebole: ls</pre>
                         <pre>PosClass?</pre>
                       </>
                     )}
@@ -396,7 +397,7 @@ const TableProxInc = () => {
               // style={{ transform: 'rotate(180deg)' }}
               onClick={() => setIsModalInserOpen(true)}
             > 📝 </button> */}
-        <div className="sticky flex flex-col overflow-y-hidden h-[32rem] bg-black z-[4]">
+        <div className="sticky flex flex-col overflow-y-hidden bg-black z-[4]">
           <CalGiorn onReset={resetAll} />
           <Partite
             resetAll={resetAll}

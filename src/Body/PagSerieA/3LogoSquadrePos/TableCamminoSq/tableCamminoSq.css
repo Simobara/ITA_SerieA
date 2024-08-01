@@ -5,7 +5,7 @@
 }
 
 table tr.last-text:hover td:last-child {
-  color: rgb(201, 177, 213);
+  color: white;
   /* color: white; */
 }
 

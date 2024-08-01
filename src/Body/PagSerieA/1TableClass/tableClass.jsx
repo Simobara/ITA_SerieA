@@ -11,7 +11,7 @@ import {
 } from "../../Glob/global";
 // import { squadrePunt } from '../../../START/app/main';
 import { nomiSquadre } from "../../../START/app/1main";
-import { s, ts } from "../../../START/otherss/styles/0CssMainStyle";
+import { s, ts } from "../../../START/styles/0CssMainStyle";
 import { calcPntSq } from "./function/calcPuntiSq";
 import { creaRisSq } from "./function/creaRisSq";
 import "./tableClass.css";
@@ -404,7 +404,7 @@ const TableClass = () => {
   // -------------------------------------------------------------------------------------------------
   // console.log(squadreOrdinate, "squadreOrdinate");
   return (
-    <table className="relative overflow-auto lg:min-h-[57.4rem]">
+    <table className="relative overflow-auto lg:min-h-[57rem]">
       <thead>
         <tr className="bg-black text-gray-600 text-center">
           <th className=" w-[0.5rem]" style={{ whiteSpace: "nowrap" }}></th>

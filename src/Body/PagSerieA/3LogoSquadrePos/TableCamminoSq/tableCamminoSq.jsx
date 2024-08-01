@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { calendario, giornataN } from "../../../../START/app/0SerieAMatches";
 import { ATeams, BTeams } from "../../../../START/funct/FilterTeamByCat";
-import { ts } from "../../../../START/otherss/styles/0CssMainStyle";
+import { ts } from "../../../../START/styles/0CssMainStyle";
 import { IndexSelectedContext } from "../../../Glob/global";
 import { GiornataClouContext } from "../../../Glob/global/";
 import "./tableCamminoSq.css";
@@ -118,7 +118,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
   // ------------------------------------------------------------------------------------------------
 
   return (
-    <div className="">
+    <div className="mb-[0rem]">
       <h1
         className={`{ text-center md:text-3xl scale-150 ${getTextTeam(nomeSquadra)}`}
       >
@@ -128,19 +128,19 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
         <thead>
           <tr className="bg-black text-white border border-black overflow-x-hidden text-xs">
             <th className="text-center text-white w-[12%] sm:w-[15%] xl:w-[12%] "></th>
-            <th className="text-center text-cyan-700 w-[18%] sm:w-[25%] xl:w-[20%] font-normal">
-              C
+            <th className="text-center text-cyan-700 w-[18%] sm:w-[25%] xl:w-[20%] font-bold mb-[1rem]">
+              {/* C */}
             </th>
-            <th className="text-center text-cyan-700 w-[12%] sm:w-[15%] xl:w-[12%] font-normal">
-              F
+            <th className="text-center text-cyan-700 w-[12%] sm:w-[15%] xl:w-[12%] font-bold">
+              {/* F */}
             </th>
             <th className="text-center text-white w-full "></th>
             <th className="text-left"></th>
           </tr>
         </thead>
       </table>
-      <div className="overflow-y-scroll scrollbar-hide overflow-x-hidden md:overflow-x-hidden h-[37.5rem]">
-        <table className=" border-2 border-t-0 border-r-0 border-gray-800 filter brightness-[75%] overflow-y-auto w-[120%] table-auto bg-black">
+      <div className="overflow-y-scroll scrollbar-hide overflow-x-hidden md:overflow-x-hidden h-[37.3rem]">
+        <table className=" border-2 border-t-0 border-r-0 border-gray-800 filter brightness-[%] overflow-y-auto w-[120%] table-auto bg-black">
           <tbody>
             {/* eslint-disable-next-line */}
             {datiSquadra.map((partita, index) => {
@@ -177,7 +177,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
               return (
                 <tr
                   key={index}
-                  className={`overflow-x-hidden xs:text-lg sm:text-md ${bgHoverClass} last-text ${borderStyle}`}
+                  className={`overflow-x-hidden xs:text-lg sm:text-md ${bgHoverClass} ${borderStyle}`}
                 >
                   <td
                     className={`w-[5%] sm:w-[15%] xl:w-[5%] text-center font-bold ${ts.ColResLine} ${ts.ColResBg} text-xl`}
