@@ -1,7 +1,4 @@
-//TODO?--- --- --- --- --- METTERE A POSTO LE SQUADRE
-
-// const calendario24 = {
-//   //NOTE: di norma 2 grandi vincono, 1-2 pareggiano (casa),  1 perde (di solito fuori) 
+//const calendario24 = {
 //   //*---                                            AGOSTO                                                                     ---  1
 //   giornata1: [
 //     { numero: 1,  day: 'sab', time: '18:30',          team1: 'Empoli',      team2: 'Verona',           pron: '', results: '0-1' },
@@ -608,9 +605,12 @@
 //   ],
 // };
 
+//?-METTERE A POSTO LE SQUADRE
+//?NOTE:  
+//?       1 GRANDE X     CASA 
+//?       1 GRANDE perde FUORI
 
 const calendario25 = {
-//NOTE: di norma 2 grandi vincono, 1-2 pareggiano (casa),  1 perde (di solito fuori) 
   //*---                                           AGOSTO                                                                      ---  1
   giornata1: [
     { numero: 1,  day: 'sab', time: '18:30',          team1: 'Genoa',       team2: 'Inter',            pron: '', results: '' }, 

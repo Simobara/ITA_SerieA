@@ -28,14 +28,14 @@ export const nomiSquadre = {
     Juv:    { name: 'Juve',       isTeam: 'A',     AnniA: { Consct: 17, Ult: 2008 },       logo: LogoJuve,         style: {top: '16.7%', left: '10.7%' },    link: ''},
     Mil:    { name: 'Milan',      isTeam: 'A',     AnniA: { Consct: 41, Ult: 1984 },       logo: LogoMilan,        style: {top: '10.6%', left: '22.7%' },    link: ''},
     Ata:    { name: 'Atalanta',   isTeam: 'A',     AnniA: { Consct: 13, Ult: 2012 },       logo: LogoAtalanta,     style: {top: '7%',    left: '26.6%' },    link: ''},
-    Nap:    { name: 'Napoli',     isTeam: 'A',     AnniA: { Consct: 17, Ult: 2008 },       logo: LogoNapoli,       style: {top: '83%',   left: '62%'   },    link: ''},
+    Nap:    { name: 'Napoli',     isTeam: ' ',     AnniA: { Consct: 17, Ult: 2008 },       logo: LogoNapoli,       style: {top: '83%',   left: '62%'   },    link: ''},
     Rom:    { name: 'Roma',       isTeam: 'A',     AnniA: { Consct: 72, Ult: 1953 },       logo: LogoRoma,         style: {top: '66.8%', left: '48.2%' },    link: ''},
     //*--- ---- ---
     Laz:    { name: 'Lazio',      isTeam: '',      AnniA: { Consct: 36, Ult: 1989 },       logo: LogoLazio,        style: {top: '66.8%', left: '48.2%' },    link: ''},
     Udi:    { name: 'Udinese',    isTeam: '',      AnniA: { Consct: 29, Ult: 1996 },       logo: LogoUdinese,      style: {top: '0.8%',  left: '54.3%' },    link: ''},
     Fio:    { name: 'Fiorentina', isTeam: '',      AnniA: { Consct: 20, Ult: 2005 },       logo: LogoFiorentina,   style: {top: '36.9%', left: '38.6%' },    link: ''},
     Tor:    { name: 'Torino',     isTeam: '',      AnniA: { Consct: 12, Ult: 2013 },       logo: LogoTorino,       style: {top: '16.7%', left: '10.7%' },    link: ''},
-    Bol:    { name: 'Bologna',    isTeam: '',      AnniA: { Consct:  9, Ult: 2016 },       logo: LogoBologna,      style: {top: '26%',   left: '39.5%' },    link: ''},
+    Bol:    { name: 'Bologna',    isTeam: 'A',     AnniA: { Consct:  9, Ult: 2016 },       logo: LogoBologna,      style: {top: '26%',   left: '39.5%' },    link: ''},
     //*--- ---- ---
     Ver:    { name: 'Verona',     isTeam: 'B',     AnniA: { Consct:  5, Ult: 2020 },       logo: LogoVerona,       style: {top: '11.1%', left: '36.5%' },    link: ''},
     Emp:    { name: 'Empoli',     isTeam: 'B',     AnniA: { Consct:  3, Ult: 2022 },       logo: LogoEmpoli,       style: {top: '38%',   left: '36.4%' },    link: ''},
@@ -43,7 +43,7 @@ export const nomiSquadre = {
     Lec:    { name: 'Lecce',      isTeam: 'B',     AnniA: { Consct:  2, Ult: 2023 },       logo: LogoLecce,        style: {top: '88%',   left: '93.4%' },    link: ''},
     Cag:    { name: 'Cagliari',   isTeam: 'B',     AnniA: { Consct:  1, Ult: 2024 },       logo: LogoCagliari,     style: {top: '89%',   left: '21.6%' },    link: ''},
     Gen:    { name: 'Genoa',      isTeam: '',      AnniA: { Consct:  1, Ult: 2024 },       logo: LogoGenoa,        style: {top: '26.9%', left: '20.5%' },    link: ''},
-    Par:    { name: 'Parma',      isTeam: 'B',     AnniA: { Consct:  0, Ult: 2025 },       logo: LogoParma,        style: {top: '23.5%',  left: '31.5%'},    link: ''},
+    Par:    { name: 'Parma',      isTeam: '',      AnniA: { Consct:  0, Ult: 2025 },       logo: LogoParma,        style: {top: '23.5%',  left: '31.5%'},    link: ''},
     Com:    { name: 'Como',       isTeam: 'B',     AnniA: { Consct:  0, Ult: 2025 },       logo: LogoComo,         style: {top: '3.6%',   left: '22.5%'},    link: ''},
     Ven:    { name: 'Venezia',    isTeam: 'B',     AnniA: { Consct:  0, Ult: 2025 },       logo: LogoVenezia,      style: {top: '11.1%', left: '46.5%' },    link: ''}, 
     //SERIE B
