@@ -17,7 +17,7 @@
 
 ## Demo
 
-![Finished App](progMywebsite.png)
+![Finished App](ITA_SerieA.png)
 
 ---
 
