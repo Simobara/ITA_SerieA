@@ -43,81 +43,35 @@ const Partite = ({ resetAll, occhioApertoPartita, setOcchioApertoPartita }) => {
     setPartite([...giornataClouSelected]);
   }, [giornataClouSelected]);
 
+  const giorniSettimana = [
+    { giorno: "mar", title: "Mar" },
+    { giorno: "mer", title: "Mer" },
+    { giorno: "gio", title: "Gio" },
+    { giorno: "ven", title: "Ven" },
+    { giorno: "sab", title: "Sab" },
+    { giorno: "dom", title: "Dom" },
+    { giorno: "lun", title: "Lun" },
+  ];
+
   return (
     // <DndProvider backend={HTML5Backend}>
     <div className=" relative overflow-y-hidden flex flex-col items-left overflow-x-hidden xs:text-xs sm:text-xl border border-x-0 rounded-3xl border-lime-400 py-[1rem] min-w-[17rem] max-h-[100%]">
       {/* <Day title="Mar" partite={partitePerGiorno.ven} day="mar" resetAll={resetAll} occhioApertoPartita={occhioApertoPartita} setOcchioApertoPartita={setOcchioApertoPartita} />
 			<Day title="Mer" partite={partitePerGiorno.ven} day="mer" resetAll={resetAll} occhioApertoPartita={occhioApertoPartita} setOcchioApertoPartita={setOcchioApertoPartita} />
 			<Day title="Gio" partite={partitePerGiorno.ven} day="gio" resetAll={resetAll} occhioApertoPartita={occhioApertoPartita} setOcchioApertoPartita={setOcchioApertoPartita} /> */}
-      {partitePerGiorno.mar.length > 0 && (
-        <Day
-          title="Mar"
-          partite={partitePerGiorno.mar}
-          day="mar"
-          resetAll={resetAll}
-          occhioApertoPartita={occhioApertoPartita}
-          setOcchioApertoPartita={setOcchioApertoPartita}
-        />
-      )}
-      {partitePerGiorno.mer.length > 0 && (
-        <Day
-          title="Mer"
-          partite={partitePerGiorno.mer}
-          day="mer"
-          resetAll={resetAll}
-          occhioApertoPartita={occhioApertoPartita}
-          setOcchioApertoPartita={setOcchioApertoPartita}
-        />
-      )}
-      {partitePerGiorno.gio.length > 0 && (
-        <Day
-          title="Gio"
-          partite={partitePerGiorno.gio}
-          day="gio"
-          resetAll={resetAll}
-          occhioApertoPartita={occhioApertoPartita}
-          setOcchioApertoPartita={setOcchioApertoPartita}
-        />
-      )}
-      {partitePerGiorno.ven.length > 0 && (
-        <Day
-          title="Ven"
-          partite={partitePerGiorno.ven}
-          day="ven"
-          resetAll={resetAll}
-          occhioApertoPartita={occhioApertoPartita}
-          setOcchioApertoPartita={setOcchioApertoPartita}
-        />
-      )}
-      {partitePerGiorno.sab.length > 0 && (
-        <Day
-          title="Sab"
-          partite={partitePerGiorno.sab}
-          day="sab"
-          resetAll={resetAll}
-          occhioApertoPartita={occhioApertoPartita}
-          setOcchioApertoPartita={setOcchioApertoPartita}
-        />
-      )}
-      {partitePerGiorno.dom.length > 0 && (
-        <Day
-          title="Dom"
-          partite={partitePerGiorno.dom}
-          day="dom"
-          resetAll={resetAll}
-          occhioApertoPartita={occhioApertoPartita}
-          setOcchioApertoPartita={setOcchioApertoPartita}
-        />
-      )}
-      {partitePerGiorno.lun.length > 0 && (
-        <Day
-          title="Lun"
-          partite={partitePerGiorno.lun}
-          day="lun"
-          resetAll={resetAll}
-          occhioApertoPartita={occhioApertoPartita}
-          setOcchioApertoPartita={setOcchioApertoPartita}
-        />
+      {giorniSettimana.map(
+        ({ giorno, title }) =>
+          partitePerGiorno[giorno].length > 0 && (
+            <Day
+              key={giorno}
+              title={title}
+              partite={partitePerGiorno[giorno]}
+              day={giorno}
+              resetAll={resetAll}
+              occhioApertoPartita={occhioApertoPartita}
+              setOcchioApertoPartita={setOcchioApertoPartita}
+            />
+          )
       )}
       {/* <div style={{ position: 'absolute', top: '0', right: '0' }}>
                     <button className="p-4 font-bold bg-gray-500 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300 focus:ring-opacity-50 transition duration-300 ease-in-out"
