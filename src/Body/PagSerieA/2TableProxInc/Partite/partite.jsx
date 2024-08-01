@@ -55,7 +55,7 @@ const Partite = ({ resetAll, occhioApertoPartita, setOcchioApertoPartita }) => {
 
   return (
     // <DndProvider backend={HTML5Backend}>
-    <div className=" relative overflow-y-hidden flex flex-col items-left overflow-x-hidden xs:text-xs sm:text-xl border border-x-0 rounded-3xl border-lime-400 py-[1rem] min-w-[17rem] max-h-[100%]">
+    <div className=" relative overflow-x-hidden overflow-y-scroll hide-scrollbar flex flex-col items-left xs:text-xs sm:text-xl border border-x-0 rounded-3xl border-lime-400 py-[5%] min-w-[17rem] max-h-[26rem]">
       {/* <Day title="Mar" partite={partitePerGiorno.ven} day="mar" resetAll={resetAll} occhioApertoPartita={occhioApertoPartita} setOcchioApertoPartita={setOcchioApertoPartita} />
 			<Day title="Mer" partite={partitePerGiorno.ven} day="mer" resetAll={resetAll} occhioApertoPartita={occhioApertoPartita} setOcchioApertoPartita={setOcchioApertoPartita} />
 			<Day title="Gio" partite={partitePerGiorno.ven} day="gio" resetAll={resetAll} occhioApertoPartita={occhioApertoPartita} setOcchioApertoPartita={setOcchioApertoPartita} /> */}

@@ -89,7 +89,7 @@ const TableProxInc = () => {
   return (
     <>
       <div className="relative">
-        <div className="flex justify-center h-[26.8rem] overflow-x-hidden">
+        <div className="flex justify-center h-[26.8rem] overflow-x-hidden hide-scrollbar">
           {/* {nel caso qui metti overflow scroll} */}
           <div className="relative h-[42rem] w-[100rem] ml-[-4rem] mr-[-1rem]">
             <img
@@ -139,7 +139,7 @@ const TableProxInc = () => {
               // style={{ transform: 'rotate(180deg)' }}
               onClick={() => setIsModalInserOpen(true)}
             > 📝 </button> */}
-        <div className="sticky flex flex-col overflow-y-hidden bg-black z-[4]">
+        <div className="sticky flex flex-col overflow-x-hidden overflow-y-auto bg-black z-[4] min-h-[30rem]">
           <CalGiorn onReset={resetAll} />
           <Partite
             resetAll={resetAll}
