@@ -139,8 +139,8 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
           </tr>
         </thead>
       </table>
-      <div className="overflow-y-scroll scrollbar-hide overflow-x-hidden md:overflow-x-hidden h-[37.3rem]">
-        <table className=" border-2 border-t-0 border-r-0 border-gray-800 filter brightness-[%] overflow-y-auto w-[120%] table-auto bg-black">
+      <div className="overflow-y-scroll scrollbar-hide overflow-x-hidden md:overflow-x-hidden h-[37.5rem]">
+        <table className=" border-2 border-t-0 border-r-0 border-gray-800 filter brightness-[%] overflow-y-auto w-[140%] table-auto bg-black">
           <tbody>
             {/* eslint-disable-next-line */}
             {datiSquadra.map((partita, index) => {
@@ -177,7 +177,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
               return (
                 <tr
                   key={index}
-                  className={`overflow-x-hidden xs:text-lg sm:text-md ${bgHoverClass} ${borderStyle}`}
+                  className={`overflow-x-hidden xs:text-lg sm:text-xlllmd ${bgHoverClass} ${borderStyle}`}
                 >
                   <td
                     className={`w-[5%] sm:w-[15%] xl:w-[5%] text-center font-bold ${ts.ColResLine} ${ts.ColResBg} text-xl`}

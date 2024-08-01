@@ -35,11 +35,11 @@ export const ts = {
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
   ColResBg: "!text-gray-800",
   ColResLine: "text-gray-500",
-  ColResHome: "!text-red-900 font-semibold",
-  ColResAway: "text-smoke-500 font-light",
+  ColResHome: "!text-pink-500 font-semibold",
+  ColResAway: "text-sky-800 font-light",
 
-  TabHoverHome: "hover:bg-green-900",
-  TabHoverAway: "hover:bg-red-900",
+  TabHoverHome: "hover:bg-green-500",
+  TabHoverAway: "hover:bg-red-500",
 
   WinBg: "bg-green-600 border-b-2 border-green-950",
   WinText: "!text-green-600",
