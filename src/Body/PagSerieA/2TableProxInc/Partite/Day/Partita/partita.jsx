@@ -27,7 +27,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
   const [isKQBtnActive, setIsKQBtnActive] = useState(false);
   const [isSignOk, setIsSignOk] = useState(false);
   const [selection, setSelection] = useState("");
-  const [isTablet, setIsTablet] = useState(window.matchMedia("(max-width: 800px) and (min-width: 700px)").matches);
+  const [isTablet, setIsTablet] = useState(window.matchMedia("(max-width: 768px)").matches);
 
   const { indexSel, setIndexSel } = useContext(IndexSelectedContext);
   const { giornataClouSelected, setGiornataClouSelected } = useContext(GiornataClouContext);
@@ -159,52 +159,6 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
       indexSel,
       giornataN,
     );
-  // const handleResetColors = (t1, t2) => {
-  //   // if (partita.results) return;
-  //   setSelection("");
-  //   setButtonResetIsResetting(true);
-  //   setIsKQBtnActive(!isKQBtnActive);
-  //   setIsSignOk(!isKQBtnActive);
-  //   setIsButtonClickable(false);
-  //   if (occhioApertoPartita === partita.numero) {
-  //     setOcchioApertoPartita(null);
-  //     handleCoppiaSelectTeam(partita);
-  //   }
-  //   if (sqSelected.length == 0) {
-  //     setSqSelected([]);
-  //   } else {
-  //     setSqSelected((currentSelected) => {
-  //       if (currentSelected) {
-  //         return currentSelected.filter(
-  //           (squadra) =>
-  //             // Rimuovi entrambe le squadre e le loro varianti con 'X', 'Y', e 'Z' se presenti
-  //             squadra !== partita.team1 &&
-  //             squadra !== partita.team1 + "X" &&
-  //             squadra !== partita.team1 + "Y" &&
-  //             squadra !== partita.team1 + "Z" &&
-  //             squadra !== partita.team2 &&
-  //             squadra !== partita.team2 + "X" &&
-  //             squadra !== partita.team2 + "Y" &&
-  //             squadra !== partita.team2 + "Z",
-  //         );
-  //       }
-  //     });
-  //   }
-
-  //   const result = completeClouSelected[`giornata${indexSel ? indexSel : giornataN}`]?.map((data, index) => {
-  //     if (data.team1 === t1 && data.team2 === t2 && data.rank) {
-  //       data.results = "";
-  //       data.rank = "1 - 1";
-  //       return data;
-  //     }
-
-  //     return data;
-  //   });
-  //   setCompleteClouSelected({
-  //     ...completeClouSelected,
-  //     [`giornata${indexSel ? indexSel : giornataN}`]: result,
-  //   });
-  // };
 
   const isBigTeam = (teamName) => {
     const formatTeamName = (name) => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
