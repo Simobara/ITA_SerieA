@@ -1,44 +1,36 @@
 .underline-thick {
-    text-decoration-thickness: 2px; /* o qualsiasi altro valore che preferisci */
+  text-decoration-thickness: 2px; /* o qualsiasi altro valore che preferisci */
 }
 
 .underlineC {
-    text-decoration: underline;
-    text-decoration-color: #c013b7; /* Colore rosso per l'underline */
-    text-decoration-thickness: 4px;
-    overflow:hidden;
-    /* opacity:1; */
+  text-decoration: underline;
+  text-decoration-color: #c013b7; /* Colore rosso per l'underline */
+  text-decoration-thickness: 4px;
+  overflow: hidden;
+  /* opacity:1; */
 }
 
 .underline-yellow {
-    text-decoration: underline;
-    text-decoration-color: rgb(249, 249, 81); /* Colore rosso per l'underline */
-    text-decoration-thickness: 4px;
-    overflow:hidden;
+  text-decoration: underline;
+  text-decoration-color: rgb(249, 249, 81); /* Colore rosso per l'underline */
+  text-decoration-thickness: 4px;
+  overflow: hidden;
 }
 
 .underlineF {
-    text-decoration: underline;
-    text-decoration-color: #c013b7; /* Colore rosso per l'underline */
-    text-decoration-thickness: 4px;
-    overflow:hidden;
+  text-decoration: underline;
+  text-decoration-color: #c013b7; /* Colore rosso per l'underline */
+  text-decoration-thickness: 4px;
+  overflow: hidden;
 }
 
-
-
 .cursor-not-allowed {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 
 .unselectable {
-    -webkit-user-select: none;  /* Safari */
-    -moz-user-select: none;     /* Firefox */
-    -ms-user-select: none;      /* IE/Edge */
-    user-select: none;          /* Standard */
-}
-
-
-.brightnessScura {
-    filter: brightness(60%);
-    /* opacity: 1;  */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge */
+  user-select: none; /* Standard */
 }

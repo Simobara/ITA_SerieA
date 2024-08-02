@@ -1,26 +1,27 @@
-import { useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { giornataN } from "../../../START/app/0SerieAMatches";
 import { nomiSquadre } from "../../../START/app/1main";
-// import { ATeams, BTeams } from "../../../START/funct/FilterTeamByCat";
 import { s } from "../../../START/styles/0CssMainStyle";
 import { CompleteDataContext, CoppiaPartitaContext, CoppiaPartitaRegistrataContext, GiornataClouContext, IndexSelectedContext, SquadraContext } from "../../Glob/global";
 import "./tableClass.css";
+import aggPunteggioSqRegg from "./zExternal/addPunteggioSqReg";
+import aggiungiPuntii from "./zExternal/addPunti";
 import { calcPntSq } from "./zExternal/calcPuntiSq";
 import { creaRisSq } from "./zExternal/creaRisSq";
-import useGetIsTeamInCoppiaRegSelected from "./zExternal/getIsTeamInCoppiaRegSelected"; // Importa il custom hook per la coppia registrata
+import useGetIsCoppiaSelected from "./zExternal/getIsCoppiaSelected";
+import useGetIsTeamInCoppiaRegSelected from "./zExternal/getIsTeamInCoppiaRegSelected";
+import useGetIsTeamMarkedWithhX from "./zExternal/getIsTeamMarkedWithX";
+import getPunteggioColonnaDomandaa from "./zExternal/getPunteggioColonnaDomanda";
+import useGetPunteggioColonnaPTS from "./zExternal/getPunteggioColonnaPTS";
 import useGetPunteggioVirtuale from "./zExternal/getPunteggioVirtuale";
 import useGetPunteggioVisualizzato from "./zExternal/getPunteggioVisualizzato";
 import useGetSquadreConPunteggioVirtuale from "./zExternal/getSquadreConPuntVirt";
 import useGetSquadreOrdinate from "./zExternal/getSquadreOrdinate";
-
-import { isPureNumber } from "./zExternal/isPureNumber";
-
-import useGetPunteggioColonnaPTS from "./zExternal/getPunteggioColonnaPTS";
+import getTeamNamee from "./zExternal/getTeamName";
 import { getTextTeam } from "./zExternal/isQTeam";
+import { isDrawingTeamInCoppiaRegSelectedd, isLosingTeamInCoppiaRegSelectedd, isWinningTeamInCoppiaRegSelectedd } from "./zExternal/isQTeamInCoppiaRegSelected";
 import prendiColoriColonnaa0 from "./zExternal/prendiColoriColonna0";
-
-// import { squadrePunt } from '../../../START/app/main';
-// import {isWinningTeamInCoppiaRegSelected} from "./function/isQTeamInCoppiaRegSel"
+import squadreOrdinatee from "./zExternal/squadreOrdinate";
 
 const TableClass = () => {
   const [indiciDiffPts, setIndiciDiffPts] = useState([]);
@@ -38,140 +39,36 @@ const TableClass = () => {
 
   const ArrayNomiSquadre = Object.values(nomiSquadre);
 
+  // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
   const prendiColoriColonna0 = (index) => prendiColoriColonnaa0(index, ArrayNomiSquadre);
-
   const getPunteggioVirtuale = useGetPunteggioVirtuale(sqSelected, completeClouSelected);
   const getPunteggioVisualizzato = useGetPunteggioVisualizzato(sqSelected, getPunteggioVirtuale);
+
   const getSquadreConPunteggioVirtuale = useGetSquadreConPunteggioVirtuale(sqSelected, ArrayNomiSquadre, getPunteggioVirtuale);
   const getSquadreOrdinate = useGetSquadreOrdinate(sqSelected, nomiSquadre, completeClouSelected, punteggiAggiornati, getPunteggioVirtuale, getPunteggioVisualizzato);
-  const numberCheck = isPureNumber("1234"); // true
-  const notNumberCheck = isPureNumber("123a"); // false
   const isTeamInCoppiaRegSelected = useGetIsTeamInCoppiaRegSelected(completeClouSelected, indexSel, giornataN);
   const getPunteggioColonnaPTS = useGetPunteggioColonnaPTS(completeClouSelected, isTeamInCoppiaRegSelected, indexSel, giornataN);
 
-  const squadreOrdinate = useMemo(() => {
-    console.log(nomiSquadre, "nomiSquadre");
-    return Object.values(nomiSquadre)
-      .map((squadra) => ({
-        ...squadra,
-        punteggioVirtuale: getPunteggioVirtuale(squadra),
-        punteggioVisualizzato: getPunteggioVisualizzato(squadra),
-      }))
-      .sort((a, b) => b.punteggioVirtuale - a.punteggioVirtuale);
-  }, [nomiSquadre, sqSelected, completeClouSelected, punteggiAggiornati]);
+  const isCoppiaSelected = useGetIsCoppiaSelected(coppiaSelected);
+  const isPureNumber = (str) => /^\d+$/.test(str);
 
-  const isTeamMarkedWithX = useCallback(
-    (teamName) => {
-      try {
-        return typeof teamName === "string" && (teamName.endsWith("X") || sqSelected.includes(teamName + "X"));
-      } catch (error) {
-        console.error("Error processing teamName:", teamName, error);
-        return false;
-      }
-    },
-    [sqSelected, completeClouSelected],
-  );
+  const squadreOrdinate = squadreOrdinatee(sqSelected, nomiSquadre, completeClouSelected, punteggiAggiornati, getPunteggioVirtuale, getPunteggioVisualizzato);
+  const isTeamMarkedWithX = useGetIsTeamMarkedWithhX(sqSelected, completeClouSelected);
+  // prettier-ignore
+  const aggPunteggioSqReg = () => aggPunteggioSqRegg(coppiaRegSelected, aggiungiPunti);
+  // prettier-ignore
+  const aggiungiPunti = (nomeSquadra, punti) => aggiungiPuntii(nomeSquadra, punti, ArrayNomiSquadre);
+  // prettier-ignore
+  const getPunteggioColonnaDomanda = (squadra) => getPunteggioColonnaDomandaa(squadra, completeClouSelected, indexSel, giornataN);
 
-  // const isPureNumber = (str) => /^\d+$/.test(str);
-  const isCoppiaSelected = useCallback(
-    (nomeSquadra) => {
-      return coppiaSelected && (nomeSquadra === coppiaSelected.team1 || nomeSquadra === coppiaSelected.team2);
-    },
-    [coppiaSelected],
-  );
+  const isWinningTeamInCoppiaRegSelected = (teamName) => isWinningTeamInCoppiaRegSelectedd(teamName, completeClouSelected, indexSel, giornataN);
+  const isLosingTeamInCoppiaRegSelected = (teamName) => isLosingTeamInCoppiaRegSelectedd(teamName, completeClouSelected, indexSel, giornataN);
+  const isDrawingTeamInCoppiaRegSelected = (teamName) => isDrawingTeamInCoppiaRegSelectedd(teamName, completeClouSelected, indexSel, giornataN);
 
-  const aggPunteggioSqReg = () => {
-    if (coppiaRegSelected) {
-      coppiaRegSelected.forEach((match) => {
-        const scores = match.risultato.split("-").map(Number);
-        const scoreTeam1 = scores[0];
-        const scoreTeam2 = scores[1];
-        let winningTeam;
-        if (scoreTeam1 > scoreTeam2) {
-          winningTeam = match.team1;
-        } else if (scoreTeam2 > scoreTeam1) {
-          winningTeam = match.team2;
-        }
-        if (winningTeam) {
-          aggiungiPunti(winningTeam, 0);
-        }
-      });
-    }
-  };
+  const getTeamName = (teamName) => getTeamNamee(teamName);
 
-  const aggiungiPunti = (nomeSquadra, punti) => {
-    const squadra = ArrayNomiSquadre.find((s) => s.name === nomeSquadra);
-    if (squadra) {
-      squadra.punteggio += punti;
-    }
-  };
-
-  const getPunteggioColonnaDomanda = (squadra) => {
-    // console.log(coppiaRegSelected, "coppiaRegSelected");
-    // Check if the squadra is part of any selected match
-    const isPartOfSelectedMatch = completeClouSelected[`giornata${indexSel ? indexSel : giornataN}`]?.find((match) => match.team1 === squadra.name || match.team2 === squadra.name);
-    return isPartOfSelectedMatch?.results !== undefined && isPartOfSelectedMatch && isPartOfSelectedMatch?.results.length ? squadra.punteggio : "";
-    // return isPartOfSelectedMatch
-    //   ? squadra.punteggio
-    //   : getPunteggioVisualizzato(squadra);
-  };
-
-  // const getPunteggioColonnaPTS = useCallback(
-  //   (squadra) => {
-  //     let punteggioFinale = squadra.punteggio;
-  //     if (isTeamInCoppiaRegSelected(squadra.name)) {
-  //       completeClouSelected[`giornata${indexSel ? indexSel : giornataN}`].forEach((match) => {
-  //         const [team1, team2] = match.results.split("-").map(Number);
-  //         if (team1 === team2) {
-  //           if (match.team1 === squadra.name || match.team2 === squadra.name) {
-  //             punteggioFinale -= 1;
-  //           }
-  //         } else {
-  //           if ((match.team1 === squadra.name && team1 > team2) || (match.team2 === squadra.name && team2 > team1)) {
-  //             punteggioFinale -= 3;
-  //           }
-  //         }
-  //       });
-  //     }
-  //     return punteggioFinale;
-  //   },
-  //   [coppiaRegSelected, completeClouSelected],
-  // ); // Aggiungi tutte le dipendenze esterne utilizzate nella funzione
-
-  const isWinningTeamInCoppiaRegSelected = (teamName) => {
-    return completeClouSelected[`giornata${indexSel ? indexSel : giornataN}`]?.some((match) => {
-      const [team1, team2] = match.results.split("-").map(Number);
-      return (match.team1 === teamName && team1 > team2) || (match.team2 === teamName && team2 > team1);
-    });
-  };
-
-  const isLosingTeamInCoppiaRegSelected = (teamName) => {
-    return completeClouSelected[`giornata${indexSel ? indexSel : giornataN}`]?.some((match) => {
-      const [team1, team2] = match.results.split("-").map(Number);
-      return (match.team1 === teamName && team1 < team2) || (match.team2 === teamName && team2 < team1);
-    });
-  };
-
-  const isDrawingTeamInCoppiaRegSelected = (teamName) => {
-    return completeClouSelected[`giornata${indexSel ? indexSel : giornataN}`]?.some((match) => {
-      const [team1, team2] = match.results.split("-").map(Number);
-      return (match.team1 === teamName || match.team2 === teamName) && team1 === team2;
-    });
-  };
-
-  const getTeamName = (squadr) => {
-    if (typeof squadr === "object" && squadr !== null) {
-      squadr = squadr.name; // Assumi che l'oggetto abbia una proprietà 'name' e usala
-    }
-    if (typeof squadr === "string") {
-      return squadr.replace("X", "").replace("Y", "").replace("Z", "");
-    }
-    // console.error('Expected a string but received:', nome);
-    return ""; // Gestisci il caso in cui l'input non è né un oggetto né una stringa
-  };
-
-  // ------------------------------------------------------------------------------------------------------
-
+  // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  // --------------------------------------------------------------------------------------
   useEffect(() => {
     Object.keys(nomiSquadre).forEach((key) => {
       const squadra = nomiSquadre[key];
@@ -253,9 +150,9 @@ const TableClass = () => {
     }
     // console.log(nuoveDifferenze, "nuoveDifferenze");
     setDifferenzePunti(nuoveDifferenze);
-  }, [coppiaRegSelected, completeClouSelected]); // Aggiungi le dipendenze necessarie qui
+  }, [coppiaRegSelected, completeClouSelected]);
 
-  // -------------------------------------------------------------------------------------------------------
+  // --------------------------------------------------------------------------------------
 
   return (
     <table className="relative overflow-auto min-h-[57rem]">
@@ -311,6 +208,7 @@ const TableClass = () => {
               {getPunteggioColonnaDomanda(squadra)}
             </td>
             {/* { COLONNA PTS} */}
+
             <td
               className={`sm:pl-[1.5rem] sm:pr-[1rem] md:pl-[1rem] lg:pl-2 xl:mr-4   text-left font-bold bg-black md:text-md  lg:text-lg
               ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ` : ""}

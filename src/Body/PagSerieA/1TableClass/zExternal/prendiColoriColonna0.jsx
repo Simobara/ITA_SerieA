@@ -1,13 +1,14 @@
+import { ItalianeInChampions, ItalianeInEuropaLeague } from "../../../../START/app/1main";
 
 const prendiColoriColonnaa0 = (index, ArrayNomiSquadre) => {
-  if (index < 4) {
-    return "bg-sky-950 text-white font-extrabold";
-  } else if (index >= 4 && index < 6) {
-    return "bg-sky-800 text-white font-extrabold";
-  } else if (index === 6) {
-    return "bg-cyan-700 text-white font-extrabold";
+  if (index < ItalianeInChampions) {
+    return "bg-sky-950";
+  } else if (index >= ItalianeInChampions && index < ItalianeInChampions + ItalianeInEuropaLeague) {
+    return "bg-sky-800";
+  } else if (index === ItalianeInChampions + ItalianeInEuropaLeague) {
+    return "bg-cyan-700";
   } else if (index >= ArrayNomiSquadre.length - 3) {
-    return "bg-gray-500 text-black font-extrabold";
+    return "bg-gray-500";
   } else {
     return "bg-black";
   }

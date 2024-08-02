@@ -16,6 +16,8 @@ export const s = {
 
   ImgTextInRoundMd: "text-md",
   ImgTextInRoundSm: "text-sm",
+
+  BrightnessDopoScelta: "brightness-40"
 };
 
 //sezione classifica - sezione3

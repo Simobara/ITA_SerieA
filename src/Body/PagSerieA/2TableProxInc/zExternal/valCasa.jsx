@@ -54,7 +54,7 @@ const ValCasa = () => {
         {isBTeam(coppiaSelected.team1) &&
           isATeam(coppiaSelected.team2) && ( //DEBOLE FORTE
             <>
-              <pre>SeProxInc MediaDebole:🙃</pre>
+              <pre>SeProxInc MediaDebole:🗜️</pre>
               <pre>📈</pre>
             </>
           )}
@@ -64,7 +64,7 @@ const ValCasa = () => {
             <>
               <pre>🎭</pre>
               <pre>Se Prox "A": win</pre>
-              <pre>Se Prox SCR: 🙃</pre>
+              <pre>Se Prox SCR: 🗜️</pre>
               <pre>📈</pre>
             </>
           )}
@@ -74,7 +74,7 @@ const ValCasa = () => {
           isATeam(coppiaSelected.team2) && ( //MEDIA FORTE
             <>
               <pre>Puo' Anche Perdere</pre>
-              <pre>Se Prox "B": 🙃</pre>
+              <pre>Se Prox "B": 🗜️</pre>
               <pre>📈</pre>
             </>
           )}

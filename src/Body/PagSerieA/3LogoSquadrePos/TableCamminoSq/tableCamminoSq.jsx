@@ -7,12 +7,9 @@ import { GiornataClouContext } from "../../../Glob/global/";
 import "./tableCamminoSq.css";
 
 const TableCamminoSq = ({ squadra, datiSquadra }) => {
-  const [isMobile, setIsMobile] = useState(
-    window.matchMedia("(max-width: 600px)").matches
-  );
+  const [isMobile, setIsMobile] = useState(window.matchMedia("(max-width: 600px)" && "(min-width: 768px").matches);
   const [selectedIndexGiornata, setSelectedIndexGiornata] = useState(null);
-  const { giornataClouSelected, setGiornataClouSelected } =
-    useContext(GiornataClouContext);
+  const { giornataClouSelected, setGiornataClouSelected } = useContext(GiornataClouContext);
   const { indexSel, setIndexSel } = useContext(IndexSelectedContext);
   const nomeSquadra = typeof squadra === "string" ? squadra : "DefinireSq";
 
@@ -101,10 +98,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
 
   useEffect(() => {
     if (giornataClouSelected) {
-      let nuovoIndice =
-        Object.keys(calendario).findIndex(
-          (key) => calendario[key] === giornataClouSelected
-        ) + 1;
+      let nuovoIndice = Object.keys(calendario).findIndex((key) => calendario[key] === giornataClouSelected) + 1;
       console.log("NI", nuovoIndice);
       nuovoIndice = indexSel ? indexSel : giornataN;
       if (nuovoIndice <= 19) {
@@ -119,21 +113,13 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
 
   return (
     <div className="mb-[0rem]">
-      <h1
-        className={`{ text-center md:text-3xl scale-150 ${getTextTeam(nomeSquadra)}`}
-      >
-        {nomeSquadra}
-      </h1>
+      <h1 className={`{ text-center md:text-3xl scale-150 ${getTextTeam(nomeSquadra)}`}>{nomeSquadra}</h1>
       <table>
         <thead>
           <tr className="bg-black text-white border border-black overflow-x-hidden text-xs">
             <th className="text-center text-white w-[12%] sm:w-[15%] xl:w-[12%] "></th>
-            <th className="text-center text-cyan-700 w-[18%] sm:w-[25%] xl:w-[20%] font-bold mb-[1rem]">
-              {/* C */}
-            </th>
-            <th className="text-center text-cyan-700 w-[12%] sm:w-[15%] xl:w-[12%] font-bold">
-              {/* F */}
-            </th>
+            <th className="text-center text-cyan-700 w-[18%] sm:w-[25%] xl:w-[20%] font-bold mb-[1rem]">{/* C */}</th>
+            <th className="text-center text-cyan-700 w-[12%] sm:w-[15%] xl:w-[12%] font-bold">{/* F */}</th>
             <th className="text-center text-white w-full "></th>
             <th className="text-left"></th>
           </tr>
@@ -152,69 +138,36 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
               const risultatoParts = risultatoPulito.split("-");
               const risultatoParte1 = risultatoParts[0]; // Prima parte del risultato
               const risultatoParte2 = risultatoParts[1]; // Seconda parte del risultato
-              const isPronostico =
-                (risultatoParte1 === "9" && risultatoParte2 === "8") ||
-                (risultatoParte1 === "8" && risultatoParte2 === "9") ||
-                (risultatoParte1 === "9" && risultatoParte2 === "9");
+              const isPronostico = (risultatoParte1 === "9" && risultatoParte2 === "8") || (risultatoParte1 === "8" && risultatoParte2 === "9") || (risultatoParte1 === "9" && risultatoParte2 === "9");
 
               let borderStyle = "";
               if (index === selectedIndexGiornata) {
                 borderStyle = "border-b-4 border-lime-500";
               }
               const formattedSqVs = partita.sqVs.toLowerCase();
-              const sqVsFormatted =
-                formattedSqVs.charAt(0).toUpperCase() + formattedSqVs.slice(1);
+              const sqVsFormatted = formattedSqVs.charAt(0).toUpperCase() + formattedSqVs.slice(1);
 
-              const sqVsClass = isATeam(partita.sqVs)
-                ? `font-black py-[-4] ml-[-4] ${ts.ATeamBg} ${ts.ATeamText} !border-l-0 `
-                : isBTeam(partita.sqVs)
-                  ? `font-light ${ts.BTeamText}`
-                  : partita.sqVs === "--- --- --- --- --- ---"
-                    ? "font-black text-black"
-                    : `${ts.ABTeamText} font-bold `;
+              const sqVsClass = isATeam(partita.sqVs) ? `font-black py-[-4] ml-[-4] ${ts.ATeamBg} ${ts.ATeamText} !border-l-0 ` : isBTeam(partita.sqVs) ? `font-light ${ts.BTeamText}` : partita.sqVs === "--- --- --- --- --- ---" ? "font-black text-black" : `${ts.ABTeamText} font-bold `;
               const bgHoverClass = getBgHoverClass(partita);
 
               return (
-                <tr
-                  key={index}
-                  className={`overflow-x-hidden xs:text-lg sm:text-md ${bgHoverClass} ${borderStyle}`}
-                >
-                  <td
-                    className={`w-[5%] sm:w-[15%] xl:w-[5%] text-center font-bold ${ts.ColResLine} ${ts.ColResBg} text-xl`}
-                  >
+                <tr key={index} className={`overflow-x-hidden xs:text-lg sm:text-md ${bgHoverClass} ${borderStyle}`}>
+                  <td className={`w-[5%] sm:w-[15%] xl:w-[5%] text-center font-bold ${ts.ColResLine} ${ts.ColResBg} text-xl`}>
                     {isPronostico ? (
                       <div className="flex justify-center items-center">
-                        <span className="text-yellow-400 text-xl font-black justify-center items-center ">
-                          *
-                        </span>
+                        <span className="text-yellow-400 text-xl font-black justify-center items-center ">*</span>
                       </div>
                     ) : (
                       <>
-                        <span className={`${ts.ColResHome} text-xl`}>
-                          {risultatoParte1}
-                        </span>
+                        <span className={`${ts.ColResHome} text-xl`}>{risultatoParte1}</span>
                         {risultatoParte1 && risultatoParte2 && "-"}
-                        <span className={`${ts.ColResAway} text-xl`}>
-                          {risultatoParte2}
-                        </span>
+                        <span className={`${ts.ColResAway} text-xl`}>{risultatoParte2}</span>
                       </>
                     )}
                   </td>
-                  <td
-                    className={`sm:w-[10%] xl:w-[10%] w-[17%] text-center xs:text-xl sm:text-base font-bold ${casaClass} ${ts.TextCF}`}
-                  >
-                    {partita.casa}
-                  </td>
-                  <td
-                    className={`w-[7%] sm:w-[15%] xl:w-[10%] text-center xs:text-xl sm:text-base font-bold ${fuoriClass} ${ts.TextCF}`}
-                  >
-                    {partita.fuori}
-                  </td>
-                  <td className={`sm:w-[50%] pl-4 text-xl ${sqVsClass} `}>
-                    {isMobile == true
-                      ? sqVsFormatted.slice(0, 3)
-                      : sqVsFormatted}
-                  </td>
+                  <td className={`sm:w-[10%] md:w-[20%] xl:w-[15%] w-[10%] text-center xs:text-xl sm:text-base font-bold ${casaClass} ${ts.TextCF}`}>{partita.casa}</td>
+                  <td className={`w-[7%] sm:w-[15%] xl:w-[15%] text-center xs:text-xl sm:text-base font-bold ${fuoriClass} ${ts.TextCF}`}>{partita.fuori}</td>
+                  <td className={`sm:w-[50%] text-xl pl-[8%] w-[10%] ${sqVsClass} `}>{isMobile == true ? sqVsFormatted.slice(0, 3) : sqVsFormatted}</td>
                 </tr>
               );
             })}

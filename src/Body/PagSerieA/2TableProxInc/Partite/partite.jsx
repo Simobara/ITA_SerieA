@@ -35,7 +35,7 @@ const Partite = ({ resetAll, occhioApertoPartita, setOcchioApertoPartita }) => {
       mer: partite.filter((p) => p.day === "mer"),
       gio: partite.filter((p) => p.day === "gio"),
     }),
-    [partite]
+    [partite],
   );
 
   //AGGIORNA IL COMPONENTE ALLA GIORNATA DI RIFERIMENTO CON LE PARTITE DI QUELLA GIORNATA
@@ -56,9 +56,6 @@ const Partite = ({ resetAll, occhioApertoPartita, setOcchioApertoPartita }) => {
   return (
     // <DndProvider backend={HTML5Backend}>
     <div className=" relative overflow-x-hidden overflow-y-scroll hide-scrollbar flex flex-col items-left xs:text-xs sm:text-xl border border-x-0 rounded-3xl border-lime-400 py-[5%] min-w-[17rem] max-h-[26rem]">
-      {/* <Day title="Mar" partite={partitePerGiorno.ven} day="mar" resetAll={resetAll} occhioApertoPartita={occhioApertoPartita} setOcchioApertoPartita={setOcchioApertoPartita} />
-			<Day title="Mer" partite={partitePerGiorno.ven} day="mer" resetAll={resetAll} occhioApertoPartita={occhioApertoPartita} setOcchioApertoPartita={setOcchioApertoPartita} />
-			<Day title="Gio" partite={partitePerGiorno.ven} day="gio" resetAll={resetAll} occhioApertoPartita={occhioApertoPartita} setOcchioApertoPartita={setOcchioApertoPartita} /> */}
       {giorniSettimana.map(
         ({ giorno, title }) =>
           partitePerGiorno[giorno].length > 0 && (
@@ -71,7 +68,7 @@ const Partite = ({ resetAll, occhioApertoPartita, setOcchioApertoPartita }) => {
               occhioApertoPartita={occhioApertoPartita}
               setOcchioApertoPartita={setOcchioApertoPartita}
             />
-          )
+          ),
       )}
       {/* <div style={{ position: 'absolute', top: '0', right: '0' }}>
                     <button className="p-4 font-bold bg-gray-500 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300 focus:ring-opacity-50 transition duration-300 ease-in-out"
