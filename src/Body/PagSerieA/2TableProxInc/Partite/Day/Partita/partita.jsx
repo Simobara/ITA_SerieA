@@ -1,25 +1,16 @@
 import { useContext, useEffect, useState } from "react";
 // import { useDrag, useDrop } from "react-dnd";
 import { giornataN } from "../../../../../../START/app/0SerieAMatches";
-import { ATeams } from "../../../../../../START/funct/FilterTeamByCat";
 import { ts } from "../../../../../../START/styles/0CssMainStyle";
-import {
-  ButtonResetContext,
-  CompleteDataContext,
-  CoppiaPartitaContext,
-  CoppiaPartitaRegistrataContext,
-  GiornataClouContext,
-  IndexSelectedContext,
-  PartiteDefinNoModContext,
-  SquadraContext,
-} from "../../../../../Glob/global";
+import { ButtonResetContext, CompleteDataContext, CoppiaPartitaContext, CoppiaPartitaRegistrataContext, GiornataClouContext, IndexSelectedContext, PartiteDefinNoModContext, SquadraContext } from "../../../../../Glob/global";
 import "./partita.css";
 import handleCoppiaSelectTeamm from "./zExternal/handleCoppiaSelectTeam";
 import handleResetColorss from "./zExternal/handleResetColors";
+import handleSelectionn from "./zExternal/handleSelection";
+import isBigTeamm from "./zExternal/isBigTeam";
 import { getTextTeam } from "./zExternal/isQTeam";
 import toggleEyee from "./zExternal/toggleEye";
 import toggleSymboll from "./zExternal/toggleSymbol";
-
 import { underlineTeamm } from "./zExternal/underlineTeam";
 
 const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartita }) => {
@@ -43,128 +34,16 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
   //   );
   // console.log(giornataClouSelected, "giornataClouSelected");
   const isPartitaModificabile = giornataClouSelected.some((p) => p.numero === partita.numero && (!p.results || p.rank));
-  // const partitaClass = isPartitaModificabile ? '' : 'unselectable';
-
   const isPartitaInCoppiaRegSelected = coppiaRegSelected.some((coppia) => coppia.team1 === partita.team1 && coppia.team2 === partita.team2 && !partita.rank);
   const toggleSymbol = () => toggleSymboll(partita, isPartitaModificabile, setButtonResetIsResetting, setIsKQBtnActive, setIsSignOk);
   const toggleEye = () => toggleEyee(partita, occhioApertoPartita, setOcchioApertoPartita, setButtonResetIsResetting, handleCoppiaSelectTeam);
   const isEyeOpen = occhioApertoPartita === partita.numero;
-
-  const handleSelection = (selectedTeam, selectionType, numeroPartita = "") => {
-    // if (!isPartitaModificabile) return;
-    if (numeroPartita !== 0 && numeroPartita === partita.numero) {
-      setButtonResetIsResetting(true);
-      //   setIsKQBtnActive(true);
-      setSelection(selectionType);
-      setIsButtonClickable(true);
-      setSqSelected((currentSelected) => {
-        if (!Array.isArray(currentSelected)) {
-          console.error("Expected an array, but got:", currentSelected);
-          return [];
-        }
-        let updatedSelection = currentSelected.filter((squadra) => squadra !== partita.team1 && squadra !== partita.team2);
-        if (selectionType === "1") {
-          updatedSelection.push(selectedTeam === partita.team1 ? partita.team1 : partita.team2);
-        } else if (selectionType === "2") {
-          updatedSelection.push(selectedTeam === partita.team1 ? partita.team2 : partita.team1);
-        } else if (selectionType === "X") {
-          updatedSelection.push(partita.team1, partita.team2);
-        }
-        return updatedSelection;
-      });
-    } else if (numeroPartita === "") {
-      // console.log("nomiiiiiiii");
-      setButtonResetIsResetting(true);
-      if (!isKQBtnActive) {
-        setSelection(selectionType);
-        if (selectionType === "1" || selectionType === "X" || selectionType === "2") {
-          setIsButtonClickable(true);
-        }
-        setSqSelected((currentSelected) => {
-          if (!Array.isArray(currentSelected)) {
-            console.error("Expected an array, but got:", currentSelected);
-            return [];
-          }
-          let updatedSelection = currentSelected;
-          const nonSelectedTeam = selectedTeam === partita.team1 ? partita.team2 : partita.team1;
-          updatedSelection = updatedSelection.filter(
-            (squadra) =>
-              squadra !== partita.team1 &&
-              squadra !== partita.team1 + "X" &&
-              squadra !== partita.team1 + "Y" &&
-              squadra !== partita.team1 + "Z" &&
-              squadra !== partita.team2 &&
-              squadra !== partita.team2 + "X" &&
-              squadra !== partita.team2 + "Y" &&
-              squadra !== partita.team2 + "Z",
-          );
-          if (selectionType === "X") {
-            updatedSelection = [...updatedSelection, partita.team1 + "X", partita.team2 + "X"];
-          } else {
-            updatedSelection = [...updatedSelection, selectedTeam + "Z", nonSelectedTeam + "Y"];
-          }
-
-          return updatedSelection;
-        });
-      }
-      const result = completeClouSelected[`giornata${indexSel ? indexSel : giornataN}`]?.map((data, index) => {
-        if (data.team1 === selectedTeam && selectionType === "X") {
-          data.results = "1-1";
-          data.rank = "1 - 1";
-          return data;
-        }
-        if (data.team1 === selectedTeam) {
-          data.results = "1-0";
-          data.rank = "1 - 1";
-          return data;
-        } else if (data.team2 === selectedTeam) {
-          data.results = "0-1";
-          data.rank = "1 - 1";
-          return data;
-        }
-        return data;
-      });
-      setCompleteClouSelected({
-        ...completeClouSelected,
-        [`giornata${indexSel ? indexSel : giornataN}`]: result,
-      });
-      //   setGiornataClouSelected(
-      //     completeClouSelected[`giornata${indexSel ? indexSel : giornataN}`]
-      //   );
-      //   scrollIntoView(indexSel ? indexSel : giornataN);
-    }
-  };
-
+  const handleSelection = (selectedTeam, selectionType, numeroPartita) => handleSelectionn(selectedTeam, selectionType, numeroPartita, partita, setButtonResetIsResetting, setSelection, setIsButtonClickable, setSqSelected, setCompleteClouSelected, completeClouSelected, indexSel, giornataN, isKQBtnActive);
   const underlineTeam = (team) => underlineTeamm(team, selection);
   const handleCoppiaSelectTeam = (partita) => handleCoppiaSelectTeamm(partita, coppiaSelected, setCoppiaSelected);
-
-  const handleResetColors = (t1, t2) =>
-    handleResetColorss(
-      t1,
-      t2,
-      partita,
-      selection,
-      setSelection,
-      setButtonResetIsResetting,
-      setIsKQBtnActive,
-      setIsSignOk,
-      setIsButtonClickable,
-      occhioApertoPartita,
-      setOcchioApertoPartita,
-      handleCoppiaSelectTeam,
-      sqSelected,
-      setSqSelected,
-      completeClouSelected,
-      setCompleteClouSelected,
-      indexSel,
-      giornataN,
-    );
-
-  const isBigTeam = (teamName) => {
-    const formatTeamName = (name) => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-    const boldTeams = ATeams.map(formatTeamName);
-    return boldTeams.includes(teamName);
-  };
+  const handleResetColors = (t1, t2) => handleResetColorss(t1, t2, partita, selection, setSelection, setButtonResetIsResetting, setIsKQBtnActive, setIsSignOk, setIsButtonClickable, occhioApertoPartita, setOcchioApertoPartita, handleCoppiaSelectTeam, sqSelected, setSqSelected, completeClouSelected, setCompleteClouSelected, indexSel, giornataN);
+  const isBigTeam = (teamName) => isBigTeamm(teamName);
+  // ------------------------------------------------------------------------------------------------
   // console.log(sqSelected, "sqSelected");
   // const nonSelectable = partita.results ? "unselectable" : "";
   // const [, drag] = useDrag({
@@ -191,7 +70,8 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
   // });
 
   // ------------------------------------------------------------------------------------------------
-  //resize
+
+  // ------------------------------------------------------------------------------------------------
   useEffect(() => {
     const handleResize = () => {
       setIsTablet(window.matchMedia("(max-width: 768px)").matches);
@@ -378,11 +258,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                         {isActive ? '❗' : '❔'}
                     </div>
                 </div> */}
-        <button
-          className="bg-black text-gray-800 hover:bg-sky-600  mr-[0] sm:mr-[1rem] md:mr-[2rem] lg:mr-[0] xl:mr-[0] font-bold z-[10] hover:cursor-pointer select-none"
-          onClick={() => toggleEye()}
-          data-partita-numero={partita.numero}
-        >
+        <button className="bg-black text-gray-800 hover:bg-sky-600  mr-[0] sm:mr-[1rem] md:mr-[2rem] lg:mr-[0] xl:mr-[0] font-bold z-[10] hover:cursor-pointer select-none" onClick={() => toggleEye()} data-partita-numero={partita.numero}>
           {/* 🗨️ ‍‍*/}
           {isEyeOpen ? "👁️" : "..."}
           {/* // */}
