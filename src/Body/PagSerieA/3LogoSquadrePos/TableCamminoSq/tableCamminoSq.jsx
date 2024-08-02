@@ -140,7 +140,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
         </thead>
       </table>
       <div className="overflow-y-scroll scrollbar-hide overflow-x-hidden md:overflow-x-hidden h-[37.5rem]">
-        <table className=" border-2 border-t-0 border-r-0 border-gray-800 filter brightness-[%] overflow-y-auto w-[140%] table-auto bg-black">
+        <table className=" border-2 border-t-0 border-r-0 border-gray-800 filter brightness-[%] overflow-y-auto w-[100%] table-auto bg-black">
           <tbody>
             {/* eslint-disable-next-line */}
             {datiSquadra.map((partita, index) => {
@@ -201,7 +201,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
                     )}
                   </td>
                   <td
-                    className={`w-[17%] sm:w-[15%] xl:w-[10%] text-center xs:text-xl sm:text-base font-bold ${casaClass} ${ts.TextCF}`}
+                    className={`sm:w-[10%] xl:w-[10%] w-[17%] text-center xs:text-xl sm:text-base font-bold ${casaClass} ${ts.TextCF}`}
                   >
                     {partita.casa}
                   </td>

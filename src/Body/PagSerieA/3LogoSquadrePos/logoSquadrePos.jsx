@@ -1,15 +1,11 @@
 import { useContext, useEffect, useRef, useState } from "react";
-// import { squadrePunt } from '../../../START/app/main';
-import {
-  nomiSquadre,
-  SqEndGruppo1,
-  SqEndGruppo2,
-} from "../../../START/app/1main";
-import { CoppiaPartitaContext } from "../../Glob/global";
-import TableCamminoSq from "./TableCamminoSq/tableCamminoSq";
-// import { camSquadre } from '../../../START/components/4CamSquadre/camSquadre';
 import { calendario1 } from "../../../START/app/0SerieAMatches";
-import { creaRisSq } from "../1TableClass/function/creaRisSq";
+import { nomiSquadre, SqEndGruppo1, SqEndGruppo2 } from "../../../START/app/1main";
+import { CoppiaPartitaContext } from "../../Glob/global";
+import { creaRisSq } from "../1TableClass/zExternal/creaRisSq";
+import TableCamminoSq from "./TableCamminoSq/tableCamminoSq";
+// import { squadrePunt } from '../../../START/app/main';
+// import { camSquadre } from '../../../START/components/4CamSquadre/camSquadre';
 
 const LogoSquadrePos = () => {
   const [squadraAttiva1, setSquadraAttiva1] = useState("");
@@ -49,15 +45,13 @@ const LogoSquadrePos = () => {
         //   inlineStyle = { filter: "brightness(125%)" }; // Aumenta la luminosità del 25%
         //}
         if (isActive1) {
-          className =
-            "px-2 cursor-pointer rounded-3xl grayscale-0 bg-sky-900 pt-1 sm:pt-2 z-3";
+          className = "px-2 cursor-pointer rounded-3xl grayscale-0 bg-sky-900 pt-1 sm:pt-2 z-3";
           inlineStyle = {
             filter: "brightness(100%)",
             //position: 'absolute', zIndex: '200',  transform: 'translateX(-300px)', transition: 'transform 1.0s ease-in-out'
           };
         } else if (isActive2) {
-          className =
-            "px-2 cursor-pointer rounded-3xl grayscale-0 bg-sky-600 pt-1 sm:pt-2 z-1";
+          className = "px-2 cursor-pointer rounded-3xl grayscale-0 bg-sky-600 pt-1 sm:pt-2 z-1";
           inlineStyle = {
             filter: "brightness(100%)",
             //position: 'absolute', zIndex: '200', transform: 'translateX(-300px)', transition: 'transform 1.0s ease-in-out'
@@ -77,11 +71,7 @@ const LogoSquadrePos = () => {
             style={inlineStyle}
             onClick={() => handleLogoClick(squadra)}
           >
-            <img
-              src={squadra.logo}
-              alt={`${squadra.nome} Logo`}
-              className="w-7 h-7 sm:w-14 sm:h-14"
-            />
+            <img src={squadra.logo} alt={`${squadra.nome} Logo`} className="w-7 h-7 sm:w-14 sm:h-14" />
           </div>
         );
       })}
@@ -140,18 +130,12 @@ const LogoSquadrePos = () => {
       <div ref={refContainer} className="flex sticky mt-[1rem] mb-[0.5rem]">
         {squadraAttiva1 && (
           <div className="bg-sky-900 text-black  w-[50%] max-w-[50%] overflow-x-hidden overflow-y-auto z-1">
-            <TableCamminoSq
-              squadra={squadraAttiva1}
-              datiSquadra={datiSquadre[squadraAttiva1]}
-            />
+            <TableCamminoSq squadra={squadraAttiva1} datiSquadra={datiSquadre[squadraAttiva1]} />
           </div>
         )}
         {squadraAttiva2 && (
           <div className="bg-sky-500/80 text-black  w-[50%] max-w-[50%] overflow-x-hidden overflow-y-auto z-1">
-            <TableCamminoSq
-              squadra={squadraAttiva2}
-              datiSquadra={datiSquadre[squadraAttiva2]}
-            />
+            <TableCamminoSq squadra={squadraAttiva2} datiSquadra={datiSquadre[squadraAttiva2]} />
           </div>
         )}
       </div>
