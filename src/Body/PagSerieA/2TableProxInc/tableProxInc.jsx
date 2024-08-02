@@ -91,11 +91,11 @@ const TableProxInc = () => {
       <div className="relative">
         <div className="unselectable flex justify-center h-[26.8rem] overflow-x-hidden hide-scrollbar">
           {/* {nel caso qui metti overflow scroll} */}
-          <div className="relative h-[42rem] w-[100rem] ml-[-4rem] mr-[-1rem]">
+          <div className="relative h-[42rem] w-[100rem] ml-[-2rem] mr-[0rem]">
             <img
               src={serieAItalia}
               alt="serieAItalia"
-              className=".unselectable relative h-[110%] w-[100%] mt-[-4rem] filter brightness-35 "
+              className="unselectable relative h-[110%] w-[100%] mt-[-4rem] filter brightness-35"
             />
             {coppiaSelected && renderSquadre()}
             {buttonResetIsResetting && (

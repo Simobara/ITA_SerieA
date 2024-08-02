@@ -408,10 +408,10 @@ const TableClass = () => {
       <thead>
         <tr className="bg-black text-gray-600 text-center">
           <th className=" w-[0.5rem]" style={{ whiteSpace: "nowrap" }}></th>
-          <th className=" w-[1rem] sm:pl-[1rem] md:pl-[0]                   lg:pl-[1rem] lg:pr-[1rem]">
+          <th className=" w-[1rem] sm:pl-[1rem] md:pl-[0] lg:pl-[1rem] lg:pr-[1rem]">
             --- SQUADRA ---
           </th>
-          <th className=" w-[1rem] sm:pl-[1rem] md:pl-[2rem]                lg:pl-[1rem] lg:pr-[1rem] ">
+          <th className=" w-[1rem] sm:pl-[1rem] md:pl-[2rem] lg:pl-[1rem] lg:pr-[1rem] ">
             ?
           </th>
           <th className=" w-[1rem] sm:pl-[1rem] md:pl-[0] md:text-center lg:pl-[0] text-right">
@@ -432,7 +432,7 @@ const TableClass = () => {
             </td>
             {/* { COLONNA SQUADRE} */}
             <td
-              className={`w-[100%] bg-black xs:pl-[0] sm:pl-[1rem] md:pl-[1.5rem] md:pr-[1rem]  py-[.8px] sm:py-1 md:py-2 md:text-md  lg:text-lg xl:px-4 flex justify-start relative sq-column
+              className={`w-[100%] bg-black xs:pl-[0] sm:pl-[1rem] md:pl-[1.5rem] md:pr-[1rem] py-[.8px] sm:py-1 md:py-2 md:text-md  lg:text-lg xl:px-4 flex justify-start relative sq-column
             ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ${s.BaseText1}` : ""}
 
             ${isTeamMarkedWithX(squadra.name) ? `${s.Filter4} underlineX ` : sqSelected.includes(squadra.name + "Z") ? `${s.Filter4} underlineW` : sqSelected.includes(squadra.name + "Y") ? `${s.Filter4} underlineL` : ""}
