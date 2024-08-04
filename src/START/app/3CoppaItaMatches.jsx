@@ -104,17 +104,17 @@ const Tornei25 = {
     ],
 	// //*------------------------------------------------------------------------------ ------ 32
     SqATrentaduesimi: [
-        { id: 1, pos: '5%', 			team1: 'Cagliari', 	team2: '      ', 		ris: '' },
+        { id: 1, pos: '5%', 			team1: 'Cagliari', 	team2: 'Carrarese',		ris: '' },
         { id: 2, pos: '15%', 			team1: 'Cremonese',	team2: 'Bari',   		ris: '' },
         { id: 3, pos: '30%', 			team1: 'Torino', 	team2: 'Cosenza',		ris: '' },
         { id: 4, pos: '40%', 			team1: 'Empoli', 	team2: 'Catanzaro',		ris: '' },
         { id: 5, pos: 'bottom-36%', 	team1: 'Monza', 	team2: 'SudTirol', 		ris: '' },
         { id: 6, pos: 'bottom-26%', 	team1: 'Venezia', 	team2: 'Brescia', 		ris: '' },
         { id: 7, pos: 'bottom-11%', 	team1: 'Frosinone',	team2: 'Pisa',   		ris: '' },
-        { id: 8, pos: 'bottom-1%', 		team1: 'Padova', 	team2: 'Verona',     	ris: '' },
+        { id: 8, pos: 'bottom-1%', 		team1: 'Cesena', 	team2: 'Verona',     	ris: '' },
     ],
     SqBTrentaduesimi: [
-        { id: 1, pos: '5%', 			team1: 'Lecce', 	team2: '      ', 		ris: '' },
+        { id: 1, pos: '5%', 			team1: 'Lecce', 	team2: 'Mantova',       ris: '' },
         { id: 2, pos: '15%', 			team1: 'Sassuolo', 	team2: 'Cittadella',	ris: '' },
         { id: 3, pos: '30%', 			team1: 'Genoa', 	team2: 'Reggiana',  	ris: '' },
         { id: 4, pos: '40%', 			team1: 'Como',      team2: 'Sampdoria',		ris: '' },

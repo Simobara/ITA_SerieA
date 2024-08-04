@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import Body from '../Body/Body.jsx';
-import Footer from '../Footer/footer.jsx';
-import Header from '../Header/header.jsx';
-import './App.css';
+import React, { useState } from "react";
+import Body from "../Body/Body.jsx";
+import Footer from "../Footer/footer.jsx";
+import Header from "../Header/header.jsx";
+import "./App.css";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -14,11 +14,11 @@ const App = () => {
   return (
     <div className="h-screen xl:overflow-hidden">
       {/* {isAuthenticated ? ( */}
-        <>
-          <Header />
-          <Body />
-          <Footer />
-        </>
+      <>
+        <Header />
+        <Body />
+        <Footer />
+      </>
       {/* ) : (
         <LoginPage onLogin={handleLogin} />
       )} */}

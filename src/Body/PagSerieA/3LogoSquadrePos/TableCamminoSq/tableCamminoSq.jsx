@@ -99,7 +99,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
 
               return (
                 <tr key={index} className={`overflow-x-hidden xs:text-lg sm:text-md ${bgHoverClass} ${borderStyle}`}>
-                  <td className={` sm:w-[15%] xl:w-[15%] w-[10%] text-center font-bold ${ts.ColResLine} ${ts.ColResBg} text-xl`}>
+                  <td className={` sm:w-[12%] md:w-[20%] xl:w-[15%] w-[10%] text-center font-bold ${ts.ColResLine} ${ts.ColResBg} text-xl`}>
                     {isPronostico ? (
                       <div className="flex justify-center items-center">
                         <span className={`${s.pin} font-black justify-center items-center `}>*</span>
@@ -112,9 +112,9 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
                       </>
                     )}
                   </td>
-                  <td className={`sm:w-[10%] md:w-[20%] xl:w-[15%] w-[10%] text-center xs:text-xl sm:text-base font-bold ${casaClass} ${ts.TextCF}`}>{partita.casa}</td>
-                  <td className={`w-[7%] sm:w-[15%] xl:w-[15%] text-center xs:text-xl sm:text-base font-bold ${fuoriClass} ${ts.TextCF}`}>{partita.fuori}</td>
-                  <td className={`sm:w-[50%] text-xl pl-[10%] w-[10%] ${sqVsClass} `}>{isMobile == true ? sqVsFormatted.slice(0, 10) : sqVsFormatted}</td>
+                  <td className={`sm:w-[10%] md:w-[12%] xl:w-[15%] w-[7%] text-center xs:text-xl sm:text-base font-bold ${casaClass} ${ts.TextCF}`}>{partita.casa}</td>
+                  <td className={`sm:w-[10%] md:w-[12%] xl:w-[15%] w-[7%] text-center xs:text-xl sm:text-base font-bold ${fuoriClass} ${ts.TextCF}`}>{partita.fuori}</td>
+                  <td className={`sm:w-[45%] ml-[10%] text-xl pl-[10%] w-[10%] ${sqVsClass} `}>{isMobile == true ? sqVsFormatted.slice(0, 10) : sqVsFormatted}</td>
                 </tr>
               );
             })}

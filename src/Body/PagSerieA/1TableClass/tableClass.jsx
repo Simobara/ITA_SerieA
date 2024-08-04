@@ -67,6 +67,9 @@ const TableClass = () => {
 
   const getTeamName = (teamName) => getTeamNamee(teamName);
 
+  const half = Math.ceil(squadreOrdinate.length / 2);
+  const firstHalf = squadreOrdinate.slice(0, half);
+  const secondHalf = squadreOrdinate.slice(half);
   // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
   // --------------------------------------------------------------------------------------
   //Itera su tutte le squadre, calcolando e assegnando i punteggi iniziali basati sui risultati di ciascuna squadra.
@@ -168,8 +171,8 @@ const TableClass = () => {
             --
           </th>
           <th className=" w-[1rem] sm:pl-[1rem] md:pl-[0] lg:pl-[1rem] lg:pr-[1rem]">--- SQUADRA ---</th>
-          <th className=" w-[1rem] sm:pl-[1rem] md:pl-[2rem] lg:pl-[1rem] lg:pr-[1rem] ">?</th>
-          <th className=" w-[1rem] sm:pl-[1rem] md:pl-[0] md:text-center lg:pl-[0] text-right">PTS</th>
+          <th className=" w-[1rem] sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[1rem] lg:pr-[1rem] pl-[1rem]">?</th>
+          <th className=" w-[1rem] sm:pl-[1rem] md:pl-[0.5rem] md:text-center lg:pl-[0] pl-[0.5rem] text-right ">PTS</th>
           {/* <th className=" w-[2%]"> </th> */}
           {/* Altre colonne commentate */}
         </tr>
@@ -183,7 +186,7 @@ const TableClass = () => {
             </td>
             {/* { COLONNA SQUADRE} */}
             <td
-              className={`w-[100%] bg-black xs:pl-[0] sm:pl-[1rem] md:pl-[1.5rem] md:pr-[1rem] py-[8px]  md:py-2 md:text-md  lg:text-lg xl:px-4 flex justify-start relative sq-column
+              className={`w-[100%] bg-black xs:pl-[0] sm:pl-[1rem] md:pl-[1.5rem] md:pr-[2rem] py-[8px] md:py-2 sm:text-lg md:text-md lg:text-lg xl:px-4 flex justify-start relative sq-column
             ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ${s.BaseText1}` : ""}
             ${isTeamMarkedWithX(squadra.name) ? `${s.Filter4} underlineX ` : sqSelected.includes(squadra.name + "Z") ? `${s.Filter4} underlineW` : sqSelected.includes(squadra.name + "Y") ? `${s.Filter4} underlineL` : ""}
             ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineW ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}
@@ -207,16 +210,15 @@ const TableClass = () => {
             </td>
             {/* { COLONNA ?} */}
             <td
-              className={`sm:pl-[1rem] md:pl-[2rem] lg:pl-[0.5rem] xl:pl-0 text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
+              className={`sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 pl-[1rem] text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
                 ${indiciDiffQ.includes(index) ? "borderAlto border-white" : ""}`}
             >
               <div className="absolute transform -translate-x-4/3 -translate-y-7 text-left text-lg text-white mx-8 my-[-10] z-[10]">{numeriIndiciBorderWhite[index]}</div>
               {getPunteggioColonnaDomanda(squadra)}
             </td>
             {/* { COLONNA PTS} */}
-
             <td
-              className={`sm:pl-[1.5rem] sm:pr-[1rem] md:pl-[1rem] lg:pl-2 xl:mr-4 text-left font-bold bg-black md:text-md  lg:text-lg
+              className={`sm:pl-[1.5rem] md:pl-[1rem] lg:pl-2 pl-[1rem] xl:mr-4 text-left font-bold bg-black md:text-md  lg:text-lg
               ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ` : ""}
               ${indiciDiffPts.includes(index) ? "borderAlto border-gray-600/80 " : ""}
               ${getPunteggioColonnaDomanda(squadra) !== " " ? `  text-cyan-500/80` : "text-cyan-500/80"}
