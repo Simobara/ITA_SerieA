@@ -27,8 +27,20 @@ export const ts = {
   Bg0:              "bg-transparent",
   Bg9:              "bg-black",
 
-  TextCF:           "text-sky-500",
+  TextCF:           "text-sky-800",
+  //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
+  TabHoverHome:     "hover:bg-slate-900",
+  TabHoverAway:     "hover:bg-slate-700",
+
+  BgSquadraCasa:    "bg-slate-900",
+  BgSquadraFuori:   "bg-slate-700",
+
+  //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
+  TabHoverHome:     "hover:bg-slate-900",
+  TabHoverAway:     "hover:bg-slate-700",
+
   //--- --- --- --- --- --- --- --- --- --- --- --- ---
+
   ATeamBg:          "bg-sky-900 border-t-2 border-l-4 border-cyan-400 rounded-t-sm rounded-l-3xl rounded-tr-xl",
   ATeamText:        "text-black tracking-wider font-black",
 
@@ -42,9 +54,6 @@ export const ts = {
   ColResHome:       "!text-sky-800 font-semibold",
   ColResAway:       "text-gray-700 font-light",
 
-  TabHoverHome:     "hover:bg-green-300",
-  TabHoverAway:     "hover:bg-red-300",
-
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
   WinBg:            "bg-green-500 rounded-full",
   WinText:          "!text-green-500",
@@ -52,8 +61,8 @@ export const ts = {
   DrawBg:           "bg-[#054787] rounded-full",
   DrawText:         "!text-[#054787]",
 
-  LoseBg:           "bg-slate-800 rounded-full",
-  LoseText:         "!text-slate-800",
+  LoseBg:           "bg-[#1d1f2a] rounded-full",
+  LoseText:         "!text-[#1d1f2a]",
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
   HoverSqHome:      "bg-red-700",
   HoverSqAway:      "bg-sky-800",

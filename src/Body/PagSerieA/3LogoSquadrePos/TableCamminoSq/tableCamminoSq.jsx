@@ -15,7 +15,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
   const [selectedIndexGiornata, setSelectedIndexGiornata] = useState(null);
   const { giornataClouSelected, setGiornataClouSelected } = useContext(GiornataClouContext);
   const { indexSel, setIndexSel } = useContext(IndexSelectedContext);
-  const nomeSquadra = typeof squadra === "string" ? squadra : "DefinireSq";
+  const nomeSquadra = typeof squadra === "string" ? squadra : "???";
 
   const getTextTeam = (teamName) => getTextTeamm(teamName, isATeam, isBTeam);
   const getBgHoverClass = (partita) => getBgHoverClasss(partita);

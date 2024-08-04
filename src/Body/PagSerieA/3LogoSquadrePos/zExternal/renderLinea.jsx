@@ -1,5 +1,5 @@
 import { nomiSquadre } from "../../../../START/app/1main";
-
+import { ts } from "../../../../START/styles/0CssMainStyle";
 export const renderLineaa = (start, end, arraySquadre, squadraAttiva1, squadraAttiva2, handleLogoClick, logoRefs) => (
   <div
     style={{
@@ -21,13 +21,13 @@ export const renderLineaa = (start, end, arraySquadre, squadraAttiva1, squadraAt
       //   inlineStyle = { filter: "brightness(125%)" }; // Aumenta la luminosità del 25%
       //}
       if (isActive1) {
-        className = "px-2 cursor-pointer rounded-3xl grayscale-0 bg-sky-900 pt-1 sm:pt-2 z-3";
+        className = `px-2 cursor-pointer rounded-3xl grayscale-0 ${ts.BgSquadraCasa} pt-1 sm:pt-2 z-3`;
         inlineStyle = {
           filter: "brightness(100%)",
           //position: 'absolute', zIndex: '200',  transform: 'translateX(-300px)', transition: 'transform 1.0s ease-in-out'
         };
       } else if (isActive2) {
-        className = "px-2 cursor-pointer rounded-3xl grayscale-0 bg-sky-600 pt-1 sm:pt-2 z-1";
+        className = `px-2 cursor-pointer rounded-3xl grayscale-0 ${ts.BgSquadraFuori} pt-1 sm:pt-2 z-1`;
         inlineStyle = {
           filter: "brightness(100%)",
           //position: 'absolute', zIndex: '200', transform: 'translateX(-300px)', transition: 'transform 1.0s ease-in-out'

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { calendario1 } from "../../../START/app/0SerieAMatches";
 import { nomiSquadre, SqEndGruppo1, SqEndGruppo2 } from "../../../START/app/1main";
+import { ts } from "../../../START/styles/0CssMainStyle";
 import { CoppiaPartitaContext } from "../../Glob/global";
 import { creaRisSq } from "../1TableClass/zExternal/creaRisSq";
 import TableCamminoSq from "./TableCamminoSq/tableCamminoSq";
@@ -12,7 +13,7 @@ const LogoSquadrePos = () => {
   const { coppiaSelected } = useContext(CoppiaPartitaContext);
   const logoRefs = useRef({});
   const refContainer = useRef(null);
-  const arraySquadre = Object.values(nomiSquadre);                //mette nomi Squadre dentro un array
+  const arraySquadre = Object.values(nomiSquadre); //mette nomi Squadre dentro un array
   const datiSquadre = Object.keys(nomiSquadre).reduce((acc, key) => {
     const squadra = nomiSquadre[key];
     acc[squadra.name] = creaRisSq(calendario1, squadra.name);
@@ -66,12 +67,12 @@ const LogoSquadrePos = () => {
       </div>
       <div ref={refContainer} className="flex sticky mt-[1rem] mb-[0.5rem]">
         {squadraAttiva1 && (
-          <div className="bg-sky-900 text-black  w-[50%] max-w-[50%] overflow-x-hidden overflow-y-auto z-1">
+          <div className={`${ts.BgSquadraCasa} text-black  w-[50%] max-w-[50%] overflow-x-hidden overflow-y-auto z-1`}>
             <TableCamminoSq squadra={squadraAttiva1} datiSquadra={datiSquadre[squadraAttiva1]} />
           </div>
         )}
         {squadraAttiva2 && (
-          <div className="bg-sky-500/80 text-black  w-[50%] max-w-[50%] overflow-x-hidden overflow-y-auto z-1">
+          <div className={`${ts.BgSquadraFuori} text-black  w-[50%] max-w-[50%] overflow-x-hidden overflow-y-auto z-1`}>
             <TableCamminoSq squadra={squadraAttiva2} datiSquadra={datiSquadre[squadraAttiva2]} />
           </div>
         )}

@@ -2,15 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import { calendario1, giornataN } from "../../../START/app/0SerieAMatches";
 // import { nomiSquadre } from "../../../START/app/1main";
 import { ATeams, BTeams } from "../../../START/funct/FilterTeamByCat";
-import { s } from "../../../START/styles/0CssMainStyle";
+import { s, ts } from "../../../START/styles/0CssMainStyle";
 import serieAItalia from "../../../assts/ChartSerieAItalia/serieAItalia.png";
-import {
-  ButtonResetContext,
-  CompleteDataContext,
-  CoppiaPartitaContext,
-  GiornataClouContext,
-  IndexSelectedContext,
-} from "../../Glob/global";
+import { ButtonResetContext, CompleteDataContext, CoppiaPartitaContext, GiornataClouContext, IndexSelectedContext } from "../../Glob/global";
 import CalGiorn from "./CalGiorn/calGiorn";
 import Partite from "./Partite/partite";
 import "./tableProxInc.css";
@@ -29,14 +23,11 @@ import ValFuori from "./zExternal/valFuori";
 const TableProxInc = () => {
   const [resetAll, setResetAll] = useState([]);
   const { coppiaSelected } = useContext(CoppiaPartitaContext);
-  const { buttonResetIsResetting, setButtonResetIsResetting } =
-    useContext(ButtonResetContext);
-  const { completeClouSelected, setCompleteClouSelected } =
-    useContext(CompleteDataContext);
+  const { buttonResetIsResetting, setButtonResetIsResetting } = useContext(ButtonResetContext);
+  const { completeClouSelected, setCompleteClouSelected } = useContext(CompleteDataContext);
   const { indexSel, setIndexSel } = useContext(IndexSelectedContext);
 
-  const { giornataClouSelected, setGiornataClouSelected } =
-    useContext(GiornataClouContext);
+  const { giornataClouSelected, setGiornataClouSelected } = useContext(GiornataClouContext);
   const [squadreAttive, setSquadreAttive] = useState({ team1: "", team2: "" });
   const [occhioApertoPartita, setOcchioApertoPartita] = useState(null);
   // const [isModalInserOpen, setIsModalInserOpen] = useState(false);
@@ -71,9 +62,7 @@ const TableProxInc = () => {
   const handleReset = () => {
     setCompleteClouSelected(JSON.parse(JSON.stringify(calendario1)));
     setResetAll([]);
-    setGiornataClouSelected(
-      JSON.parse(JSON.stringify(calendario1))[`giornata${giornataN}`]
-    );
+    setGiornataClouSelected(JSON.parse(JSON.stringify(calendario1))[`giornata${giornataN}`]);
     setIndexSel(giornataN);
     setTimeout(() => {
       setButtonResetIsResetting(false);
@@ -92,29 +81,19 @@ const TableProxInc = () => {
         <div className="unselectable flex justify-center h-[26.8rem] overflow-x-hidden hide-scrollbar">
           {/* {nel caso qui metti overflow scroll} */}
           <div className="relative h-[42rem] w-[100rem] ml-[-2rem] mr-[0rem]">
-            <img
-              src={serieAItalia}
-              alt="serieAItalia"
-              className="unselectable relative h-[110%] w-[100%] mt-[-4rem] filter brightness-35"
-            />
+            <img src={serieAItalia} alt="serieAItalia" className="unselectable relative h-[110%] w-[100%] mt-[-4rem] filter brightness-35" />
             {coppiaSelected && renderSquadre()}
             {buttonResetIsResetting && (
-              <button
-                className="absolute top-[18%] left-[45%] p-1 font-bold bg-transparent rounded-full hover:bg-red-900 z-10"
-                onClick={() => handleReset()}
-              >
+              <button className="absolute top-[18%] left-[45%] p-1 font-bold bg-transparent rounded-full hover:bg-red-900 z-10" onClick={() => handleReset()}>
                 📍
                 {/* 👁️ */}
               </button>
             )}
 
-            <div
-              className="absolute top-[-1%] left-[58.5%] w-[310px] h-[223px] bg-black flex flex-col items-start justify-start text-white text-lg border border-gray-700 border-3 px-1 overflow-hidden z-10"
-              style={{ borderRadius: "5%" }}
-            >
+            <div className="absolute top-[-1%] left-[58.5%] w-[310px] h-[223px] bg-black flex flex-col items-start justify-start text-white text-lg border border-gray-700 border-3 px-1 overflow-hidden z-10" style={{ borderRadius: "5%" }}>
               <div className="flex-1 flex items-start">
                 <span
-                  className={`${getTextTeam(coppiaSelected.team1)} bg-sky-800 !z-20`}
+                  className={`${getTextTeam(coppiaSelected.team1)} ${ts.BgSquadraCasa} !z-20`}
                   // ${isATeam(coppiaSelected.team1) ? "bg-sky-700/80" : isBTeam(coppiaSelected.team1) ? "bg-gray-600/80" : "bg-sky-500/60"}`
                 >
                   {coppiaSelected.team1}
@@ -123,7 +102,7 @@ const TableProxInc = () => {
               {occhioApertoPartita && <ValCasa />}
               <div className="flex-1 flex items-start mt-1 ">
                 <span
-                  className={`${getTextTeam(coppiaSelected.team2)} bg-sky-500 !z-10`}
+                  className={`${getTextTeam(coppiaSelected.team2)} ${ts.BgSquadraFuori} !z-10`}
                   //  ${isATeam(coppiaSelected.team2) ? "bg-sky-500" : isBTeam(coppiaSelected.team2) ? "bg-sky-500" : "bg-sky-500"}`
                 >
                   {coppiaSelected.team2}
@@ -141,11 +120,7 @@ const TableProxInc = () => {
             > 📝 </button> */}
         <div className="sticky flex flex-col overflow-x-hidden overflow-y-auto bg-black z-[4] min-h-[30rem]">
           <CalGiorn onReset={resetAll} />
-          <Partite
-            resetAll={resetAll}
-            occhioApertoPartita={occhioApertoPartita}
-            setOcchioApertoPartita={setOcchioApertoPartita}
-          />
+          <Partite resetAll={resetAll} occhioApertoPartita={occhioApertoPartita} setOcchioApertoPartita={setOcchioApertoPartita} />
         </div>
         {/* </div> */}
       </div>

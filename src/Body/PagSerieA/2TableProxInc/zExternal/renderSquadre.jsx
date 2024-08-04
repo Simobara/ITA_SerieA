@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { nomiSquadre } from "../../../../START/app/1main";
 import { ATeams, BTeams } from "../../../../START/funct/FilterTeamByCat";
-import { s } from "../../../../START/styles/0CssMainStyle";
+import { s, ts } from "../../../../START/styles/0CssMainStyle";
 import { CoppiaPartitaContext } from "../../../Glob/global";
 
 export const renderSquadre = () => {
@@ -34,21 +34,10 @@ export const renderSquadre = () => {
   };
 
   return squadreArray.map((squadra) => {
-    const isCoppiaSelectedTeam =
-      coppiaSelected &&
-      (coppiaSelected.team1 === squadra.name ||
-        coppiaSelected.team2 === squadra.name); // Verifica se la squadra corrente è team1 o team2
-    const team1Info =
-      coppiaSelected &&
-      squadreArray.find((s) => s.name === coppiaSelected.team1); // Trova le informazioni di team1 e team2 da nomiSquadre
-    const team2Info =
-      coppiaSelected &&
-      squadreArray.find((s) => s.name === coppiaSelected.team2);
-    const isSamePosition =
-      team1Info &&
-      team2Info &&
-      team1Info.style.top === team2Info.style.top &&
-      team1Info.style.left === team2Info.style.left; // Verifica se team1 e team2 hanno gli stessi valori di top e left
+    const isCoppiaSelectedTeam = coppiaSelected && (coppiaSelected.team1 === squadra.name || coppiaSelected.team2 === squadra.name); // Verifica se la squadra corrente è team1 o team2
+    const team1Info = coppiaSelected && squadreArray.find((s) => s.name === coppiaSelected.team1); // Trova le informazioni di team1 e team2 da nomiSquadre
+    const team2Info = coppiaSelected && squadreArray.find((s) => s.name === coppiaSelected.team2);
+    const isSamePosition = team1Info && team2Info && team1Info.style.top === team2Info.style.top && team1Info.style.left === team2Info.style.left; // Verifica se team1 e team2 hanno gli stessi valori di top e left
 
     if (isCoppiaSelectedTeam) {
       if (isSamePosition) {
@@ -86,27 +75,14 @@ export const renderSquadre = () => {
           height: "25px",
           zIndex: 2,
         };
-        const teamColorClass =
-          coppiaSelected.team1 === squadra.name
-            ? "bg-sky-900 z-20"
-            : "bg-sky-500 z-5";
+        const teamColorClass = coppiaSelected.team1 === squadra.name ? `${ts.BgSquadraCasa} z-20` : `${ts.BgSquadraFuori} z-5`;
         // const textStyleClass = 'text-black font-medium text-xl';
-        const teamName =
-          coppiaSelected.team1 === squadra.name
-            ? coppiaSelected.team1
-            : coppiaSelected.team2;
+        const teamName = coppiaSelected.team1 === squadra.name ? coppiaSelected.team1 : coppiaSelected.team2;
         const teamClass = getTextTeam(teamName);
 
         return (
-          <div
-            key={squadra.name}
-            id={squadra.name}
-            className={`absolute ${teamColorClass} scale-150 rounded-full flex items-center justify-center`}
-            style={customStyle}
-          >
-            <span className={`${teamClass} overflow-hidden`}>
-              {teamName.slice(0, 3)}
-            </span>
+          <div key={squadra.name} id={squadra.name} className={`absolute ${teamColorClass} scale-150 rounded-full flex items-center justify-center`} style={customStyle}>
+            <span className={`${teamClass} overflow-hidden`}>{teamName.slice(0, 3)}</span>
           </div>
         );
       }
@@ -120,12 +96,7 @@ export const renderSquadre = () => {
         top: squadra.style.top,
         left: squadra.style.left,
       };
-      return (
-        <div
-          key={`${squadra.name}-${squadra.style.top}-${squadra.style.left}`}
-          style={defaultStyle}
-        ></div>
-      );
+      return <div key={`${squadra.name}-${squadra.style.top}-${squadra.style.left}`} style={defaultStyle}></div>;
     }
   });
 };
