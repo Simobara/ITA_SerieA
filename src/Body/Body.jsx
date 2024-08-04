@@ -1,11 +1,11 @@
 import PagSerieA from "./PagSerieA/pagSerieA";
-import { CompleteDataProvider, SquadraProvider } from "./Glob/global";
-import { GiornataClouProvider } from "./Glob/global";
-import { CoppiaPartitaProvider } from "./Glob/global";
-import { CoppiaPartitaRegistrataProvider } from "./Glob/global";
-import { PartiteDefinNoModProvider } from "./Glob/global";
-import { ButtonResetProvider } from "./Glob/global";
-import { IndexSelectedProvider } from "./Glob/global";
+import { CompleteDataProvider, SquadraProvider } from "./Global/global";
+import { GiornataClouProvider } from "./Global/global";
+import { CoppiaPartitaProvider } from "./Global/global";
+import { CoppiaPartitaRegistrataProvider } from "./Global/global";
+import { PartiteDefinNoModProvider } from "./Global/global";
+import { ButtonResetProvider } from "./Global/global";
+import { IndexSelectedProvider } from "./Global/global";
 
 const Body = () => {
   return (

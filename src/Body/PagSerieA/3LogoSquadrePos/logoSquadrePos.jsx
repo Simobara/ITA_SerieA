@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { calendario1 } from "../../../START/app/0SerieAMatches";
 import { nomiSquadre, SqEndGruppo1, SqEndGruppo2 } from "../../../START/app/1main";
 import { ts } from "../../../START/styles/0CssMainStyle";
-import { CoppiaPartitaContext } from "../../Glob/global";
+import { CoppiaPartitaContext } from "../../Global/global";
 import { creaRisSq } from "../1TableClass/zExternal/creaRisSq";
 import TableCamminoSq from "./TableCamminoSq/tableCamminoSq";
 import { renderLineaa } from "./zExternal/renderLinea";

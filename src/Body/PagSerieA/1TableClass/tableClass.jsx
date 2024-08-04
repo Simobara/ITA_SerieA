@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { giornataN } from "../../../START/app/0SerieAMatches";
 import { nomiSquadre } from "../../../START/app/1main";
 import { s } from "../../../START/styles/0CssMainStyle";
-import { CompleteDataContext, CoppiaPartitaContext, CoppiaPartitaRegistrataContext, GiornataClouContext, IndexSelectedContext, SquadraContext } from "../../Glob/global";
+import { CompleteDataContext, CoppiaPartitaContext, CoppiaPartitaRegistrataContext, GiornataClouContext, IndexSelectedContext, SquadraContext } from "../../Global/global";
 import "./tableClass.css";
 import aggPunteggioSqRegg from "./zExternal/addPunteggioSqReg";
 import aggiungiPuntii from "./zExternal/addPunti";
@@ -69,6 +69,8 @@ const TableClass = () => {
 
   // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
   // --------------------------------------------------------------------------------------
+  //Itera su tutte le squadre, calcolando e assegnando i punteggi iniziali basati sui risultati di ciascuna squadra.
+  //Forza un aggiornamento dello stato dei punteggi per riflettere le nuove assegnazioni nel rendering del componente.
   useEffect(() => {
     Object.keys(nomiSquadre).forEach((key) => {
       const squadra = nomiSquadre[key];
@@ -88,6 +90,7 @@ const TableClass = () => {
     setPunteggiAggiornati((prevPunteggi) => [...prevPunteggi]); // Assicurati che questa logica abbia senso nel tuo contesto
   }, [indexSel, completeClouSelected]);
 
+  //Calcola gli indici delle squadre che hanno una differenza di punteggio significativa (>= 3) con la squadra precedente nella lista ordinata.
   useEffect(() => {
     let nuoviIndici = [];
     let numeriCorrispondenti = {};
@@ -106,6 +109,7 @@ const TableClass = () => {
     setNumeriIndiciBorderWhite(numeriCorrispondenti);
   }, [squadreOrdinate, coppiaRegSelected, completeClouSelected]);
 
+  //Calcola le differenze di punteggio significative (>= 3) tra squadre adiacenti nella lista di punteggi aggiornati ordinati.
   useEffect(() => {
     let nuoviIndici = [];
     let nuoveDifferenze = {};
@@ -123,7 +127,7 @@ const TableClass = () => {
     setIndiciDiffPts(nuoviIndici);
     setDifferenzePunti(nuoveDifferenze);
   }, [punteggiAggiornati, completeClouSelected]);
-
+  //Chiama una funzione per aggiornare i punteggi delle squadre basate sulle coppie selezionate (coppiaRegSelected).
   useEffect(() => {
     if (coppiaRegSelected) {
       // console.log("COMP TABLECLASS/coppiaRegSelected", coppiaRegSelected)
@@ -131,6 +135,8 @@ const TableClass = () => {
     aggPunteggioSqReg();
   }, [coppiaRegSelected, completeClouSelected]);
 
+  //Aggiorna lo stato punteggiAggiornati con questi nuovi punteggi.
+  //Calcola le differenze di punteggio significative (>= 3) tra squadre adiacenti nella lista di nuovi punteggi.
   useEffect(() => {
     // console.log(squadreOrdinate, "squadreOrdinate");
     // Calcola i nuovi punteggi basandoti su getPunteggioColonnaPTS
@@ -220,7 +226,9 @@ const TableClass = () => {
 							`}
             >
               <div className="innerBorder"></div>
-              <div className={`absolute transform -translate-x-4/3 -translate-y-8 text-center text-md text-gray-600/80 mx-8 my-[-10] z-30`}>{!numeriIndiciBorderWhite[index] && differenzePunti[index]}</div>
+              <div className={`absolute transform -translate-x-4/3 -translate-y-8 text-center text-md text-gray-600/80 mx-8 my-[-10] z-30`}>
+                {!numeriIndiciBorderWhite[index] && differenzePunti[index]}
+              </div>
               {getPunteggioColonnaPTS(squadra)}
             </td>
           </tr>

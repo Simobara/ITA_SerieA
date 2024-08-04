@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback } from "react";
 
 /**
  * Hook per verificare se una squadra è inclusa nella coppia registrata per la giornata selezionata.
@@ -10,11 +10,9 @@ import { useCallback } from 'react';
 const useGetIsTeamInCoppiaRegSelected = (completeClouSelected, indexSel, giornataN) => {
   return useCallback(
     (teamName) => {
-      return completeClouSelected[`giornata${indexSel ? indexSel : giornataN}`]?.find(
-        (match) => match.team1 === teamName || match.team2 === teamName
-      );
+      return completeClouSelected[`giornata${indexSel ? indexSel : giornataN}`]?.find((match) => match.team1 === teamName || match.team2 === teamName);
     },
-    [completeClouSelected, indexSel, giornataN]
+    [completeClouSelected, indexSel, giornataN],
   );
 };
 

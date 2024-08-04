@@ -19,7 +19,9 @@ export const s = {
 
   BorderPartite:        "border-pink-900",
   BrightnessDopoScelta: "brightness-60",
-  BorderLineNextMatch:  "border-b-4 border-pink-900"
+  BorderLineNextMatch:  "border-b-4 border-pink-900",
+
+  pin: "text-yellow-500 text-sm "
 };
 
 //sezione classifica - sezione3
@@ -34,10 +36,6 @@ export const ts = {
 
   BgSquadraCasa:    "bg-slate-900",
   BgSquadraFuori:   "bg-slate-700",
-
-  //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
-  TabHoverHome:     "hover:bg-slate-900",
-  TabHoverAway:     "hover:bg-slate-700",
 
   //--- --- --- --- --- --- --- --- --- --- --- --- ---
 

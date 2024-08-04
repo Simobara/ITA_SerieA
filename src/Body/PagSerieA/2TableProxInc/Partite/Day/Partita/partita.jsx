@@ -2,7 +2,16 @@ import { useContext, useEffect, useState } from "react";
 // import { useDrag, useDrop } from "react-dnd";
 import { giornataN } from "../../../../../../START/app/0SerieAMatches";
 import { ts } from "../../../../../../START/styles/0CssMainStyle";
-import { ButtonResetContext, CompleteDataContext, CoppiaPartitaContext, CoppiaPartitaRegistrataContext, GiornataClouContext, IndexSelectedContext, PartiteDefinNoModContext, SquadraContext } from "../../../../../Glob/global";
+import {
+  ButtonResetContext,
+  CompleteDataContext,
+  CoppiaPartitaContext,
+  CoppiaPartitaRegistrataContext,
+  GiornataClouContext,
+  IndexSelectedContext,
+  PartiteDefinNoModContext,
+  SquadraContext,
+} from "../../../../../Global/global";
 import "./partita.css";
 import handleCoppiaSelectTeamm from "./zExternal/handleCoppiaSelectTeam";
 import handleResetColorss from "./zExternal/handleResetColors";
@@ -38,10 +47,45 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
   const toggleSymbol = () => toggleSymboll(partita, isPartitaModificabile, setButtonResetIsResetting, setIsKQBtnActive, setIsSignOk);
   const toggleEye = () => toggleEyee(partita, occhioApertoPartita, setOcchioApertoPartita, setButtonResetIsResetting, handleCoppiaSelectTeam);
   const isEyeOpen = occhioApertoPartita === partita.numero;
-  const handleSelection = (selectedTeam, selectionType, numeroPartita) => handleSelectionn(selectedTeam, selectionType, numeroPartita, partita, setButtonResetIsResetting, setSelection, setIsButtonClickable, setSqSelected, setCompleteClouSelected, completeClouSelected, indexSel, giornataN, isKQBtnActive);
+  const handleSelection = (selectedTeam, selectionType, numeroPartita) =>
+    handleSelectionn(
+      selectedTeam,
+      selectionType,
+      numeroPartita,
+      partita,
+      setButtonResetIsResetting,
+      setSelection,
+      setIsButtonClickable,
+      setSqSelected,
+      setCompleteClouSelected,
+      completeClouSelected,
+      indexSel,
+      giornataN,
+      isKQBtnActive,
+    );
   const underlineTeam = (team) => underlineTeamm(team, selection);
   const handleCoppiaSelectTeam = (partita) => handleCoppiaSelectTeamm(partita, coppiaSelected, setCoppiaSelected);
-  const handleResetColors = (t1, t2) => handleResetColorss(t1, t2, partita, selection, setSelection, setButtonResetIsResetting, setIsKQBtnActive, setIsSignOk, setIsButtonClickable, occhioApertoPartita, setOcchioApertoPartita, handleCoppiaSelectTeam, sqSelected, setSqSelected, completeClouSelected, setCompleteClouSelected, indexSel, giornataN);
+  const handleResetColors = (t1, t2) =>
+    handleResetColorss(
+      t1,
+      t2,
+      partita,
+      selection,
+      setSelection,
+      setButtonResetIsResetting,
+      setIsKQBtnActive,
+      setIsSignOk,
+      setIsButtonClickable,
+      occhioApertoPartita,
+      setOcchioApertoPartita,
+      handleCoppiaSelectTeam,
+      sqSelected,
+      setSqSelected,
+      completeClouSelected,
+      setCompleteClouSelected,
+      indexSel,
+      giornataN,
+    );
   const isBigTeam = (teamName) => isBigTeamm(teamName);
   // ------------------------------------------------------------------------------------------------
   // console.log(sqSelected, "sqSelected");
@@ -101,7 +145,9 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                 console.error("currentSelected is not an array:", currentSelected);
                 return [];
               }
-              return currentSelected.filter((squadra) => squadra !== partita.team1 && squadra !== partita.team2 && !squadra.includes(partita.team1) && !squadra.includes(partita.team2));
+              return currentSelected.filter(
+                (squadra) => squadra !== partita.team1 && squadra !== partita.team2 && !squadra.includes(partita.team1) && !squadra.includes(partita.team2),
+              );
             });
             setCoppiaSelected((currentSelected) => {
               if (!Array.isArray(currentSelected)) {
@@ -238,7 +284,9 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
             >
               {/* Contenuto del div */}
             </div>
-            <div className={`absolute flex flex-row sm:ml-[5rem] md:ml-[55%] ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}>
+            <div
+              className={`absolute flex flex-row sm:ml-[5rem] md:ml-[55%] ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
+            >
               <div
                 className={`max-w-[9rem] whitespace-nowrap overflow-hidden ml-[1rem] 
                                 ${getTextTeam(partita.team2)} 
@@ -258,7 +306,11 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                         {isActive ? '❗' : '❔'}
                     </div>
                 </div> */}
-        <button className="bg-black text-gray-800 hover:bg-sky-600  mr-[0] sm:mr-[1rem] md:mr-[2rem] lg:mr-[0] xl:mr-[0] font-bold z-[10] hover:cursor-pointer select-none" onClick={() => toggleEye()} data-partita-numero={partita.numero}>
+        <button
+          className="bg-black text-gray-800 hover:bg-sky-600  mr-[0] sm:mr-[1rem] md:mr-[2rem] lg:mr-[0] xl:mr-[0] font-bold z-[10] hover:cursor-pointer select-none"
+          onClick={() => toggleEye()}
+          data-partita-numero={partita.numero}
+        >
           {/* 🗨️ ‍‍*/}
           {isEyeOpen ? "👁️" : "..."}
           {/* // */}

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { nomiSquadre } from "../../../../START/app/1main";
 import { ATeams, BTeams } from "../../../../START/funct/FilterTeamByCat";
 import { s, ts } from "../../../../START/styles/0CssMainStyle";
-import { CoppiaPartitaContext } from "../../../Glob/global";
+import { CoppiaPartitaContext } from "../../../Global/global";
 
 export const renderSquadre = () => {
   const squadreArray = Object.values(nomiSquadre);

@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { calendario1, giornataN } from "../../../START/app/0SerieAMatches";
 // import { nomiSquadre } from "../../../START/app/1main";
-import { ATeams, BTeams } from "../../../START/funct/FilterTeamByCat";
-import { s, ts } from "../../../START/styles/0CssMainStyle";
+import { ts } from "../../../START/styles/0CssMainStyle";
 import serieAItalia from "../../../assts/ChartSerieAItalia/serieAItalia.png";
-import { ButtonResetContext, CompleteDataContext, CoppiaPartitaContext, GiornataClouContext, IndexSelectedContext } from "../../Glob/global";
+import { ButtonResetContext, CompleteDataContext, CoppiaPartitaContext, GiornataClouContext, IndexSelectedContext } from "../../Global/global";
 import CalGiorn from "./CalGiorn/calGiorn";
 import Partite from "./Partite/partite";
 import "./tableProxInc.css";
+import { getTextTeam } from "./zExternal/isQTeam";
 import { renderSquadre } from "./zExternal/renderSquadre";
 import ValCasa from "./zExternal/valCasa";
 import ValFuori from "./zExternal/valFuori";
@@ -34,31 +34,6 @@ const TableProxInc = () => {
   // const { giornataClouSelected, setGiornataClouSelected } = useContext(GiornataClouContext);
   // const { partiteDefinNoMod, setPartiteDefinNoMod } = useContext(PartiteDefinNoModContext);
 
-  const isATeam = (teamName) => {
-    if (typeof teamName === "string") {
-      return ATeams.includes(teamName.toUpperCase());
-    }
-    return false;
-  };
-
-  const isBTeam = (teamName) => {
-    if (typeof teamName === "string") {
-      return BTeams.includes(teamName.toUpperCase());
-    }
-    return false;
-  };
-
-  const getTextTeam = (teamName) => {
-    // console.log('teamName:', teamName); // Aggiungi per vedere cosa ricevi effettivamente come input
-    if (isATeam(teamName)) {
-      return `text-black font-extrabold ${s.ImgTextInRoundMd} `;
-    } else if (isBTeam(teamName)) {
-      return ` text-gray-500  font-light ${s.ImgTextInRoundMd} `;
-    } else {
-      return "text-sky-600 font-bold";
-    }
-  };
-
   const handleReset = () => {
     setCompleteClouSelected(JSON.parse(JSON.stringify(calendario1)));
     setResetAll([]);
@@ -68,18 +43,17 @@ const TableProxInc = () => {
       setButtonResetIsResetting(false);
     }, 300);
   };
-
+  // --------------------------------------------------------------------------------------
   useEffect(() => {
     if (!buttonResetIsResetting) {
       setButtonResetIsResetting(false);
     }
   }, []);
-
+  // --------------------------------------------------------------------------------------
   return (
     <>
       <div className="relative">
         <div className="unselectable flex justify-center h-[26.8rem] overflow-x-hidden hide-scrollbar">
-          {/* {nel caso qui metti overflow scroll} */}
           <div className="relative h-[42rem] w-[100rem] ml-[-2rem] mr-[0rem]">
             <img src={serieAItalia} alt="serieAItalia" className="unselectable relative h-[110%] w-[100%] mt-[-4rem] filter brightness-35" />
             {coppiaSelected && renderSquadre()}
@@ -90,23 +64,16 @@ const TableProxInc = () => {
               </button>
             )}
 
-            <div className="absolute top-[-1%] left-[58.5%] w-[310px] h-[223px] bg-black flex flex-col items-start justify-start text-white text-lg border border-gray-700 border-3 px-1 overflow-hidden z-10" style={{ borderRadius: "5%" }}>
+            <div
+              className="absolute top-[-1%] left-[58.5%] w-[310px] h-[223px] bg-black flex flex-col items-start justify-start text-white text-lg border border-gray-700 border-3 px-1 overflow-hidden z-10"
+              style={{ borderRadius: "5%" }}
+            >
               <div className="flex-1 flex items-start">
-                <span
-                  className={`${getTextTeam(coppiaSelected.team1)} ${ts.BgSquadraCasa} !z-20`}
-                  // ${isATeam(coppiaSelected.team1) ? "bg-sky-700/80" : isBTeam(coppiaSelected.team1) ? "bg-gray-600/80" : "bg-sky-500/60"}`
-                >
-                  {coppiaSelected.team1}
-                </span>
+                <span className={`${getTextTeam(coppiaSelected.team1)} ${ts.BgSquadraCasa} !z-20`}>{coppiaSelected.team1}</span>
               </div>
               {occhioApertoPartita && <ValCasa />}
               <div className="flex-1 flex items-start mt-1 ">
-                <span
-                  className={`${getTextTeam(coppiaSelected.team2)} ${ts.BgSquadraFuori} !z-10`}
-                  //  ${isATeam(coppiaSelected.team2) ? "bg-sky-500" : isBTeam(coppiaSelected.team2) ? "bg-sky-500" : "bg-sky-500"}`
-                >
-                  {coppiaSelected.team2}
-                </span>
+                <span className={`${getTextTeam(coppiaSelected.team2)} ${ts.BgSquadraFuori} !z-10`}>{coppiaSelected.team2}</span>
               </div>
               {occhioApertoPartita && <ValFuori />}
             </div>

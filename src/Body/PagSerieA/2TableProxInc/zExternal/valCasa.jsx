@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ATeams, BTeams } from "../../../../START/funct/FilterTeamByCat";
 
-import { CoppiaPartitaContext } from "../../../Glob/global";
+import { CoppiaPartitaContext } from "../../../Global/global";
 
 const ValCasa = () => {
   const { coppiaSelected } = useContext(CoppiaPartitaContext);

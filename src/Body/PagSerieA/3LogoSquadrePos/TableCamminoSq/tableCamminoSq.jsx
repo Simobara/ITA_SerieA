@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { calendario, giornataN } from "../../../../START/app/0SerieAMatches";
 import { s, ts } from "../../../../START/styles/0CssMainStyle";
-import { IndexSelectedContext } from "../../../Glob/global";
-import { GiornataClouContext } from "../../../Glob/global/";
+import { IndexSelectedContext } from "../../../Global/global";
+import { GiornataClouContext } from "../../../Global/global/";
 import "./tableCamminoSq.css";
 import { getBgHoverClasss } from "./zExternal/getBgHoverClass";
-import { getClassForCasaa } from "./zExternal/getClassForCasa";
-import { getClassForFuorii } from "./zExternal/getClassForFuori";
+import { getSignForCasaa } from "./zExternal/getSignForCasa";
+import { getSignForFuorii } from "./zExternal/getSignForFuori";
 import { getTextTeamm } from "./zExternal/getTextTeam";
 import { isATeam, isBTeam } from "./zExternal/isQTeam";
 
@@ -19,8 +19,8 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
 
   const getTextTeam = (teamName) => getTextTeamm(teamName, isATeam, isBTeam);
   const getBgHoverClass = (partita) => getBgHoverClasss(partita);
-  const getClassForCasa = (casa) => getClassForCasaa(casa);
-  const getClassForFuori = (fuori) => getClassForFuorii(fuori);
+  const getSignForCasa = (casa) => getSignForCasaa(casa);
+  const getSignForFuori = (fuori) => getSignForFuorii(fuori);
 
   // ------------------------------------------------------------------------------------------------
   useEffect(() => {
@@ -45,7 +45,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
       }
       // console.log(giornataClouSelected);
     }
-  }, [giornataClouSelected]); // la dipendenza è necessaria per ricaricare l'effetto quando giornataClouSelected cambia
+  }, [giornataClouSelected]);
   // ------------------------------------------------------------------------------------------------
 
   return (
@@ -66,15 +66,18 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
         <table className=" border-2 border-t-0 border-r-0 border-gray-800 filter brightness-[%] overflow-y-auto w-[100%] table-auto bg-black">
           <tbody>
             {datiSquadra.map((partita, index) => {
-              const casaClass = getClassForCasa(partita.casa);
-              const fuoriClass = getClassForFuori(partita.fuori);
+              const casaClass = getSignForCasa(partita.casa);
+              const fuoriClass = getSignForFuori(partita.fuori);
               const risultatoPulito = partita.risultato // Dividere il risultato in due parti
                 .trim()
                 .replace(/\s*-\s*/, "-");
               const risultatoParts = risultatoPulito.split("-");
               const risultatoParte1 = risultatoParts[0]; // Prima parte del risultato
               const risultatoParte2 = risultatoParts[1]; // Seconda parte del risultato
-              const isPronostico = (risultatoParte1 === "9" && risultatoParte2 === "8") || (risultatoParte1 === "8" && risultatoParte2 === "9") || (risultatoParte1 === "9" && risultatoParte2 === "9");
+              const isPronostico =
+                (risultatoParte1 === "9" && risultatoParte2 === "8") ||
+                (risultatoParte1 === "8" && risultatoParte2 === "9") ||
+                (risultatoParte1 === "9" && risultatoParte2 === "9");
 
               let borderStyle = "";
               if (index === selectedIndexGiornata) {
@@ -83,7 +86,13 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
               const formattedSqVs = partita.sqVs.toLowerCase();
               const sqVsFormatted = formattedSqVs.charAt(0).toUpperCase() + formattedSqVs.slice(1);
 
-              const sqVsClass = isATeam(partita.sqVs) ? `font-black py-[-4] ml-[-4] ${ts.ATeamBg} ${ts.ATeamText} !border-l-0 ` : isBTeam(partita.sqVs) ? `font-light ${ts.BTeamText}` : partita.sqVs === "--- --- --- --- --- ---" ? "font-black text-black" : `${ts.ABTeamText} font-bold `;
+              const sqVsClass = isATeam(partita.sqVs)
+                ? `font-black py-[-4] ml-[-4] ${ts.ATeamBg} ${ts.ATeamText} !border-l-0 `
+                : isBTeam(partita.sqVs)
+                  ? `font-light ${ts.BTeamText}`
+                  : partita.sqVs === "--- --- --- --- --- ---"
+                    ? "font-black text-black"
+                    : `${ts.ABTeamText} font-bold `;
               const bgHoverClass = getBgHoverClass(partita);
 
               return (
@@ -91,7 +100,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
                   <td className={` sm:w-[15%] xl:w-[15%] w-[10%] text-center font-bold ${ts.ColResLine} ${ts.ColResBg} text-xl`}>
                     {isPronostico ? (
                       <div className="flex justify-center items-center">
-                        <span className="text-yellow-400 text-xl font-black justify-center items-center ">*</span>
+                        <span className={`${s.pin} font-black justify-center items-center `}>*</span>
                       </div>
                     ) : (
                       <>

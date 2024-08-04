@@ -1,12 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { giornataClou, giornataN } from "../../../../START/app/0SerieAMatches";
-import {
-  ButtonResetContext,
-  CompleteDataContext,
-  IndexSelectedContext,
-  PartiteDefinNoModContext,
-} from "../../../Glob/global";
-import { GiornataClouContext } from "../../../Glob/global/";
+import { ButtonResetContext, CompleteDataContext, GiornataClouContext, IndexSelectedContext, PartiteDefinNoModContext } from "../../../Global/global";
 import "./calGiorn.css";
 
 const CalGiorn = ({ onReset }) => {
@@ -15,27 +9,24 @@ const CalGiorn = ({ onReset }) => {
   const { indexSel, setIndexSel } = useContext(IndexSelectedContext);
   const [indexSelected, setIndexSelected] = useState(null);
   const [matches, setMatches] = useState([]);
-  const { giornataClouSelected, setGiornataClouSelected } =
-    useContext(GiornataClouContext);
-  const { partiteDefinNoMod, setPartiteDefinNoMod } = useContext(
-    PartiteDefinNoModContext
-  );
-  const { completeClouSelected, setCompleteClouSelected } =
-    useContext(CompleteDataContext);
-  const { buttonResetIsResetting, setButtonResetIsResetting } =
-    useContext(ButtonResetContext);
+  const { giornataClouSelected, setGiornataClouSelected } = useContext(GiornataClouContext);
+  const { partiteDefinNoMod, setPartiteDefinNoMod } = useContext(PartiteDefinNoModContext);
+  const { completeClouSelected, setCompleteClouSelected } = useContext(CompleteDataContext);
+  const { buttonResetIsResetting, setButtonResetIsResetting } = useContext(ButtonResetContext);
+
+  const totaleGiornate = 38;
 
   //Crea un ref per ciascuna casella
   const boxRefs = useRef([]);
-  if (boxRefs.current.length !== 38) {
+  if (boxRefs.current.length !== totaleGiornate) {
     // Inizializza l'array di refs con 38 elementi (numero delle caselle)
-    boxRefs.current = Array(38)
+    boxRefs.current = Array(totaleGiornate)
       .fill()
       .map((_, i) => boxRefs.current[i] || React.createRef());
   }
 
   const handleSelectNumber = (number) => {
-    if (number >= 1 && number <= 38) {
+    if (number >= 1 && number <= totaleGiornate) {
       // Seleziona la nuova giornata e controlla se è diversa dalla corrente
       if (number !== indexSelected) {
         setButtonResetIsResetting(true);
@@ -53,7 +44,7 @@ const CalGiorn = ({ onReset }) => {
     let newSelected = indexSelected;
     if (direction === "left" && indexSelected > 1) {
       newSelected = indexSelected - 3;
-    } else if (direction === "right" && indexSelected < 38) {
+    } else if (direction === "right" && indexSelected < totaleGiornate) {
       newSelected = indexSelected + 3;
     }
     handleSelectNumber(newSelected);
@@ -74,8 +65,8 @@ const CalGiorn = ({ onReset }) => {
       end = end + (1 - start);
       start = 1;
     } else if (end > 38) {
-      start = start - (end - 38);
-      end = 38;
+      start = start - (end - totaleGiornate);
+      end = totaleGiornate;
     }
     return Array.from({ length: end - start + 1 }, (_, i) => start + i);
   };
@@ -84,10 +75,7 @@ const CalGiorn = ({ onReset }) => {
   //QUESTO USE EFFECT TROVA LA CASELLA DELLA GIORNATA CLOU INIZIALMENTE
   useEffect(() => {
     setButtonResetIsResetting(false);
-    const giornataClouIndex =
-      Object.keys(completeClouSelected).findIndex(
-        (giornata) => completeClouSelected[giornata] === giornataClou
-      ) + 1;
+    const giornataClouIndex = Object.keys(completeClouSelected).findIndex((giornata) => completeClouSelected[giornata] === giornataClou) + 1;
     if (giornataClouIndex) {
       setIndexSelected(giornataClouIndex);
       scrollIntoView(giornataClouIndex);
@@ -101,17 +89,12 @@ const CalGiorn = ({ onReset }) => {
   useEffect(() => {
     setButtonResetIsResetting(false);
     if (onReset) {
-      const giornataClouIndex =
-        Object.keys(completeClouSelected).findIndex(
-          (giornata) => completeClouSelected[giornata] === giornataClou
-        ) + 1;
+      const giornataClouIndex = Object.keys(completeClouSelected).findIndex((giornata) => completeClouSelected[giornata] === giornataClou) + 1;
       if (indexSelected === giornataClouIndex) {
         // Se sei nella giornata clou, mantieni la selezione corrente
         // Esempio: potresti voler aggiornare solo parte dello stato
         setMatches(completeClouSelected[`giornata${indexSelected}`]);
-        setGiornataClouSelected(
-          completeClouSelected[`giornata${indexSelected}`]
-        );
+        setGiornataClouSelected(completeClouSelected[`giornata${indexSelected}`]);
       } else {
         // Se sei in una giornata diversa dalla clou, reimposta tutto
         setIndexSelected(null);
@@ -157,10 +140,7 @@ const CalGiorn = ({ onReset }) => {
       >
         &#9664;
       </button>
-      <div
-        ref={scrollContainer}
-        className="flex overflow-x-auto scrollbar-hide"
-      >
+      <div ref={scrollContainer} className="flex overflow-x-auto scrollbar-hide">
         <div className="flex flex-nowrap">
           {getVisibleMatches().map((number, index) => (
             <div
@@ -183,7 +163,7 @@ const CalGiorn = ({ onReset }) => {
       </div>
       <button
         onClick={() => scroll("right")}
-        disabled={indexSelected === 38} // Disabilita se selected è 38
+        disabled={indexSelected === totaleGiornate} // Disabilita se selected è totaleGiornate
         className={`text-gray-900 p-2 hover:bg-sky-800 hover:text-white focus:outline-none ${indexSelected === 38 ? "opacity-20 cursor-not-allowed" : ""}`}
       >
         &#9654;

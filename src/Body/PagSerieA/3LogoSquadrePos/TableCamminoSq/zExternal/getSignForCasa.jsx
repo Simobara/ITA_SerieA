@@ -1,13 +1,7 @@
 import { ts } from "../../../../../START/styles/0CssMainStyle";
 
-export const getClassForFuorii = (fuori) => {
-  if (fuori === "...") {
-    return `bg-black ${ts.TextCF}`;
-  }
-  if (fuori === " ") {
-    return " ";
-  }
-  switch (fuori) {
+export const getSignForCasaa = (casa) => {
+  switch (casa) {
     case "+":
       return `${ts.WinBg} ${ts.WinText}`;
     case "=":
@@ -15,6 +9,6 @@ export const getClassForFuorii = (fuori) => {
     case "-":
       return `${ts.LoseBg} ${ts.LoseText}`;
     default:
-      return `${ts.Bg0}`;
+      return `${ts.Bg9}`;
   }
 };
