@@ -73,7 +73,6 @@ const ValCasa = () => {
           !isBTeam(coppiaSelected.team1) &&
           isATeam(coppiaSelected.team2) && ( //MEDIA FORTE
             <>
-              <pre>Puo' Anche Perdere</pre>
               <pre>Se Prox "B": 🗜️</pre>
               <pre>📈</pre>
             </>

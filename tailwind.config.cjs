@@ -32,8 +32,8 @@ module.exports = {
         ".hide-scrollbar::-webkit-scrollbar": {
           display: "none" /* Safari e Chrome */,
         },
-        ".brightness-40": {
-          filter: "brightness(40%)",
+        ".brightness-60": {
+          filter: "brightness(60%)",
         },
       };
       addUtilities(newUtilities);

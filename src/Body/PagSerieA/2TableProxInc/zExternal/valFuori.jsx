@@ -25,7 +25,7 @@ const ValFuori = () => {
         {isATeam(coppiaSelected.team1) &&
           isATeam(coppiaSelected.team2) && ( //FORTE FORTE
             <>
-              <pre>SCR TOP 😰</pre>
+              <pre>SCR TOP 🪨</pre>
               <pre>📈</pre>
             </>
           )}
@@ -40,7 +40,7 @@ const ValFuori = () => {
           !isATeam(coppiaSelected.team2) &&
           !isBTeam(coppiaSelected.team2) && ( //FORTE MEDIA
             <>
-              <pre>SCR Europa 😰</pre>
+              <pre>SCR Europa 🪨</pre>
               <pre>SeProxInc "B"+Casa: 🗜️</pre>
             </>
           )}
@@ -48,7 +48,7 @@ const ValFuori = () => {
         {isBTeam(coppiaSelected.team1) &&
           isBTeam(coppiaSelected.team2) && ( //DEBOLE DEBOLE
             <>
-              <pre>SCR RETROCESS 😰</pre>
+              <pre>SCR RETROCESS 🪨</pre>
               <pre>X</pre>
               <pre>📈</pre>
             </>
@@ -73,7 +73,7 @@ const ValFuori = () => {
           isATeam(coppiaSelected.team2) && ( //MEDIA FORTE
             <>
               <pre>Puo' perdere</pre>
-              <pre>Se Prox "B"+Casa: 🙂‍↔️</pre>
+              <pre>Se Prox "B"+Casa: 🛠️</pre>
               <pre>📈</pre>
             </>
           )}

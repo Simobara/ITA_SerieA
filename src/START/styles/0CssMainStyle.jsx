@@ -17,7 +17,9 @@ export const s = {
   ImgTextInRoundMd: "text-md",
   ImgTextInRoundSm: "text-sm",
 
-  BrightnessDopoScelta: "brightness-40"
+  BorderPartite:        "border-pink-900",
+  BrightnessDopoScelta: "brightness-60",
+  BorderLineNextMatch:  "border-b-4 border-pink-900"
 };
 
 //sezione classifica - sezione3
@@ -36,21 +38,24 @@ export const ts = {
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
   ColResBg:         "!text-gray-800",
   ColResLine:       "text-gray-500",
-  ColResHome:       "!text-pink-500 font-semibold",
-  ColResAway:       "text-sky-800 font-light",
 
-  TabHoverHome:     "hover:bg-gray-300",
-  TabHoverAway:     "hover:bg-gray-800",
+  ColResHome:       "!text-sky-800 font-semibold",
+  ColResAway:       "text-gray-700 font-light",
 
-  WinBg:            "bg-green-600 border-b-2 border-green-950",
-  WinText:          "!text-green-600",
+  TabHoverHome:     "hover:bg-green-300",
+  TabHoverAway:     "hover:bg-red-300",
 
-  DrawBg:           "bg-sky-900 border-b-2 border-sky-950",
-  DrawText:         "!text-sky-900",
+  //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
+  WinBg:            "bg-green-500 rounded-full",
+  WinText:          "!text-green-500",
 
-  LoseBg:           "border-2 border-gray-700 bg-black",
-  LoseText:         "!text-gray-700/20",
+  DrawBg:           "bg-[#054787] rounded-full",
+  DrawText:         "!text-[#054787]",
 
+  LoseBg:           "bg-slate-800 rounded-full",
+  LoseText:         "!text-slate-800",
+  //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
   HoverSqHome:      "bg-red-700",
   HoverSqAway:      "bg-sky-800",
+  //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
 };

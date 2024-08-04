@@ -17,7 +17,7 @@ export const underlineTeamm = (team, selection) => {
       return `${s.BrightnessDopoScelta}`;
     }
   } else if (selection === "X") {
-    return `${s.BrightnessDopoScelta} underline underline-yellow font-bold underline-thick z-3`;
+    return `${s.BrightnessDopoScelta} underline underline-draw font-bold underline-thick z-3`;
   } else {
     return `${s.BrightnessDopoScelta}`;
   }

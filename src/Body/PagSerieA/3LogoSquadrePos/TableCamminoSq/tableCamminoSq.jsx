@@ -1,10 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { calendario, giornataN } from "../../../../START/app/0SerieAMatches";
-import { ATeams, BTeams } from "../../../../START/funct/FilterTeamByCat";
-import { ts } from "../../../../START/styles/0CssMainStyle";
+import { s, ts } from "../../../../START/styles/0CssMainStyle";
 import { IndexSelectedContext } from "../../../Glob/global";
 import { GiornataClouContext } from "../../../Glob/global/";
 import "./tableCamminoSq.css";
+import { getBgHoverClasss } from "./zExternal/getBgHoverClass";
+import { getClassForCasaa } from "./zExternal/getClassForCasa";
+import { getClassForFuorii } from "./zExternal/getClassForFuori";
+import { getTextTeamm } from "./zExternal/getTextTeam";
+import { isATeam, isBTeam } from "./zExternal/isQTeam";
 
 const TableCamminoSq = ({ squadra, datiSquadra }) => {
   const [isMobile, setIsMobile] = useState(window.matchMedia("(max-width: 600px)" && "(min-width: 768px").matches);
@@ -13,82 +17,15 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
   const { indexSel, setIndexSel } = useContext(IndexSelectedContext);
   const nomeSquadra = typeof squadra === "string" ? squadra : "DefinireSq";
 
-  const isATeam = (teamName) => {
-    return ATeams.includes(teamName.toUpperCase());
-  };
-
-  const isBTeam = (teamName) => {
-    return BTeams.includes(teamName.toUpperCase());
-  };
-
-  const getTextTeam = (teamName) => {
-    if (isATeam(teamName)) {
-      return "font-black text-black";
-    } else if (isBTeam(teamName)) {
-      return "font-thin text-gray-400/80";
-    } else if (teamName !== "--- --- --- --- --- ---") {
-      return "text-medium text-cyan-500/80 font-medium";
-    } else {
-      return "text-black";
-    }
-  };
-
-  // const getTextColor = (partita) => {
-  //   const conditions = ["+", "-", "=", "..."];
-  //   if (conditions.includes(partita.casa) || conditions.includes(partita.fuori)) {
-  //     return "text-white"; // white text when row is fuchsia
-  //   }
-  //   return "text-black"; // default text color
-  // };
-
-  const getBgHoverClass = (partita) => {
-    if (partita.sqVs === "--- --- --- --- --- ---") {
-      return "hover:no.hover";
-    }
-    const conditions = ["+", "-", "=", "..."];
-    if (conditions.includes(partita.casa)) {
-      return `${ts.TabHoverHome}`;
-    } else if (conditions.includes(partita.fuori)) {
-      return `${ts.TabHoverAway}`;
-    }
-    return " ";
-  };
-
-  const getClassForCasa = (casa) => {
-    switch (casa) {
-      case "+":
-        return `${ts.WinBg} ${ts.WinText}`;
-      case "=":
-        return `${ts.DrawBg} ${ts.DrawText}`;
-      case "-":
-        return `${ts.LoseBg} ${ts.LoseText}`;
-      default:
-        return `${ts.Bg9}`;
-    }
-  };
-  const getClassForFuori = (fuori) => {
-    if (fuori === "...") {
-      return `bg-black ${ts.TextCF}`;
-    }
-    if (fuori === " ") {
-      return " ";
-    }
-    switch (fuori) {
-      case "+":
-        return `${ts.WinBg} ${ts.WinText}`;
-      case "=":
-        return `${ts.DrawBg} ${ts.DrawText}`;
-      case "-":
-        return `${ts.LoseBg} ${ts.LoseText}`;
-      default:
-        return `${ts.Bg0}`;
-    }
-  };
+  const getTextTeam = (teamName) => getTextTeamm(teamName, isATeam, isBTeam);
+  const getBgHoverClass = (partita) => getBgHoverClasss(partita);
+  const getClassForCasa = (casa) => getClassForCasaa(casa);
+  const getClassForFuori = (fuori) => getClassForFuorii(fuori);
 
   // ------------------------------------------------------------------------------------------------
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.matchMedia("(max-width: 600px)").matches);
+      setIsMobile(window.matchMedia("(max-width: 768px)").matches);
     };
     window.addEventListener("resize", handleResize);
     return () => {
@@ -128,7 +65,6 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
       <div className="overflow-y-scroll scrollbar-hide overflow-x-hidden md:overflow-x-hidden h-[37.5rem]">
         <table className=" border-2 border-t-0 border-r-0 border-gray-800 filter brightness-[%] overflow-y-auto w-[100%] table-auto bg-black">
           <tbody>
-            {/* eslint-disable-next-line */}
             {datiSquadra.map((partita, index) => {
               const casaClass = getClassForCasa(partita.casa);
               const fuoriClass = getClassForFuori(partita.fuori);
@@ -142,7 +78,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
 
               let borderStyle = "";
               if (index === selectedIndexGiornata) {
-                borderStyle = "border-b-4 border-lime-500";
+                borderStyle = `${s.BorderLineNextMatch}`;
               }
               const formattedSqVs = partita.sqVs.toLowerCase();
               const sqVsFormatted = formattedSqVs.charAt(0).toUpperCase() + formattedSqVs.slice(1);
@@ -152,7 +88,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
 
               return (
                 <tr key={index} className={`overflow-x-hidden xs:text-lg sm:text-md ${bgHoverClass} ${borderStyle}`}>
-                  <td className={`w-[5%] sm:w-[15%] xl:w-[5%] text-center font-bold ${ts.ColResLine} ${ts.ColResBg} text-xl`}>
+                  <td className={` sm:w-[15%] xl:w-[15%] w-[10%] text-center font-bold ${ts.ColResLine} ${ts.ColResBg} text-xl`}>
                     {isPronostico ? (
                       <div className="flex justify-center items-center">
                         <span className="text-yellow-400 text-xl font-black justify-center items-center ">*</span>
@@ -167,7 +103,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
                   </td>
                   <td className={`sm:w-[10%] md:w-[20%] xl:w-[15%] w-[10%] text-center xs:text-xl sm:text-base font-bold ${casaClass} ${ts.TextCF}`}>{partita.casa}</td>
                   <td className={`w-[7%] sm:w-[15%] xl:w-[15%] text-center xs:text-xl sm:text-base font-bold ${fuoriClass} ${ts.TextCF}`}>{partita.fuori}</td>
-                  <td className={`sm:w-[50%] text-xl pl-[8%] w-[10%] ${sqVsClass} `}>{isMobile == true ? sqVsFormatted.slice(0, 3) : sqVsFormatted}</td>
+                  <td className={`sm:w-[50%] text-xl pl-[10%] w-[10%] ${sqVsClass} `}>{isMobile == true ? sqVsFormatted.slice(0, 10) : sqVsFormatted}</td>
                 </tr>
               );
             })}
