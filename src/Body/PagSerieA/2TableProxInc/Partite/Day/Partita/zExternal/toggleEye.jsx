@@ -1,4 +1,4 @@
-const toggleEyee = (partita, occhioApertoPartita, setOcchioApertoPartita, setButtonResetIsResetting, handleCoppiaSelectTeam) => {
+export const toggleEyee = (partita, occhioApertoPartita, setOcchioApertoPartita, setButtonResetIsResetting, handleCoppiaSelectTeam) => {
   if (occhioApertoPartita === partita.numero) {
     setOcchioApertoPartita(null);
   } else {
@@ -7,5 +7,3 @@ const toggleEyee = (partita, occhioApertoPartita, setOcchioApertoPartita, setBut
   setButtonResetIsResetting(true);
   handleCoppiaSelectTeam(partita);
 };
-
-export default toggleEyee;

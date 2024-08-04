@@ -32,7 +32,9 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  //Quando la finestra viene ridimensionata, la funzione handleResize aggiorna lo stato isMobile in base alla corrispondenza del media query (max-width: 768px).
 
+  //Aggiorna l'indice della giornata selezionata (selectedIndexGiornata) quando cambia la giornata clou selezionata (giornataClouSelected).
   useEffect(() => {
     if (giornataClouSelected) {
       let nuovoIndice = Object.keys(calendario).findIndex((key) => calendario[key] === giornataClouSelected) + 1;

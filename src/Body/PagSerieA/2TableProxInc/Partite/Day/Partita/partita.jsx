@@ -13,13 +13,13 @@ import {
   SquadraContext,
 } from "../../../../../Global/global";
 import "./partita.css";
-import handleCoppiaSelectTeamm from "./zExternal/handleCoppiaSelectTeam";
-import handleResetColorss from "./zExternal/handleResetColors";
-import handleSelectionn from "./zExternal/handleSelection";
-import isBigTeamm from "./zExternal/isBigTeam";
+import { handleCoppiaSelectTeamm } from "./zExternal/handleCoppiaSelectTeam";
+import { handleResetColorss } from "./zExternal/handleResetColors";
+import { handleSelectionn } from "./zExternal/handleSelection";
+import { isBigTeamm } from "./zExternal/isBigTeam";
 import { getTextTeam } from "./zExternal/isQTeam";
-import toggleEyee from "./zExternal/toggleEye";
-import toggleSymboll from "./zExternal/toggleSymbol";
+import { toggleEyee } from "./zExternal/toggleEye";
+import { toggleSymboll } from "./zExternal/toggleSymbol";
 import { underlineTeamm } from "./zExternal/underlineTeam";
 
 const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartita }) => {
@@ -115,7 +115,6 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
 
   // ------------------------------------------------------------------------------------------------
 
-  // ------------------------------------------------------------------------------------------------
   useEffect(() => {
     const handleResize = () => {
       setIsTablet(window.matchMedia("(max-width: 768px)").matches);
@@ -126,7 +125,9 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  //Quando la finestra viene ridimensionata, la funzione handleResize aggiorna lo stato isTablet.
 
+  //Filtra e aggiorna sqSelected e coppiaSelected rimuovendo le squadre e coppie legate alla partita corrente se i risultati non sono già definiti.
   useEffect(() => {
     setCoppiaSelected({});
     if (resetAll) {
@@ -142,7 +143,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
             setSelection("");
             setSqSelected((currentSelected) => {
               if (!Array.isArray(currentSelected)) {
-                console.error("currentSelected is not an array:", currentSelected);
+                // console.error("currentSelected is not an array:", currentSelected);
                 return [];
               }
               return currentSelected.filter(
@@ -160,7 +161,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
       });
     }
   }, [resetAll, giornataClouSelected, partita]);
-
+  //Crea un nuovo Set chiamato newPartiteDefinNoMod contenente i numeri delle partite con risultati definiti.
   useEffect(() => {
     // Aggiorna partiteDefinNoMod quando cambia giornataClouSelected
     const newPartiteDefinNoMod = new Set();
@@ -169,7 +170,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
     });
     setPartiteDefinNoMod(newPartiteDefinNoMod);
   }, [giornataClouSelected, setPartiteDefinNoMod]);
-
+  //Scorre giornataClouSelected e per ogni partita con un risultato nel formato "X-X", determina il tipo di selezione (1, 2 o X).
   useEffect(() => {
     const partiteRegistrata = []; // Array temporaneo per le partite registrate
     giornataClouSelected.forEach((partitaGiornataClou) => {
@@ -196,7 +197,8 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
     });
     setCoppiaRegSelected(partiteRegistrata);
   }, [giornataClouSelected, completeClouSelected]);
-
+  //Se partita.results è definito, determina il tipo di selezione (1, 2 o X) in base al punteggio.
+  //Aggiorna lo stato selection e rende il pulsante cliccabile (setIsButtonClickable(true)).
   useEffect(() => {
     //determina i colori se la squadra vince perde pareggia
     if (partita.results) {

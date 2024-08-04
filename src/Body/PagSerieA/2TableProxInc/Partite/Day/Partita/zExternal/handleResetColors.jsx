@@ -1,4 +1,4 @@
-const handleResetColorss = (t1, t2, partita, selection, setSelection, setButtonResetIsResetting, setIsKQBtnActive, setIsSignOk, setIsButtonClickable, occhioApertoPartita, setOcchioApertoPartita, handleCoppiaSelectTeam, sqSelected, setSqSelected, completeClouSelected, setCompleteClouSelected, indexSel, giornataN) => {
+export const handleResetColorss = (t1, t2, partita, selection, setSelection, setButtonResetIsResetting, setIsKQBtnActive, setIsSignOk, setIsButtonClickable, occhioApertoPartita, setOcchioApertoPartita, handleCoppiaSelectTeam, sqSelected, setSqSelected, completeClouSelected, setCompleteClouSelected, indexSel, giornataN) => {
     // if (partita.results) return;
     setSelection("");
     setButtonResetIsResetting(true);
@@ -48,5 +48,5 @@ const handleResetColorss = (t1, t2, partita, selection, setSelection, setButtonR
     });
   };
   
-  export default handleResetColorss;
+  
   

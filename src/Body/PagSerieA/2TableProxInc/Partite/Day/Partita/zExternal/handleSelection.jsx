@@ -1,4 +1,4 @@
-const handleSelectionn = (
+export const handleSelectionn = (
   selectedTeam,
   selectionType,
   numeroPartita = "",
@@ -88,5 +88,3 @@ const handleSelectionn = (
     });
   }
 };
-
-export default handleSelectionn;

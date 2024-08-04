@@ -16,7 +16,7 @@ export const SquadraProvider = ({ children }) => {
 };
 
 //-----------------------------------------------------------------------
-
+//dalla partita, prende le 2 squadre e le divide creando un oggetto, punto clou in: //! handleCoppiaSelectTeamm
 export const CoppiaPartitaContext = createContext();
 // eslint-disable-next-line
 export const CoppiaPartitaProvider = ({ children }) => {
