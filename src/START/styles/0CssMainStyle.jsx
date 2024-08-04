@@ -34,9 +34,8 @@ export const ts = {
   TabHoverHome:     "hover:bg-slate-900",
   TabHoverAway:     "hover:bg-slate-700",
 
-  BgSquadraCasa:    "bg-slate-900",
-  // BgSquadraFuori:   "bg-slate-800",
-  BgSquadraFuori:   "bg-slate-800",
+  BgSquadraCasa:    "bg-slate-800",
+  BgSquadraFuori:   "bg-slate-700",
 
   SqCasaZChart:     "!z-10",
   SqFuoriZChart:    "!z-5",
@@ -49,17 +48,18 @@ export const ts = {
 
   BTeamText:        "text-gray-600",
 
-  ABTeamText:       "text-sky-900 font-bold",
+  ABTeamText:       "text-sky-800 font-bold",
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
   ColResBg:         "!text-gray-800",
   ColResLine:       "text-gray-500",
 
+  //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
   ColResHome:       "!text-sky-800 font-semibold",
   ColResAway:       "text-gray-700 font-light",
 
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
-  WinBg:            "bg-green-500 rounded-full",
-  WinText:          "!text-green-500",
+  WinBg:            "bg-green-700 rounded-full",
+  WinText:          "!text-green-700",
 
   DrawBg:           "bg-[#054787] rounded-full",
   DrawText:         "!text-[#054787]",
