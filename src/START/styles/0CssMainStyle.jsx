@@ -29,7 +29,7 @@ export const ts = {
   Bg0:              "bg-transparent",
   Bg9:              "bg-black",
 
-  TextCF:           "text-sky-800",
+  TextCF:           "text-slate-600",
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
   TabHoverHome:     "hover:bg-slate-900",
   TabHoverAway:     "hover:bg-slate-700",
