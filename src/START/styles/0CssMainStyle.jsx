@@ -35,6 +35,7 @@ export const ts = {
   TabHoverAway:     "hover:bg-slate-700",
 
   BgSquadraCasa:    "bg-slate-900",
+  // BgSquadraFuori:   "bg-slate-800",
   BgSquadraFuori:   "bg-slate-700",
 
   SqCasaZChart:     "!z-10",
@@ -42,12 +43,12 @@ export const ts = {
 
   //--- --- --- --- --- --- --- --- --- --- --- --- ---
 
-  ATeamBg:          "bg-sky-900 border-t-2 border-l-4 border-cyan-400 rounded-t-sm rounded-l-3xl rounded-tr-xl",
-  ATeamText:        "text-black tracking-wider font-black",
+  ATeamBg:          "bg-slate-800 border-t-2 border-l-4 border-cyan-400 rounded-t-sm rounded-l-3xl rounded-tr-xl",
+  ATeamText:        "text-black [#020c2d] tracking-wider font-black",
 
   BTeamText:        "text-gray-600",
 
-  ABTeamText:       "text-sky-800 font-bold",
+  ABTeamText:       "text-sky-900 font-bold",
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
   ColResBg:         "!text-gray-800",
   ColResLine:       "text-gray-500",
@@ -62,10 +63,10 @@ export const ts = {
   DrawBg:           "bg-[#054787] rounded-full",
   DrawText:         "!text-[#054787]",
 
-  // LoseBg:           "bg-[#1d1f2a] rounded-full",
+  // LoseBg:           "bg-[#020c2d] rounded-full",
   LoseBg:           "bg-slate-900 rounded-full",
+  // LoseText:         "!text-[#020c2d]",
   LoseText:         "!text-slate-900",
-  
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
   HoverSqHome:      "bg-red-700",
   HoverSqAway:      "bg-sky-800",

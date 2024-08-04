@@ -1,5 +1,5 @@
 import { ATeams, BTeams } from "../../../../START/funct/FilterTeamByCat";
-import { s } from "../../../../START/styles/0CssMainStyle";
+import { s, ts } from "../../../../START/styles/0CssMainStyle";
 
 export const isATeam = (teamName) => {
   if (typeof teamName === "string") {
@@ -18,10 +18,10 @@ export const isBTeam = (teamName) => {
 export const getTextTeam = (teamName) => {
   // console.log('teamName:', teamName); // Aggiungi per vedere cosa ricevi effettivamente come input
   if (isATeam(teamName)) {
-    return `text-black font-extrabold ${s.ImgTextInRoundMd} `;
+    return `${ts.ATeamText} font-extrabold ${s.ImgTextInRoundMd} `;
   } else if (isBTeam(teamName)) {
-    return ` text-gray-500  font-light ${s.ImgTextInRoundMd} `;
+    return ` ${ts.BTeamText} font-light ${s.ImgTextInRoundMd} `;
   } else {
-    return "text-sky-600 font-bold";
+    return `${ts.ABTeamText} font-bold`;
   }
 };
