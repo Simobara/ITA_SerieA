@@ -36,15 +36,16 @@ export const ts = {
 
   BgSquadraCasa:    "bg-slate-900",
   // BgSquadraFuori:   "bg-slate-800",
-  BgSquadraFuori:   "bg-slate-700",
+  BgSquadraFuori:   "bg-slate-800",
 
   SqCasaZChart:     "!z-10",
   SqFuoriZChart:    "!z-5",
 
   //--- --- --- --- --- --- --- --- --- --- --- --- ---
+  ATeamBg:          "bg-slate-800 border-t-2 border-l-4 border-cyan-500 rounded-t-sm rounded-l-3xl rounded-tr-xl",
 
-  ATeamBg:          "bg-slate-800 border-t-2 border-l-4 border-cyan-400 rounded-t-sm rounded-l-3xl rounded-tr-xl",
-  ATeamText:        "text-black [#020c2d] tracking-wider font-black",
+  //--- --- --- --- --- --- --- --- --- --- --- --- ---
+  ATeamText:        "text-black tracking-wider font-black",
 
   BTeamText:        "text-gray-600",
 
@@ -71,4 +72,6 @@ export const ts = {
   HoverSqHome:      "bg-red-700",
   HoverSqAway:      "bg-sky-800",
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
+
+  //ottima tonalita'=[#020c2d]
 };
