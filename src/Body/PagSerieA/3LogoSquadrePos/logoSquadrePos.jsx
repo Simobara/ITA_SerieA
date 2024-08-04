@@ -11,7 +11,9 @@ const LogoSquadrePos = () => {
   const [squadraAttiva1, setSquadraAttiva1] = useState("");
   const [squadraAttiva2, setSquadraAttiva2] = useState("");
   const { coppiaSelected } = useContext(CoppiaPartitaContext);
+  //logoRefs: Un oggetto che viene utilizzato per creare riferimenti a ciascun logo delle squadre, permettendo operazioni dirette su questi elementi (come i click).
   const logoRefs = useRef({});
+  // refContainer: Un riferimento al contenitore principale delle squadre, utilizzato per eventuali manipolazioni o accessi diretti a questo elemento DOM.
   const refContainer = useRef(null);
   const arraySquadre = Object.values(nomiSquadre); //mette nomi Squadre dentro un array
   const datiSquadre = Object.keys(nomiSquadre).reduce((acc, key) => {

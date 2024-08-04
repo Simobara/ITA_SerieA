@@ -5,7 +5,8 @@ import "./calGiorn.css";
 
 const CalGiorn = ({ onReset }) => {
   const scrollContainer = useRef(null);
-  const singleBoxRef = useRef(null); // Aggiunto ref per la larghezza della casella
+  // scrollContainer è una ref utilizzata per gestire lo scorrimento orizzontale delle giornate, assicurandosi che la casella selezionata sia sempre visibile. */
+  // const singleBoxRef = useRef(null); // Aggiunto ref per la larghezza della casella
   const { indexSel, setIndexSel } = useContext(IndexSelectedContext);
   const [indexSelected, setIndexSelected] = useState(null);
   const [matches, setMatches] = useState([]);
@@ -13,7 +14,6 @@ const CalGiorn = ({ onReset }) => {
   const { partiteDefinNoMod, setPartiteDefinNoMod } = useContext(PartiteDefinNoModContext);
   const { completeClouSelected, setCompleteClouSelected } = useContext(CompleteDataContext);
   const { buttonResetIsResetting, setButtonResetIsResetting } = useContext(ButtonResetContext);
-
   const totaleGiornate = 38;
 
   //Crea un ref per ciascuna casella
@@ -140,6 +140,7 @@ const CalGiorn = ({ onReset }) => {
       >
         &#9664;
       </button>
+
       <div ref={scrollContainer} className="flex overflow-x-auto scrollbar-hide">
         <div className="flex flex-nowrap">
           {getVisibleMatches().map((number, index) => (

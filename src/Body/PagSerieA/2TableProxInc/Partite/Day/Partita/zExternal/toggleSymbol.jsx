@@ -1,4 +1,4 @@
-export const toggleSymbol = (partita, isPartitaModificabile, setButtonResetIsResetting, setIsKQBtnActive, setIsSignOk) => {
+export const toggleSymboll = (partita, isPartitaModificabile, setButtonResetIsResetting, setIsKQBtnActive, setIsSignOk) => {
   if (partita.results && partita.rank) {
     setButtonResetIsResetting(true);
     setIsKQBtnActive((prev) => !prev);
