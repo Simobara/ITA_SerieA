@@ -44,11 +44,11 @@ export const renderSquadre = () => {
         const sharedStyle = {
           width: "35px",
           height: "35px",
-          backgroundColor: "#584194",
+          backgroundColor: "#FF00FF",
           borderRadius: "50%",
           position: "absolute",
-          top: squadra.style.top,
-          left: squadra.style.left,
+          top: `calc(${squadra.style.top} - 1%)`,
+          left: `calc(${squadra.style.left} - 2%)`,
           zIndex: 4,
           display: "flex",
           alignItems: "center",
@@ -58,8 +58,9 @@ export const renderSquadre = () => {
         const innerCircleStyle = {
           width: "25px",
           height: "25px",
-          backgroundColor: "#9191cc",
-          opacity: 0.9,
+          backgroundColor: "transparent",
+          opacity: 0.8,
+          zIndex: "-1",
           borderRadius: "50%",
         };
 
@@ -75,7 +76,7 @@ export const renderSquadre = () => {
           height: "25px",
           zIndex: 2,
         };
-        const teamColorClass = coppiaSelected.team1 === squadra.name ? `${ts.BgSquadraCasa} z-20` : `${ts.BgSquadraFuori} z-5`;
+        const teamColorClass = coppiaSelected.team1 === squadra.name ? `${ts.BgSquadraCasa} ${ts.SqCasaZChart}` : `${ts.BgSquadraFuori} ${ts.SqFuoriZChart}`;
         // const textStyleClass = 'text-black font-medium text-xl';
         const teamName = coppiaSelected.team1 === squadra.name ? coppiaSelected.team1 : coppiaSelected.team2;
         const teamClass = getTextTeam(teamName);

@@ -37,6 +37,9 @@ export const ts = {
   BgSquadraCasa:    "bg-slate-900",
   BgSquadraFuori:   "bg-slate-700",
 
+  SqCasaZChart:     "!z-10",
+  SqFuoriZChart:    "!z-5",
+
   //--- --- --- --- --- --- --- --- --- --- --- --- ---
 
   ATeamBg:          "bg-sky-900 border-t-2 border-l-4 border-cyan-400 rounded-t-sm rounded-l-3xl rounded-tr-xl",
@@ -59,8 +62,10 @@ export const ts = {
   DrawBg:           "bg-[#054787] rounded-full",
   DrawText:         "!text-[#054787]",
 
-  LoseBg:           "bg-[#1d1f2a] rounded-full",
-  LoseText:         "!text-[#1d1f2a]",
+  // LoseBg:           "bg-[#1d1f2a] rounded-full",
+  LoseBg:           "bg-slate-900 rounded-full",
+  LoseText:         "!text-slate-900",
+  
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
   HoverSqHome:      "bg-red-700",
   HoverSqAway:      "bg-sky-800",

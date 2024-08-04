@@ -18,3 +18,7 @@
 .unselectable {
   user-select: none;
 }
+
+.transparent-bg {
+  background-color: transparent !important;
+}
