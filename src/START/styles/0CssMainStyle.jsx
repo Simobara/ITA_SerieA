@@ -31,10 +31,10 @@ export const ts = {
 
   TextCF:           "text-slate-600",
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
-  TabHoverHome:     "hover:bg-slate-900",
+  TabHoverHome:     "hover:bg-[#03325C]",
   TabHoverAway:     "hover:bg-slate-700",
 
-  BgSquadraCasa:    "bg-slate-800",
+  BgSquadraCasa:    "bg-[#03325C]",
   BgSquadraFuori:   "bg-slate-700",
 
   SqCasaZChart:     "!z-10",
@@ -61,7 +61,7 @@ export const ts = {
   WinBg:            "bg-green-700 rounded-full",
   WinText:          "!text-green-700",
 
-  DrawBg:           "bg-[#054787] rounded-full",
+  DrawBg:           "bg-[#054787] rounded-full ",
   DrawText:         "!text-[#054787]",
 
   // LoseBg:           "bg-[#020c2d] rounded-full",

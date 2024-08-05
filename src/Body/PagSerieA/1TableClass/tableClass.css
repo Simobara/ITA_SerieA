@@ -72,3 +72,15 @@ td {
   filter: brightness(65%);
   /* opacity: 1;  */
 }
+/* --------------------------- */
+
+@media (max-width: 768px) {
+  .table-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .table-column {
+    width: 50%;
+  }
+}
