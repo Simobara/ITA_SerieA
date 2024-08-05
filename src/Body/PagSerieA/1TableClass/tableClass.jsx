@@ -340,15 +340,15 @@ const TableClass = () => {
             </table>
           </div>
           <div className="table-column">
-            <table className="relative overflow-auto md:min-h-[57rem]">
+            <table className="relative overflow-auto md:min-h-[57rem] ml-[-1rem]">
               <thead>
                 <tr className="bg-black text-gray-600 text-center">
                   <th className="w-[0.5rem]" style={{ whiteSpace: "nowrap" }}>
                     -
                   </th>
-                  <th className="w-[1rem] sm:pl-[1rem] md:pl-[0] lg:pl-[1rem] lg:pr-[1rem]">--- SQUADRA --</th>
-                  <th className="w-[1rem] sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[1rem] lg:pr-[1rem] pl-[1rem]">?</th>
-                  <th className="w-[1rem] sm:pl-[1rem] md:pl-[0.5rem] md:text-center lg:pl-[0] pl-[0.5rem] text-right">PTS</th>
+                  <th className="w-[1rem] sm:pl-[1rem] ">--- SQUADRA --</th>
+                  <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem]">?</th>
+                  <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem] text-right">PTS</th>
                 </tr>
               </thead>
               <tbody className="bg-black text-cyan-800">
@@ -358,7 +358,7 @@ const TableClass = () => {
                       <div className="w-full h-full flex items-center justify-center ">{/* {index + 1} */}</div>
                     </td>
                     <td
-                      className={`w-[100%] bg-black xs:pl-[0] sm:pl-[1rem] md:pl-[1.5rem] md:pr-[2rem] py-[8px] md:py-2 sm:text-lg md:text-md lg:text-lg xl:px-4 flex justify-start relative sq-column
+                      className={`flex w-[100%] bg-black xs:pl-[0] sm:pl-[1rem] py-[8px] sm:text-lg justify-start relative sq-column
                       ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ${s.BaseText1}` : ""}
                       ${isTeamMarkedWithX(squadra.name) ? `${s.Filter4} underlineX ` : sqSelected.includes(squadra.name + "Z") ? `${s.Filter4} underlineW` : sqSelected.includes(squadra.name + "Y") ? `${s.Filter4} underlineL` : ""}
                       ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineW ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}
