@@ -271,7 +271,7 @@ const TableClass = () => {
         </table>
       )}
       {isMobile && (
-        <div className="table-container w-[95vw]  ">
+        <div className="table-container w-[95vw] mb-[1rem]">
           <div className="table-column">
             <table className="relative overflow-x-hidden overflow-y-auto md:min-h-[57rem] max-w-[50%]">
               <thead>
@@ -291,7 +291,7 @@ const TableClass = () => {
                       <div className="w-full h-full flex items-center justify-center ">{/* {index + 1} */}</div>
                     </td>
                     <td
-                      className={`w-[100%] bg-black xs:pl-[0] sm:pl-[1rem] md:pl-[1.5rem] md:pr-[2rem] py-[8px] md:py-2 sm:text-lg md:text-md lg:text-lg xl:px-4 flex justify-start relative sq-column
+                      className={`w-[100%] bg-black xs:pl-[0] sm:pl-[1rem] md:pl-[1.5rem] md:pr-[2rem] py-[7px] md:py-2 sm:text-lg md:text-md lg:text-lg xl:px-4 flex justify-start relative sq-column
                       ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ${s.BaseText1}` : ""}
                       ${isTeamMarkedWithX(squadra.name) ? `${s.Filter4} underlineX ` : sqSelected.includes(squadra.name + "Z") ? `${s.Filter4} underlineW` : sqSelected.includes(squadra.name + "Y") ? `${s.Filter4} underlineL` : ""}
                       ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineW ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}
@@ -358,7 +358,7 @@ const TableClass = () => {
                       <div className="w-full h-full flex items-center justify-center ">{/* {index + 1} */}</div>
                     </td>
                     <td
-                      className={`flex w-[100%] bg-black xs:pl-[0] sm:pl-[1rem] py-[8px] sm:text-lg justify-start relative sq-column
+                      className={`flex w-[100%] bg-black xs:pl-[0] sm:pl-[1rem] py-[7px] sm:text-lg justify-start relative sq-column
                       ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ${s.BaseText1}` : ""}
                       ${isTeamMarkedWithX(squadra.name) ? `${s.Filter4} underlineX ` : sqSelected.includes(squadra.name + "Z") ? `${s.Filter4} underlineW` : sqSelected.includes(squadra.name + "Y") ? `${s.Filter4} underlineL` : ""}
                       ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineW ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}
