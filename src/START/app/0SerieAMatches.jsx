@@ -588,11 +588,12 @@ const calendario25 = {
     { numero: 10, day: 'dom', time: '20:45',          team1: 'Venezia',       team2: 'Juve',           pron: '', results: '' },
   ],
 }; 
+
 //! ------------------- ------------------------------------------------------------------- ------------------------------------------
-export const giornataN = 1
+export const giornataNum = 1 //!NON TOCCARE QUESTO VALORE
 //! -------------------------------------------------------------------------------------- -------------------------------------------
 export const currentYear = 2025;
 export const calendario = JSON.parse(JSON.stringify(calendario25));
 export const calendario1 = JSON.parse(JSON.stringify(calendario25));
-export const giornataClou = calendario[`giornata${giornataN}`];
+export const giornataClou = calendario[`giornata${giornataNum}`];
 //! -------------------------------------------------------------------------------------- -------------------------------------------

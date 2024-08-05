@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import { calendario1, giornataN } from "../../../START/app/0SerieAMatches";
+import { GiornataNContext } from "../../../Ap/Global/global";
+import { calendario1 } from "../../../START/app/0SerieAMatches";
 // import { nomiSquadre } from "../../../START/app/1main";
 import { ts } from "../../../START/styles/0CssMainStyle";
 import serieAItalia from "../../../assts/ChartSerieAItalia/serieAItalia.png";
@@ -26,6 +27,7 @@ const TableProxInc = () => {
   const { buttonResetIsResetting, setButtonResetIsResetting } = useContext(ButtonResetContext);
   const { completeClouSelected, setCompleteClouSelected } = useContext(CompleteDataContext);
   const { indexSel, setIndexSel } = useContext(IndexSelectedContext);
+  const { giornataN, setGiornataN } = useContext(GiornataNContext);
 
   const { giornataClouSelected, setGiornataClouSelected } = useContext(GiornataClouContext);
   const [squadreAttive, setSquadreAttive] = useState({ team1: "", team2: "" });
@@ -49,6 +51,10 @@ const TableProxInc = () => {
       setButtonResetIsResetting(false);
     }
   }, []);
+
+  useEffect(() => {
+    handleReset();
+  }, [giornataN]);
   // --------------------------------------------------------------------------------------
   return (
     <>

@@ -2,11 +2,11 @@ import { ts } from "../../../../../START/styles/0CssMainStyle";
 
 export const getTextTeamm = (teamName, isATeam, isBTeam) => {
   if (isATeam(teamName)) {
-    return `font-black ${ts.ATeamText}`;
+    return `${ts.ATeamText} font-black `;
   } else if (isBTeam(teamName)) {
-    return `font-thin ${ts.BTeamText}`;
+    return `${ts.BTeamText} font-thin `;
   } else if (teamName !== "--- --- --- --- --- ---") {
-    return `text-medium ${ts.ABTeamText} font-medium`;
+    return `${ts.ABTeamText} text-medium font-medium`;
   } else {
     return "text-black";
   }

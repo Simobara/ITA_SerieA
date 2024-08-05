@@ -1,8 +1,15 @@
 import { useContext, useEffect, useState } from "react";
-import { giornataN } from "../../../START/app/0SerieAMatches";
+import { GiornataNContext } from "../../../Ap/Global/global";
 import { nomiSquadre } from "../../../START/app/1main";
 import { s } from "../../../START/styles/0CssMainStyle";
-import { CompleteDataContext, CoppiaPartitaContext, CoppiaPartitaRegistrataContext, GiornataClouContext, IndexSelectedContext, SquadraContext } from "../../Global/global";
+import {
+  CompleteDataContext,
+  CoppiaPartitaContext,
+  CoppiaPartitaRegistrataContext,
+  GiornataClouContext,
+  IndexSelectedContext,
+  SquadraContext,
+} from "../../Global/global";
 import "./tableClass.css";
 import aggPunteggioSqRegg from "./zExternal/addPunteggioSqReg";
 import aggiungiPuntii from "./zExternal/addPunti";
@@ -30,6 +37,7 @@ const TableClass = () => {
   const [differenzePunti, setDifferenzePunti] = useState({});
   const [punteggiAggiornati, setPunteggiAggiornati] = useState([]);
   const [giornataClouSelected, setGiornataClouSelected] = useState(GiornataClouContext);
+  const { giornataN, setGiornataN } = useContext(GiornataNContext);
 
   const { sqSelected } = useContext(SquadraContext);
   const { coppiaSelected } = useContext(CoppiaPartitaContext);
@@ -45,7 +53,14 @@ const TableClass = () => {
   const getPunteggioVisualizzato = useGetPunteggioVisualizzato(sqSelected, getPunteggioVirtuale);
 
   const getSquadreConPunteggioVirtuale = useGetSquadreConPunteggioVirtuale(sqSelected, ArrayNomiSquadre, getPunteggioVirtuale);
-  const getSquadreOrdinate = useGetSquadreOrdinate(sqSelected, nomiSquadre, completeClouSelected, punteggiAggiornati, getPunteggioVirtuale, getPunteggioVisualizzato);
+  const getSquadreOrdinate = useGetSquadreOrdinate(
+    sqSelected,
+    nomiSquadre,
+    completeClouSelected,
+    punteggiAggiornati,
+    getPunteggioVirtuale,
+    getPunteggioVisualizzato,
+  );
   const isTeamInCoppiaRegSelected = useGetIsTeamInCoppiaRegSelected(completeClouSelected, indexSel, giornataN);
   const getPunteggioColonnaPTS = useGetPunteggioColonnaPTS(completeClouSelected, isTeamInCoppiaRegSelected, indexSel, giornataN);
 
@@ -213,7 +228,9 @@ const TableClass = () => {
               className={`sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 pl-[1rem] text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
                 ${indiciDiffQ.includes(index) ? "borderAlto border-white" : ""}`}
             >
-              <div className="absolute transform -translate-x-4/3 -translate-y-7 text-left text-lg text-white mx-8 my-[-10] z-[10]">{numeriIndiciBorderWhite[index]}</div>
+              <div className="absolute transform -translate-x-4/3 -translate-y-7 text-left text-lg text-white mx-8 my-[-10] z-[10]">
+                {numeriIndiciBorderWhite[index]}
+              </div>
               {getPunteggioColonnaDomanda(squadra)}
             </td>
             {/* { COLONNA PTS} */}

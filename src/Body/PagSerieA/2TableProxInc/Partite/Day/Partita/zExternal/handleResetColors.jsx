@@ -1,4 +1,4 @@
-export const handleResetColorss = (t1, t2, partita, selection, setSelection, setButtonResetIsResetting, setIsKQBtnActive, setIsSignOk, setIsButtonClickable, occhioApertoPartita, setOcchioApertoPartita, handleCoppiaSelectTeam, sqSelected, setSqSelected, completeClouSelected, setCompleteClouSelected, indexSel, giornataN) => {
+export const handleResetColorss = (t1, t2, partita, selection, setSelection, setButtonResetIsResetting, setIsKQBtnActive, setIsSignOk, setIsButtonClickable, occhioApertoPartita, setOcchioApertoPartita, handleCoppiaSelectTeam, sqSelected, setSqSelected, completeClouSelected, setCompleteClouSelected, indexSel, giornataNm) => {
     // if (partita.results) return;
     setSelection("");
     setButtonResetIsResetting(true);

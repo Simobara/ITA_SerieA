@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { giornataClou, giornataN } from "../../../../START/app/0SerieAMatches";
+import { GiornataNContext } from "../../../../Ap/Global/global";
+import { giornataClou } from "../../../../START/app/0SerieAMatches";
 import { ButtonResetContext, CompleteDataContext, GiornataClouContext, IndexSelectedContext, PartiteDefinNoModContext } from "../../../Global/global";
 import "./calGiorn.css";
 
 const CalGiorn = ({ onReset }) => {
-  const scrollContainer = useRef(null);
-  // scrollContainer è una ref utilizzata per gestire lo scorrimento orizzontale delle giornate, assicurandosi che la casella selezionata sia sempre visibile. */
-  // const singleBoxRef = useRef(null); // Aggiunto ref per la larghezza della casella
+  const scrollContainer = useRef(null); // scrollContainer è una ref utilizzata per gestire lo scorrimento orizzontale delle giornate, assicurandosi che la casella selezionata sia sempre visibile. */
+
   const { indexSel, setIndexSel } = useContext(IndexSelectedContext);
   const [indexSelected, setIndexSelected] = useState(null);
   const [matches, setMatches] = useState([]);
@@ -14,25 +14,23 @@ const CalGiorn = ({ onReset }) => {
   const { partiteDefinNoMod, setPartiteDefinNoMod } = useContext(PartiteDefinNoModContext);
   const { completeClouSelected, setCompleteClouSelected } = useContext(CompleteDataContext);
   const { buttonResetIsResetting, setButtonResetIsResetting } = useContext(ButtonResetContext);
+  const { giornataN, setGiornataN } = useContext(GiornataNContext);
   const totaleGiornate = 38;
 
-  //Crea un ref per ciascuna casella
-  const boxRefs = useRef([]);
+  const boxRefs = useRef([]); // const singleBoxRef = useRef(null); // Aggiunto ref per la larghezza della casella//Crea un ref per ciascuna casella
   if (boxRefs.current.length !== totaleGiornate) {
-    // Inizializza l'array di refs con 38 elementi (numero delle caselle)
     boxRefs.current = Array(totaleGiornate)
       .fill()
       .map((_, i) => boxRefs.current[i] || React.createRef());
   }
 
   const handleSelectNumber = (number) => {
+    // Seleziona la nuova giornata e controlla se è diversa dalla corrente
     if (number >= 1 && number <= totaleGiornate) {
-      // Seleziona la nuova giornata e controlla se è diversa dalla corrente
       if (number !== indexSelected) {
         setButtonResetIsResetting(true);
         setIndexSelected(number);
         setIndexSel(number);
-        // console.log("CAL GIORNO/number", number)
       }
 
       setMatches(completeClouSelected[`giornata${number}`]);

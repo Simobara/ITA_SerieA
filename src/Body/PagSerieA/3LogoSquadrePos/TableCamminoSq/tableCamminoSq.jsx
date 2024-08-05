@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import { calendario, giornataN } from "../../../../START/app/0SerieAMatches";
+import { GiornataNContext } from "../../../../Ap/Global/global";
+import { calendario } from "../../../../START/app/0SerieAMatches";
 import { s, ts } from "../../../../START/styles/0CssMainStyle";
 import { IndexSelectedContext } from "../../../Global/global";
 import { GiornataClouContext } from "../../../Global/global/";
@@ -15,13 +16,14 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
   const [selectedIndexGiornata, setSelectedIndexGiornata] = useState(null);
   const { giornataClouSelected, setGiornataClouSelected } = useContext(GiornataClouContext);
   const { indexSel, setIndexSel } = useContext(IndexSelectedContext);
-  const nomeSquadra = typeof squadra === "string" ? squadra : "???";
+  const { giornataN, setGiornataN } = useContext(GiornataNContext);
 
   const getTextTeam = (teamName) => getTextTeamm(teamName, isATeam, isBTeam);
   const getBgHoverClass = (partita) => getBgHoverClasss(partita);
   const getSignForCasa = (casa) => getSignForCasaa(casa);
   const getSignForFuori = (fuori) => getSignForFuorii(fuori);
 
+  const nomeSquadra = typeof squadra === "string" ? squadra : "???";
   // ------------------------------------------------------------------------------------------------
   useEffect(() => {
     const handleResize = () => {
@@ -112,9 +114,15 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
                       </>
                     )}
                   </td>
-                  <td className={`sm:w-[10%] md:w-[12%] xl:w-[15%] w-[7%] text-center xs:text-xl sm:text-base font-bold ${casaClass} ${ts.TextCF}`}>{partita.casa}</td>
-                  <td className={`sm:w-[10%] md:w-[12%] xl:w-[15%] w-[7%] text-center xs:text-xl sm:text-base font-bold ${fuoriClass} ${ts.TextCF}`}>{partita.fuori}</td>
-                  <td className={`sm:w-[45%] ml-[10%] text-xl pl-[10%] w-[10%] ${sqVsClass} `}>{isMobile == true ? sqVsFormatted.slice(0, 10) : sqVsFormatted}</td>
+                  <td className={`sm:w-[10%] md:w-[12%] xl:w-[15%] w-[7%] text-center xs:text-xl sm:text-base font-bold ${casaClass} ${ts.TextCF}`}>
+                    {partita.casa}
+                  </td>
+                  <td className={`sm:w-[10%] md:w-[12%] xl:w-[15%] w-[7%] text-center xs:text-xl sm:text-base font-bold ${fuoriClass} ${ts.TextCF}`}>
+                    {partita.fuori}
+                  </td>
+                  <td className={`sm:w-[45%] ml-[10%] text-xl pl-[10%] w-[10%] ${sqVsClass} `}>
+                    {isMobile == true ? sqVsFormatted.slice(0, 10) : sqVsFormatted}
+                  </td>
                 </tr>
                 //implementare se la TEXTCF in casa e' con un squadra di B allora ... sono di colore verde acceso
               );

@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 // import { useDrag, useDrop } from "react-dnd";
-import { giornataN } from "../../../../../../START/app/0SerieAMatches";
+import { GiornataNContext } from "../../../../../../Ap/Global/global";
 import { ts } from "../../../../../../START/styles/0CssMainStyle";
 import {
   ButtonResetContext,
@@ -29,6 +29,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
   const [selection, setSelection] = useState("");
   const [isTablet, setIsTablet] = useState(window.matchMedia("(max-width: 768px)").matches);
 
+  const { giornataN, setGiornataN } = useContext(GiornataNContext);
   const { indexSel, setIndexSel } = useContext(IndexSelectedContext);
   const { giornataClouSelected, setGiornataClouSelected } = useContext(GiornataClouContext);
   const { sqSelected, setSqSelected } = useContext(SquadraContext);

@@ -1,9 +1,11 @@
 export function creaRisSq(calendario, nomeSquadra, number) {
   const risultatiSquadra = [];
+  const totaleGiornate = 38;
+
   let giornataSpecialeInserita = false;
   console.log("risultati squadra", risultatiSquadra);
   // console.log(number, "numbernumber");
-  let value = number ? number : 38;
+  let value = number ? number : totaleGiornate;
   for (let i = 1; i <= value; i++) {
     const giornata = calendario[`giornata${i}`];
 
@@ -28,8 +30,7 @@ export function creaRisSq(calendario, nomeSquadra, number) {
         } else if (partita.pron === "x") {
           resultsTrimmed = "9-9"; // Aggiunto: se 'pron' è 'X', imposta il risultato su '9-9'
         } else {
-          resultsTrimmed =
-            typeof partita.results === "string" ? partita.results.trim() : "";
+          resultsTrimmed = typeof partita.results === "string" ? partita.results.trim() : "";
         }
         if (resultsTrimmed.split("-").length === 1) {
           // Se resultsTrimmed è solo un numero, trattalo come una stringa vuota
@@ -52,9 +53,7 @@ export function creaRisSq(calendario, nomeSquadra, number) {
           else if (golSquadra < golAvversari) segno = "-";
           else segno = "=";
 
-          const risultatoInvertito = isCasa
-            ? resultsTrimmed
-            : risultatoSplit.reverse().join("-");
+          const risultatoInvertito = isCasa ? resultsTrimmed : risultatoSplit.reverse().join("-");
 
           risultatiSquadra.push({
             risultato: risultatoInvertito,

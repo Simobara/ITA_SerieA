@@ -1,96 +1,66 @@
-//? PAGE CON SENDING EMAIL
-
-require('dotenv').config(); // Carica le variabili d'ambiente dal file .env
-const express = require('express');
-const bodyParser = require('body-parser');
-const nodemailer = require('nodemailer');
-const cors = require('cors');
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
 const app = express();
-const port = 3001;
+const PORT = 5000;
 
-console.log('EMAIL_USER:', process.env.EMAIL_USER); // Log per verificare le variabili d'ambiente
-console.log('EMAIL_PASS:', process.env.EMAIL_PASS); // Log per verificare le variabili d'ambiente
-
-app.use(bodyParser.json());
+// Middleware
 app.use(cors());
+app.use(express.json());
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER, // Usa la variabile d'ambiente
-    pass: process.env.EMAIL_PASS,  // Usa la variabile d'ambiente
+// Importa il modello Giornata
+const Giornata = require("./schemas/giornataSchema");
+
+// Costruisci il connection string dinamicamente
+const username = process.env.USERNAME;
+const password = process.env.PASSWORD;
+const clusterUrl = process.env.CLUSTER_URL;
+const dbName = process.env.DB_NAME;
+const dbURI = `mongodb+srv://${username}:${password}@${clusterUrl}/${dbName}?retryWrites=true&w=majority&appName=Cluster0`;
+
+// Connessione a MongoDB Atlas
+mongoose
+  .connect(dbURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("Connected to MongoDB Atlas"))
+  .catch((err) => console.error("Could not connect to MongoDB Atlas...", err));
+
+// Endpoint per ottenere tutte le giornate
+app.get("/api/giornate", async (req, res) => {
+  try {
+    const giornate = await Giornata.find();
+    res.send(giornate);
+  } catch (error) {
+    res.status(500).send(error);
   }
 });
 
-app.post('/login', (req, res) => {
-  const { email, phoneNumber } = req.body;
-  const loginTime = new Date().toLocaleString();
-
-  const mailOptions = {
-    from: process.env.EMAIL_USER,
-    to: ['simo.bara12@gmail.com', email], // Invia sia al tuo indirizzo che all'indirizzo dell'utente
-    subject: 'Nuovo login',
-    text: `Numero di cellulare: ${phoneNumber}\nEmail: ${email}\nOra di accesso: ${loginTime}`
-  };
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error('Errore durante l\'invio della mail:', error);
-      return res.status(500).json({ success: false, message: error.message });
-    }
-    res.json({ success: true, message: 'Credenziali inviate con successo' });
-  });
+// Endpoint per aggiornare la giornataClou
+app.put("/api/giornate/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { giornataClou } = req.body;
+    const giornata = await Giornata.findByIdAndUpdate(id, { giornataClou }, { new: true });
+    res.send(giornata);
+  } catch (error) {
+    res.status(500).send(error);
+  }
 });
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+// Endpoint per impostare una giornata clou
+app.post("/api/giornate/clou", async (req, res) => {
+  try {
+    const { numero } = req.body;
+    const giornata = await Giornata.findOneAndUpdate({ numeroSelezionato: numero }, { giornataClou: true }, { new: true, upsert: true });
+    res.send(giornata);
+  } catch (error) {
+    res.status(500).send(error);
+  }
 });
 
-
-//? PAGE CON OTP
-// const express = require('express');
-// const bodyParser = require('body-parser');
-// const twilio = require('twilio');
-// const cors = require('cors');
-
-// const app = express();
-// const port = 3001;
-
-// app.use(bodyParser.json());
-// app.use(cors());
-
-// const accountSid = 'your_twilio_account_sid'; // Trova queste informazioni nella tua dashboard Twilio
-// const authToken = 'your_twilio_auth_token';
-// const client = twilio(accountSid, authToken);
-
-// let otpStore = {}; // Una semplice memoria per memorizzare OTP temporaneamente
-
-// app.post('/send-otp', (req, res) => {
-//   const { phoneNumber } = req.body;
-//   const otp = Math.floor(100000 + Math.random() * 900000).toString();
-
-//   otpStore[phoneNumber] = otp;
-
-//   client.messages
-//     .create({
-//       body: `Your OTP code is ${otp}`,
-//       from: 'your_twilio_phone_number',
-//       to: phoneNumber,
-//     })
-//     .then((message) => res.json({ success: true, message: 'OTP sent' }))
-//     .catch((error) => res.status(500).json({ success: false, message: error.message }));
-// });
-
-// app.post('/verify-otp', (req, res) => {
-//   const { phoneNumber, otp } = req.body;
-//   if (otpStore[phoneNumber] === otp) {
-//     delete otpStore[phoneNumber];
-//     res.json({ success: true, message: 'OTP verified' });
-//   } else {
-//     res.status(400).json({ success: false, message: 'Invalid OTP' });
-//   }
-// });
-
-// app.listen(port, () => {
-//   console.log(`Server running on http://localhost:${port}`);
-// });
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
