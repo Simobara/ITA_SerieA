@@ -60,7 +60,7 @@ const Header = () => {
               Modifica
             </button>
           </form>
-          <div className="flex items-center space-x-4 ml-[30%]">
+          <div className="flex items-center space-x-4 ml-[15%] sm:ml-[35%]">
             <button className="bg-black text-blue-900 rounded flex items-center justify-center animate-gradient" onClick={openLink1}>
               <img src={ItaliaDelCalcio} alt="Italia del Calcio" className="mr-0" style={{ width: "30px", height: "auto" }} />
             </button>
