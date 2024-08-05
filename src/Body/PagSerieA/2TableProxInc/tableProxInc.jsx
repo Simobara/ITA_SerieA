@@ -36,6 +36,8 @@ const TableProxInc = () => {
   // const { giornataClouSelected, setGiornataClouSelected } = useContext(GiornataClouContext);
   // const { partiteDefinNoMod, setPartiteDefinNoMod } = useContext(PartiteDefinNoModContext);
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
   const handleReset = () => {
     setCompleteClouSelected(JSON.parse(JSON.stringify(calendario1)));
     setResetAll([]);
@@ -55,38 +57,49 @@ const TableProxInc = () => {
   useEffect(() => {
     handleReset();
   }, [giornataN]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   // --------------------------------------------------------------------------------------
   return (
     <>
       <div className="relative">
-        <div className="unselectable flex justify-center h-[26.8rem] overflow-x-hidden hide-scrollbar">
-          <div className="relative h-[42rem] w-[100rem] ml-[-2rem] mr-[0rem]">
-            <img src={serieAItalia} alt="serieAItalia" className="unselectable relative h-[110%] w-[100%] mt-[-4rem] filter brightness-35" />
-            {coppiaSelected && renderSquadre()}
-            {buttonResetIsResetting && (
-              <button className="absolute top-[18%] left-[45%] p-1 font-bold bg-transparent rounded-full hover:bg-red-900 z-10" onClick={() => handleReset()}>
-                📍
-                {/* 👁️ */}
-              </button>
-            )}
+        {!isMobile && (
+          <div className="unselectable flex justify-center h-[26.8rem] overflow-x-hidden hide-scrollbar ">
+            <div className="relative h-[42rem] w-[100rem] ml-[-2rem] mr-[0rem]">
+              <img src={serieAItalia} alt="serieAItalia" className="unselectable relative h-[110%] w-[100%] mt-[-4rem] filter brightness-35" />
+              {coppiaSelected && renderSquadre()}
+              {buttonResetIsResetting && (
+                <button className="absolute top-[18%] left-[45%] p-1 font-bold bg-transparent rounded-full hover:bg-red-900 z-10" onClick={() => handleReset()}>
+                  📍
+                  {/* 👁️ */}
+                </button>
+              )}
 
-            <div
-              className="absolute top-[-1%] left-[58.5%] w-[310px] h-[223px] bg-black flex flex-col items-start justify-start text-white text-lg border border-gray-700 border-3 px-1 overflow-hidden z-10"
-              style={{ borderRadius: "5%" }}
-            >
-              <div className="flex-1 flex items-start">
-                <span className={`${getTextTeam(coppiaSelected.team1)} ${ts.BgSquadraCasa} !z-20`}>{coppiaSelected.team1}</span>
+              <div
+                className="absolute top-[-1%] left-[58.5%] w-[310px] h-[223px] bg-black flex flex-col items-start justify-start text-white text-lg border border-gray-700 border-3 px-1 overflow-hidden z-10"
+                style={{ borderRadius: "5%" }}
+              >
+                <div className="flex-1 flex items-start">
+                  <span className={`${getTextTeam(coppiaSelected.team1)} ${ts.BgSquadraCasa} !z-20`}>{coppiaSelected.team1}</span>
+                </div>
+                {occhioApertoPartita && <ValCasa />}
+                <div className="flex-1 flex items-start mt-1 ">
+                  <span className={`${getTextTeam(coppiaSelected.team2)} ${ts.BgSquadraFuori} !z-10`}>{coppiaSelected.team2}</span>
+                </div>
+                {occhioApertoPartita && <ValFuori />}
               </div>
-              {occhioApertoPartita && <ValCasa />}
-              <div className="flex-1 flex items-start mt-1 ">
-                <span className={`${getTextTeam(coppiaSelected.team2)} ${ts.BgSquadraFuori} !z-10`}>{coppiaSelected.team2}</span>
-              </div>
-              {occhioApertoPartita && <ValFuori />}
-            </div>
-            {/* <div className="absolute top-[26%] left-[49.5%]">1 -📊 </div>
+              {/* <div className="absolute top-[26%] left-[49.5%]">1 -📊 </div>
             <div className="absolute top-[30.2%] left-[51%]">3 -📋 </div> */}
+            </div>
           </div>
-        </div>
+        )}
         {/* <button className="mt-2 mr-4 p-4 font-bold bg-gray-500 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300 focus:ring-opacity-50 transition duration-300 ease-in-out"
               // style={{ transform: 'rotate(180deg)' }}
               onClick={() => setIsModalInserOpen(true)}
