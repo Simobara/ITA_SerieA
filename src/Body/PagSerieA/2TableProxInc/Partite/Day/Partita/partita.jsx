@@ -261,7 +261,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
             )}
             <div className={`{absolute flex flex-row ml-[10%] {!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}>
               <div
-                className={`max-w-[9rem] whitespace-nowrap overflow-hidden z-[1]
+                className={`max-w-[9rem] whitespace-nowrap overflow-hidden z-[1] text-xl
                                 ${getTextTeam(partita.team1)} 
                                 ${isKQBtnActive ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}
                                 ${isBigTeam(partita.team1) ? `my-1 ${ts.ATeamText} ${ts.ATeamBg} font-bold` : ""} 
@@ -276,11 +276,11 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                   !isSignOk && isPartitaModificabile ? handleSelection(partita.team1, "1") : undefined;
                 }}
               >
-                {isTablet ? partita.team1.slice(0, 3) : partita.team1}
+                {isTablet ? partita.team1.slice(0, 10) : partita.team1}
               </div>
             </div>
             <div
-              className={`absolute flex flex-row sm:ml-[4rem] md:ml-[8rem] lg:ml-[42%] ml-[40%] rounded-lg bg-gray-900 mt-3 w-6 pt-[0.7rem] z-[4] 
+              className={`absolute flex flex-row sm:ml-[4rem] md:ml-[8rem] lg:ml-[42%] ml-[44%] rounded-lg bg-gray-900 mt-3 w-6 pt-[0.7rem] z-[4] 
                                 ${isKQBtnActive || !isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"} 
                                 ${selection === "X" ? "text-yellow-500/50" : ""}`}
               onClick={() => (!isSignOk && isPartitaModificabile ? handleSelection(partita.team1, "X") : undefined)}
@@ -291,14 +291,14 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
               className={`absolute flex flex-row sm:ml-[5rem] md:ml-[55%] ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
             >
               <div
-                className={`max-w-[9rem] whitespace-nowrap overflow-hidden ml-[1rem] 
+                className={`max-w-[9rem] whitespace-nowrap overflow-hidden ml-[1rem] text-xl
                                 ${getTextTeam(partita.team2)} 
                                 ${isKQBtnActive ? "hover:cursor-not-allowed unselectable" : ""}
                                 ${isBigTeam(partita.team2) ? "font-bold" : ""} 
                                 ${underlineTeam("2")}`}
                 onClick={() => (!isSignOk && isPartitaModificabile ? handleSelection(partita.team2, "2") : undefined)}
               >
-                {isTablet == true ? partita.team2.slice(0, 3) : partita.team2}
+                {isTablet == true ? partita.team2.slice(0, 10) : partita.team2}
                 {/* {partita.team2} */}
               </div>
             </div>
