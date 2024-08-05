@@ -271,15 +271,15 @@ const TableClass = () => {
         </table>
       )}
       {isMobile && (
-        <div className="table-container">
+        <div className="table-container w-[95vw]  ">
           <div className="table-column">
-            <table className="relative overflow-auto md:min-h-[57rem]">
+            <table className="relative overflow-x-hidden overflow-y-auto md:min-h-[57rem] max-w-[50%]">
               <thead>
                 <tr className="bg-black text-gray-600 text-center">
                   <th className="w-[0.5rem]" style={{ whiteSpace: "nowrap" }}>
                     -
                   </th>
-                  <th className="w-[1rem] sm:pl-[1rem]">--- SQUADRA --</th>
+                  <th className="w-[20%rem] sm:pl-[1rem]">--- SQUADRA --</th>
                   <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem]">?</th>
                   <th className="w-[1rem] sm:pl-[1rem] pl-[0.2rem] text-left">PTS</th>
                 </tr>
@@ -340,7 +340,7 @@ const TableClass = () => {
             </table>
           </div>
           <div className="table-column">
-            <table className="relative overflow-auto md:min-h-[57rem] ml-[1rem]">
+            <table className="relative overflow-x-hidden overflow-y-auto md:min-h-[57rem] max-w-[50%] ml-[-1rem]">
               <thead>
                 <tr className="bg-black text-gray-600 text-center">
                   <th className="w-[0.5rem]" style={{ whiteSpace: "nowrap" }}>
