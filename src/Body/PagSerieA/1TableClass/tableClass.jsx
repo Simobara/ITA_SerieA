@@ -340,7 +340,7 @@ const TableClass = () => {
             </table>
           </div>
           <div className="table-column">
-            <table className="relative overflow-auto md:min-h-[57rem] ml-[-1rem]">
+            <table className="relative overflow-auto md:min-h-[57rem] ml-[1rem]">
               <thead>
                 <tr className="bg-black text-gray-600 text-center">
                   <th className="w-[0.5rem]" style={{ whiteSpace: "nowrap" }}>
