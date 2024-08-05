@@ -281,7 +281,7 @@ const TableClass = () => {
                   </th>
                   <th className="w-[1rem] sm:pl-[1rem]">--- SQUADRA --</th>
                   <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem]">?</th>
-                  <th className="w-[1rem] sm:pl-[1rem] lg:pl-[0] pl-[0.5rem] text-center">PTS</th>
+                  <th className="w-[1rem] sm:pl-[1rem] pl-[0.2rem] text-left">PTS</th>
                 </tr>
               </thead>
               <tbody className="bg-black text-cyan-800">
@@ -348,7 +348,7 @@ const TableClass = () => {
                   </th>
                   <th className="w-[1rem] sm:pl-[1rem] ">--- SQUADRA --</th>
                   <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem]">?</th>
-                  <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem] text-right">PTS</th>
+                  <th className="w-[1rem] sm:pl-[1rem] pl-[0.2rem] text-left">PTS</th>
                 </tr>
               </thead>
               <tbody className="bg-black text-cyan-800">
