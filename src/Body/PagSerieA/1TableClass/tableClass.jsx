@@ -271,7 +271,7 @@ const TableClass = () => {
         </table>
       )}
       {isMobile && (
-        <div className="table-container w-[95vw] mb-[1rem]">
+        <div className="table-container w-[95vw]">
           <div className="table-column">
             <table className="relative overflow-x-hidden overflow-y-auto md:min-h-[57rem] max-w-[50%]">
               <thead>
