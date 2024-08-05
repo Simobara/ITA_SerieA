@@ -2,13 +2,7 @@
 // import Placeholder from "./Placeholder/placeholder"; //posizione per trascinare
 import Partita from "./Partita/partita";
 
-const Day = ({
-  title,
-  partite = [],
-  resetAll,
-  occhioApertoPartita,
-  setOcchioApertoPartita,
-}) => {
+const Day = ({ title, partite = [], resetAll, occhioApertoPartita, setOcchioApertoPartita }) => {
   // const [occhioApertoPartita, setOcchioApertoPartita] = useState(null);
   const hasPartite = Array.isArray(partite) && partite.length > 0;
 
