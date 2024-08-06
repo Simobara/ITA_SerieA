@@ -273,7 +273,7 @@ const TableClass = () => {
       {isMobile && (
         <div className="table-container w-[100vw]">
           <div className="table-column">
-            <table className="relative overflow-x-hidden overflow-y-auto md:min-h-[57rem] max-w-[46%]">
+            <table className="relative overflow-x-hidden overflow-y-hidden md:min-h-[57rem] max-w-[46%]">
               <thead>
                 <tr className="bg-black text-gray-600 text-center">
                   <th className="w-[0.2rem] sm:w-[0.5rem]" style={{ whiteSpace: "nowrap" }}>
@@ -281,7 +281,7 @@ const TableClass = () => {
                   </th>
                   <th className="w-[20%] sm:pl-[1rem]">----- SQUADRA </th>
                   <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem]">?</th>
-                  <th className="w-[1rem] sm:pl-[1rem] pl-[0.2rem] text-center">P</th>
+                  <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem] text-center">P</th>
                 </tr>
               </thead>
               <tbody className="bg-black text-cyan-800">
@@ -340,7 +340,7 @@ const TableClass = () => {
             </table>
           </div>
           <div className="table-column">
-            <table className="relative overflow-x-hidden overflow-y-auto md:min-h-[57rem] max-w-[46%] ml-[0rem]">
+            <table className="relative overflow-x-hidden overflow-y-hidden md:min-h-[57rem] max-w-[46%] ml-[0rem]">
               <thead>
                 <tr className="bg-black text-gray-600 text-center">
                   <th className="w-[1rem] sm:w-[0.5rem]" style={{ whiteSpace: "nowrap" }}>
@@ -348,7 +348,7 @@ const TableClass = () => {
                   </th>
                   <th className="w-[20%] sm:pl-[1rem] "> ----- SQUADRA </th>
                   <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem]">?</th>
-                  <th className="w-[1rem] sm:pl-[1rem] pl-[0.2rem] text-center">P</th>
+                  <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem] text-center">P</th>
                 </tr>
               </thead>
               <tbody className="bg-black text-cyan-800">
