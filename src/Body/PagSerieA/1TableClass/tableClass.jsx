@@ -277,9 +277,9 @@ const TableClass = () => {
               <thead>
                 <tr className="bg-black text-gray-600 text-center">
                   <th className="w-[2%] sm:w-[0.5rem]" style={{ whiteSpace: "nowrap" }}></th>
-                  <th className="w-[20%] sm:pl-[1rem]">---- SQUADRA</th>
+                  <th className="w-[20%] sm:pl-[1rem]">----- SQUADRA</th>
                   <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem]">?</th>
-                  <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem] text-center">Ps</th>
+                  <th className="w-[5%] sm:pl-[1rem] pl-[0.5rem] text-center">Ps</th>
                 </tr>
               </thead>
               <tbody className="bg-black text-cyan-800">
@@ -309,7 +309,7 @@ const TableClass = () => {
                       </div>
                     </td>
                     <td
-                      className={`sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 pl-[0] text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
+                      className={`sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 pl-[0.5rem] text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
                           ${indiciDiffQ.includes(index) ? "borderAlto border-white" : ""}`}
                     >
                       <div className="absolute transform -translate-x-4/3 -translate-y-7 sm:-translate-y-6 md:-translate-y-8 text-center md:text-lg text-md text-white mx-5 sm:mx-3 md:mx-0 lg:mx-2 my-[-10] z-[10]">
@@ -317,8 +317,9 @@ const TableClass = () => {
                       </div>
                       {getPunteggioColonnaDomanda(squadra)}
                     </td>
+                    {/* // COLONNA PTS SOTTO */}
                     <td
-                      className={`sm:pl-[1.5rem] md:pl-[1rem] lg:pl-2 pl-[1rem] xl:mr-4 text-left font-bold bg-black md:text-md  lg:text-lg
+                      className={`sm:pl-[1.5rem] md:pl-[1rem] lg:pl-2 pl-[0.5rem] xl:mr-4 text-left font-bold bg-black md:text-md  lg:text-lg
                         ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ` : ""}
                         ${indiciDiffPts.includes(index) ? "borderAlto border-gray-600/80 " : ""}
                         ${getPunteggioColonnaDomanda(squadra) !== " " ? `  text-cyan-500/80` : "text-cyan-500/80"}
@@ -342,7 +343,7 @@ const TableClass = () => {
               <thead>
                 <tr className="bg-black text-gray-600 text-center">
                   <th className="w-[2%] sm:w-[0.5rem]" style={{ whiteSpace: "nowrap" }}></th>
-                  <th className="w-[20%] sm:pl-[1rem] "> ---- SQUADRA </th>
+                  <th className="w-[20%] sm:pl-[1rem] "> ----- SQUADRA </th>
                   <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem]">?</th>
                   <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem] text-center">Ps</th>
                 </tr>
@@ -374,7 +375,7 @@ const TableClass = () => {
                       </div>
                     </td>
                     <td
-                      className={`sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 pl-[1rem] text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
+                      className={`sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 pl-[0.5rem] text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
                           ${indiciDiffQ.includes(index + half) ? "borderAlto border-white" : ""}`}
                     >
                       <div className="absolute transform -translate-x-4/3 -translate-y-7 sm:-translate-y-6 md:-translate-y-8 text-center md:text-lg text-md text-white mx-5 sm:mx-3 md:mx-0 lg:mx-2 my-[-10] z-[10]">
@@ -382,8 +383,9 @@ const TableClass = () => {
                       </div>
                       {getPunteggioColonnaDomanda(squadra)}
                     </td>
+                    {/* //colonna PTS SOTTO*/}
                     <td
-                      className={`sm:pl-[1.5rem] md:pl-[1rem] lg:pl-2 pl-[1rem] xl:mr-4 text-left font-bold bg-black md:text-md  lg:text-lg
+                      className={`sm:pl-[1.5rem] md:pl-[1rem] lg:pl-2 pl-[0.5rem] xl:mr-4 text-left font-bold bg-black md:text-md  lg:text-lg
                         ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ` : ""}
                         ${indiciDiffPts.includes(index + half) ? "borderAlto border-gray-600/80 " : ""}
                         ${getPunteggioColonnaDomanda(squadra) !== " " ? `  text-cyan-500/80` : "text-cyan-500/80"}
