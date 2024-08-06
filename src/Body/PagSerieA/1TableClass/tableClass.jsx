@@ -273,7 +273,7 @@ const TableClass = () => {
       {isMobile && (
         <div className="table-container w-[100vw]">
           <div className="table-column">
-            <table className="relative overflow-x-hidden overflow-y-auto md:min-h-[57rem] max-w-[50%]">
+            <table className="relative overflow-x-hidden overflow-y-auto md:min-h-[57rem] max-w-[46%]">
               <thead>
                 <tr className="bg-black text-gray-600 text-center">
                   <th className="w-[0.2rem] sm:w-[0.5rem]" style={{ whiteSpace: "nowrap" }}>
@@ -329,7 +329,7 @@ const TableClass = () => {
                         ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}`}
                     >
                       <div className="innerBorder"></div>
-                      <div className={`absolute transform -translate-x-4/3 -translate-y-8 text-center text-md text-gray-600/80 mx-8 sm:my-[-10] z-30`}>
+                      <div className={`absolute transform -translate-x-4/3 -translate-y-8 text-left text-md text-gray-600/80 mx-8 sm:my-[-10] z-30`}>
                         {!numeriIndiciBorderWhite[index] && differenzePunti[index]}
                       </div>
                       {getPunteggioColonnaPTS(squadra)}
@@ -340,7 +340,7 @@ const TableClass = () => {
             </table>
           </div>
           <div className="table-column">
-            <table className="relative overflow-x-hidden overflow-y-auto md:min-h-[57rem] max-w-[50%] ml-[0rem]">
+            <table className="relative overflow-x-hidden overflow-y-auto md:min-h-[57rem] max-w-[46%] ml-[0rem]">
               <thead>
                 <tr className="bg-black text-gray-600 text-center">
                   <th className="w-[0.2rem] sm:w-[0.5rem]" style={{ whiteSpace: "nowrap" }}>
@@ -396,7 +396,7 @@ const TableClass = () => {
                         ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}`}
                     >
                       <div className="innerBorder"></div>
-                      <div className="absolute transform -translate-x-4/3 -translate-y-7 sm:-translate-y-6 md:-translate-y-8 text-center md:text-lg text-md text-white mx-5 sm:mx-3 md:mx-0 lg:mx-2 my-[-10] z-[10]">
+                      <div className="absolute transform -translate-x-4/3 -translate-y-7 sm:-translate-y-6 md:-translate-y-8 text-left md:text-lg text-md text-white mx-5 sm:mx-3 md:mx-0 lg:mx-2 my-[-10] z-[10]">
                         {!numeriIndiciBorderWhite[index + half] && differenzePunti[index + half]}
                       </div>
                       {getPunteggioColonnaPTS(squadra)}
