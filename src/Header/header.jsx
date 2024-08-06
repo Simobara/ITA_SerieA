@@ -57,7 +57,7 @@ const Header = () => {
               ))}
             </select>
             <button type="submit" className="bg-blue-500 text-white px-2 py-1 rounded">
-              Modifica
+              Set
             </button>
           </form>
           <div className="flex items-center space-x-4 ml-[15%] sm:ml-[35%]">

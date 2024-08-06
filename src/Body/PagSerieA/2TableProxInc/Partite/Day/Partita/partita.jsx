@@ -226,7 +226,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                 ${isPartitaModificabile ? "" : "unselectable"}`}
       >
         <div className="flex items-center justify-center xs:text-xs sm:text-sm relative">
-          <div className="ml-[5%] sm:ml-0 sm:mr-1 p-[0.354rem] py-0 w-30 text-gray-800">
+          <div className="ml-[-6rem] sm:ml-0 sm:mr-1 p-[0.354rem] py-0 w-30 text-gray-800">
             {/* <span role="img" aria-label="Menu">☰</span> */}
             <span>{partita.time}</span>
           </div>
@@ -259,7 +259,10 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                 </div>
               </div>
             )}
-            <div className={`{absolute flex flex-row ml-[10%] {!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}>
+            {/* partita.team1 */}
+            <div
+              className={`{absolute flex flex-row sm:ml-[-12%] md:ml-[10%] ml-[10%] {!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
+            >
               <div
                 className={`max-w-[9rem] whitespace-nowrap overflow-hidden z-[1] text-xl
                                 ${getTextTeam(partita.team1)} 
@@ -267,26 +270,20 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                                 ${isBigTeam(partita.team1) ? `my-1 ${ts.ATeamText} ${ts.ATeamBg} font-bold` : ""} 
                                 ${underlineTeam("1")}`}
                 onClick={() => {
-                  // console.log(
-                  //   partita.team1,
-                  //   isKQBtnActive,
-                  //   /!isSignOk && isPartitaModificabile,
-                  //   "abcdefghijkl"
-                  // );
                   !isSignOk && isPartitaModificabile ? handleSelection(partita.team1, "1") : undefined;
                 }}
               >
                 {isTablet ? partita.team1.slice(0, 10) : partita.team1}
               </div>
             </div>
+            {/* segno in mezzo */}
             <div
               className={`absolute flex flex-row sm:ml-[4rem] md:ml-[8rem] lg:ml-[42%] ml-[44%] rounded-lg bg-gray-900 mt-3 w-6 pt-[0.7rem] z-[4] 
                                 ${isKQBtnActive || !isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"} 
                                 ${selection === "X" ? "text-yellow-500/50" : ""}`}
               onClick={() => (!isSignOk && isPartitaModificabile ? handleSelection(partita.team1, "X") : undefined)}
-            >
-              {/* Contenuto del div */}
-            </div>
+            ></div>
+            {/* {partita.team2} */}
             <div
               className={`absolute flex flex-row sm:ml-[5rem] md:ml-[55%] ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
             >
@@ -299,7 +296,6 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                 onClick={() => (!isSignOk && isPartitaModificabile ? handleSelection(partita.team2, "2") : undefined)}
               >
                 {isTablet == true ? partita.team2.slice(0, 10) : partita.team2}
-                {/* {partita.team2} */}
               </div>
             </div>
           </div>
@@ -309,8 +305,10 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                         {isActive ? '❗' : '❔'}
                     </div>
                 </div> */}
+        <div className="absolute flex ml-[44%]">pr</div>
+
         <button
-          className="bg-black text-gray-800 hover:bg-sky-600  mr-[0] sm:mr-[1rem] md:mr-[2rem] lg:mr-[0] xl:mr-[0] font-bold z-[10] hover:cursor-pointer select-none"
+          className="bg-black text-gray-800 hover:bg-sky-600  mr-[-1rem] sm:mr-[0] md:mr-[1rem] lg:mr-[0] xl:mr-[0] font-bold z-[10] hover:cursor-pointer select-none"
           onClick={() => toggleEye()}
           data-partita-numero={partita.numero}
         >
