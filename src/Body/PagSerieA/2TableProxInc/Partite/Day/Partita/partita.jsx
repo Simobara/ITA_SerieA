@@ -226,7 +226,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                 ${isPartitaModificabile ? "" : "unselectable"}`}
       >
         <div className="flex items-center justify-center xs:text-xs sm:text-sm relative">
-          <div className="ml-[-6rem] sm:ml-0  lg:ml-[-2rem] sm:mr-1 p-[0.354rem] py-0 w-30 text-gray-800">
+          <div className="ml-[-5rem] sm:ml-0  md:ml-[-0.5rem] lg:ml-[-1rem] sm:mr-1 p-[0.354rem] py-[-0.5rem] w-30 text-gray-800">
             {/* <span role="img" aria-label="Menu">☰</span> */}
             <span>{partita.time}</span>
           </div>
@@ -278,7 +278,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
             </div>
             {/* segno in mezzo */}
             <div
-              className={`absolute flex flex-row sm:ml-[4rem] md:ml-[8rem] lg:ml-[42%] ml-[44%] rounded-lg bg-gray-900 mt-3 w-6 pt-[0.7rem] z-[4] 
+              className={`absolute flex flex-row sm:ml-[4rem] md:ml-[42%] lg:ml-[42%] ml-[44%] rounded-lg bg-gray-900 mt-3 w-6 pt-[0.7rem] z-[4] 
                                 ${isKQBtnActive || !isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"} 
                                 ${selection === "X" ? "text-yellow-500/50" : ""}`}
               onClick={() => (!isSignOk && isPartitaModificabile ? handleSelection(partita.team1, "X") : undefined)}
@@ -305,10 +305,11 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                         {isActive ? '❗' : '❔'}
                     </div>
                 </div> */}
-        <div className="absolute flex ml-[44%]">pr</div>
 
+        {/* button eye */}
+        <div className="flex mr-[1rem] text-white z-[5]">1</div>
         <button
-          className="bg-black text-gray-800 hover:bg-sky-600  mr-[-1rem] sm:mr-[0] md:mr-[1rem] lg:mr-[0] xl:mr-[0] font-bold z-[10] hover:cursor-pointer select-none"
+          className="bg-black text-gray-800 hover:bg-sky-600 mr-[-1rem] sm:mr-[0] md:mr-[1rem] lg:mr-[0] xl:mr-[0] font-bold z-[10] hover:cursor-pointer select-none"
           onClick={() => toggleEye()}
           data-partita-numero={partita.numero}
         >
