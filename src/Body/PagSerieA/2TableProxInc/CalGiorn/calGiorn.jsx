@@ -130,7 +130,7 @@ const CalGiorn = ({ onReset }) => {
 
   // -------------------------------------------------------------------------------------------------------------
   return (
-    <div className="unselectable flex items-center justify-center bg-black mt-[0rem]">
+    <div className="unselectable flex items-center justify-center bg-black mt-[0rem] sm:mb-[0.5rem]">
       <button
         onClick={() => scroll("left")}
         disabled={indexSelected === 1} // Disabilita se selected è 1
