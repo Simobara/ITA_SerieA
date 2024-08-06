@@ -279,7 +279,7 @@ const TableClass = () => {
                   <th className="w-[0.2rem] sm:w-[0.5rem]" style={{ whiteSpace: "nowrap" }}>
                     -
                   </th>
-                  <th className="w-[15%rem] sm:pl-[1rem]">--- SQUADRA --</th>
+                  <th className="w-[20%] sm:pl-[1rem]">--- SQUADRA --</th>
                   <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem]">?</th>
                   <th className="w-[1rem] sm:pl-[1rem] pl-[0.2rem] text-center">PTS</th>
                 </tr>
@@ -343,10 +343,10 @@ const TableClass = () => {
             <table className="relative overflow-x-hidden overflow-y-auto md:min-h-[57rem] max-w-[46%] ml-[0rem]">
               <thead>
                 <tr className="bg-black text-gray-600 text-center">
-                  <th className="w-[0.2rem] sm:w-[0.5rem]" style={{ whiteSpace: "nowrap" }}>
+                  <th className="w-[3%] sm:w-[0.5rem]" style={{ whiteSpace: "nowrap" }}>
                     -
                   </th>
-                  <th className="w-[1rem] sm:pl-[1rem] ">--- SQUADRA --</th>
+                  <th className="w-[20%] sm:pl-[1rem] ">--- SQUADRA --</th>
                   <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem]">?</th>
                   <th className="w-[1rem] sm:pl-[1rem] pl-[0.2rem] text-center">PTS</th>
                 </tr>
