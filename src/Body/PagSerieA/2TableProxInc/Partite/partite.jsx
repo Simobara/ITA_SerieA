@@ -20,7 +20,7 @@ const Partite = ({ resetAll, occhioApertoPartita, setOcchioApertoPartita }) => {
   return (
     // <DndProvider backend={HTML5Backend}>
     <div
-      className={`relative overflow-x-hidden overflow-y-scroll hide-scrollbar flex flex-col items-left xs:text-xs sm:text-xl border border-x-0 rounded-3xl ${s.BorderPartite} sm:py-[0] md:py-[-0.5rem] min-w-[17rem] max-h-[26rem] my-[-0.5rem] sm:my-[1]`}
+      className={`relative overflow-x-hidden overflow-y-scroll hide-scrollbar flex flex-col items-left xs:text-xs sm:text-xl border border-x-0 rounded-3xl ${s.BorderPartite} sm:py-[0] md:py-[-2%] lg:py-[5%] min-w-[17rem] max-h-[26rem] my-[1rem] sm:my-[-0.5rem]`}
     >
       {giorniSettimana.map(
         ({ giorno, title }) =>

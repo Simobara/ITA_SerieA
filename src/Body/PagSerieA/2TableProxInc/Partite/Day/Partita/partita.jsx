@@ -226,7 +226,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                 ${isPartitaModificabile ? "" : "unselectable"}`}
       >
         <div className="flex items-center justify-center xs:text-xs sm:text-sm relative">
-          <div className="ml-[-5rem] sm:ml-0  md:ml-[-0.5rem] lg:ml-[-1rem] sm:mr-1 p-[0.354rem] py-[-0.5rem] w-30 text-gray-800">
+          <div className="ml-[-5rem] sm:ml-[-2rem]  md:ml-[-4rem] lg:ml-[-1rem] sm:mr-1 p-[0.354rem] py-[-0.5rem] w-30 text-gray-800">
             {/* <span role="img" aria-label="Menu">☰</span> */}
             <span>{partita.time}</span>
           </div>
@@ -251,8 +251,9 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
         </div>
         <div className="relative flex flex-col sm:ml-[2rem] justify-start w-[90rem] max-w-[70%] sm:mx-2">
           <div className="relative flex flex-row items-center ml-[1rem] xs:text-xs sm:text-xl">
+            {/*symbol */}
             {isButtonClickable && !isPartitaInCoppiaRegSelected && (
-              <div className={`absolute ml-[2%] sm:pl-[10%] sm:ml-[-1.5rem] z-[20] bg-black ${!isPartitaModificabile ? "unselectable" : ""}`}>
+              <div className={`absolute ml-[4%] sm:pl-[-10%] sm:ml-[-12%] z-[20] bg-black ${!isPartitaModificabile ? "unselectable" : ""}`}>
                 <div className="hover:cursor-pointer" onClick={toggleSymbol}>
                   {" "}
                   {isKQBtnActive ? "📍" : "✔️"}{" "}
@@ -261,7 +262,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
             )}
             {/* partita.team1 */}
             <div
-              className={`{absolute flex flex-row sm:ml-[-12%] md:ml-[10%] ml-[10%] {!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
+              className={`{absolute flex flex-row sm:ml-[-2%] md:ml-[10%] ml-[10%] {!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
             >
               <div
                 className={`max-w-[9rem] whitespace-nowrap overflow-hidden z-[1] text-xl
@@ -278,14 +279,14 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
             </div>
             {/* segno in mezzo */}
             <div
-              className={`absolute flex flex-row sm:ml-[4rem] md:ml-[42%] lg:ml-[42%] ml-[44%] rounded-lg bg-gray-900 mt-3 w-6 pt-[0.7rem] z-[4] 
+              className={`absolute flex flex-row sm:ml-[36%] md:ml-[42%] lg:ml-[42%] ml-[44%] rounded-lg bg-gray-900 mt-3 w-6 pt-[0.7rem] z-[4] 
                                 ${isKQBtnActive || !isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"} 
                                 ${selection === "X" ? "text-yellow-500/50" : ""}`}
               onClick={() => (!isSignOk && isPartitaModificabile ? handleSelection(partita.team1, "X") : undefined)}
             ></div>
             {/* {partita.team2} */}
             <div
-              className={`absolute flex flex-row sm:ml-[5rem] md:ml-[55%] ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
+              className={`absolute flex flex-row sm:ml-[42%] md:ml-[55%] ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
             >
               <div
                 className={`max-w-[9rem] whitespace-nowrap overflow-hidden ml-[1rem] text-xl
@@ -307,9 +308,9 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                 </div> */}
 
         {/* button eye */}
-        <div className="flex mr-[1rem] text-white z-[5]">1</div>
+        <div className="absolute flex ml-[70%] mr-[1rem] text-slate-700 z-[5]">{partita.pron}</div>
         <button
-          className="bg-black text-gray-800 hover:bg-sky-600 mr-[-1rem] sm:mr-[0] md:mr-[1rem] lg:mr-[0] xl:mr-[0] font-bold z-[10] hover:cursor-pointer select-none"
+          className="absolute bg-black text-gray-800 hover:bg-sky-600 ml-[80%] sm:mr-[0] md:mr-[1rem] lg:mr-[0] xl:mr-[0] font-bold z-[10] hover:cursor-pointer select-none"
           onClick={() => toggleEye()}
           data-partita-numero={partita.numero}
         >
