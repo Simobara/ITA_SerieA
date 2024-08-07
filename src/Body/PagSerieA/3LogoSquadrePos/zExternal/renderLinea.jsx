@@ -1,4 +1,3 @@
-import { nomiSquadre } from "../../../../START/app/1main";
 import { ts } from "../../../../START/styles/0CssMainStyle";
 export const renderLineaa = (start, end, arraySquadre, squadraAttiva1, squadraAttiva2, handleLogoClick, logoRefs) => (
   <div
@@ -12,7 +11,7 @@ export const renderLineaa = (start, end, arraySquadre, squadraAttiva1, squadraAt
     {arraySquadre.slice(start, end).map((squadra, index) => {
       const isActive1 = squadra.name === squadraAttiva1;
       const isActive2 = squadra.name === squadraAttiva2;
-      console.log("NOMI SQUADRE:", nomiSquadre);
+      // console.log("NOMI SQUADRE:", nomiSquadre);
       let className = "px-1 sm:px-2 py-1 grayscale";
       let inlineStyle = {};
 

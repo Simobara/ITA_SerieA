@@ -110,11 +110,11 @@ const TableClass = () => {
       const risultatiSquadra = creaRisSq(completeClouSelected, squadra.name, number);
       // Log per vedere i risultati della squadra corrente
 
-      console.log(squadra.name, calcPntSq(risultatiSquadra), "nommiiiii");
+      // console.log(squadra.name, calcPntSq(risultatiSquadra), "nommiiiii");
       const punteggio = calcPntSq(risultatiSquadra);
 
       squadra.punteggio = punteggio; // Aggiunge il punteggio direttamente all'oggetto della squadra
-      console.log(squadra.name, squadra.punteggio, "punteggioInizialeSquadra");
+      // console.log(squadra.name, squadra.punteggio, "punteggioInizialeSquadra");
     });
 
     // Forza un aggiornamento dello stato per riflettere i nuovi punteggi nel rendering del componente

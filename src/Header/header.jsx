@@ -15,6 +15,7 @@ const Header = () => {
   const totaleGiornate = 38;
   const [showModalCal, setShowModalCal] = useState(false);
   const [showModalCoppaIta, setShowModalCoppaIta] = useState(false);
+  const [giornateClou, setGiornateClou] = useState([]);
   const { giornataN, setGiornataN } = useContext(GiornataNContext);
 
   const openLink1 = () => openLinks();
@@ -27,18 +28,18 @@ const Header = () => {
     setShowModalCoppaIta((prev) => !prev);
   };
 
+  //------------------------------------------------------------------------------------------POST REQUEST
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(`Giornata attuale: ${giornataN}`);
     try {
       const response = await axios.post("http://localhost:5000/api/giornate/clou", { numero: giornataN });
       console.log("Giornata clou aggiornata:", response.data);
-      // Puoi aggiornare lo stato o eseguire altre azioni necessarie qui
     } catch (error) {
       console.error("Errore durante l'aggiornamento della giornata clou:", error);
     }
   };
-
+  //------------------------------------------------------------------------------------------------------
   const handleChange = (e) => {
     setGiornataN(Number(e.target.value));
   };
@@ -57,7 +58,7 @@ const Header = () => {
               ))}
             </select>
             <button type="submit" className="bg-blue-500 text-white px-2 py-1 rounded">
-              Set
+              SetDayClou
             </button>
           </form>
           <div className="flex items-center space-x-4 ml-[15%] sm:ml-[35%]">

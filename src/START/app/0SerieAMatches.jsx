@@ -589,11 +589,11 @@ const calendario25 = {
   ],
 }; 
 
-//! ------------------- ------------------------------------------------------------------- ------------------------------------------
-export const giornataNum = 1 //!NON TOCCARE QUESTO VALORE
+
 //! -------------------------------------------------------------------------------------- -------------------------------------------
 export const currentYear = 2025;
 export const calendario = JSON.parse(JSON.stringify(calendario25));
 export const calendario1 = JSON.parse(JSON.stringify(calendario25));
+export const giornataNum = 1 //!NON TOCCARE QUESTO VALORE
 export const giornataClou = calendario[`giornata${giornataNum}`];
 //! -------------------------------------------------------------------------------------- -------------------------------------------

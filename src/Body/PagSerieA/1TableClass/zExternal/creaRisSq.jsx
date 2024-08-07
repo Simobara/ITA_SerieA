@@ -3,7 +3,8 @@ export function creaRisSq(calendario, nomeSquadra, number) {
   const totaleGiornate = 38;
 
   let giornataSpecialeInserita = false;
-  console.log("risultati squadra", risultatiSquadra);
+  //CONSOLE LOG IMPORTANTE
+  // console.log("risultati squadra", risultatiSquadra);
   // console.log(number, "numbernumber");
   let value = number ? number : totaleGiornate;
   for (let i = 1; i <= value; i++) {

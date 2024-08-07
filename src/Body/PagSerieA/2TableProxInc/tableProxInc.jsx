@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { GiornataNContext } from "../../../Ap/Global/global";
 import { calendario1 } from "../../../START/app/0SerieAMatches";
-// import { nomiSquadre } from "../../../START/app/1main";
 import { ts } from "../../../START/styles/0CssMainStyle";
 import serieAItalia from "../../../assts/ChartSerieAItalia/serieAItalia.png";
 import { ButtonResetContext, CompleteDataContext, CoppiaPartitaContext, GiornataClouContext, IndexSelectedContext } from "../../Global/global";
@@ -13,6 +12,7 @@ import { renderSquadre } from "./zExternal/renderSquadre";
 import ValCasa from "./zExternal/valCasa";
 import ValFuori from "./zExternal/valFuori";
 
+// import { nomiSquadre } from "../../../START/app/1main";
 // import { squadreConfig } from '../../../START/components/2NomiSquadre/nomiSquadre';
 // import { calendario } from "../../../START/Matches/matches"
 // import { giornataClou } from "../../../START/Matches/matches";

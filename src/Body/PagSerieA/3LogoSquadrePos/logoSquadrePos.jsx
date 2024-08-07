@@ -16,7 +16,7 @@ const LogoSquadrePos = () => {
   // refContainer: Un riferimento al contenitore principale delle squadre, utilizzato per eventuali manipolazioni o accessi diretti a questo elemento DOM.
   const refContainer = useRef(null);
   const arraySquadre = Object.values(nomiSquadre); //mette nomi Squadre dentro un array
-  
+
   const datiSquadre = Object.keys(nomiSquadre).reduce((acc, key) => {
     const squadra = nomiSquadre[key];
     acc[squadra.name] = creaRisSq(calendario1, squadra.name);
@@ -24,7 +24,7 @@ const LogoSquadrePos = () => {
   }, {});
 
   const handleLogoClick = (squadra) => {
-    const url = `https://sport.virgilio.it/prossime-partite-calendario1-${squadra.name.toLowerCase()}/`;
+    const url = `https://sport.virgilio.it/prossime-partite-calendario-${squadra.name.toLowerCase()}/`;
     window.open(url, "_blank");
   };
   const renderLinea = (start, end) => renderLineaa(start, end, arraySquadre, squadraAttiva1, squadraAttiva2, handleLogoClick, logoRefs);
