@@ -10,11 +10,13 @@ import { partitePerGiornoo } from "./zExternal/partitePerGiorno";
 
 const Partite = ({ resetAll, occhioApertoPartita, setOcchioApertoPartita }) => {
   const { giornataClouSelected } = useContext(GiornataClouContext);
-  const [partite, setPartite] = useState([...giornataClouSelected]);
+  const [partite, setPartite] = useState([...giornataClouSelected]); //QUESTO PRENDE TUTTE LE PARTITE DELLA SINGOLA GIORNATA CLOU
   const partitePerGiorno = partitePerGiornoo(partite);
 
   useEffect(() => {
     setPartite([...giornataClouSelected]);
+    // console.log("PPPPPPP", partite);
+    console.log("IIIIIIII", giornataClouSelected);
   }, [giornataClouSelected]);
 
   return (

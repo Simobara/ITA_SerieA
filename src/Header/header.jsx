@@ -4,6 +4,7 @@ import { GiornataNContext } from "../Ap/Global/global";
 import LogoSerieA from "../Body/PagCalendar/assts/LogoItaSerieA.png";
 import PagCalendar from "../Body/PagCalendar/pagCalendar";
 import PagCoppaIta from "../Body/PagCoppaIta/pagCoppaIta";
+import ModalModCurrGiornClou from "./ModalModCurrentGiornClou/modalModCurrGiornClou";
 import Calendar from "./assts/Calendar.png";
 import LogoCoppaItalia from "./assts/LogoCoppaItalia.png";
 import ItaliaDelCalcio from "./assts/LogoItaliaDelCalcio.png";
@@ -15,7 +16,9 @@ const Header = () => {
   const totaleGiornate = 38;
   const [showModalCal, setShowModalCal] = useState(false);
   const [showModalCoppaIta, setShowModalCoppaIta] = useState(false);
+  const [showModalModCurrGiornClou, setShowModalModCurrGiornClou] = useState(false);
   const [giornateClou, setGiornateClou] = useState([]);
+
   const { giornataN, setGiornataN } = useContext(GiornataNContext);
 
   const openLink1 = () => openLinks();
@@ -26,6 +29,10 @@ const Header = () => {
 
   const toggleModalCoppaIta = () => {
     setShowModalCoppaIta((prev) => !prev);
+  };
+
+  const toggleModalModCurrGiornClou = () => {
+    setShowModalModCurrGiornClou((prev) => !prev);
   };
 
   const handleIncrement = () => {
@@ -71,7 +78,9 @@ const Header = () => {
               SetDayClou
             </button>
           </form>
-          <div className="mx-2 text-white">📝</div>
+          <div className="mx-2 text-white" onClick={toggleModalModCurrGiornClou}>
+            📝
+          </div>
           <div className="flex items-center space-x-8 ml-[15%] sm:ml-[21%]">
             <button className="bg-black text-blue-900 rounded flex items-center justify-center animate-gradient" onClick={openLink1}>
               <img src={ItaliaDelCalcio} alt="Italia del Calcio" className="mr-0" style={{ width: "30px", height: "auto" }} />
@@ -85,6 +94,7 @@ const Header = () => {
 
             {showModalCal && <PagCalendar onClose={toggleModalCal} />}
             {showModalCoppaIta && <PagCoppaIta onClose={toggleModalCoppaIta} />}
+            {showModalModCurrGiornClou && <ModalModCurrGiornClou onClose={toggleModalModCurrGiornClou} />}
           </div>
         </div>
       </div>
