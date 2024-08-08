@@ -28,6 +28,14 @@ const Header = () => {
     setShowModalCoppaIta((prev) => !prev);
   };
 
+  const handleIncrement = () => {
+    setGiornataN((prev) => (prev < totaleGiornate ? prev + 1 : prev));
+  };
+
+  const handleDecrement = () => {
+    setGiornataN((prev) => (prev > 1 ? prev - 1 : prev));
+  };
+
   //------------------------------------------------------------------------------------------POST REQUEST
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -48,20 +56,23 @@ const Header = () => {
     <header>
       <div className="flex h-[4rem] w-[100%] items-center bg-slate-950">
         <img src={LogoSerieA} alt="Calendar" className="mr-2" style={{ width: "50px", height: "auto" }} />
-        <div className="flex-grow flex justify-start items-center">
-          <form onSubmit={handleSubmit} className="flex items-center space-x-2">
-            <select value={giornataN} onChange={handleChange} className="px-8 py-1 rounded">
-              {Array.from({ length: totaleGiornate }, (_, i) => (
-                <option key={i + 1} value={i + 1}>
-                  {i + 1}
-                </option>
-              ))}
-            </select>
-            <button type="submit" className="bg-blue-500 text-white px-2 py-1 rounded">
+        <div className="flex-grow flex justify-start items-center ">
+          <form onSubmit={handleSubmit} className="flex flex-col items-center bg-slate-900">
+            <div className="flex items-center space-x-0">
+              <button type="button" onClick={handleDecrement} className="bg-slate-950 text-sky-700 text-2xl px-2 py-1 rounded hover:text-white">
+                &lt;
+              </button>
+              <span className="px-2 text-white">{giornataN}</span>
+              <button type="button" onClick={handleIncrement} className="bg-slate-950 text-sky-700 text-2xl px-2 py-1 rounded hover:text-white">
+                &gt;
+              </button>
+            </div>
+            <button type="submit" className="bg-slate-900 text-sky-800 px-0 py-1 rounded w-full hover:text-white">
               SetDayClou
             </button>
           </form>
-          <div className="flex items-center space-x-4 ml-[15%] sm:ml-[35%]">
+          <div className="mx-2 text-white">📝</div>
+          <div className="flex items-center space-x-8 ml-[15%] sm:ml-[21%]">
             <button className="bg-black text-blue-900 rounded flex items-center justify-center animate-gradient" onClick={openLink1}>
               <img src={ItaliaDelCalcio} alt="Italia del Calcio" className="mr-0" style={{ width: "30px", height: "auto" }} />
             </button>
