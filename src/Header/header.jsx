@@ -43,10 +43,13 @@ const Header = () => {
     setGiornataN((prev) => (prev > 1 ? prev - 1 : prev));
   };
 
+  const handleChange = (e) => {
+    setGiornataN(Number(e.target.value));
+  };
   //------------------------------------------------------------------------------------------POST REQUEST
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(`Giornata attuale: ${giornataN}`);
+    console.log(`Giornata attuale numero: ${giornataN}`);
     try {
       const response = await axios.post("http://localhost:5000/api/giornate/clou", { numero: giornataN });
       console.log("Giornata clou aggiornata:", response.data);
@@ -55,10 +58,18 @@ const Header = () => {
     }
   };
   //------------------------------------------------------------------------------------------------------
-  const handleChange = (e) => {
-    setGiornataN(Number(e.target.value));
-  };
 
+  const handleSave = async (giornataNumber) => {
+    console.log(`Dati ricevuti in header.js per giornata ${giornataN}:`, { giornataNumber });
+    try {
+      // Costruisci dinamicamente la rotta utilizzando la giornataN
+      const response = await axios.post(`http://localhost:5000/api/giornate/giornata/giornata${giornataN}`, { giornata: giornataNumber });
+      console.log("Risposta dal server:", response.data);
+    } catch (error) {
+      console.error("Errore durante l'invio dei dati:", error);
+    }
+  };
+  //------------------------------------------------------------------------------------------------------
   return (
     <header>
       <div className="flex h-[4rem] w-[100%] items-center bg-slate-950">
@@ -94,7 +105,7 @@ const Header = () => {
 
             {showModalCal && <PagCalendar onClose={toggleModalCal} />}
             {showModalCoppaIta && <PagCoppaIta onClose={toggleModalCoppaIta} />}
-            {showModalModCurrGiornClou && <ModalModCurrGiornClou onClose={toggleModalModCurrGiornClou} />}
+            {showModalModCurrGiornClou && <ModalModCurrGiornClou onClose={toggleModalModCurrGiornClou} onSave={handleSave} />}
           </div>
         </div>
       </div>

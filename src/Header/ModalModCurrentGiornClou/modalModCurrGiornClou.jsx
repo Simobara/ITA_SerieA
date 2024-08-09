@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
-import { GiornataClouContext } from "../../Ap/Global/global";
+import { GiornataClouContext, GiornataNContext } from "../../Ap/Global/global";
 
-const ModalModCurrGiornClou = ({ onClose }) => {
+const ModalModCurrGiornClou = ({ onClose, onSave }) => {
   const { giornataClouSelected } = useContext(GiornataClouContext);
+  const { giornataN } = useContext(GiornataNContext);
   const [partite, setPartite] = useState([...giornataClouSelected]);
   const [squadre, setSquadre] = useState([]); // Nuovo array per le squadre
   const [duplicateTeams, setDuplicateTeams] = useState(new Set()); // Per tracciare i duplicati
@@ -60,6 +61,21 @@ const ModalModCurrGiornClou = ({ onClose }) => {
 
     setDuplicateTeams(duplicates);
   };
+
+  const handleSaveClick = () => {
+    const giornataSalvata = partite.map((partita) => ({
+      numero: partita.numero,
+      day: partita.day,
+      time: partita.time,
+      team1: partita.team1,
+      team2: partita.team2,
+      pron: partita.pron || "",
+      results: partita.results || "",
+    }));
+    onSave(giornataSalvata);
+    onClose(); // Chiudi il modale dopo aver salvato
+  };
+
   //-------------------------------------------------------------------------------------
   useEffect(() => {
     const tutteLeSquadre = giornataClouSelected.reduce((acc, partita) => {
@@ -73,8 +89,9 @@ const ModalModCurrGiornClou = ({ onClose }) => {
   useEffect(() => {
     setPartite([...giornataClouSelected]);
     checkForDuplicates(giornataClouSelected);
-    console.log("IIIIIIII", giornataClouSelected);
-  }, [giornataClouSelected]);
+    console.log("GIORNATA n", giornataN);
+    console.log("GIORNATA CLOU SELECTED", giornataClouSelected);
+  }, [giornataClouSelected, giornataN]);
   //-------------------------------------------------------------------------------------
   return (
     <>
@@ -159,12 +176,11 @@ const ModalModCurrGiornClou = ({ onClose }) => {
               <button
                 className={`px-4 py-2 bg-sky-700 hover:bg-sky-900 rounded-lg text-white ${duplicateTeams.size > 0 ? "cursor-not-allowed" : ""}`}
                 disabled={duplicateTeams.size > 0}
+                onClick={handleSaveClick}
               >
                 SAVE
               </button>
             </div>
-            <div className="text-white mt-4">SAVE BUTTON = PARTE LA RICHIESTA AL DATABASE</div>
-            <div className="text-white">CONTROLLA CHE TUTTI I DATI PRESENTI ALTRIMENTI ROSSO</div>
           </div>
         </div>
       </div>

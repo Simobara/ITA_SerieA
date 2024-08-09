@@ -12,6 +12,7 @@ export const GiornataNProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("giornataN", JSON.stringify(giornataN));
+    console.log("global.jsx => DatiNelloStorage => giornataN", giornataN);
   }, [giornataN]);
 
   return <GiornataNContext.Provider value={{ giornataN, setGiornataN }}>{children}</GiornataNContext.Provider>;
