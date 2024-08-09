@@ -78,7 +78,7 @@ const Header = () => {
               SetDayClou
             </button>
           </form>
-          <div className="mx-2 text-white" onClick={toggleModalModCurrGiornClou}>
+          <div className="mx-1 mb-8 text-white" onClick={toggleModalModCurrGiornClou}>
             📝
           </div>
           <div className="flex items-center space-x-8 ml-[15%] sm:ml-[21%]">
