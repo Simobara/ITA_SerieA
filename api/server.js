@@ -22,6 +22,8 @@ mongoose
   .then(() => console.log("Server.js => Connected to MongoDB Atlas"))
   .catch((err) => console.error("Server.js => Could not connect to MongoDB Atlas...", err));
 
+
+//----------------------------------------------------------------ENDPOINTS
 // Importa e usa il router per gli endpoint
 const routerGiornateClou = require('./routes/routesGiornateClou');
 app.use('/api/giornate',routerGiornateClou);
@@ -29,6 +31,15 @@ app.use('/api/giornate',routerGiornateClou);
 // Importa e usa il router per `CoppaItaliaFinale`
 const routerCIFinale = require('./routes/routesCoppaItaFinale');
 app.use('/api/coppaItaFinale', routerCIFinale);
+
+// Importa e usa il router per `Giornata`
+const routerGiornata = require('./routes/routesGiornata');
+app.use('/api/giornate', routerGiornata);
+
+// Importa e usa il router per `Giornata1`
+// const routerGiornata1 = require('./routes/routesGiornata1');
+// app.use('/api/giornate', routerGiornata1);
+//----------------------------------------------------------------
 
 // Conferma che il server è in esecuzione
 app.listen(PORT, () => {
