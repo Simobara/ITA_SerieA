@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { GiornataClouContext } from "../../Ap/Global/global";
 
 const ModalModCurrGiornClou = ({ onClose }) => {
+  const { giornataClouSelected } = useContext(GiornataClouContext);
+  const [partite, setPartite] = useState([...giornataClouSelected]);
+
+  useEffect(() => {
+    setPartite([...giornataClouSelected]);
+    console.log("PPPPPPP", partite);
+    console.log("IIIIIIII", giornataClouSelected);
+  }, [giornataClouSelected]);
+
   return (
     <>
       <div className="fixed inset-0 flex items-start justify-start z-50 bg-gray-900 bg-opacity-50 pl-[15rem]">

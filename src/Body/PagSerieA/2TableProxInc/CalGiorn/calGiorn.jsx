@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { GiornataNContext } from "../../../../Ap/Global/global";
+import { GiornataClouContext, GiornataNContext } from "../../../../Ap/Global/global";
 import { giornataClou } from "../../../../START/app/0SerieAMatches";
-import { ButtonResetContext, CompleteDataContext, GiornataClouContext, IndexSelectedContext, PartiteDefinNoModContext } from "../../../Global/global";
+import { ButtonResetContext, CompleteDataContext, IndexSelectedContext, PartiteDefinNoModContext } from "../../../Global/global";
 import "./calGiorn.css";
 
 const CalGiorn = ({ onReset }) => {

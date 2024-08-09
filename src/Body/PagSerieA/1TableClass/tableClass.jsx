@@ -1,15 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import { GiornataNContext } from "../../../Ap/Global/global";
+import { GiornataClouContext, GiornataNContext } from "../../../Ap/Global/global";
 import { nomiSquadre } from "../../../START/app/1main";
 import { s } from "../../../START/styles/0CssMainStyle";
-import {
-  CompleteDataContext,
-  CoppiaPartitaContext,
-  CoppiaPartitaRegistrataContext,
-  GiornataClouContext,
-  IndexSelectedContext,
-  SquadraContext,
-} from "../../Global/global";
+import { CompleteDataContext, CoppiaPartitaContext, CoppiaPartitaRegistrataContext, IndexSelectedContext, SquadraContext } from "../../Global/global";
 import "./tableClass.css";
 import aggPunteggioSqRegg from "./zExternal/addPunteggioSqReg";
 import aggiungiPuntii from "./zExternal/addPunti";

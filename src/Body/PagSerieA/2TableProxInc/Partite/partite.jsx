@@ -3,7 +3,7 @@ import { s } from "../../../../START/styles/0CssMainStyle";
 // import { DndProvider } from "react-dnd";
 // import { HTML5Backend } from "react-dnd-html5-backend";
 // import { initialPartite } from "../../../../START/START";
-import { GiornataClouContext } from "../../../Global/global";
+import { GiornataClouContext } from "../../../../Ap/Global/global";
 import Day from "./Day/day";
 import { giorniSettimana } from "./zExternal/giorniSettimana";
 import { partitePerGiornoo } from "./zExternal/partitePerGiorno";

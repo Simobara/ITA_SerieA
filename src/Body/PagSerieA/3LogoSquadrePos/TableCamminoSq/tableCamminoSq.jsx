@@ -1,9 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import { GiornataNContext } from "../../../../Ap/Global/global";
+import { GiornataClouContext, GiornataNContext } from "../../../../Ap/Global/global";
 import { calendario } from "../../../../START/app/0SerieAMatches";
 import { s, ts } from "../../../../START/styles/0CssMainStyle";
 import { IndexSelectedContext } from "../../../Global/global";
-import { GiornataClouContext } from "../../../Global/global/";
 import "./tableCamminoSq.css";
 import { getBgHoverClasss } from "./zExternal/getBgHoverClass";
 import { getSignForCasaa } from "./zExternal/getSignForCasa";

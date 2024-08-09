@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
-import { GiornataNContext } from "../../../Ap/Global/global";
+import { GiornataClouContext, GiornataNContext } from "../../../Ap/Global/global";
 import { calendario1 } from "../../../START/app/0SerieAMatches";
 import { ts } from "../../../START/styles/0CssMainStyle";
 import serieAItalia from "../../../assts/ChartSerieAItalia/serieAItalia.png";
-import { ButtonResetContext, CompleteDataContext, CoppiaPartitaContext, GiornataClouContext, IndexSelectedContext } from "../../Global/global";
+import { ButtonResetContext, CompleteDataContext, CoppiaPartitaContext, IndexSelectedContext } from "../../Global/global";
 import CalGiorn from "./CalGiorn/calGiorn";
 import Partite from "./Partite/partite";
 import "./tableProxInc.css";
@@ -72,7 +72,7 @@ const TableProxInc = () => {
       <div className="relative">
         {!isMobile && (
           <div className="unselectable flex justify-center h-[26.8rem] overflow-x-hidden hide-scrollbar ">
-            <div className="relative h-[42rem] w-[100%] ml-[-2rem] mr-[0rem]">
+            <div className="relative h-[42rem] w-[100%] ml-[0rem] mr-[0rem]">
               <img src={serieAItalia} alt="serieAItalia" className="unselectable relative h-[110%] w-[100%] mt-[-4rem] filter brightness-35" />
               {coppiaSelected && renderSquadre()}
               {buttonResetIsResetting && (

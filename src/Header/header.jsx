@@ -9,7 +9,7 @@ import Calendar from "./assts/Calendar.png";
 import LogoCoppaItalia from "./assts/LogoCoppaItalia.png";
 import ItaliaDelCalcio from "./assts/LogoItaliaDelCalcio.png";
 
-import { openLinks } from "../START/link/linkEsterni";
+import { openLinkss } from "../START/link/linkEsterni";
 import "./header.css";
 
 const Header = () => {
@@ -21,7 +21,7 @@ const Header = () => {
 
   const { giornataN, setGiornataN } = useContext(GiornataNContext);
 
-  const openLink1 = () => openLinks();
+  const openLinks = () => openLinkss();
 
   const toggleModalCal = () => {
     setShowModalCal((prev) => !prev);
@@ -82,7 +82,7 @@ const Header = () => {
             📝
           </div>
           <div className="flex items-center space-x-8 ml-[15%] sm:ml-[21%]">
-            <button className="bg-black text-blue-900 rounded flex items-center justify-center animate-gradient" onClick={openLink1}>
+            <button className="bg-black text-blue-900 rounded flex items-center justify-center animate-gradient" onClick={openLinks}>
               <img src={ItaliaDelCalcio} alt="Italia del Calcio" className="mr-0" style={{ width: "30px", height: "auto" }} />
             </button>
             <button onClick={toggleModalCal}>

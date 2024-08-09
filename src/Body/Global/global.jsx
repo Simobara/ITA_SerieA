@@ -32,13 +32,7 @@ export const CoppiaPartitaRegistrataProvider = ({ children }) => {
 
 //-----------------------------------------------------------------------
 
-export const GiornataClouContext = createContext();
-//setta la giornata Clou: //! SerieAMatches
-export const GiornataClouProvider = ({ children }) => {
-  const [giornataClouSelected, setGiornataClouSelected] = useState(giornataClou);
 
-  return <GiornataClouContext.Provider value={{ giornataClouSelected, setGiornataClouSelected }}>{children}</GiornataClouContext.Provider>;
-};
 //-----------------------------------------------------------------------
 export const CompleteDataContext = createContext();
 
