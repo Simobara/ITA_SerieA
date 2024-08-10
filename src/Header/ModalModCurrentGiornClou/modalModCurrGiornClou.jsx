@@ -148,6 +148,7 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
                     </select>
                   </div>
                   <div className="flex-1 text-center">-</div>
+
                   <div className="flex-1 text-left pr-10">
                     <select
                       value={partita.team2}
@@ -169,6 +170,7 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
                       <option value="2">2</option>
                     </select>
                   </div>
+                  <div className="flex-1 text-left">.{partita.results}</div>
                 </div>
               ))}
             </div>

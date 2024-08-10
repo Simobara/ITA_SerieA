@@ -7,12 +7,12 @@ const schemaGiornataClouN = require("../schemas/schemaGiornataClouN"); // Import
 const GiornataClouN = mongoose.model("GiornataN", schemaGiornataClouN);
 
 // Endpoint per ottenere tutte le giornate clou
-router.get("/clou", async (req, res) => {
+router.get("/N", async (req, res) => {
   try {
     console.log("giornateClou.js => Richiesta GET ricevuta a /api/giornate/clou");
-    const giornateClou = await GiornataClouN.find({ giornataClou: true });
-    console.log("Giornate clou trovate:", giornateClou);
-    res.send(giornateClou);
+    const giornateClouN = await GiornataClouN.find({ giornataClouN: true });
+    console.log("Giornate clou trovate:", giornateClouN);
+    res.send(giornateClouN);
   } catch (error) {
     console.error("Errore durante il recupero delle giornate clou:", error);
     res.status(500).send(error);
@@ -20,12 +20,12 @@ router.get("/clou", async (req, res) => {
 });
 
 // Endpoint per impostare una giornata clou
-router.post("/clou", async (req, res) => {
+router.post("/N", async (req, res) => {
   try {
     console.log("giornateClou.js => Richiesta POST ricevuta a /api/giornate/clou con numero:", req.body.numero);
     const { numero } = req.body;
     // li prende dal schemaGiornataClouN
-    const giornataClouSelected = await GiornataClouN.findOneAndUpdate({ numeroSelezionato: numero }, { giornataClou: true }, { new: true, upsert: true });
+    const giornataClouSelected = await GiornataClouN.findOneAndUpdate({ numeroSelezionato: numero }, { giornataCloN: true }, { new: true, upsert: true });
     console.log("Giornata clou selected e aggiornata:", giornataClouSelected);
     res.send(giornataClouSelected);
   } catch (error) {

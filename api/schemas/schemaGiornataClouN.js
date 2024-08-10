@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const collectionGiornataClou = process.env.COLLECTION_GIORNATA_CLOU;
+const collectionGiornataClouN = process.env.COLLECTION_GIORNATA_CLOU_N;
 
 const schemaGiornataClouN = new mongoose.Schema(
   {
@@ -7,12 +7,12 @@ const schemaGiornataClouN = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    giornataClou: {
+    giornataClouN: {
       type: Boolean,
       default: false,
     },
   },
-  { collection: collectionGiornataClou },
+  { collection: collectionGiornataClouN},
 );
 
 module.exports = schemaGiornataClouN;

@@ -1,7 +1,7 @@
 const calendario25 = {
   //*---                                           AGOSTO                                                                      ---  1
   giornata1: [
-    { numero: 1,  day: 'sab', time: '18:30',          team1: 'Genoa',       team2: 'Inter',            pron: '', results: '' }, 
+    { numero: 1,  day: 'sab', time: '18:30',          team1: 'Genoa',       team2: 'Inter',            pron: '', results: '2-1' }, 
     { numero: 2,  day: 'sab', time: '18:30',          team1: 'Parma',       team2: 'Fiorentina',       pron: '', results: '' },
     { numero: 3,  day: 'sab', time: '20:45',          team1: 'Empoli',      team2: 'Monza',            pron: '1', results: '' },
     { numero: 4,  day: 'sab', time: '20:45',          team1: 'Milan',       team2: 'Torino',           pron: '', results: '' },

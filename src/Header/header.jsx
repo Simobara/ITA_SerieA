@@ -46,30 +46,29 @@ const Header = () => {
   const handleChange = (e) => {
     setGiornataN(Number(e.target.value));
   };
-  //------------------------------------------------------------------------------------------POST REQUEST
+  //------------------------------------------------------------------------------------------POST REQUEST GIORNATA CLOU N
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(`Giornata attuale numero: ${giornataN}`);
     try {
-      const response = await axios.post("http://localhost:5000/api/giornate/clou", { numero: giornataN });
+      const response = await axios.post("http://localhost:5000/api/giornate/N", { numero: giornataN });
       console.log("Giornata clou aggiornata:", response.data);
     } catch (error) {
       console.error("Errore durante l'aggiornamento della giornata clou:", error);
     }
   };
-  //------------------------------------------------------------------------------------------------------
-
+  //-------------------------------------------------------------------------------------------POST REQUEST GIORNATE N
   const handleSave = async (giornataNumber) => {
     console.log(`Dati ricevuti in header.js per giornata ${giornataN}:`, { giornataNumber });
     try {
       // Costruisci dinamicamente la rotta utilizzando la giornataN
-      const response = await axios.post(`http://localhost:5000/api/giornate/giornata/giornata${giornataN}`, { giornata: giornataNumber });
+      const response = await axios.post(`http://localhost:5000/api/giornate/giornata/${giornataN}`, { giornata: giornataNumber });
       console.log("Risposta dal server:", response.data);
     } catch (error) {
       console.error("Errore durante l'invio dei dati:", error);
     }
   };
-  //------------------------------------------------------------------------------------------------------
+  //--------------------------------------------------------------------------------------------
   return (
     <header>
       <div className="flex h-[4rem] w-[100%] items-center bg-slate-950">
