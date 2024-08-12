@@ -8,14 +8,12 @@ const app = express();
 const PORT = process.env.NODE_ENV === 'production' ? 3000 : 5000;
 
 // Middleware CORS
-console.log("ENV PROCESS:",process.env.NODE_ENV)
-
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? 'https://ita-serie-a.vercel.app'  // Origine consentita in produzione
-    : 'http://localhost:5173',           // Origine consentita in sviluppo
+    ? 'https://ita-serie-a.vercel.app'  // Solo il dominio di produzione è autorizzato
+    : 'http://localhost:5173',           // Solo il dominio di sviluppo è autorizzato
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
+  credentials: true  // Consente di includere credenziali nelle richieste, come i cookie
 }));
 
 console.log("ENV PROCESS:",process.env.NODE_ENV)
