@@ -8,6 +8,7 @@ const Finale = ({ width = '55px', height = '24px' }) => {
     const containerStyle = { width, height };
     const resultBoxStyle = `flex items-center justify-center text-black bg-gray-500 w-full font-bold overflow-hidden ml-4 mr-4 mb-4`;
 
+	const API_BASE_URL = 'https://ita-serie-a.vercel.app';
     useEffect(() => {
 		const fetchData = async () => {
 			try {
