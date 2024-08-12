@@ -11,7 +11,7 @@ const Finale = ({ width = '55px', height = '24px' }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // Usa le variabili d'ambiente per determinare l'URL API
+                // Determina l'URL API in base all'ambiente
                 const API_BASE_URL = process.env.NODE_ENV === 'production'
                     ? process.env.REACT_APP_API_URL_PRODUCTION
                     : process.env.REACT_APP_API_URL_DEVELOPMENT;
