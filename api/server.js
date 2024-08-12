@@ -1,3 +1,5 @@
+//QUESTO FILE E' CORRETTO
+
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
@@ -24,10 +26,10 @@ const username   = process.env.USERNAME || 'yourUsername';
 const password   = process.env.PASSWORD || 'yourPassword';
 const clusterUrl = process.env.CLUSTER_URL || 'yourClusterUrl';
 const dbName     = process.env.DB_NAME || 'yourDbName';
-const dbURI      = `mongodb+srv://${username}:${password}@${clusterUrl}/${dbName}?retryWrites=true&w=majority&appName=Cluster0`;
+const dbURI      = `mongodb+srv://${username}:${password}@${clusterUrl}/${dbName}?retryWrites=true&w=majority&appName=Cluster0&connectTimeoutMS=10000`;
 
 // Connessione a MongoDB Atlas
-mongoosemongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(dbURI)
 .then(() => console.log("Connected to MongoDB Atlas"))
 .catch((err) => console.error("Could not connect to MongoDB Atlas...", err));
 
