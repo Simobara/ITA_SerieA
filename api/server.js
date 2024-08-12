@@ -8,7 +8,7 @@ const PORT = 5000;
 // Middleware CORS
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? 'https://ita-serie-a.vercel.app' 
+    ? ['https://ita-serie-a.vercel.app', 'http://localhost:3000'] 
     : 'http://localhost:3000',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
