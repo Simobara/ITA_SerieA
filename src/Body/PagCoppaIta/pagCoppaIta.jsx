@@ -26,14 +26,14 @@ const PagCoppaIta = ({ onClose }) => {
 						X
 					</button>
 				</div>
-				<div className="relative w-full h-full pb-2 pt-[75px] overflow-x-scroll md:overflow-y-scroll">
+				<div className="relative w-full h-full pb-2 pt-[4.5rem] overflow-x-scroll md:overflow-y-scroll">
 					<div className="absolute inset-0 min-w-[1260px] h-full bg-cover bg-no-repeat brightness-[40%]" style={{ backgroundImage: `url(${LogoSfondoTabellone})` }}></div>
+					<div className="absolute top-[4px] w-full min-w-[1260px] h-full mb-4" style={{ backgroundImage: `url(${LogoCoppaItaHeader})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}></div>
 					<div className="relative top-[10px] min-w-[1260px] h-[98%] grid grid-cols-11 gap-0 px-4">
 						{colonneVoci.map((column) => (
 							<Colonne key={column.id} colonneTitle={column.title} colonneIdN={column.IdN} />
 						))}
 					</div>
-					<div className="absolute top-[4px] w-full min-w-[1260px] h-full mb-7" style={{ backgroundImage: `url(${LogoCoppaItaHeader})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}></div>
 				</div>
 			</div>
 		</div>
