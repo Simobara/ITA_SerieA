@@ -29,7 +29,7 @@ const routerGiornateClou = require('./routes/routesGiornateClou');
 app.use('/api/giornate',routerGiornateClou);
 
 // Importa e usa il router per `CoppaItaliaFinale`
-const routerCIFinale = require('./routes/routesCoppaIta');
+const routerCIFinale = require('./routes/routesCoppaItaFinale');
 app.use('/api/coppaItaFinale', routerCIFinale);
 
 // Importa e usa il router per `Giornata`

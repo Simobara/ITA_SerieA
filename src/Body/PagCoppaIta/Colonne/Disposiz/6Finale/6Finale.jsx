@@ -11,10 +11,10 @@ const Finale = ({ width = '55px', height = '24px' }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // Determina l'URL API in base all'ambiente
+                // Usa le variabili d'ambiente per determinare l'URL API
                 const API_BASE_URL = process.env.NODE_ENV === 'production'
-                    ? 'https://ita-serie-a.vercel.app'
-                    : 'http://localhost:5000';
+                    ? process.env.REACT_APP_API_URL_PRODUCTION
+                    : process.env.REACT_APP_API_URL_DEVELOPMENT;
 
                 const response = await axios.get(`${API_BASE_URL}/api/coppaItaFinale/finale`);
                 const data = response.data;
