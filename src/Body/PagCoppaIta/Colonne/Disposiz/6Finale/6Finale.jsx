@@ -22,7 +22,7 @@ const Finale = ({ width = '55px', height = '24px' }) => {
 
                 const response = await axios.get(`${API_BASE_URL}/api/coppaItaFinale/finale`);
                 
-				//http://localhost:5173/api/coppaItaFinale/finale
+				//http://localhost:3000/api/coppaItaFinale/finale
 				// https://ita-serie-a.vercel.app/api/coppaItaFinale/finale
 				const data = response.data;
 
