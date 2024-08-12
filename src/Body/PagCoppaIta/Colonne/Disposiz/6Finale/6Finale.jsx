@@ -15,12 +15,16 @@ const Finale = ({ width = '55px', height = '24px' }) => {
                 const API_BASE_URL = import.meta.env.PROD
                     ? import.meta.env.VITE_API_URL_PRODUCTION
                     : import.meta.env.VITE_API_URL_DEVELOPMENT;
-
 					console.log('Environment:', import.meta.env.PROD ? 'Production' : 'Development');
+
+			
 					console.log('API_BASE_URL:', API_BASE_URL);
 
                 const response = await axios.get(`${API_BASE_URL}/api/coppaItaFinale/finale`);
-                const data = response.data;
+                
+				//http://localhost:5173/api/coppaItaFinale/finale
+				// https://ita-serie-a.vercel.app/api/coppaItaFinale/finale
+				const data = response.data;
 
                 console.log("DATI FINALE: ", data); // Controlla la struttura dei dati
 

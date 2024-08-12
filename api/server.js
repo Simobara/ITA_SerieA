@@ -5,8 +5,14 @@ const cors = require("cors");
 const app = express();
 const PORT = 5000;
 
-// Middleware
-app.use(cors());
+// Middleware CORS
+const allowedOrigins = ['http://localhost:3000', 'https://ita-serie-a.vercel.app'];
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://ita-serie-a.vercel.app'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Stringhe di connessione env
