@@ -7,7 +7,7 @@ const cors = require("cors");
 const app = express();
 const PORT = 5000;
 
-// Middleware CORS
+// Middleware CORSSS
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
     ? 'https://ita-serie-a.vercel.app'  // Origine consentita in produzione
