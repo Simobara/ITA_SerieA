@@ -8,8 +8,8 @@ const PORT = 5000;
 // Middleware CORS
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? 'https://ita-serie-a.vercel.app'
-    : 'http://localhost:5173', // Origine per Vite durante lo sviluppo
+    ? 'https://ita-serie-a.vercel.app'  // Origine consentita in produzione
+    : 'http://localhost:5173',           // Origine consentita in sviluppo
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
@@ -27,10 +27,9 @@ const dbName     = process.env.DB_NAME || 'yourDbName';
 const dbURI      = `mongodb+srv://${username}:${password}@${clusterUrl}/${dbName}?retryWrites=true&w=majority&appName=Cluster0`;
 
 // Connessione a MongoDB Atlas
-mongoose
-  .connect(dbURI)
-  .then(() => console.log("Server.js => Connected to MongoDB Atlas"))
-  .catch((err) => console.error("Server.js => Could not connect to MongoDB Atlas...", err));
+mongoosemongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+.then(() => console.log("Connected to MongoDB Atlas"))
+.catch((err) => console.error("Could not connect to MongoDB Atlas...", err));
 
 
 //----------------------------------------------------------------ENDPOINTS
@@ -50,6 +49,7 @@ app.use('/api/giornate', routerGiornata);
 // const routerGiornata1 = require('./routes/routesGiornata1');
 // app.use('/api/giornate', routerGiornata1);
 //----------------------------------------------------------------
+
 
 
 // Conferma che il server è in esecuzione
