@@ -9,36 +9,28 @@ const Finale = ({ width = '55px', height = '24px' }) => {
     const resultBoxStyle = `flex items-center justify-center text-black bg-gray-500 w-full font-bold overflow-hidden ml-4 mr-4 mb-4`;
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                // Determina l'URL API in base all'ambiente
-                const API_BASE_URL = import.meta.env.PROD
-                    ? import.meta.env.VITE_API_URL_PRODUCTION
-                    : import.meta.env.VITE_API_URL_DEVELOPMENT;
-					console.log('Environment:', import.meta.env.PROD ? 'Production' : 'Development');
-
-			
-					console.log('API_BASE_URL:', API_BASE_URL);
-
-                const response = await axios.get(`${API_BASE_URL}/api/coppaItaFinale/finale`);
-                
-				//http://localhost:3000/api/coppaItaFinale/finale
-				// https://ita-serie-a.vercel.app/api/coppaItaFinale/finale
+		const fetchData = async () => {
+			try {
+				console.log('Environment: Production');
+				console.log('API_BASE_URL:', API_BASE_URL);
+	
+				const response = await axios.get(`${API_BASE_URL}/api/coppaItaFinale/finale`);
+	
 				const data = response.data;
-
-                console.log("DATI FINALE: ", data); // Controlla la struttura dei dati
-
-                if (data.length > 0 && data[0]) {
-                    setMatch(data[0]); // Accedi correttamente al primo match dell'array "Finale"
-                } else {
-                    console.error('La struttura dei dati non è quella prevista');
-                }
-            } catch (error) {
-                console.error('Errore durante il recupero dei dati:', error);
-            }
-        };
-        fetchData();
-    }, []);
+	
+				console.log("DATI FINALE: ", data);
+	
+				if (data.length > 0 && data[0]) {
+					setMatch(data[0]); 
+				} else {
+					console.error('La struttura dei dati non è quella prevista');
+				}
+			} catch (error) {
+				console.error('Errore durante il recupero dei dati:', error);
+			}
+		};
+		fetchData();
+	}, []);
 
     if (!match) {
         return <div>Loading...</div>;
