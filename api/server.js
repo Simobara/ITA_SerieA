@@ -5,9 +5,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
-const PORT = 5000;
+const PORT = process.env.NODE_ENV === 'production' ? 3000 : 5000;
 
-// Middleware CORSSS
+// Middleware CORS
+console.log("ENV PROCESS:",process.env.NODE_ENV)
+
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
     ? 'https://ita-serie-a.vercel.app'  // Origine consentita in produzione
@@ -16,7 +18,7 @@ app.use(cors({
   credentials: true
 }));
 
-
+console.log("ENV PROCESS:",process.env.NODE_ENV)
 
 // Questo è un commento per forzare un nuovo deploy
 app.use(express.json());
@@ -51,7 +53,9 @@ app.use('/api/giornate', routerGiornata);
 // const routerGiornata1 = require('./routes/routesGiornata1');
 // app.use('/api/giornate', routerGiornata1);
 //----------------------------------------------------------------
-
+app.get('/api/test', (req, res) => {
+  res.status(200).send('Test endpoint is working!');
+});
 
 
 // Conferma che il server è in esecuzione
