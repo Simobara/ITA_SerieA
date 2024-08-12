@@ -8,11 +8,12 @@ const PORT = 5000;
 // Middleware CORS
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? 'https://ita-serie-a.vercel.app'  // Origine consentita in produzione
-    : 'http://localhost:5173',           // Origine consentita in sviluppo con Vite
+    ? 'https://ita-serie-a.vercel.app'
+    : 'http://localhost:5173', // Origine per Vite durante lo sviluppo
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
+
 
 
 // Questo è un commento per forzare un nuovo deploy
@@ -49,9 +50,6 @@ app.use('/api/giornate', routerGiornata);
 // const routerGiornata1 = require('./routes/routesGiornata1');
 // app.use('/api/giornate', routerGiornata1);
 //----------------------------------------------------------------
-
-
-
 
 
 // Conferma che il server è in esecuzione
