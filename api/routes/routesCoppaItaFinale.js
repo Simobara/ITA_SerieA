@@ -20,17 +20,17 @@ router.get("/finale", async (req, res) => {
 });
 
 // Endpoint per aggiungere un nuovo finale
-router.post("/finale", async (req, res) => {
-  try {
-    console.log("coppaItaFinale.js => Richiesta POST ricevuta a /api/coppaItaFinale/finale con dati:", req.body);
-    const coppaItaFinale = new CoppaItaFinale(req.body);
-    await coppaItaFinale.save();
-    console.log("Nuovo finale aggiunto:", coppaItaFinale);
-    res.send(coppaItaFinale);
-  } catch (error) {
-    console.error("Errore durante l'aggiunta del nuovo finale:", error);
-    res.status(500).send(error);
-  }
-});
+// router.post("/finale", async (req, res) => {
+//   try {
+//     console.log("coppaItaFinale.js => Richiesta POST ricevuta a /api/coppaItaFinale/finale con dati:", req.body);
+//     const coppaItaFinale = new CoppaItaFinale(req.body);
+//     await coppaItaFinale.save();
+//     console.log("Nuovo finale aggiunto:", coppaItaFinale);
+//     res.send(coppaItaFinale);
+//   } catch (error) {
+//     console.error("Errore durante l'aggiunta del nuovo finale:", error);
+//     res.status(500).send(error);
+//   }
+// });
 
 module.exports = router;

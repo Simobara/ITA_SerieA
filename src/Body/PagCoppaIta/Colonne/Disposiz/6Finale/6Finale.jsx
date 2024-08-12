@@ -1,6 +1,3 @@
-// import React from 'react';
-// import { Tornei } from '../../../../../START/app/3CoppaItaMatches';
-
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
@@ -11,15 +8,18 @@ const Finale = ({ width = '55px', height = '24px' }) => {
     const containerStyle = { width, height };
 	const resultBoxStyle = `flex items-center justify-center text-black bg-gray-500 w-full font-bold overflow-hidden ml-4 mr-4 mb-4`;
 
-	// const match = Tornei.Finale[0];
-
 	useEffect(() => {
 		const fetchData = async () => {
 		  try {
 			const response = await axios.get('http://localhost:5000/api/coppaItaFinale/finale');
 			const data = response.data;
-			if (data.length > 0) {
-			  setMatch(data[0].Finale[0]); // Assuming you want the first match of the first Finale
+			
+			console.log("DATI FINALE: ",data); // Controlla la struttura dei dati
+
+			if (data.length > 0 && data[0]) {
+			  setMatch(data[0]); // Accedi correttamente al primo match dell'array "Finale"
+			} else {
+			  console.error('La struttura dei dati non è quella prevista');
 			}
 		  } catch (error) {
 			console.error('Errore durante il recupero dei dati:', error);
@@ -32,7 +32,7 @@ const Finale = ({ width = '55px', height = '24px' }) => {
 		return <div>Loading...</div>;
 	  }
 	
-	  const [team1Result, team2Result] = match.ris?match.ris.split('-') : ['', ''];
+	  const [team1Result, team2Result] = match.ris ? match.ris.split('-') : ['', ''];
 
 	return (
 		<>
