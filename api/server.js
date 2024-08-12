@@ -6,20 +6,21 @@ const app = express();
 const PORT = 5000;
 
 // Middleware CORS
-const corsOptions = {
-  origin: ['http://localhost:3000', 'https://ita-serie-a.vercel.app'],
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production' 
+    ? 'https://ita-serie-a.vercel.app' 
+    : 'http://localhost:3000',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
-};
+}));
 
-app.use(cors(corsOptions));
 app.use(express.json());
 
 // Stringhe di connessione env
-const username   = process.env.USERNAME;
-const password   = process.env.PASSWORD;
-const clusterUrl = process.env.CLUSTER_URL;
-const dbName     = process.env.DB_NAME;
+const username   = process.env.USERNAME || 'yourUsername';
+const password   = process.env.PASSWORD || 'yourPassword';
+const clusterUrl = process.env.CLUSTER_URL || 'yourClusterUrl';
+const dbName     = process.env.DB_NAME || 'yourDbName';
 const dbURI      = `mongodb+srv://${username}:${password}@${clusterUrl}/${dbName}?retryWrites=true&w=majority&appName=Cluster0`;
 
 // Connessione a MongoDB Atlas
