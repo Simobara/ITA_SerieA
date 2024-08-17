@@ -103,7 +103,7 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
             </button>
           </div>
           <div className="relative w-full h-full pb-2 pt-[75px]">
-            <div className="px-4">
+            <div className="sm:px-4 px-0">
               {partite.map((partita, index) => (
                 <div key={index} className="mb-2 flex items-center justify-between text-white">
                   <div className="flex-1 text-right sm:pr-10 md:pr-15 pr-1">{partita.numero}</div>
