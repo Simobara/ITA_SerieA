@@ -6,7 +6,7 @@
       "use": "@vercel/node",
       "config": {
         "maxLambdaSize": "15mb",
-        "maxDuration": 20,
+        "maxDuration": 10,
         "memory": 512
       }
     },
