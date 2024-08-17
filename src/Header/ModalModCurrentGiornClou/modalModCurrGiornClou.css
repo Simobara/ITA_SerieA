@@ -1,50 +1,17 @@
-/* Per Webkit (Chrome, Safari, Opera) */
+/* Stile globale per rimuovere la freccia dalle select */
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   background: none;
+  border: 1px solid #ccc; /* Aggiusta il bordo come necessario */
+  padding: 8px; /* Aggiusta il padding se necessario */
+  border-radius: 4px; /* Aggiusta il bordo arrotondato */
+  background-image: none; /* Rimuove la freccia nativa */
+  background-color: transparent; /* Rende lo sfondo trasparente */
 }
 
-/* Per Firefox */
+/* Nasconde la freccia su Internet Explorer e vecchi Edge */
 select::-ms-expand {
   display: none;
-}
-
-/* Per Internet Explorer e Edge */
-select {
-  -webkit-appearance: none; /* Per Webkit (Chrome, Safari, Opera) */
-  -moz-appearance: none; /* Per Firefox */
-  -ms-appearance: none; /* Per Internet Explorer e Edge */
-  appearance: none; /* Proprietà standard */
-  background: none; /* Rimuove lo sfondo standard */
-}
-
-select::-ms-expand {
-  display: none; /* Nasconde la freccia in Internet Explorer */
-}
-/* Per Webkit (Chrome, Safari, Opera) */
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-}
-
-/* Per Firefox */
-select::-ms-expand {
-  display: none;
-}
-
-/* Per Internet Explorer e Edge */
-select {
-  -webkit-appearance: none; /* Per Webkit (Chrome, Safari, Opera) */
-  -moz-appearance: none; /* Per Firefox */
-  -ms-appearance: none; /* Per Internet Explorer e Edge */
-  appearance: none; /* Proprietà standard */
-  background: none; /* Rimuove lo sfondo standard */
-}
-
-select::-ms-expand {
-  display: none; /* Nasconde la freccia in Internet Explorer */
 }
