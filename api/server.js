@@ -73,14 +73,14 @@ app.use('/api/giornate', async (req, res, next) => {
 const routerCIFinale = require('./routes/routesCoppaItaFinale');
 app.use('/api/coppaItaFinale', async (req, res, next) => {
   console.log("Request received for /api/coppaItaFinale");
-  await connectToDatabase(); // Aggiungi un log qui
+  await connectToDatabase();
   console.log("Connected to database, processing request...");
 
   // Effettua la richiesta API con axios e configura il keep-alive
   axios.get('https://ita-serie-a.vercel.app/api/coppaItaFinale/finale', {
-    httpAgent: agent,  // Usa l'agente per richieste HTTP
-    httpsAgent: secureAgent,  // Usa l'agente per richieste HTTPS
-    timeout: 60000  // Aumenta il timeout a 60 secondi
+    httpAgent: agent,
+    httpsAgent: secureAgent,
+    timeout: 60000
   }).then(response => {
     console.log("Data received:", response.data);
     res.json(response.data); // Invia i dati ricevuti come risposta
@@ -88,8 +88,6 @@ app.use('/api/coppaItaFinale', async (req, res, next) => {
     console.error('Errore durante il recupero dei dati:', error);
     res.status(500).send('Errore durante il recupero dei dati');
   });
-
-  routerCIFinale(req, res, next);
 });
 
 
