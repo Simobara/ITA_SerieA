@@ -2,6 +2,9 @@ require('dotenv').config({ path: '../.env' });
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const axios = require('axios'); // Importa axios
+const http = require('http');
+const https = require('https');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -24,11 +27,7 @@ const corsOptions = {
   credentials: true,
 };
 app.use(cors(corsOptions));
-
-// Questo è un commento per forzare un nuovo deploy
-app.use(express.json());
-
-// Funzione per la connessione a MongoDB
+app.use(express.json());// Questo è un commento per forzare un nuovo deploy
 let cachedDb = null;
 
 async function connectToDatabase() {
@@ -40,7 +39,7 @@ async function connectToDatabase() {
   const password = process.env.PASSWORD;
   const clusterUrl = process.env.CLUSTER_URL;
   const dbName = process.env.DB_NAME;
-  const dbURI = `mongodb+srv://${username}:${password}@${clusterUrl}/${dbName}?retryWrites=true&w=majority&appName=Cluster0&connectTimeoutMS=10000`;
+  const dbURI = `mongodb+srv://${username}:${password}@${clusterUrl}/${dbName}?retryWrites=true&w=majority&appName=Cluster0&connectTimeoutMS=50000`;
   
   mongoose.connect(dbURI).then(() => {
     console.log("Connected to MongoDB Atlas in dev/prod environment");
@@ -51,6 +50,19 @@ async function connectToDatabase() {
   console.log("Connected to MongoDB Atlas");
   return cachedDb;
 }
+
+// Configura gli agenti per mantenere aperte le connessioni
+const agent = new http.Agent({ keepAlive: true });
+const secureAgent = new https.Agent({ keepAlive: true });
+
+
+//----------------------------------------------------------------ENDPOINTS
+// Importa e usa il router per `GiornateClou`
+const routerGiornateClou = require('./routes/routesGiornateClou');
+app.use('/api/giornate', async (req, res, next) => {
+  await connectToDatabase();
+  routerGiornateClou(req, res, next);
+});
 
 // Importa e usa il router per `CoppaItaliaFinale`
 const routerCIFinale = require('./routes/routesCoppaItaFinale');
@@ -67,8 +79,8 @@ app.use('/api/giornate', async (req, res, next) => {
   await connectToDatabase();
   routerGiornata(req, res, next);
 });
-
 //----------------------------------------------------------------
+
 app.get('/api/test', (req, res) => {
   res.status(200).send('Test endpoint is working!');
 });
