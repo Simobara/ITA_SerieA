@@ -1,5 +1,3 @@
-//QUESTO FILE E' CORR. routesCoppaItaFinale.js
-
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
@@ -12,9 +10,13 @@ const CoppaItaFinale = mongoose.model("CoppaItaFinale", schemaCoppaItaFinale);
 router.get("/finale", async (req, res) => {
   try {
     console.log("coppaItaFinale.js => Richiesta GET ricevuta a /api/coppaItaFinale/finale");
+
+    // Recupera i dati dal database
     const finale = await CoppaItaFinale.find();
     console.log("Finale ", finale);
-    res.send(finale);
+
+    // Invia i dati recuperati dal database come risposta
+    res.json(finale);
   } catch (error) {
     console.error("Errore durante il recupero della finale:", error);
     res.status(500).send(error);
@@ -34,5 +36,4 @@ router.get("/finale", async (req, res) => {
 //     res.status(500).send(error);
 //   }
 // });
-
 module.exports = router;
