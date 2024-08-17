@@ -44,10 +44,7 @@ async function connectToDatabase() {
   const dbName = process.env.DB_NAME;
   const dbURI = `mongodb+srv://${username}:${password}@${clusterUrl}/${dbName}?retryWrites=true&w=majority&appName=Cluster0&connectTimeoutMS=10000`;
   
-  cachedDb = await mongoose.connect(dbURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+  cachedDb = await mongoose.connect(dbURI);
   console.log("Connected to MongoDB Atlas");
   return cachedDb;
 }
