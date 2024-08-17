@@ -1,5 +1,5 @@
-//
-//QUESTO FILE E' CORRETTO
+//QUESTO FILE E' CORR. Finale.jsx
+
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 

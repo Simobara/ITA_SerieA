@@ -1,11 +1,11 @@
-//QUESTO FILE E' CORRETTO
+//QUESTO FILE E' CORR server.js
 
 require('dotenv').config({ path: '../.env' });
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
-const PORT = process.env.NODE_ENV === 'production' ? 3000 : 5000;
+const PORT = process.env.PORT || 5000;
 
 
 // Log per verificare che le variabili d'ambiente siano correttamente lette
