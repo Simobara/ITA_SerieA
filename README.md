@@ -17,7 +17,7 @@
 
 ## Demo
 
-![Finished App](ITA_SerieA.jpg)
+![Finished App](SerieA.jpg)
 
 ---
 
