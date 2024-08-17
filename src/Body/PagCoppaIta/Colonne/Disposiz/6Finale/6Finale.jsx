@@ -1,6 +1,6 @@
-// import axios from 'axios';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Tornei } from '../../../../../START/app/3CoppaItaMatches'; // Importa il JSON locale
+import { Tornei } from '../../../../../START/app/3CoppaItaMatches';
 
 const Finale = ({ width = '55px', height = '24px' }) => {
     const [match, setMatch] = useState("");

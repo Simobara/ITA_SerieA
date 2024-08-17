@@ -5,7 +5,9 @@
       "src": "api/server.js",
       "use": "@vercel/node",
       "config": {
-        "maxLambdaSize": "15mb"
+        "maxLambdaSize": "15mb",
+        "maxDuration": 20,
+        "memory": 512
       }
     },
     {
