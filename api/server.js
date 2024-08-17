@@ -10,22 +10,22 @@ const PORT = process.env.NODE_ENV === 'production' ? 3000 : 5000;
 // Middleware CORS
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? 'https://ita-serie-a.vercel.app'  // Solo il dominio di produzione è autorizzato
-    : 'http://localhost:5173',           // Solo il dominio di sviluppo è autorizzato
+    ? 'https://ita-serie-a.vercel.app'
+    : 'http://localhost:5173',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true  // Consente di includere credenziali nelle richieste, come i cookie
+  credentials: true
 }));
 
-console.log("ENV PROCESS:",process.env.NODE_ENV)
+
 
 // Questo è un commento per forzare un nuovo deploy
 app.use(express.json());
 
 // Stringhe di connessione env
-const username   = process.env.USERNAME || 'yourUsername';
-const password   = process.env.PASSWORD || 'yourPassword';
-const clusterUrl = process.env.CLUSTER_URL || 'yourClusterUrl';
-const dbName     = process.env.DB_NAME || 'yourDbName';
+const username   = process.env.USERNAME     || 'yourUsername';
+const password   = process.env.PASSWORD     || 'yourPassword';
+const clusterUrl = process.env.CLUSTER_URL  || 'yourClusterUrl';
+const dbName     = process.env.DB_NAME      || 'yourDbName';
 const dbURI      = `mongodb+srv://${username}:${password}@${clusterUrl}/${dbName}?retryWrites=true&w=majority&appName=Cluster0&connectTimeoutMS=10000`;
 
 // Connessione a MongoDB Atlas

@@ -12,20 +12,23 @@ const Finale = ({ width = '55px', height = '24px' }) => {
 
     useEffect(() => {
         const fetchData = async () => {
+            console.log("Environment:", import.meta.env.PROD ? 'Production' : 'Development');
+            console.log("VITE_API_URL_PRODUCTION:", import.meta.env.VITE_API_URL_PRODUCTION);
+            console.log("VITE_API_URL_DEVELOPMENT:", import.meta.env.VITE_API_URL_DEVELOPMENT);
+   
             try {
                 // Determina l'URL API in base all'ambiente
                 const API_BASE_URL = import.meta.env.PROD
                     ? import.meta.env.VITE_API_URL_PRODUCTION
                     : import.meta.env.VITE_API_URL_DEVELOPMENT;
-
-
+                
+                console.log("Using API URL: ", API_BASE_URL);
+   
                 const response = await axios.get(`${API_BASE_URL}/api/coppaItaFinale/finale`);
                 const data = response.data;
-
-				console.log("Using API URL: ", API_BASE_URL);
+   
                 console.log("DATI FINALE: ", data); // Controlla la struttura dei dati
-                console.log("PRODUCTION", import.meta.env.VITE_API_URL_PRODUCTION);
-
+   
                 if (data.length > 0 && data[0]) {
                     setMatch(data[0]); // Accedi correttamente al primo match dell'array "Finale"
                 } else {

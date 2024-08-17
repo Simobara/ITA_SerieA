@@ -2,9 +2,9 @@
   "name": "1my-calcio",
   "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
+    "dev": "NODE_ENV=development vite",
+    "build": "NODE_ENV=production vite build",
+    "serve": "NODE_ENV=production vite preview"
   },
   "dependencies": {
     "autoprefixer": "^10.4.16",

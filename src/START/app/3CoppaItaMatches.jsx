@@ -104,13 +104,13 @@ const Tornei25 = {
     ],
 	// //*------------------------------------------------------------------------------ ------ 32
     SqATrentaduesimi: [
-        { id: 1, pos: '5%', 			team1: 'Cagliari', 	team2: 'Carrarese',		ris: '' },
+        { id: 1, pos: '5%', 			team1: 'Cagliari', 	team2: 'Carrarese',		ris: '3-1' },
         { id: 2, pos: '15%', 			team1: 'Cremonese',	team2: 'Bari',   		ris: '6-5' },
         { id: 3, pos: '30%', 			team1: 'Torino', 	team2: 'Cosenza',		ris: '2-0' },
         { id: 4, pos: '40%', 			team1: 'Empoli', 	team2: 'Catanzaro',		ris: '4-1' },
         { id: 5, pos: 'bottom-36%', 	team1: 'Monza', 	team2: 'SudTirol', 		ris: '9-8' },
         { id: 6, pos: 'bottom-26%', 	team1: 'Brescia', 	team2: 'Venezia', 		ris: '3-1' },
-        { id: 7, pos: 'bottom-11%', 	team1: 'Frosinone',	team2: 'Pisa',   		ris: '' },
+        { id: 7, pos: 'bottom-11%', 	team1: 'Frosinone',	team2: 'Pisa',   		ris: '0-3' },
         { id: 8, pos: 'bottom-1%', 		team1: 'Cesena', 	team2: 'Verona',     	ris: '2-1' },
     ],
     SqBTrentaduesimi: [
@@ -120,21 +120,21 @@ const Tornei25 = {
         { id: 4, pos: '40%', 			team1: 'Como',      team2: 'Sampdoria',		ris: '4-3' },
         { id: 5, pos: 'bottom-36%', 	team1: 'Napoli',    team2: 'Modena', 		ris: '4-3' },
         { id: 6, pos: 'bottom-26%', 	team1: 'Parma',     team2: 'Palermo', 		ris: '0-1' },
-        { id: 7, pos: 'bottom-11%', 	team1: 'Salernitana',team2:'Spezia',		ris: '' },
+        { id: 7, pos: 'bottom-11%', 	team1: 'Salernitana',team2:'Spezia',		ris: '5-4' },
         { id: 8, pos: 'bottom-1%', 		team1: 'Udinese', 	team2: 'Avellino', 		ris: '4-0' },
     ],
 	// //*------------------------------------------------------------------------------ ------ 16
     SqASedicesimi: [
-        { id: 1, pos: '10%', 			team1: '', 	        team2: 'Cremonese',     ris: '' },
+        { id: 1, pos: '10%', 			team1: 'Cagliari',  team2: 'Cremonese',     ris: '' },
         { id: 2, pos: '35%', 			team1: 'Torino',    team2: 'Empoli',        ris: '' },
         { id: 3, pos: '31%', 			team1: 'Monza',     team2: 'Brescia',       ris: '' },
-        { id: 4, pos: '6%', 			team1: '', 	        team2: 'Cesena',        ris: '' },
+        { id: 4, pos: '6%', 			team1: 'Pisa',      team2: 'Cesena',        ris: '' },
     ],
     SqBSedicesimi: [
         { id: 1, pos: '10%', 			team1: 'LEC',    	team2: 'Sassuolo', 	    ris: '' },
         { id: 2, pos: '35%', 			team1: 'Genoa', 	team2: 'Sampdoria',	    ris: '' },
         { id: 3, pos: '31%', 			team1: 'Napoli',    team2: 'Palermo',       ris: '' },
-        { id: 4, pos: '6%', 			team1: '',          team2: 'Udinese', 		        ris: '' },
+        { id: 4, pos: '6%', 			team1: 'Salernit',  team2: 'Udinese', 		ris: '' },
     ],
 	// //*------------------------------------------------------------------------------ ------  8
     SqAOttavi: [

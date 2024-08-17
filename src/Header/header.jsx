@@ -51,7 +51,9 @@ const Header = () => {
     e.preventDefault();
     console.log(`Giornata attuale numero: ${giornataN}`);
     try {
-      const response = await axios.post("http://localhost:5000/api/giornate/N", { numero: giornataN });
+      const response = await axios.post(`${import.meta.env.PROD ? import.meta.env.VITE_API_URL_PRODUCTION : import.meta.env.VITE_API_URL_DEVELOPMENT}/api/giornate/N`, {
+        numero: giornataN,
+      });
       console.log("Giornata clou aggiornata:", response.data);
     } catch (error) {
       console.error("Errore durante l'aggiornamento della giornata clou:", error);
@@ -61,8 +63,10 @@ const Header = () => {
   const handleSave = async (giornataNumber) => {
     console.log(`Dati ricevuti in header.js per giornata ${giornataN}:`, { giornataNumber });
     try {
-      // Costruisci dinamicamente la rotta utilizzando la giornataN
-      const response = await axios.post(`http://localhost:5000/api/giornate/giornata/${giornataN}`, { giornata: giornataNumber });
+      const response = await axios.post(
+        `${import.meta.env.PROD ? import.meta.env.VITE_API_URL_PRODUCTION : import.meta.env.VITE_API_URL_DEVELOPMENT}/api/giornate/giornata/${giornataN}`,
+        { giornata: giornataNumber },
+      );
       console.log("Risposta dal server:", response.data);
     } catch (error) {
       console.error("Errore durante l'invio dei dati:", error);
