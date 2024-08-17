@@ -65,9 +65,12 @@ app.use('/api/giornate', async (req, res, next) => {
 // Importa e usa il router per `CoppaItaliaFinale`
 const routerCIFinale = require('./routes/routesCoppaItaFinale');
 app.use('/api/coppaItaFinale', async (req, res, next) => {
-  await connectToDatabase();
+  console.log("Request received for /api/coppaItaFinale");
+  await connectToDatabase(); // Aggiungi un log qui
+  console.log("Connected to database, processing request...");
   routerCIFinale(req, res, next);
 });
+
 
 // Importa e usa il router per `Giornata`
 const routerGiornata = require('./routes/routesGiornata');

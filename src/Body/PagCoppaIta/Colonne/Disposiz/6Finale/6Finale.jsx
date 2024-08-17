@@ -1,7 +1,6 @@
-//QUESTO FILE E' CORR. Finale.jsx
-
-import axios from 'axios';
+// import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Tornei } from '../../../../../START/app/3CoppaItaMatches'; // Importa il JSON locale
 
 const Finale = ({ width = '55px', height = '24px' }) => {
     const [match, setMatch] = useState("");
@@ -31,23 +30,23 @@ const Finale = ({ width = '55px', height = '24px' }) => {
                 console.log("Response data:", data);
             
                 if (data.length > 0 && data[0]) {
-                    setMatch(data[0]); // Accedi correttamente al primo match dell'array "Finale"
+                    setMatch(data[0]); // Usa i dati dall'API se disponibili e corretti
                 } else {
                     console.error('La struttura dei dati non è quella prevista');
+                    setMatch(Tornei.Finale[0]); // Usa i dati locali come fallback
                 }
+                // Forza un errore per utilizzare i dati locali
+                // throw new Error('Simulated error to skip API call');
             } catch (error) {
                 console.error('Errore durante il recupero dei dati:', error);
-                if (error.response) {
-                    console.error('Response data:', error.response.data);
-                    console.error('Response status:', error.response.status);
-                }
+                setMatch(Tornei.Finale[0]); // Usa i dati locali come fallback in caso di errore
             }
         };
         fetchData();
     }, []);
 
-    const team1 = match?.team1 || "";// Se `match` è null, imposta `team1` a una stringa vuota
-    const team2 = match?.team2 || "";// Se `match` è null, imposta `team2` a una stringa vuota
+    const team1 = match?.team1 || ""; // Se `match` è null, imposta `team1` a una stringa vuota
+    const team2 = match?.team2 || ""; // Se `match` è null, imposta `team2` a una stringa vuota
     const [team1Result, team2Result] = match.ris ? match.ris.split('-') : ['', ''];
 
     return (
