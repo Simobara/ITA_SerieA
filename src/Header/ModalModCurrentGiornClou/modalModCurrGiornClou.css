@@ -23,3 +23,28 @@ select {
 select::-ms-expand {
   display: none; /* Nasconde la freccia in Internet Explorer */
 }
+/* Per Webkit (Chrome, Safari, Opera) */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+}
+
+/* Per Firefox */
+select::-ms-expand {
+  display: none;
+}
+
+/* Per Internet Explorer e Edge */
+select {
+  -webkit-appearance: none; /* Per Webkit (Chrome, Safari, Opera) */
+  -moz-appearance: none; /* Per Firefox */
+  -ms-appearance: none; /* Per Internet Explorer e Edge */
+  appearance: none; /* Proprietà standard */
+  background: none; /* Rimuove lo sfondo standard */
+}
+
+select::-ms-expand {
+  display: none; /* Nasconde la freccia in Internet Explorer */
+}
