@@ -23,12 +23,13 @@ const Finale = ({ width = '55px', height = '24px' }) => {
                     : import.meta.env.VITE_API_URL_DEVELOPMENT;
                 
                 console.log("Using API URL: ", API_BASE_URL);
-   
+            
                 const response = await axios.get(`${API_BASE_URL}/api/coppaItaFinale/finale`);
                 const data = response.data;
-   
-                console.log("DATI FINALE: ", data); // Controlla la struttura dei dati
-   
+            
+                console.log("Response status:", response.status);
+                console.log("Response data:", data);
+            
                 if (data.length > 0 && data[0]) {
                     setMatch(data[0]); // Accedi correttamente al primo match dell'array "Finale"
                 } else {
@@ -36,6 +37,10 @@ const Finale = ({ width = '55px', height = '24px' }) => {
                 }
             } catch (error) {
                 console.error('Errore durante il recupero dei dati:', error);
+                if (error.response) {
+                    console.error('Response data:', error.response.data);
+                    console.error('Response status:', error.response.status);
+                }
             }
         };
         fetchData();
