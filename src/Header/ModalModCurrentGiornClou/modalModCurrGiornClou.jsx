@@ -112,7 +112,7 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
                     <select
                       value={partita.day}
                       onChange={(e) => handleDayChange(index, e.target.value)}
-                      className={`appearance-none g-slate-950 text-white rounded p-1 ${partita.day === "dom" ? "!bg-red-400" : ""}`}
+                      className={`appearance-none bg-slate-950 text-white rounded p-1 ${partita.day === "dom" ? "!bg-red-400" : ""}`}
                     >
                       <option value="ven">ven</option>
                       <option value="sab">sab</option>
