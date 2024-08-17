@@ -2,9 +2,10 @@
   "name": "1my-calcio",
   "version": "1.0.0",
   "scripts": {
+    "start": "NODE_OPTIONS='--no-deprecation' vite",
     "dev": "cross-env NODE_ENV=development vite",
     "build": "cross-env NODE_ENV=production vite build",
-    "serve": "vite preview"
+    "serve-dist": "NODE_OPTIONS='--no-deprecation' serve dist"
   },
   "dependencies": {
     "autoprefixer": "^10.4.16",
