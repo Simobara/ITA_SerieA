@@ -1,17 +1,38 @@
-/* Stile globale per rimuovere la freccia dalle select */
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-  border: 1px solid #ccc; /* Aggiusta il bordo come necessario */
-  padding: 8px; /* Aggiusta il padding se necessario */
-  border-radius: 4px; /* Aggiusta il bordo arrotondato */
-  background-image: none; /* Rimuove la freccia nativa */
-  background-color: transparent; /* Rende lo sfondo trasparente */
+.select-no-arrow {
+  -webkit-appearance: none; /* Per Webkit (Chrome, Safari, Opera) */
+  -moz-appearance: none; /* Per Firefox */
+  -ms-appearance: none; /* Per Internet Explorer e vecchie versioni di Edge */
+  appearance: none; /* Proprietà standard */
+  background: none; /* Rimuove lo sfondo */
+  border: 1px solid #ccc; /* Esempio di stile del bordo */
+  padding: 8px; /* Esempio di padding */
+  border-radius: 4px; /* Esempio di bordo arrotondato */
+  position: relative; /* Per posizionare elementi aggiuntivi */
+  z-index: 1; /* Portare in primo piano il select */
 }
 
-/* Nasconde la freccia su Internet Explorer e vecchi Edge */
-select::-ms-expand {
+/* Nasconde la freccia su Internet Explorer e Edge */
+.select-no-arrow::-ms-expand {
   display: none;
+}
+
+/* Rimuove qualsiasi icona di background aggiunta da browser specifici */
+.select-no-arrow {
+  background-image: none !important;
+}
+
+/* Per Safari e Chrome su macOS */
+select::-webkit-inner-spin-button,
+select::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Per migliorare la compatibilità su altri browser */
+select::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+}
+
+select::-webkit-outer-spin-button {
+  -webkit-appearance: none !important;
 }
