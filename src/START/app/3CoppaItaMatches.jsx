@@ -114,7 +114,7 @@ const Tornei25 = {
         { id: 8, pos: 'bottom-1%', 		team1: 'Cesena', 	team2: 'Verona',     	ris: '2-1' },
     ],
     SqBTrentaduesimi: [
-        { id: 1, pos: '5%', 			team1: 'Lecce', 	team2: 'Mantova',       ris: '' },
+        { id: 1, pos: '5%', 			team1: 'Lecce', 	team2: 'Mantova',       ris: '2-1' },
         { id: 2, pos: '15%', 			team1: 'Sassuolo', 	team2: 'Cittadella',	ris: '2-1' },
         { id: 3, pos: '30%', 			team1: 'Genoa', 	team2: 'Reggiana',  	ris: '1-0' },
         { id: 4, pos: '40%', 			team1: 'Como',      team2: 'Sampdoria',		ris: '4-3' },
@@ -131,7 +131,7 @@ const Tornei25 = {
         { id: 4, pos: '6%', 			team1: 'Pisa',      team2: 'Cesena',        ris: '' },
     ],
     SqBSedicesimi: [
-        { id: 1, pos: '10%', 			team1: 'LEC',    	team2: 'Sassuolo', 	    ris: '' },
+        { id: 1, pos: '10%', 			team1: 'Lecce',    	team2: 'Sassuolo', 	    ris: '' },
         { id: 2, pos: '35%', 			team1: 'Genoa', 	team2: 'Sampdoria',	    ris: '' },
         { id: 3, pos: '31%', 			team1: 'Napoli',    team2: 'Palermo',       ris: '' },
         { id: 4, pos: '6%', 			team1: 'Salernit',  team2: 'Udinese', 		ris: '' },

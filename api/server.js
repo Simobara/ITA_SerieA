@@ -23,16 +23,21 @@ console.log("----------------------------------");
 
 
 // Middleware CORS
+
+// const corsOptions = {
+//   origin: process.env.NODE_ENV === 'production'
+//     ? 'https://ita-serie-a.vercel.app' // In produzione, permetti richieste solo dal tuo dominio Vercel
+//     : 'http://localhost:3000', // In sviluppo, permetti richieste dal localhost
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   credentials: true,
+// };
+// app.use(cors(corsOptions));
 const corsOptions = {
-  origin: process.env.NODE_ENV === 'production'
-    ? 'https://ita-serie-a.vercel.app' // In produzione, permetti richieste solo dal tuo dominio Vercel
-    : 'http://localhost:3000', // In sviluppo, permetti richieste dal localhost
+  origin: '*', // Consenti tutte le origini (non sicuro per produzione)
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 };
-
 app.use(cors(corsOptions));
-
 
 
 // Questo è un commento per forzare un nuovo deploy
