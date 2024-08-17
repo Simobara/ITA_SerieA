@@ -30,11 +30,5 @@
   "env": {
     "NODE_ENV": "production",
     "CUSTOM_ENV_VARIABLE": "value"
-  },
-  "functions": {
-    "api/server.js": {
-      "memory": 256,
-      "maxDuration": 10
-    }
   }
 }
