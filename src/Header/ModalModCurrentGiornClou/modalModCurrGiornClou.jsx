@@ -112,7 +112,7 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
                     <select
                       value={partita.day}
                       onChange={(e) => handleDayChange(index, e.target.value)}
-                      className={`select-no-arrow appearance-none bg-slate-950 text-white rounded p-1 ${partita.day === "dom" ? "!bg-red-400" : ""}`}
+                      className={`select-no-arrow appearance-none bg-slate-950 text-white rounded p-1 ${partita.day === "dom" ? "!bg-pink-900" : partita.day === "sab" ? "!bg-green-900" : ""}`}
                     >
                       <option value="ven">ven</option>
                       <option value="sab">sab</option>
@@ -127,7 +127,7 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
                     <select
                       value={partita.time}
                       onChange={(e) => handleTimeChange(index, e.target.value)}
-                      className={`select-no-arrow appearance-none bg-slate-950 text-white rounded p-1 ${partita.time === "20:45" ? "!bg-slate-900" : "!bg-slate-700"}`}
+                      className={`select-no-arrow appearance-none bg-slate-950 text-white rounded p-1 ${partita.time === "20:45" ? "!bg-sky-950" : "!bg-blue-400"}`}
                     >
                       <option value="12:30">12.30</option>
                       <option value="18:30">18.30</option>
@@ -139,7 +139,7 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
                     <select
                       value={partita.team1}
                       onChange={(e) => handleTeam1Change(index, e.target.value)}
-                      className={`select-no-arrow appearance-none bg-gray-700 text-white rounded p-1 ${duplicateTeams.has(partita.team1) ? "border-2 border-red-500" : ""}`}
+                      className={`select-no-arrow appearance-none bg-slate-950 text-white rounded p-1 ${duplicateTeams.has(partita.team1) ? "border-2 border-red-500" : ""}`}
                     >
                       {squadre.map((squadra, squadraIndex) => (
                         <option key={`team1-${squadraIndex}`} value={squadra}>
@@ -154,7 +154,7 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
                     <select
                       value={partita.team2}
                       onChange={(e) => handleTeam2Change(index, e.target.value)}
-                      className={`select-no-arrow appearance-none bg-gray-700 text-white rounded p-1 ${duplicateTeams.has(partita.team2) ? "border-2 border-red-500" : ""}`}
+                      className={`select-no-arrow appearance-none bg-slate-950 text-white rounded p-1 ${duplicateTeams.has(partita.team2) ? "border-2 border-red-500" : ""}`}
                     >
                       {squadre.map((squadra, squadraIndex) => (
                         <option key={`team2-${squadraIndex}`} value={squadra}>
@@ -167,7 +167,7 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
                     <select
                       value={partita.pron || ""}
                       onChange={(e) => handlePronChange(index, e.target.value)}
-                      className={`select-no-arrow appearance-none bg-slate-950 rounded p-1 text-white`}
+                      className={`select-no-arrow appearance-none bg-red-900 rounded p-1 text-white`}
                     >
                       <option value=" "> </option>
                       <option value="1">1</option>
@@ -175,7 +175,7 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
                       <option value="2">2</option>
                     </select>
                   </div>
-                  <div className="flex-1 text-left">.{partita.results}</div>
+                  <div className="flex-1 text-left">{partita.results}</div>
                 </div>
               ))}
             </div>
