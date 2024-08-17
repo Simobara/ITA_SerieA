@@ -95,8 +95,8 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
   //-------------------------------------------------------------------------------------
   return (
     <>
-      <div className="fixed inset-0 flex items-start justify-start z-50 bg-gray-900 bg-opacity-50 ">
-        <div className="relative w-full h-full max-w-[800px] max-h-[580px] shadow-xxxl rounded-lg border-4 border-sky-900 bg-black overflow-hidden ml-[2rem]">
+      <div className="fixed inset-0 flex items-start justify-start z-50 bg-gray-900 bg-opacity-50">
+        <div className="relative w-[700px] h-[650px] shadow-xxxl rounded-lg border-4 border-sky-900 bg-black overflow-auto ml-[2rem]">
           <div className="absolute top-0 left-0 right-0 bg-gray-950 z-20">
             <button className="text-3xl leading-none text-sky-700 w-full hover:bg-sky-800 hover:text-white" onClick={onClose}>
               X
@@ -122,7 +122,7 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
                       <option value="gio">gio</option>
                     </select>
                   </div>
-                  <div className="flex-1 text-right pr-20">
+                  <div className="flex-1 text-right sm:pr-10 md:pr-15 pr-2">
                     <select
                       value={partita.time}
                       onChange={(e) => handleTimeChange(index, e.target.value)}
@@ -149,7 +149,7 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
                   </div>
                   <div className="flex-1 text-center">-</div>
 
-                  <div className="flex-1 text-left pr-10">
+                  <div className="flex-1 text-left sm:pr-10 md:pr-15 pr-2">
                     <select
                       value={partita.team2}
                       onChange={(e) => handleTeam2Change(index, e.target.value)}
@@ -162,7 +162,7 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
                       ))}
                     </select>
                   </div>
-                  <div className="flex-1 text-left pl-2">
+                  <div className="flex-1 text-left sm:pl-5 md:pl-2 pl-0">
                     <select value={partita.pron || ""} onChange={(e) => handlePronChange(index, e.target.value)} className={`bg-slate-950 rounded p-1 text-white`}>
                       <option value=" "> </option>
                       <option value="1">1</option>
