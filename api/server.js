@@ -45,7 +45,7 @@ async function connectToDatabase() {
   const dbURI = `mongodb+srv://${username}:${password}@${clusterUrl}/${dbName}?retryWrites=true&w=majority&appName=Cluster0&connectTimeoutMS=10000`;
   
   mongoose.connect(dbURI).then(() => {
-    console.log("Connected to MongoDB Atlas in production environment");
+    console.log("Connected to MongoDB Atlas in dev/prod environment");
   }).catch((err) => {
     console.error("Could not connect to MongoDB Atlas in production...", err);
   });
