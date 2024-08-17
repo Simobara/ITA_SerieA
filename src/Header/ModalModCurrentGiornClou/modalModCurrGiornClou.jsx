@@ -106,8 +106,8 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
             <div className="px-4">
               {partite.map((partita, index) => (
                 <div key={index} className="mb-2 flex items-center justify-between text-white">
-                  <div className="flex-1 text-right sm:pr-10 md:pr-15 pr-2">{partita.numero}</div>
-                  <div className="flex-1 text-right sm:pr-10 md:pr-15 pr-2">
+                  <div className="flex-1 text-right sm:pr-10 md:pr-15 pr-1">{partita.numero}</div>
+                  <div className="flex-1 text-right sm:pr-10 md:pr-15 pr-1">
                     <select
                       value={partita.day}
                       onChange={(e) => handleDayChange(index, e.target.value)}
@@ -122,7 +122,7 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
                       <option value="gio">gio</option>
                     </select>
                   </div>
-                  <div className="flex-1 text-right sm:pr-10 md:pr-15 pr-2">
+                  <div className="flex-1 text-right sm:pr-10 md:pr-15 pr-1">
                     <select
                       value={partita.time}
                       onChange={(e) => handleTimeChange(index, e.target.value)}
@@ -149,7 +149,7 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
                   </div>
                   <div className="flex-1 text-center ">-</div>
 
-                  <div className="flex-1 text-left sm:pr-10 md:pr-15 pr-2">
+                  <div className="flex-1 text-left sm:pr-10 md:pr-15 pr-1">
                     <select
                       value={partita.team2}
                       onChange={(e) => handleTeam2Change(index, e.target.value)}
