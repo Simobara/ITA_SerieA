@@ -26,8 +26,8 @@ const Finale = ({ width = '55px', height = '24px' }) => {
                 const response = await axios.get(`${API_BASE_URL}/api/coppaItaFinale/finale`);
                 const data = response.data;
             
-                // console.log("Resp status:", response.status);
-                // console.log("Resp data:", data);
+                console.log("Resp status:", response.status);
+                console.log("Resp data:", data);
             
                 if (data.length > 0 && data[0]) {
                     setMatch(data[0]); // Usa i dati dall'API se disponibili e corretti

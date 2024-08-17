@@ -260,13 +260,11 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
               </div>
             )}
             {/* partita.team1 */}
-            <div
-              className={`{absolute flex flex-row sm:ml-[-2%] md:ml-[10%] ml-[10%] {!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
-            >
+            <div className={`{absolute flex flex-row sm:ml-[-2%] md:ml-[10%] ml-[10%] ${!isPartitaModificabile ? "unselectable" : "hover:cursor-pointer"}`}>
               <div
                 className={`max-w-[9rem] whitespace-nowrap overflow-hidden z-[1] text-xl
                                 ${getTextTeam(partita.team1)} 
-                                ${isKQBtnActive ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}
+                                ${isKQBtnActive || !isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}
                                 ${isBigTeam(partita.team1) ? `my-1 ${ts.ATeamText} ${ts.ATeamBg} font-bold` : ""} 
                                 ${underlineTeam("1")}`}
                 onClick={() => {
@@ -290,7 +288,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
               <div
                 className={`max-w-[9rem] whitespace-nowrap overflow-hidden ml-[1rem] text-xl
                                 ${getTextTeam(partita.team2)} 
-                                ${isKQBtnActive ? "hover:cursor-not-allowed unselectable" : ""}
+                                ${isKQBtnActive || !isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}
                                 ${isBigTeam(partita.team2) ? "font-bold" : ""} 
                                 ${underlineTeam("2")}`}
                 onClick={() => (!isSignOk && isPartitaModificabile ? handleSelection(partita.team2, "2") : undefined)}

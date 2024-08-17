@@ -1,10 +1,12 @@
+@import url("../../../../../../START/styles/variable.css");
+
 .underline-thick {
   text-decoration-thickness: 2px; /* o qualsiasi altro valore che preferisci */
 }
 
 .underlineC {
   text-decoration: underline;
-  text-decoration-color: #9aff03; /* Colore rosso per l'underline */
+  text-decoration-color: var(--win-bg-color); /* Colore rosso per l'underline */
   text-decoration-thickness: 4px;
   overflow: hidden;
   /* opacity:1; */
@@ -12,14 +14,14 @@
 
 .underline-draw {
   text-decoration: underline;
-  text-decoration-color: rgb(7, 102, 255); /* Colore rosso per l'underline */
+  text-decoration-color: var(--draw-bg-color); /* Colore rosso per l'underline */
   text-decoration-thickness: 4px;
   overflow: hidden;
 }
 
 .underlineF {
   text-decoration: underline;
-  text-decoration-color: #9aff03; /* #c013b7 Colore rosso per l'underline */
+  text-decoration-color: var(--win-bg-color); /* #c013b7 Colore rosso per l'underline */
   text-decoration-thickness: 4px;
   overflow: hidden;
 }

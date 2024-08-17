@@ -2,6 +2,8 @@ require('dotenv').config({ path: '../.env' });
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const http = require('http'); 
+const https = require('https'); 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -41,12 +43,12 @@ async function connectToDatabase() {
   const dbURI = `mongodb+srv://${username}:${password}@${clusterUrl}/${dbName}?retryWrites=true&w=majority&appName=Cluster0&connectTimeoutMS=10000`;
 
   try {
+    console.log("Trying to connect to MongoDB...");
     const connection = await mongoose.connect(dbURI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       serverSelectionTimeoutMS: 5000, // Timeout dopo 5 secondi
       socketTimeoutMS: 45000,         // Chiudi i socket dopo 45 secondi di inattività
-      poolSize: 10,                   // Numero massimo di socket in pool
       family: 4                       // Usa IPv4, ignora IPv6
     });
 

@@ -33,9 +33,9 @@ export const nomiSquadre = {
     Rom:    { name: 'Roma',       isTeam: 'A',     AnniA: { Consct: 72, Ult: 1953 },       logo: LogoRoma,         style: {top: '45.4%', left: '48.8%' },    link: ''},
     //*--- ---- ---
     Laz:    { name: 'Lazio',      isTeam: '',      AnniA: { Consct: 36, Ult: 1989 },       logo: LogoLazio,        style: {top: '45.4%', left: '48.8%' },    link: ''},
-    Udi:    { name: 'Udinese',    isTeam: '',      AnniA: { Consct: 29, Ult: 1996 },       logo: LogoUdinese,      style: {top: '1%',    left: '55%'   },    link: ''},
+    Udi:    { name: 'Udinese',    isTeam: 'B',      AnniA: { Consct: 29, Ult: 1996 },       logo: LogoUdinese,      style: {top: '1%',    left: '55%'   },    link: ''},
     Fio:    { name: 'Fiorentina', isTeam: '',      AnniA: { Consct: 20, Ult: 2005 },       logo: LogoFiorentina,   style: {top: '25%',   left: '38%'   },    link: ''},
-    Tor:    { name: 'Torino',     isTeam: 'B',     AnniA: { Consct: 12, Ult: 2013 },       logo: LogoTorino,       style: {top: '10.7%', left: '10.7%' },    link: ''},
+    Tor:    { name: 'Torino',     isTeam: '',     AnniA: { Consct: 12, Ult: 2013 },       logo: LogoTorino,       style: {top: '10.7%', left: '10.7%' },    link: ''},
     Bol:    { name: 'Bologna',    isTeam: 'A',     AnniA: { Consct:  9, Ult: 2016 },       logo: LogoBologna,      style: {top: '17.5%', left: '39.5%' },    link: ''},
     //*--- ---- ---
     Ver:    { name: 'Verona',     isTeam: 'B',     AnniA: { Consct:  5, Ult: 2020 },       logo: LogoVerona,       style: {top: '7.1%',  left: '36.5%' },    link: ''},

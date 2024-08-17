@@ -1,4 +1,5 @@
 /* File style.css */
+@import url("../../../START/styles/variable.css");
 
 .vertical-dashed-line {
   /* Aggiustato per rimuovere position: absolute */
@@ -35,7 +36,7 @@ td {
 
 .underlineW {
   text-decoration: underline;
-  text-decoration-color: #9aff03; /* Colore rosso per l'underline */
+  text-decoration-color: var(--win-bg-color); /* Colore rosso per l'underline */
   text-decoration-thickness: 3px;
   overflow: hidden;
   /* filter: brightness(75%); */
@@ -44,8 +45,8 @@ td {
 
 .underlineX {
   text-decoration: underline;
-  text-decoration-color: rgb(7, 102, 255); /* Colore rosso per l'underline */
-  text-decoration-thickness: 3px;
+  text-decoration-color: var(--draw-bg-color); /* Colore rosso per l'underline */
+  text-decoration-thickness: var(--underline-thickness);
   overflow: hidden;
   /* filter: brightness(75%); */
 }

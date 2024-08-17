@@ -1,0 +1,6 @@
+/* variables.css */
+:root {
+  --win-bg-color: hsl(303, 100%, 16%);
+  --draw-bg-color: #354500;
+  --underline-thickness: 3px;
+}

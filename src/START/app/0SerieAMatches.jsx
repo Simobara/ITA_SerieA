@@ -1,10 +1,10 @@
 const calendario25 = {
   //*---                                           AGOSTO                                                                      ---  1
   giornata1: [
-    { numero: 1,  day: 'sab', time: '18:30',          team1: 'Genoa',       team2: 'Inter',            pron: '', results: '2-1' }, 
-    { numero: 2,  day: 'sab', time: '18:30',          team1: 'Parma',       team2: 'Fiorentina',       pron: '', results: '' },
-    { numero: 3,  day: 'sab', time: '20:45',          team1: 'Empoli',      team2: 'Monza',            pron: '1', results: '' },
-    { numero: 4,  day: 'sab', time: '20:45',          team1: 'Milan',       team2: 'Torino',           pron: '', results: '' },
+    { numero: 1,  day: 'sab', time: '18:30',          team1: 'Genoa',       team2: 'Inter',            pron: '', results: '2-2' }, 
+    { numero: 2,  day: 'sab', time: '18:30',          team1: 'Parma',       team2: 'Fiorentina',       pron: '', results: '1-1' },
+    { numero: 3,  day: 'sab', time: '20:45',          team1: 'Empoli',      team2: 'Monza',            pron: '', results: '0-0' },
+    { numero: 4,  day: 'sab', time: '20:45',          team1: 'Milan',       team2: 'Torino',           pron: '', results: '2-2' },
 
     { numero: 5,  day: 'dom', time: '18:30',          team1: 'Bologna',     team2: 'Udinese',          pron: '', results: '' },
     { numero: 6,  day: 'dom', time: '18:30',          team1: 'Verona',      team2: 'Napoli',           pron: '', results: '' },

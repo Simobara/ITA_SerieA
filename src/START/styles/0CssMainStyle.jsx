@@ -1,3 +1,5 @@
+import './variable.css';
+
 //sezione classifica - sezione1
 export const s = {
   Bg0:              "bg-transparent",
@@ -58,11 +60,12 @@ export const ts = {
   ColResAway:       "text-gray-700 font-light",
 
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
-  WinBg:            "bg-green-700 rounded-full",
-  WinText:          "!text-green-700",
+  WinBg:            "bg-[var(--win-bg-color)] rounded-full",
+  WinText:           "!text-[var(--win-bg-color)]", 
 
-  DrawBg:           "bg-[#054787] rounded-full ",
-  DrawText:         "!text-[#054787]",
+  DrawBg:           "bg-[var(--draw-bg-color)] rounded-full", 
+  DrawText:         "!text-[var(--draw-bg-color)]", 
+
 
   // LoseBg:           "bg-[#020c2d] rounded-full",
   LoseBg:           "bg-slate-900 rounded-full",
