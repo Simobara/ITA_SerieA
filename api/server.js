@@ -2,9 +2,6 @@ require('dotenv').config({ path: '../.env' });
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const axios = require('axios'); // Importa axios
-const http = require('http');
-const https = require('https');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -28,10 +25,12 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 app.use(express.json());// Questo è un commento per forzare un nuovo deploy
+
 let cachedDb = null;
 
 async function connectToDatabase() {
   if (cachedDb) {
+    console.log("Using cached database instance");
     return cachedDb;
   }
   
@@ -39,22 +38,31 @@ async function connectToDatabase() {
   const password = process.env.PASSWORD;
   const clusterUrl = process.env.CLUSTER_URL;
   const dbName = process.env.DB_NAME;
-  const dbURI = `mongodb+srv://${username}:${password}@${clusterUrl}/${dbName}?retryWrites=true&w=majority&appName=Cluster0&connectTimeoutMS=50000`;
-  
-  mongoose.connect(dbURI).then(() => {
-    console.log("Connected to MongoDB Atlas in dev/prod environment");
-  }).catch((err) => {
-    console.error("Could not connect to MongoDB Atlas in production...", err);
-  });
+  const dbURI = `mongodb+srv://${username}:${password}@${clusterUrl}/${dbName}?retryWrites=true&w=majority&appName=Cluster0&connectTimeoutMS=10000`;
 
-  console.log("Connected to MongoDB Atlas");
-  return cachedDb;
+  try {
+    const connection = await mongoose.connect(dbURI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      serverSelectionTimeoutMS: 5000, // Timeout dopo 5 secondi
+      socketTimeoutMS: 45000,         // Chiudi i socket dopo 45 secondi di inattività
+      poolSize: 10,                   // Numero massimo di socket in pool
+      family: 4                       // Usa IPv4, ignora IPv6
+    });
+
+    cachedDb = connection; // Memorizza la connessione nel cache
+    console.log("Connected to MongoDB Atlas in dev/prod environment");
+
+    return cachedDb;
+  } catch (err) {
+    console.error("Could not connect to MongoDB Atlas in production...", err);
+    throw new Error('Database connection failed');
+  }
 }
 
 // Configura gli agenti per mantenere aperte le connessioni
 const agent = new http.Agent({ keepAlive: true });
 const secureAgent = new https.Agent({ keepAlive: true });
-
 
 //----------------------------------------------------------------ENDPOINTS
 // Importa e usa il router per `GiornateClou`

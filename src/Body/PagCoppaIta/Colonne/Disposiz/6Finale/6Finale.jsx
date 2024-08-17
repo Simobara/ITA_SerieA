@@ -12,8 +12,8 @@ const Finale = ({ width = '55px', height = '24px' }) => {
     useEffect(() => {
         const fetchData = async () => {
             console.log("Environment:", import.meta.env.PROD ? 'Production' : 'Development');
-            console.log("VITE_API_URL_PRODUCTION:", import.meta.env.VITE_API_URL_PRODUCTION);
-            console.log("VITE_API_URL_DEVELOPMENT:", import.meta.env.VITE_API_URL_DEVELOPMENT);
+            // console.log("VITE_API_URL_DEVELOPMENT:", import.meta.env.VITE_API_URL_DEVELOPMENT);//http://localhost:5000
+            // console.log("VITE_API_URL_PRODUCTION:", import.meta.env.VITE_API_URL_PRODUCTION);//https://ita-serie-a.vercel.app
    
             try {
                 // Determina l'URL API in base all'ambiente
@@ -21,18 +21,17 @@ const Finale = ({ width = '55px', height = '24px' }) => {
                     ? import.meta.env.VITE_API_URL_PRODUCTION
                     : import.meta.env.VITE_API_URL_DEVELOPMENT;
                 
-                console.log("Using API URL: ", API_BASE_URL);
+                // console.log("Using API URL: ", API_BASE_URL);
             
                 const response = await axios.get(`${API_BASE_URL}/api/coppaItaFinale/finale`);
                 const data = response.data;
             
-                console.log("Response status:", response.status);
-                console.log("Response data:", data);
+                // console.log("Resp status:", response.status);
+                // console.log("Resp data:", data);
             
                 if (data.length > 0 && data[0]) {
                     setMatch(data[0]); // Usa i dati dall'API se disponibili e corretti
                 } else {
-                    console.error('La struttura dei dati non è quella prevista');
                     setMatch(Tornei.Finale[0]); // Usa i dati locali come fallback
                 }
                 // Forza un errore per utilizzare i dati locali

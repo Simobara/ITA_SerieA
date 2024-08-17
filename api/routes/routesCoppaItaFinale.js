@@ -3,16 +3,17 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
-const schemaCoppaItaFinale = require("../schemas/schemaCoppaItaFinale"); // Importa il modello
 
-// Definisci il modello CoppaItaFinale utilizzando la connessione corrente di Mongoose
+const schemaCoppaItaFinale = require("../schemas/schemaCoppaItaFinale"); // Importa il modello
 const CoppaItaFinale = mongoose.model("CoppaItaFinale", schemaCoppaItaFinale);
 
-// Endpoint per ottenere tutti i finali
 router.get("/finale", async (req, res) => {
   try {
-    console.log("coppaItaFinale.js => Richiesta GET ricevuta a /api/coppaItaFinale/finale");
-    const finale = await CoppaItaFinale.find();
+    const limit = parseInt(req.query.limit) || 10; // Limite di risultati per pagina
+    const page = parseInt(req.query.page) || 1; // Numero della pagina
+    const finale = await CoppaItaFinale.find()
+      .limit(limit)
+      .skip((page - 1) * limit);
     console.log("Finale ", finale);
     res.send(finale);
   } catch (error) {
