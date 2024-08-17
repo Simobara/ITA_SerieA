@@ -4,7 +4,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 const Finale = ({ width = '55px', height = '24px' }) => {
-    const [match, setMatch] = useState(null);
+    const [match, setMatch] = useState("");
 
     const boxStyle = `flex items-center justify-start bg-white text-black font-bold pl-1 overflow-hidden`;
     const containerStyle = { width, height };
@@ -41,18 +41,16 @@ const Finale = ({ width = '55px', height = '24px' }) => {
         fetchData();
     }, []);
 
-    if (!match) {
-        return <div>Loading...</div>;
-    }
-
+    const team1 = match?.team1 || "";// Se `match` è null, imposta `team1` a una stringa vuota
+    const team2 = match?.team2 || "";// Se `match` è null, imposta `team2` a una stringa vuota
     const [team1Result, team2Result] = match.ris ? match.ris.split('-') : ['', ''];
 
     return (
         <>
             <div className="absolute bottom-[42.5%] flex flex-col items-center">
                 <div className="flex space-x-1">
-                    <div className={boxStyle} style={containerStyle}>{match.team1}</div>
-                    <div className={boxStyle} style={containerStyle}>{match.team2}</div>
+                    <div className={boxStyle} style={containerStyle}>{team1}</div>
+                    <div className={boxStyle} style={containerStyle}>{team2}</div>
                 </div>
                 <div className={resultBoxStyle}>{team1Result} - {team2Result}</div>
             </div>
