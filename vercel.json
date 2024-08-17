@@ -1,5 +1,3 @@
-
-
 {
   "version": 2,
   "builds": [
@@ -31,7 +29,7 @@
   "functions": {
     "api/*.js": {
       "memory": 512,
-      "maxDuration": 10
+      "maxDuration": 20
     }
   }
 }

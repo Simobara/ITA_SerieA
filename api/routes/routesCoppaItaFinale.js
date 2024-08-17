@@ -10,6 +10,7 @@ const CoppaItaFinale = mongoose.model("CoppaItaFinale", schemaCoppaItaFinale);
 
 // Endpoint per ottenere tutti i finali
 router.get("/finale", async (req, res) => {
+  console.log("Richiesta ricevuta a /api/coppaItaFinale/finale");
   try {
     console.log("coppaItaFinale.js => Richiesta GET ricevuta a /api/coppaItaFinale/finale");
     const finale = await CoppaItaFinale.find();
