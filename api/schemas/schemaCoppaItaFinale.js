@@ -1,7 +1,7 @@
 require("dotenv").config({ path: "../.env" });
 
 const mongoose = require("mongoose");
-const collectionCoppaItaFinale = process.env.COLLECTION_COPPA_ITA_FINALE;
+const collectionCoppaItaFinale = process.env.COLLECTION_COPPA_ITA_6FINALE;
 
 const schemaCoppaItaFinale = new mongoose.Schema(
   {

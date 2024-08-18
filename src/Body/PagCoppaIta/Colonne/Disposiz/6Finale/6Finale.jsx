@@ -20,9 +20,7 @@ const Finale = ({ width = '55px', height = '24px' }) => {
                 const API_BASE_URL = import.meta.env.PROD
                     ? import.meta.env.VITE_API_URL_PROD
                     : import.meta.env.VITE_API_URL_DEV;
-                
-                // console.log("Using API URL: ", API_BASE_URL);
-            
+                console.log("Using API URL: ", API_BASE_URL);
                 const response = await axios.get(`${API_BASE_URL}/api/coppaItaFinale/finale`);
                 const data = response.data;
             
