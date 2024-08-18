@@ -46,26 +46,31 @@ const Header = () => {
   const handleChange = (e) => {
     setGiornataN(Number(e.target.value));
   };
-  //------------------------------------------------------------------------------------------POST REQUEST GIORNATA CLOU N
+  //------------------------------------------------------------------------------------------POST REQUEST GIORNATA CLOU N //! CORRETTO
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(`Giornata attuale numero: ${giornataN}`);
     try {
-      const response = await axios.post(`${import.meta.env.PROD ? import.meta.env.VITE_API_URL_PRODUCTION : import.meta.env.VITE_API_URL_DEVELOPMENT}/api/giornate/N`, {
-        numero: giornataN,
-      });
+      const response = await axios.post(
+        `${import.meta.env.PROD ? import.meta.env.VITE_API_URL_PROD : import.meta.env.VITE_API_URL_DEV}/api/giornate/clou/${giornataN}`,
+        {
+          numero: giornataN,
+        },
+      );
       console.log("Giornata clou aggiornata:", response.data);
     } catch (error) {
       console.error("Errore durante l'aggiornamento della giornata clou:", error);
     }
   };
-  //-------------------------------------------------------------------------------------------POST REQUEST GIORNATE N
+  //-------------------------------------------------------------------------------------------POST REQUEST GIORNATE N //! CORRETTO
   const handleSave = async (giornataNumber) => {
     console.log(`Dati ricevuti in header.js per giornata ${giornataN}:`, { giornataNumber });
     try {
       const response = await axios.post(
-        `${import.meta.env.PROD ? import.meta.env.VITE_API_URL_PRODUCTION : import.meta.env.VITE_API_URL_DEVELOPMENT}/api/giornate/giornata/${giornataN}`,
-        { giornata: giornataNumber },
+        `${import.meta.env.PROD ? import.meta.env.VITE_API_URL_PROD : import.meta.env.VITE_API_URL_DEV}/api/giornata/${giornataN}`,
+        {
+          giornata: giornataNumber,
+        },
       );
       console.log("Risposta dal server:", response.data);
     } catch (error) {

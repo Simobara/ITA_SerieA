@@ -1,5 +1,5 @@
 //COMPONENTE GIORNATA CLOU N
-// ENDPOINT: http://localhost:5000/api/giornate/clou/N
+// ENDPOINT: http://localhost:5000/api/giornate/clou/{N}
 //! IL FILE E' CORRETTO
 
 const express = require("express");
@@ -12,8 +12,8 @@ const GiornataClouN = mongoose.model("GiornataClouN", schemaGiornataClouN);
 router.get("/giornate/clou/:N", async (req, res) => {
   const { N } = req.params;
   try {
-    console.log("routesGiornateClouN.js => Req GET ricevuta a /api/giornate/clou/N");
-    const giornateClouN = await GiornataClouN.find({ giornataClouN: true });
+    console.log("routesGiornateClouN.js => Req GET ricevuta a /api/giornate/clou/:N");
+    const giornateClouN = await GiornataClouN.find({ giornataClouN: true }, { giornataClouN: true }, { new: true, upsert: true });
     console.log("Giornate clou trovate:", giornateClouN);
     res.send(giornateClouN);
   } catch (error) {
