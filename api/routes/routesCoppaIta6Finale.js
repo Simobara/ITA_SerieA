@@ -6,7 +6,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 
-const schemaCoppaItaFinale = require("../schemas/schemaCoppaItaFinale"); // Importa il modello
+const schemaCoppaItaFinale = require("../schemas/schemaCoppaIta6Finale"); // Importa il modello
 const CoppaItaFinale = mongoose.model("CoppaItaFinale", schemaCoppaItaFinale);
 
 router.get("/coppaItaFinale/finale", async (req, res) => {

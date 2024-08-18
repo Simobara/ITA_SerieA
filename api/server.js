@@ -72,7 +72,7 @@ app.use('/api', async (req, res, next) => {
 });
 
 // Importa e usa il router per `routesCoppaItaFinale`             //!CORRETTO
-const routerCIFinale = require('./routes/routesCoppaItaFinale');
+const routerCIFinale = require('./routes/routesCoppaIta6Finale');
 app.use('/api', async (req, res, next) => {
   await connectToDatabase();
   routerCIFinale(req, res, next);
