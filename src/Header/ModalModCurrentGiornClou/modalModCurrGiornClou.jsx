@@ -14,20 +14,16 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
   const [partite, setPartite] = useState([...giornataClouSelected]);
   const [squadre, setSquadre] = useState([]); // Nuovo array per le squadre
   const [duplicateTeams, setDuplicateTeams] = useState(new Set()); // Per tracciare i duplicati
-  const [score1, setScore1] = useState(0);
-  const [score2, setScore2] = useState(0);
 
   const handleDayChange = (index, value) => handleDayChangee(index, value, partite, setPartite);
   const handleTimeChange = (index, value) => handleTimeChangee(index, value, partite, setPartite);
   const handleTeam1Change = (index, value) => handleTeam1Changee(index, value, partite, setPartite, checkForDuplicates);
   const handleTeam2Change = (index, value) => handleTeam2Changee(index, value, partite, setPartite, checkForDuplicates);
   const handlePronChange = (index, value) => handlePronChangee(index, value, partite, setPartite);
-
   const checkForDuplicates = (updatedPartite) => checkForDuplicatess(updatedPartite, setDuplicateTeams);
+  const incrementScore1 = (index) => incrementScoree1(index, partite, setPartite);
+  const incrementScore2 = (index) => incrementScoree2(index, partite, setPartite);
   const handleSaveClick = () => handleSaveClickk(partite, onSave, onClose);
-
-  const incrementScore1 = () => incrementScoree1(score1, setScore1);
-  const incrementScore2 = () => incrementScoree2(score2, setScore2);
 
   //-------------------------------------------------------------------------------------
   useEffect(() => {
@@ -40,10 +36,15 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
   }, [giornataClouSelected]);
 
   useEffect(() => {
-    setPartite([...giornataClouSelected]);
-    checkForDuplicates(giornataClouSelected);
+    const initializedPartite = giornataClouSelected.map((partita) => ({
+      ...partita,
+      score1: 0,
+      score2: 0,
+    }));
+    setPartite(initializedPartite); // Inizializza con score1 e score2
+    checkForDuplicates(initializedPartite); // Passa la nuova lista a checkForDuplicates
     console.log("GIORNATA n", giornataN);
-    console.log("GIORNATA CLOU SELECTED", giornataClouSelected);
+    console.log("GIORNATA CLOU SELECTED", initializedPartite);
   }, [giornataClouSelected, giornataN]);
   //-------------------------------------------------------------------------------------
   return (
@@ -101,7 +102,6 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
                     </select>
                   </div>
                   {/* <div className="flex-1 text-center ">-</div> */}
-
                   <div className="flex-1 text-left sm:pr-10 md:pr-15 pr-1 ml-2">
                     <select
                       value={partita.team2}
@@ -128,11 +128,11 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
                     </select>
                   </div>
                   {/* <div className="flex-1 text-left">{partita.results}</div> */}
-                  <div onClick={incrementScore1} className="w-[1rem] bg-red-800 text-white flex items-center justify-center cursor-pointer mr-1 ">
-                    {score1}
+                  <div onClick={() => incrementScore1(index)} className="w-[1rem] bg-red-800 text-white flex items-center justify-center cursor-pointer mr-1 ">
+                    {partita.score1}
                   </div>
-                  <div onClick={incrementScore2} className="w-[1rem] bg-blue-800 text-white flex items-center justify-center cursor-pointer mr-4">
-                    {score2}
+                  <div onClick={() => incrementScore2(index)} className="w-[1rem] bg-blue-800 text-white flex items-center justify-center cursor-pointer mr-4">
+                    {partita.score2}
                   </div>
                 </div>
               ))}

@@ -1,15 +1,19 @@
-export const incrementScoree1 = (score1, setScore1) => {
-  if (score1 < 7) {
-    setScore1(score1 + 1);
+export const incrementScoree1 = (index, partite, setPartite) => {
+  const updatedPartite = [...partite];
+  if (updatedPartite[index].score1 < 7) {
+    updatedPartite[index].score1 += 1;
   } else {
-    setScore1(0); // Resetta a 0 se il punteggio è già 7
+    updatedPartite[index].score1 = 0; // Resetta a 0 se il punteggio è già 7
   }
+  setPartite(updatedPartite);
 };
 
-export const incrementScoree2 = (score2, setScore2) => {
-  if (score2 < 7) {
-    setScore2(score2 + 1);
+export const incrementScoree2 = (index, partite, setPartite) => {
+  const updatedPartite = [...partite];
+  if (updatedPartite[index].score2 < 7) {
+    updatedPartite[index].score2 += 1;
   } else {
-    setScore2(0); // Resetta a 0 se il punteggio è già 7
+    updatedPartite[index].score2 = 0; // Resetta a 0 se il punteggio è già 7
   }
+  setPartite(updatedPartite);
 };
