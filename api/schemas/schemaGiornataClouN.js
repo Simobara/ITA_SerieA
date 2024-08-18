@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+require('dotenv').config({ path: '../.env' });
 const collectionGiornataClouN = process.env.COLLECTION_GIORNATA_CLOU_N;
 
 const schemaGiornataClouN = new mongoose.Schema(
@@ -12,7 +13,7 @@ const schemaGiornataClouN = new mongoose.Schema(
       default: false,
     },
   },
-  { collection: collectionGiornataClouN},
+  { collection: collectionGiornataClouN },
 );
 
 module.exports = schemaGiornataClouN;

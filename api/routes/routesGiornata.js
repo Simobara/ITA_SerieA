@@ -1,3 +1,7 @@
+// COMPONENTE ROUTES GIORNATA
+// ENDPOINT: http://localhost:5000/api/giornata/{N}
+//! IL FILE E' CORRETTO
+
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");

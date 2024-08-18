@@ -13,8 +13,8 @@ console.log("USERNAME:",    process.env.USERNAME);
 console.log("PASSWORD:",    process.env.PASSWORD ? "*****" : "Mancante");
 console.log("CLUSTER_URL:", process.env.CLUSTER_URL);
 console.log("DB_NAME:",     process.env.DB_NAME);
-console.log("VITE_API_URL_PRODUCTION:",   process.env.VITE_API_URL_PRODUCTION);
-console.log("VITE_API_URL_DEVELOPMENT:",  process.env.VITE_API_URL_DEVELOPMENT);
+console.log("VITE_API_URL_PROD:",   process.env.VITE_API_URL_PROD);
+console.log("VITE_API_URL_DEV:",  process.env.VITE_API_URL_DEV);
 console.log("----------------------------------");
 
 // Middleware CORS
@@ -32,7 +32,6 @@ let cachedDb = null;
 
 async function connectToDatabase() {
   if (cachedDb) {
-    console.log("Using cached database instance");
     return cachedDb;
   }
   
@@ -65,25 +64,23 @@ const agent = new http.Agent({ keepAlive: true });
 const secureAgent = new https.Agent({ keepAlive: true });
 
 //----------------------------------------------------------------ENDPOINTS
-// Importa e usa il router per `GiornateClou`
-const routerGiornateClou = require('./routes/routesGiornateClou');
-app.use('/api/giornate', async (req, res, next) => {
+// Importa e usa il router per `routesGiornataClouN`               //!CORRETTO
+const routerGiornateClou = require('./routes/routesGiornataClouN');
+app.use('/api', async (req, res, next) => {
   await connectToDatabase();
   routerGiornateClou(req, res, next);
 });
 
-// Importa e usa il router per `CoppaItaliaFinale`
+// Importa e usa il router per `routesCoppaItaFinale`             //!CORRETTO
 const routerCIFinale = require('./routes/routesCoppaItaFinale');
-app.use('/api/coppaItaFinale', async (req, res, next) => {
-  console.log("Request received for /api/coppaItaFinale");
+app.use('/api', async (req, res, next) => {
   await connectToDatabase();
-  console.log("Connected to database, processing request...");
   routerCIFinale(req, res, next);
 });
 
-// Importa e usa il router per `Giornata`
+//Importa e usa il router per `routesGiornata`                    //!CORRETTO
 const routerGiornata = require('./routes/routesGiornata');
-app.use('/api/giornate', async (req, res, next) => {
+app.use('/api', async (req, res, next) => {
   await connectToDatabase();
   routerGiornata(req, res, next);
 });

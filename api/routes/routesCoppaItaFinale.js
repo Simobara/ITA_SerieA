@@ -1,4 +1,6 @@
-//QUESTO FILE E' CORR. routesCoppaItaFinale.js
+// COMPONENTE ROUTES GIORNATA
+// ENDPOINT: http://localhost:5000/api/coppaItaFinale/finale
+//! IL FILE E' CORRETTO
 
 const express = require("express");
 const router = express.Router();
@@ -7,7 +9,7 @@ const mongoose = require("mongoose");
 const schemaCoppaItaFinale = require("../schemas/schemaCoppaItaFinale"); // Importa il modello
 const CoppaItaFinale = mongoose.model("CoppaItaFinale", schemaCoppaItaFinale);
 
-router.get("/finale", async (req, res) => {
+router.get("/coppaItaFinale/finale", async (req, res) => {
   try {
     const limit = parseInt(req.query.limit) || 10; // Limite di risultati per pagina
     const page = parseInt(req.query.page) || 1; // Numero della pagina
