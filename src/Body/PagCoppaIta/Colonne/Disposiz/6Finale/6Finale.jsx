@@ -12,14 +12,14 @@ const Finale = ({ width = '55px', height = '24px' }) => {
     useEffect(() => {
         const fetchData = async () => {
             console.log("Environment:", import.meta.env.PROD ? 'Production' : 'Development');
-            // console.log("VITE_API_URL_DEVELOPMENT:", import.meta.env.VITE_API_URL_DEVELOPMENT);//http://localhost:5000
-            // console.log("VITE_API_URL_PRODUCTION:", import.meta.env.VITE_API_URL_PRODUCTION);//https://ita-serie-a.vercel.app
+            // console.log("VITE_API_URL_DEV:", import.meta.env.VITE_API_URL_DEV);//http://localhost:5000
+            // console.log("VITE_API_URL_PROD:", import.meta.env.VITE_API_URL_PROD);//https://ita-serie-a.vercel.app
    
             try {
                 // Determina l'URL API in base all'ambiente
                 const API_BASE_URL = import.meta.env.PROD
-                    ? import.meta.env.VITE_API_URL_PRODUCTION
-                    : import.meta.env.VITE_API_URL_DEVELOPMENT;
+                    ? import.meta.env.VITE_API_URL_PROD
+                    : import.meta.env.VITE_API_URL_DEV;
                 
                 // console.log("Using API URL: ", API_BASE_URL);
             
