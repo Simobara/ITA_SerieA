@@ -7,7 +7,7 @@ export const handleTeam1Changee = (index, value, partite, setPartite, checkForDu
 
 export const handleTeam2Changee = (index, value, partite, setPartite, checkForDuplicates) => {
   const updatedPartite = [...partite];
-  updatedPartite[index].team1 = value;
+  updatedPartite[index].team2 = value;
   checkForDuplicates(updatedPartite);
   setPartite(updatedPartite);
 };

@@ -36,3 +36,7 @@ select::-webkit-inner-spin-button {
 select::-webkit-outer-spin-button {
   -webkit-appearance: none !important;
 }
+
+.unselectable {
+  user-select: none;
+}
