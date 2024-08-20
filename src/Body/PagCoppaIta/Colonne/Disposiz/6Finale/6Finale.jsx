@@ -17,14 +17,18 @@ const Finale = ({ width = '55px', height = '24px' }) => {
     const [showModalCambioSq, setShowModalCambioSq] = useState(false);
     const [showModalCambioRis, setShowModalCambioRis] = useState(false);
     
+    const ENDPOINTS = {
+        finale: '/api/coppaItaFinale/finale',
+      };
+
     const boxStyle = `flex items-center justify-start bg-white text-black font-bold pl-1 overflow-hidden`;
     const containerStyle = { width, height };
     const resultBoxStyle = `flex items-center justify-center text-black bg-gray-500 w-full font-bold overflow-hidden ml-4 mr-4 mb-4`;
     
     const toggleModalCambioSq = (indexSide) => toggleModalCambioSqq (indexSide, setPosTeam, setShowModalCambioSq);
     const toggleModalCambioRis = () => toggleModalCambioRiss(setShowModalCambioRis);  
-    const handleSaveTeamName=(newTeamName)=> handleSaveTeamsNamee(newTeamName, oggettoPartita, posTeam, setOggettoPartita);
-    const handleSaveTeamsRis=(newTeamsRis) => handleSaveTeamsRiss(newTeamsRis, oggettoPartita, setOggettoPartita);
+    const handleSaveTeamName=(newTeamName)=> handleSaveTeamsNamee(newTeamName, oggettoPartita, posTeam, setOggettoPartita,ENDPOINTS.finale);
+    const handleSaveTeamsRis=(newTeamsRis) => handleSaveTeamsRiss(newTeamsRis, oggettoPartita, setOggettoPartita,ENDPOINTS.finale);
     
     
     

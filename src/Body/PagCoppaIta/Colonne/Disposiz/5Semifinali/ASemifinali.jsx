@@ -7,6 +7,7 @@ import { handleSaveTeamsNamee } from '../zExternal/handleSaveTeamsName';
 import { handleSaveTeamsRiss } from '../zExternal/handleSaveTeamsRis';
 import { toggleModalCambioRiss, toggleModalCambioSqq } from '../zExternal/toggleModalCambio';
 
+
 const ASemifinali = ({ width = '80px', height = '24px' }) => {
     const [oggettoPartita, setOggettoPartita] = useState("");
     const [hoveredTeam1, setHoveredTeam1] = useState(false);
@@ -16,14 +17,18 @@ const ASemifinali = ({ width = '80px', height = '24px' }) => {
     const [showModalCambioSq, setShowModalCambioSq] = useState(false);
     const [showModalCambioRis, setShowModalCambioRis] = useState(false);
 
+    const ENDPOINTS = {
+        semifinalA: '/api/coppaItaSemifinaleA/semifinaleA'
+      };
+
     const boxStyle = `text-black font-bold flex items-center justify-start bg-white ml-1 pl-1 overflow-hidden`;
     const containerStyle = { width, height };
     const resultBoxStyle = `flex flex-1 w-6 h-[24px] items-center justify-center bg-gray-500 text-black font-bold overflow-hidden`;
 
     const toggleModalCambioSq = (indexSide) => toggleModalCambioSqq(indexSide, setPosTeam, setShowModalCambioSq);
     const toggleModalCambioRis = () => toggleModalCambioRiss(setShowModalCambioRis);
-    const handleSaveTeamName = (newTeamName) => handleSaveTeamsNamee(newTeamName, oggettoPartita, posTeam, setOggettoPartita);
-    const handleSaveTeamsRis = (newTeamsRis) => handleSaveTeamsRiss(newTeamsRis, oggettoPartita, setOggettoPartita);
+    const handleSaveTeamName = (newTeamName) => handleSaveTeamsNamee(newTeamName, oggettoPartita, posTeam, setOggettoPartita,ENDPOINTS.semifinalA);
+    const handleSaveTeamsRis = (newTeamsRis) => handleSaveTeamsRiss(newTeamsRis, oggettoPartita, setOggettoPartita, ENDPOINTS.semifinalA);
 
     //--------------------------------------------------------------------------------------------------------------
     useEffect(() => {
