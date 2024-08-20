@@ -78,6 +78,20 @@ app.use('/api', async (req, res, next) => {
   routerCIFinale(req, res, next);
 });
 
+// Importa e usa il router per `routesCoppaItaSemifinaleA`             //!CORRETTO
+const routerCoppaItaSemifinaleA = require('./routes/routesCoppaIta5SemifA');
+app.use('/api', async (req, res, next) => {
+  await connectToDatabase();
+  routerCoppaItaSemifinaleA(req, res, next);
+});
+
+// Importa e usa il router per `routesCoppaItaItaSemifinaleB`             //!CORRETTO
+// const routerCoppaItaSemifinaleA = require('./routes/routesCoppaIta5SemifB');
+// app.use('/api', async (req, res, next) => {
+//   await connectToDatabase();
+//   routerCoppaItaSemifinaleB(req, res, next);
+// });
+
 //Importa e usa il router per `routesGiornata`                    //!CORRETTO
 const routerGiornata = require('./routes/routesGiornata');
 app.use('/api', async (req, res, next) => {

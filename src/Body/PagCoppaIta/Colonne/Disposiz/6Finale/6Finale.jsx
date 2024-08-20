@@ -1,14 +1,34 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Tornei } from '../../../../../START/app/3CoppaItaMatches';
+import ModCambioRis from '../modCambioRis/modCambioRis';
+import ModCambioSq from '../modCambioSq/modCambioSq';
+import { handleSaveTeamsNamee } from '../zExternal/handleSaveTeamsName';
+import { handleSaveTeamsRiss } from '../zExternal/handleSaveTeamsRis';
+import { toggleModalCambioRiss, toggleModalCambioSqq } from '../zExternal/toggleModalCambio';
 
 const Finale = ({ width = '55px', height = '24px' }) => {
-    const [match, setMatch] = useState("");
-
+    const [stage,setStage]=useState("finale")
+    const [oggettoPartita, setOggettoPartita] = useState("");
+    const [hoveredTeam1, setHoveredTeam1] = useState(false); 
+    const [hoveredTeam2, setHoveredTeam2] = useState(false); 
+    const [hoveredResult, setHoveredResult] = useState(false); 
+    const [posTeam,setPosTeam]=useState("");
+    const [showModalCambioSq, setShowModalCambioSq] = useState(false);
+    const [showModalCambioRis, setShowModalCambioRis] = useState(false);
+    
     const boxStyle = `flex items-center justify-start bg-white text-black font-bold pl-1 overflow-hidden`;
     const containerStyle = { width, height };
     const resultBoxStyle = `flex items-center justify-center text-black bg-gray-500 w-full font-bold overflow-hidden ml-4 mr-4 mb-4`;
-
+    
+    const toggleModalCambioSq = (indexSide) => toggleModalCambioSqq (indexSide, setPosTeam, setShowModalCambioSq);
+    const toggleModalCambioRis = () => toggleModalCambioRiss(setShowModalCambioRis);  
+    const handleSaveTeamName=(newTeamName)=> handleSaveTeamsNamee(newTeamName, oggettoPartita, posTeam, setOggettoPartita);
+    const handleSaveTeamsRis=(newTeamsRis) => handleSaveTeamsRiss(newTeamsRis, oggettoPartita, setOggettoPartita);
+    
+    
+    
+    //--------------------------------------------------------------------------------------------------------------
     useEffect(() => {
         const fetchData = async () => {
             console.log("Environment:", import.meta.env.PROD ? 'Production' : 'Development');
@@ -28,32 +48,60 @@ const Finale = ({ width = '55px', height = '24px' }) => {
                 console.log("Resp data:", data);
             
                 if (data.length > 0 && data[0]) {
-                    setMatch(data[0]); // Usa i dati dall'API se disponibili e corretti
+                    setOggettoPartita(data[0]); // Usa i dati dall'API se disponibili e corretti
                 } else {
-                    setMatch(Tornei.Finale[0]); // Usa i dati locali come fallback
+                    setOggettoPartita(Tornei.Finale[0]); // Usa i dati locali come fallback
                 }
                 // Forza un errore per utilizzare i dati locali
                 // throw new Error('Simulated error to skip API call');
             } catch (error) {
                 console.error('Errore durante il recupero dei dati:', error);
-                setMatch(Tornei.Finale[0]); // Usa i dati locali come fallback in caso di errore
+                setOggettoPartita(Tornei.Finale[0]); // Usa i dati locali come fallback in caso di errore
             }
         };
         fetchData();
-    }, []);
+        // const interval = setInterval(fetchData, 180000); // Esegue ogni 60 secondi
 
-    const team1 = match?.team1 || ""; // Se `match` è null, imposta `team1` a una stringa vuota
-    const team2 = match?.team2 || ""; // Se `match` è null, imposta `team2` a una stringa vuota
-    const [team1Result, team2Result] = match.ris ? match.ris.split('-') : ['', ''];
+        // return () => clearInterval(interval); // Pulisce l'intervallo quando il componente viene smontato
+    }, []);
+    //--------------------------------------------------------------------------------------------------------------
+    const team1 = oggettoPartita?.team1 || ""; 
+    const team2 = oggettoPartita?.team2 || "";
+    const [team1Result, team2Result] = oggettoPartita.ris ? oggettoPartita.ris.split('-') : ['', ''];
 
     return (
         <>
             <div className="absolute bottom-[42.5%] flex flex-col items-center">
                 <div className="flex space-x-1">
-                    <div className={boxStyle} style={containerStyle}>{team1}</div>
-                    <div className={boxStyle} style={containerStyle}>{team2}</div>
+                    <div
+                        className={boxStyle}
+                        style={containerStyle}
+                        onMouseEnter={() => setHoveredTeam1(true)} 
+                        onMouseLeave={() => setHoveredTeam1(false)}
+                    >
+                        {team1}
+                        {hoveredTeam1 && <span className="absolute left-10 scale-150" onClick={()=>toggleModalCambioSq("A")}>📝</span>}
+                    </div>
+                    <div
+                        className={boxStyle}
+                        style={containerStyle}
+                        onMouseEnter={() => setHoveredTeam2(true)} 
+                        onMouseLeave={() => setHoveredTeam2(false)}
+                    >
+                        {team2}
+                        {hoveredTeam2 && <span className="absolute right-0 scale-150" onClick={()=>toggleModalCambioSq("B")}>📝</span>}
+                    </div>
                 </div>
-                <div className={resultBoxStyle}>{team1Result} - {team2Result}</div>
+                <div
+                    className={resultBoxStyle}
+                    onMouseEnter={() => setHoveredResult(true)}
+                    onMouseLeave={() => setHoveredResult(false)}
+                >
+                    {team1Result} - {team2Result}
+                    {hoveredResult && <span className="absolute right-0 scale-150" onClick={toggleModalCambioRis}>📝</span>}
+                </div>
+                {showModalCambioSq && <ModCambioSq onClose={toggleModalCambioSq} stage={stage} posTeam={posTeam} onSave={handleSaveTeamName}/>}
+                {showModalCambioRis && <ModCambioRis onClose={toggleModalCambioRis} stage={stage} posTeam={posTeam} onSave={handleSaveTeamsRis}/>}
             </div>
         </>
     );

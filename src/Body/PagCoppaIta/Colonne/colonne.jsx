@@ -14,7 +14,7 @@ import Finale from './Disposiz/6Finale/6Finale';
 const Colonne = ({ colonneTitle, colonneIdN }) => {
 
 	return (
-		<div className="relative col-span-1 bg-transparent text-gray-500 font-bold text-sm flex flex-col h-full w-[110px]">
+		<div className="relative col-span-1 bg-transparent text-gray-400 font-bold text-sm flex flex-col h-full w-[110px]">
 			<div className="mt-2 mb-2 text-center z-20 pt-0">{colonneTitle}</div>
 			<div className="flex flex-col items-start justify-start flex-grow ">
 				{(colonneTitle === 'TRENTADUESIMI' 		&& colonneIdN ===  '1') &&	<ATrentaduesimi 	/>}
