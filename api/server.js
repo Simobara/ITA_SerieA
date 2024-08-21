@@ -71,7 +71,7 @@ const routerCoppaItaSemifinali =  require('./routes/CoppaItalia/routesCoppaIta5S
 const routerCoppaItaQuarti =      require('./routes/CoppaItalia/routesCoppaIta4Quarti'); 
 
 
-const routerCoppaItaOttaviA1 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviA1'); 
+const routerCoppaItaOttavi =    require('./routes/CoppaItalia/routesCoppaIta3Ottavi'); 
 // const routerCoppaItaOttaviA2 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviA2');
 // const routerCoppaItaOttaviA3 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviA3');
 // const routerCoppaItaOttaviA4 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviA4');
@@ -108,33 +108,17 @@ app.use('/api', async (req, res, next) => {
          req.path.startsWith('/coppaItaQuartiB2'):
          routerCoppaItaQuarti(req, res, next);
          break;
-
-
     //-----------------------------------------------Ottavi
-    case req.path.startsWith('/coppaItaOttaviA1'):
-      routerCoppaItaOttaviA1(req, res, next);
-      break;
-    // case req.path.startsWith('/coppaItaOttaviA2'):
-    //   routerCoppaItaOttaviA2(req, res, next);
-    //   break;
-    // case req.path.startsWith('/coppaItaOttaviA3'):
-    //   routerCoppaItaOttaviA3(req, res, next);
-    //   break;
-    // case req.path.startsWith('/coppaItaOttaviA4'):
-    //   routerCoppaItaOttaviA4(req, res, next);
-    //   break;
-    // case req.path.startsWith('/coppaItaOttaviB1'):
-    //   routerCoppaItaOttaviB1(req, res, next);
-    //   break;
-    // case req.path.startsWith('/coppaItaOttaviB2'):
-    //   routerCoppaItaOttaviB2(req, res, next);
-    //   break;
-    // case req.path.startsWith('/coppaItaOttaviB3'):
-    //   routerCoppaItaOttaviB3(req, res, next);
-    //   break;
-    // case req.path.startsWith('/coppaItaOttaviB4'):
-    //   routerCoppaItaOttaviB4(req, res, next);
-    //   break;
+    case req.path.startsWith('/coppaItaOttaviA1') || 
+         req.path.startsWith('/coppaItaOttaviA2') || 
+         req.path.startsWith('/coppaItaOttaviA3') || 
+         req.path.startsWith('/coppaItaOttaviA4') || 
+         req.path.startsWith('/coppaItaOttaviB1') || 
+         req.path.startsWith('/coppaItaOttaviB2') || 
+         req.path.startsWith('/coppaItaOttaviB3') || 
+         req.path.startsWith('/coppaItaOttaviB4'):
+         routerCoppaItaOttavi(req, res, next);
+         break;
     //-----------------------------------------------Sedicesimi
 
     //-----------------------------------------------Trentaduesimi
