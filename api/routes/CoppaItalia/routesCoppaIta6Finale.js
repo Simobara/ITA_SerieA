@@ -1,4 +1,4 @@
-// COMPONENTE ROUTES GIORNATA
+// COMPONENTE ROUTES COPPAITA 6FINALE
 // ENDPOINT: http://localhost:5000/api/coppaItaFinale/finale
 //! IL FILE E' CORRETTO
 
@@ -6,8 +6,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 
-const schemaCoppaItaFinale = require("../../schemas/schemaCoppaIta6Finale");
-const CoppaItaFinale = mongoose.model("CoppaItaFinale", schemaCoppaItaFinale);
+const { CoppaItaFinale } = require("../../schemas/schemaCoppaIta");
 
 // Endpoint per prendere il nome della squadra
 router.get("/coppaItaFinale/finale", async (req, res) => {

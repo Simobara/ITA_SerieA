@@ -26,7 +26,7 @@ const corsOptions = {
   credentials: true,
 };
 app.use(cors(corsOptions));
-app.use(express.json());// Questo è un commento per forzare un nuovo deploy
+app.use(express.json());//forza nuovo deploy
 
 let cachedDb = null;
 
@@ -59,74 +59,90 @@ async function connectToDatabase() {
   }
 }
 
-// Configura gli agenti per mantenere aperte le connessioni
-const agent = new http.Agent({ keepAlive: true });
+const agent = new http.Agent({ keepAlive: true });//Configura gli agenti per mantenere aperte le connessioni
 const secureAgent = new https.Agent({ keepAlive: true });
 
-//----------------------------------------------------------------ENDPOINTS
-const routerCIFinale =            require('./routes/CoppaItalia/routesCoppaIta6Finale'); 
-const routerCoppaItaSemifinaleA = require('./routes/CoppaItalia/routesCoppaIta5SemifA');
-const routerCoppaItaSemifinaleB = require('./routes/CoppaItalia/routesCoppaIta5SemifB');
-const routerCoppaItaQuartiA1 =    require('./routes/CoppaItalia/routesCoppaIta4QuartiA1'); 
-const routerCoppaItaQuartiA2 =    require('./routes/CoppaItalia/routesCoppaIta4QuartiA2');
-const routerCoppaItaQuartiB1 =    require('./routes/CoppaItalia/routesCoppaIta4QuartiB1'); 
-const routerCoppaItaQuartiB2 =    require('./routes/CoppaItalia/routesCoppaIta4QuartiB2');
-
-//-----------------------------------------------------CAMPIONATO
-// Importa e usa il router per `routesGiornataClouN`               //!CORRETTO
+//--------------------------------------------------ENDPOINTS
 const routerGiornateClou = require('./routes/routesGiornataClouN');
-app.use('/api', async (req, res, next) => {
-  await connectToDatabase();
-  routerGiornateClou(req, res, next);
-});
-//Importa e usa il router per `routesGiornata`                     //!CORRETTO
-const routerGiornata = require('./routes/routesGiornata');
-app.use('/api', async (req, res, next) => {
-  await connectToDatabase();
-  routerGiornata(req, res, next);
-});
+const routerGiornata =     require('./routes/routesGiornata');
 
-//-----------------------------------------------------COPPAITALIA
+const routerCIFinale =            require('./routes/CoppaItalia/routesCoppaIta6Finale');
+const routerCoppaItaSemifinali =  require('./routes/CoppaItalia/routesCoppaIta5Semifinali');
+const routerCoppaItaQuarti =      require('./routes/CoppaItalia/routesCoppaIta4Quarti'); 
+
+
+const routerCoppaItaOttaviA1 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviA1'); 
+// const routerCoppaItaOttaviA2 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviA2');
+// const routerCoppaItaOttaviA3 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviA3');
+// const routerCoppaItaOttaviA4 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviA4');
+// const routerCoppaItaOttaviB1 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviB1');
+// const routerCoppaItaOttaviB2 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviB2');
+// const routerCoppaItaOttaviB3 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviB3');
+// const routerCoppaItaOttaviB4 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviB4');
+
+
+//--------------------------------------------------CAMPIONATO //!CORRETTO
 app.use('/api', async (req, res, next) => {
   await connectToDatabase();
   switch (true) {
+    case req.path.startsWith('/giornate'):
+         routerGiornateClou(req, res, next);
+         break;
+    case req.path.startsWith('/giornata'):
+         routerGiornata(req, res, next);
+         break;
+    //-----------------------------------------------COPPAITALIA
+    //-----------------------------------------------Finale
     case req.path.startsWith('/coppaItaFinale'):
-      routerCIFinale(req, res, next);
-    break;
-    case req.path.startsWith('/coppaItaSemifinaleA'):
-      routerCoppaItaSemifinaleA(req, res, next);
-    break;
-    case req.path.startsWith('/coppaItaSemifinaleB'):
-      routerCoppaItaSemifinaleB(req, res, next);
-    break;
-    case req.path.startsWith('/coppaItaQuartiA1'):
-      routerCoppaItaQuartiA1(req, res, next);
-      break;
-    case req.path.startsWith('/coppaItaQuartiA2'):
-      routerCoppaItaQuartiA2(req, res, next);
-      break;
-    case req.path.startsWith('/coppaItaQuartiB1'):
-      routerCoppaItaQuartiB1(req, res, next);
-    break;
-    case req.path.startsWith('/coppaItaQuartiB2'):
-      routerCoppaItaQuartiB2(req, res, next);
-    break;
+         routerCIFinale(req, res, next);
+         break;
+    //-----------------------------------------------Semifinali
+    case req.path.startsWith('/coppaItaSemifinaleA') ||
+         req.path.startsWith('/coppaItaSemifinaleB'):
+         routerCoppaItaSemifinali(req, res, next);
+         break;
+    //-----------------------------------------------Quarti
+    case req.path.startsWith('/coppaItaQuartiA1') || 
+         req.path.startsWith('/coppaItaQuartiA2') || 
+         req.path.startsWith('/coppaItaQuartiB1') || 
+         req.path.startsWith('/coppaItaQuartiB2'):
+         routerCoppaItaQuarti(req, res, next);
+         break;
 
+
+    //-----------------------------------------------Ottavi
+    case req.path.startsWith('/coppaItaOttaviA1'):
+      routerCoppaItaOttaviA1(req, res, next);
+      break;
+    // case req.path.startsWith('/coppaItaOttaviA2'):
+    //   routerCoppaItaOttaviA2(req, res, next);
+    //   break;
+    // case req.path.startsWith('/coppaItaOttaviA3'):
+    //   routerCoppaItaOttaviA3(req, res, next);
+    //   break;
+    // case req.path.startsWith('/coppaItaOttaviA4'):
+    //   routerCoppaItaOttaviA4(req, res, next);
+    //   break;
+    // case req.path.startsWith('/coppaItaOttaviB1'):
+    //   routerCoppaItaOttaviB1(req, res, next);
+    //   break;
+    // case req.path.startsWith('/coppaItaOttaviB2'):
+    //   routerCoppaItaOttaviB2(req, res, next);
+    //   break;
+    // case req.path.startsWith('/coppaItaOttaviB3'):
+    //   routerCoppaItaOttaviB3(req, res, next);
+    //   break;
+    // case req.path.startsWith('/coppaItaOttaviB4'):
+    //   routerCoppaItaOttaviB4(req, res, next);
+    //   break;
+    //-----------------------------------------------Sedicesimi
+
+    //-----------------------------------------------Trentaduesimi
     default:
       console.log('No matching route, passing to next middleware.');
       next();
   }
 });
-
-
-// Importa e usa il router per `routesCoppaItaOttaviA1`            //!CORRETTO
-// const routerCoppaItaQuartiB2 = require('./routes/routesCoppaIta3OttaviA1');
-// app.use('/api', async (req, res, next) => {
-//   await connectToDatabase(); 
-//   routerCoppaItaQuartiB2(req, res, next); 
-// });
-
-
 
 //----------------------------------------------------------------
 app.get('/api/test', (req, res) => {
