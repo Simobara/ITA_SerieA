@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { getModalPositionRis } from "../zExternal/getModalPositionRis";
 
 const ModCambioRis = ({ onClose, stage, posTeam, onSave }) => {
   const [team1Result, setTeam1Result] = useState("");
@@ -9,6 +10,7 @@ const ModCambioRis = ({ onClose, stage, posTeam, onSave }) => {
     onSave(newTeamsResult);
     onClose();
   };
+
   const handleReset = () => {
     setTeam1Result("");
     setTeam2Result("");
@@ -33,7 +35,7 @@ const ModCambioRis = ({ onClose, stage, posTeam, onSave }) => {
   return (
     <div className={`fixed inset-0 flex items-center justify-center z-50 bg-gray-900 bg-opacity-70`}>
       <div
-        className={`relative w-full h-full max-w-[200px] max-h-[260px] shadow-xxxl rounded-lg border-4 border-sky-900 bg-black overflow-x-auto overflow-y-auto ${stage === "finale" ? "top-[13rem] left-[0]" : "top-[-4.5rem] left-[6.5rem]"}`}
+        className={`relative w-full h-full max-w-[200px] max-h-[260px] shadow-xxxl rounded-lg border-4 border-sky-900 bg-black overflow-x-auto overflow-y-auto ${getModalPositionRis(stage)}`}
       >
         <div className="absolute top-0 left-0 right-0 bg-gray-950 z-20 w-full">
           <button className="text-3xl leading-none text-sky-700 w-full hover:bg-sky-800 hover:text-white" onClick={onClose}>

@@ -13,7 +13,7 @@ console.log("USERNAME:",    process.env.USERNAME);
 console.log("PASSWORD:",    process.env.PASSWORD ? "*****" : "Mancante");
 console.log("CLUSTER_URL:", process.env.CLUSTER_URL);
 console.log("DB_NAME:",     process.env.DB_NAME);
-console.log("VITE_API_URL_PROD:",   process.env.VITE_API_URL_PROD);
+console.log("VITE_API_URL_PROD:", process.env.VITE_API_URL_PROD);
 console.log("VITE_API_URL_DEV:",  process.env.VITE_API_URL_DEV);
 console.log("----------------------------------");
 
@@ -64,43 +64,71 @@ const agent = new http.Agent({ keepAlive: true });
 const secureAgent = new https.Agent({ keepAlive: true });
 
 //----------------------------------------------------------------ENDPOINTS
+const routerCIFinale =            require('./routes/CoppaItalia/routesCoppaIta6Finale'); 
+const routerCoppaItaSemifinaleA = require('./routes/CoppaItalia/routesCoppaIta5SemifA');
+const routerCoppaItaSemifinaleB = require('./routes/CoppaItalia/routesCoppaIta5SemifB');
+const routerCoppaItaQuartiA1 =    require('./routes/CoppaItalia/routesCoppaIta4QuartiA1'); 
+const routerCoppaItaQuartiA2 =    require('./routes/CoppaItalia/routesCoppaIta4QuartiA2');
+const routerCoppaItaQuartiB1 =    require('./routes/CoppaItalia/routesCoppaIta4QuartiB1'); 
+const routerCoppaItaQuartiB2 =    require('./routes/CoppaItalia/routesCoppaIta4QuartiB2');
+
+//-----------------------------------------------------CAMPIONATO
 // Importa e usa il router per `routesGiornataClouN`               //!CORRETTO
 const routerGiornateClou = require('./routes/routesGiornataClouN');
 app.use('/api', async (req, res, next) => {
   await connectToDatabase();
   routerGiornateClou(req, res, next);
 });
-
-// Importa e usa il router per `routesCoppaItaFinale`             //!CORRETTO
-const routerCIFinale = require('./routes/routesCoppaIta6Finale');
-app.use('/api', async (req, res, next) => {
-  await connectToDatabase();
-  routerCIFinale(req, res, next);
-});
-
-
-// Importa e usa il router per `routesCoppaItaSemifinaleA`        //!CORRETTO
-const routerCoppaItaSemifinaleA = require('./routes/routesCoppaIta5SemifA');
-app.use('/api', async (req, res, next) => {
-  await connectToDatabase();
-  routerCoppaItaSemifinaleA(req, res, next);
-});
-
-// Importa e usa il router per `routesCoppaItaItaSemifinaleB`     //!CORRETTO
-const routerCoppaItaSemifinaleB = require('./routes/routesCoppaIta5SemifB');
-app.use('/api', async (req, res, next) => {
-  await connectToDatabase();
-  routerCoppaItaSemifinaleB(req, res, next);
-});
-
 //Importa e usa il router per `routesGiornata`                     //!CORRETTO
 const routerGiornata = require('./routes/routesGiornata');
 app.use('/api', async (req, res, next) => {
   await connectToDatabase();
   routerGiornata(req, res, next);
 });
-//----------------------------------------------------------------
 
+//-----------------------------------------------------COPPAITALIA
+app.use('/api', async (req, res, next) => {
+  await connectToDatabase();
+  switch (true) {
+    case req.path.startsWith('/coppaItaFinale'):
+      routerCIFinale(req, res, next);
+    break;
+    case req.path.startsWith('/coppaItaSemifinaleA'):
+      routerCoppaItaSemifinaleA(req, res, next);
+    break;
+    case req.path.startsWith('/coppaItaSemifinaleB'):
+      routerCoppaItaSemifinaleB(req, res, next);
+    break;
+    case req.path.startsWith('/coppaItaQuartiA1'):
+      routerCoppaItaQuartiA1(req, res, next);
+      break;
+    case req.path.startsWith('/coppaItaQuartiA2'):
+      routerCoppaItaQuartiA2(req, res, next);
+      break;
+    case req.path.startsWith('/coppaItaQuartiB1'):
+      routerCoppaItaQuartiB1(req, res, next);
+    break;
+    case req.path.startsWith('/coppaItaQuartiB2'):
+      routerCoppaItaQuartiB2(req, res, next);
+    break;
+
+    default:
+      console.log('No matching route, passing to next middleware.');
+      next();
+  }
+});
+
+
+// Importa e usa il router per `routesCoppaItaOttaviA1`            //!CORRETTO
+// const routerCoppaItaQuartiB2 = require('./routes/routesCoppaIta3OttaviA1');
+// app.use('/api', async (req, res, next) => {
+//   await connectToDatabase(); 
+//   routerCoppaItaQuartiB2(req, res, next); 
+// });
+
+
+
+//----------------------------------------------------------------
 app.get('/api/test', (req, res) => {
   res.status(200).send('Test endpoint is working!');
 });

@@ -82,27 +82,30 @@ const Finale = ({ width = '55px', height = '24px' }) => {
                         style={containerStyle}
                         onMouseEnter={() => setHoveredTeam1(true)} 
                         onMouseLeave={() => setHoveredTeam1(false)}
+                        onClick={()=>toggleModalCambioSq("A")}
                     >
                         {team1}
-                        {hoveredTeam1 && <span className="absolute left-10 scale-150" onClick={()=>toggleModalCambioSq("A")}>📝</span>}
+                        {hoveredTeam1 && <span className="absolute left-10 scale-150" >📝</span>}
                     </div>
                     <div
                         className={boxStyle}
                         style={containerStyle}
                         onMouseEnter={() => setHoveredTeam2(true)} 
                         onMouseLeave={() => setHoveredTeam2(false)}
+                        onClick={()=>toggleModalCambioSq("B")}
                     >
                         {team2}
-                        {hoveredTeam2 && <span className="absolute right-0 scale-150" onClick={()=>toggleModalCambioSq("B")}>📝</span>}
+                        {hoveredTeam2 && <span className="absolute right-0 scale-150" >📝</span>}
                     </div>
                 </div>
                 <div
                     className={resultBoxStyle}
                     onMouseEnter={() => setHoveredResult(true)}
                     onMouseLeave={() => setHoveredResult(false)}
+                    onClick={toggleModalCambioRis}
                 >
                     {team1Result} - {team2Result}
-                    {hoveredResult && <span className="absolute right-0 scale-150" onClick={toggleModalCambioRis}>📝</span>}
+                    {hoveredResult && <span className="absolute right-0 scale-150" >📝</span>}
                 </div>
                 {showModalCambioSq && <ModCambioSq onClose={toggleModalCambioSq} stage={stage} posTeam={posTeam} onSave={handleSaveTeamName}/>}
                 {showModalCambioRis && <ModCambioRis onClose={toggleModalCambioRis} stage={stage} posTeam={posTeam} onSave={handleSaveTeamsRis}/>}

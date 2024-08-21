@@ -6,7 +6,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 
-const schemaCoppaItaFinale = require("../schemas/schemaCoppaIta6Finale");
+const schemaCoppaItaFinale = require("../../schemas/schemaCoppaIta6Finale");
 const CoppaItaFinale = mongoose.model("CoppaItaFinale", schemaCoppaItaFinale);
 
 // Endpoint per prendere il nome della squadra
@@ -31,11 +31,7 @@ router.post("/coppaItaFinale/finale", async (req, res) => {
     const { _id, team1, team2, ris } = req.body;
 
     // Trova il record per ID e aggiorna i campi team1, team2 e ris
-    const finale = await CoppaItaFinale.findByIdAndUpdate(
-      _id, 
-      { team1, team2, ris }, 
-      { new: true }
-    );
+    const finale = await CoppaItaFinale.findByIdAndUpdate(_id, { team1, team2, ris }, { new: true });
 
     console.log("Partita aggiornata:", finale);
     res.send(finale);

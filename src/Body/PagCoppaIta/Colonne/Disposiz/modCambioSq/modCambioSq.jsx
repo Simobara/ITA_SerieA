@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
+import { getModalPositionSq } from "../zExternal/getModalPositionSq";
 
 const ModCambioSq = ({ onClose, stage, posTeam, onSave }) => {
   const [teamName, setTeamName] = useState("");
   const inputRef = useRef(null);
 
   const handleSave = () => {
+    console.log("handleSave chiamato con teamName:", teamName);
     onSave(teamName);
     onClose();
   };
@@ -20,7 +22,7 @@ const ModCambioSq = ({ onClose, stage, posTeam, onSave }) => {
   return (
     <div className={`fixed inset-0 flex items-center justify-center z-50 bg-gray-900 bg-opacity-70`}>
       <div
-        className={`relative w-full h-full max-w-[200px] max-h-[200px] shadow-xxxl rounded-lg border-4 border-sky-900 bg-black overflow-x-auto overflow-y-auto ${stage === "finale" && posTeam === "A" ? "top-[-4.5rem] left-[-5.5rem]" : "top-[-4.5rem] left-[6.5rem]"}`}
+        className={`relative w-full h-full max-w-[200px] max-h-[200px] shadow-xxxl rounded-lg border-4 border-sky-900 bg-black overflow-x-auto overflow-y-auto ${getModalPositionSq(stage, posTeam)}`}
       >
         <div className="absolute top-0 left-0 right-0 bg-gray-950 z-20 w-full">
           <button className="text-3xl leading-none text-sky-700 w-full hover:bg-sky-800 hover:text-white" onClick={onClose}>

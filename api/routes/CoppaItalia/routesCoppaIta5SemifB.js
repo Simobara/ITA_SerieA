@@ -5,7 +5,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { CoppaItaSemifinaleB } = require("../schemas/schemaCoppaIta5Semif");
+const { CoppaItaSemifinaleB } = require("../../schemas/schemaCoppaIta5Semif");
 
 // Endpoint per prendere i dati della semifinale B
 router.get("/coppaItaSemifinaleB/semifinaleB", async (req, res) => {

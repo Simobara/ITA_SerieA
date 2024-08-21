@@ -9,6 +9,7 @@ import { toggleModalCambioRiss, toggleModalCambioSqq } from '../zExternal/toggle
 
 
 const ASemifinali = ({ width = '80px', height = '24px' }) => {
+    const [stage,setStage]=useState("semifinaleA")
     const [oggettoPartita, setOggettoPartita] = useState("");
     const [hoveredTeam1, setHoveredTeam1] = useState(false);
     const [hoveredTeam2, setHoveredTeam2] = useState(false);
@@ -69,7 +70,7 @@ const ASemifinali = ({ width = '80px', height = '24px' }) => {
                         onClick={() => toggleModalCambioSq("A")}
                     >
                         {team1}
-                        {hoveredTeam1 && <span className="absolute left-10 scale-150">📝</span>}
+                        {hoveredTeam1 && <span className="absolute right-6 scale-150">📝</span>}
                     </div>
                     <div 
                         className={resultBoxStyle}
@@ -93,7 +94,7 @@ const ASemifinali = ({ width = '80px', height = '24px' }) => {
                         onClick={() => toggleModalCambioSq("B")}
                     >
                         {team2}
-                        {hoveredTeam2 && <span className="absolute right-10 scale-150">📝</span>}
+                        {hoveredTeam2 && <span className="absolute right-6 scale-150">📝</span>}
                     </div>
                     <div 
                         className={resultBoxStyle}
@@ -107,8 +108,8 @@ const ASemifinali = ({ width = '80px', height = '24px' }) => {
                 </div>
             </div>
 
-            {showModalCambioSq && <ModCambioSq onClose={toggleModalCambioSq} stage="semifinali" posTeam={posTeam} onSave={handleSaveTeamName}/>}
-            {showModalCambioRis && <ModCambioRis onClose={toggleModalCambioRis} stage="semifinali" posTeam={posTeam} onSave={handleSaveTeamsRis}/>}
+            {showModalCambioSq && <ModCambioSq onClose={toggleModalCambioSq} stage={stage} posTeam={posTeam} onSave={handleSaveTeamName}/>}
+            {showModalCambioRis && <ModCambioRis onClose={toggleModalCambioRis} stage={stage} posTeam={posTeam} onSave={handleSaveTeamsRis}/>}
         </>
     );
 };
