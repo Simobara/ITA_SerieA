@@ -1,13 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Tornei } from '../../../../../START/app/3CoppaItaMatches';
+import { ENDPOINTS } from '../config/endpoints';
 import ModCambioRis from '../modCambioRis/modCambioRis';
 import ModCambioSq from '../modCambioSq/modCambioSq';
 import { handleSaveTeamsNamee } from '../zExternal/handleSaveTeamsName';
 import { handleSaveTeamsRiss } from '../zExternal/handleSaveTeamsRis';
 import { toggleModalCambioRiss, toggleModalCambioSqq } from '../zExternal/toggleModalCambio';
 
-const BQuarti = ({ width = '70px', height = '24px' }) => {
+const QuartoB = ({ width = '70px', height = '24px' }) => {
     const [stage, setStage] = useState("");  
     const [oggettoPartitaB1, setOggettoPartitaB1] = useState({ team1: '', team2: '', ris: '' });
     const [oggettoPartitaB2, setOggettoPartitaB2] = useState({ team1: '', team2: '', ris: '' });
@@ -16,11 +17,6 @@ const BQuarti = ({ width = '70px', height = '24px' }) => {
     const [posTeam, setPosTeam] = useState("");
     const [showModalCambioSq, setShowModalCambioSq] = useState(false);
     const [showModalCambioRis, setShowModalCambioRis] = useState(false);
-
-    const ENDPOINTS = {
-        quartiB1: '/api/coppaItaQuartiB1/quartiB1',
-        quartiB2: '/api/coppaItaQuartiB2/quartiB2'
-    };
 
     const boxStyle = `flex items-center justify-start mr-4 bg-white text-black font-bold pl-1 overflow-hidden `;
     const containerStyle = { width, height };
@@ -39,7 +35,7 @@ const BQuarti = ({ width = '70px', height = '24px' }) => {
     const handleSaveTeamName = (newTeamName) => {
         const oggettoPartita = stage === 'quartoB1' ? oggettoPartitaB1 : oggettoPartitaB2;
         const setOggettoPartita = stage === 'quartoB1' ? setOggettoPartitaB1 : setOggettoPartitaB2;
-        const endpoint = stage === 'quartoB1' ? ENDPOINTS.quartiB1 : ENDPOINTS.quartiB2;
+        const endpoint = stage === 'quartoB1' ? ENDPOINTS.QUARTO_B1 : ENDPOINTS.QUARTO_B2
 
         handleSaveTeamsNamee(newTeamName, oggettoPartita, posTeam, setOggettoPartita, endpoint);
     };
@@ -47,7 +43,7 @@ const BQuarti = ({ width = '70px', height = '24px' }) => {
     const handleSaveTeamsRis = (newTeamsRis) => {
         const oggettoPartita = stage === 'quartoB1' ? oggettoPartitaB1 : oggettoPartitaB2;
         const setOggettoPartita = stage === 'quartoB1' ? setOggettoPartitaB1 : setOggettoPartitaB2;
-        const endpoint = stage === 'quartoB1' ? ENDPOINTS.quartiB1 : ENDPOINTS.quartiB2;
+        const endpoint = stage === 'quartoB1' ? ENDPOINTS.QUARTO_B1 : ENDPOINTS.QUARTO_B2;
 
         handleSaveTeamsRiss(newTeamsRis, oggettoPartita, setOggettoPartita, endpoint);
     };
@@ -59,8 +55,8 @@ const BQuarti = ({ width = '70px', height = '24px' }) => {
                     ? import.meta.env.VITE_API_URL_PROD
                     : import.meta.env.VITE_API_URL_DEV;
 
-                const responseB1 = await axios.get(`${API_BASE_URL}${ENDPOINTS.quartiB1}`);
-                const responseB2 = await axios.get(`${API_BASE_URL}${ENDPOINTS.quartiB2}`);
+                const responseB1 = await axios.get(`${API_BASE_URL}${ENDPOINTS.QUARTO_B1}`);
+                const responseB2 = await axios.get(`${API_BASE_URL}${ENDPOINTS.QUARTO_B2}`);
 
                 if (responseB1.data && responseB1.data.length > 0) {
                     setOggettoPartitaB1(responseB1.data[0]);
@@ -164,4 +160,4 @@ const BQuarti = ({ width = '70px', height = '24px' }) => {
     );
 };
 
-export default BQuarti;
+export default QuartoB;

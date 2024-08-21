@@ -1,13 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Tornei } from '../../../../../START/app/3CoppaItaMatches';
+import { ENDPOINTS } from '../config/endpoints';
 import ModCambioRis from '../modCambioRis/modCambioRis';
 import ModCambioSq from '../modCambioSq/modCambioSq';
 import { handleSaveTeamsNamee } from '../zExternal/handleSaveTeamsName';
 import { handleSaveTeamsRiss } from '../zExternal/handleSaveTeamsRis';
 import { toggleModalCambioRiss, toggleModalCambioSqq } from '../zExternal/toggleModalCambio';
 
-const BSemifinali = ({ width = '80px', height = '24px' }) => {
+const SemifinaleB = ({ width = '80px', height = '24px' }) => {
     const [stage,setStage]=useState("semifinaleB")
     const [oggettoPartita, setOggettoPartita] = useState("");
     const [hoveredTeam1, setHoveredTeam1] = useState(false);
@@ -17,9 +18,7 @@ const BSemifinali = ({ width = '80px', height = '24px' }) => {
     const [showModalCambioSq, setShowModalCambioSq] = useState(false);
     const [showModalCambioRis, setShowModalCambioRis] = useState(false);
 
-    const ENDPOINTS = {
-        semifinalB: '/api/coppaItaSemifinaleB/semifinaleB'
-    };
+    
 
     const boxStyle = `flex items-center justify-start mr-1 bg-white text-black font-bold pl-1 overflow-hidden`;
     const containerStyle = { width, height };
@@ -27,8 +26,8 @@ const BSemifinali = ({ width = '80px', height = '24px' }) => {
 
     const toggleModalCambioSq = (indexSide) => toggleModalCambioSqq(indexSide, setPosTeam, setShowModalCambioSq);
     const toggleModalCambioRis = () => toggleModalCambioRiss(setShowModalCambioRis);
-    const handleSaveTeamName = (newTeamName) => handleSaveTeamsNamee(newTeamName, oggettoPartita, posTeam, setOggettoPartita, ENDPOINTS.semifinalB);
-    const handleSaveTeamsRis = (newTeamsRis) => handleSaveTeamsRiss(newTeamsRis, oggettoPartita, setOggettoPartita, ENDPOINTS.semifinalB);
+    const handleSaveTeamName = (newTeamName) => handleSaveTeamsNamee(newTeamName, oggettoPartita, posTeam, setOggettoPartita, ENDPOINTS.SEMIFINALE_B);
+    const handleSaveTeamsRis = (newTeamsRis) => handleSaveTeamsRiss(newTeamsRis, oggettoPartita, setOggettoPartita, ENDPOINTS.SEMIFINALE_B );
 
     //--------------------------------------------------------------------------------------------------------------
     useEffect(() => {
@@ -37,7 +36,7 @@ const BSemifinali = ({ width = '80px', height = '24px' }) => {
                 const API_BASE_URL = import.meta.env.PROD
                     ? import.meta.env.VITE_API_URL_PROD
                     : import.meta.env.VITE_API_URL_DEV;
-                const response = await axios.get(`${API_BASE_URL}${ENDPOINTS.semifinalB}`);
+                const response = await axios.get(`${API_BASE_URL}${ENDPOINTS.SEMIFINALE_B}`);
                 const data = response.data;
 
                 if (data.length > 0 && data[0]) {
@@ -113,4 +112,4 @@ const BSemifinali = ({ width = '80px', height = '24px' }) => {
     );
 };
 
-export default BSemifinali;
+export default SemifinaleB;

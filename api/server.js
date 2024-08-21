@@ -69,17 +69,8 @@ const routerGiornata =     require('./routes/routesGiornata');
 const routerCIFinale =            require('./routes/CoppaItalia/routesCoppaIta6Finale');
 const routerCoppaItaSemifinali =  require('./routes/CoppaItalia/routesCoppaIta5Semifinali');
 const routerCoppaItaQuarti =      require('./routes/CoppaItalia/routesCoppaIta4Quarti'); 
-
-
-const routerCoppaItaOttavi =    require('./routes/CoppaItalia/routesCoppaIta3Ottavi'); 
-// const routerCoppaItaOttaviA2 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviA2');
-// const routerCoppaItaOttaviA3 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviA3');
-// const routerCoppaItaOttaviA4 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviA4');
-// const routerCoppaItaOttaviB1 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviB1');
-// const routerCoppaItaOttaviB2 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviB2');
-// const routerCoppaItaOttaviB3 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviB3');
-// const routerCoppaItaOttaviB4 =    require('./routes/CoppaItalia/routesCoppaIta3OttaviB4');
-
+const routerCoppaItaOttavi =      require('./routes/CoppaItalia/routesCoppaIta3Ottavi');
+const routerCoppaItaSedicesimi =  require('./routes/CoppaItalia/routesCoppaIta2Sedicesimi');
 
 //--------------------------------------------------CAMPIONATO //!CORRETTO
 app.use('/api', async (req, res, next) => {
@@ -120,6 +111,24 @@ app.use('/api', async (req, res, next) => {
          routerCoppaItaOttavi(req, res, next);
          break;
     //-----------------------------------------------Sedicesimi
+    case req.path.startsWith('/coppaItaSedicesimiA1') || 
+         req.path.startsWith('/coppaItaSedicesimiA2') || 
+         req.path.startsWith('/coppaItaSedicesimiA3') || 
+         req.path.startsWith('/coppaItaSedicesimiA4') || 
+         req.path.startsWith('/coppaItaSedicesimiA5') || 
+         req.path.startsWith('/coppaItaSedicesimiA6') || 
+         req.path.startsWith('/coppaItaSedicesimiA7') || 
+         req.path.startsWith('/coppaItaSedicesimiA8') || 
+         req.path.startsWith('/coppaItaSedicesimiB1') || 
+         req.path.startsWith('/coppaItaSedicesimiB2') || 
+         req.path.startsWith('/coppaItaSedicesimiB3') || 
+         req.path.startsWith('/coppaItaSedicesimiB4') || 
+         req.path.startsWith('/coppaItaSedicesimiB5') || 
+         req.path.startsWith('/coppaItaSedicesimiB6') || 
+         req.path.startsWith('/coppaItaSedicesimiB7') || 
+         req.path.startsWith('/coppaItaSedicesimiB8'):
+         routerCoppaItaSedicesimi(req, res, next);
+         break;
 
     //-----------------------------------------------Trentaduesimi
     default:

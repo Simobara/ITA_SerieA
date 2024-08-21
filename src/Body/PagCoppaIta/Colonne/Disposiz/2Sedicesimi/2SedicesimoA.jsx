@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tornei } from '../../../../../START/app/3CoppaItaMatches'; 
 
-const ASedicesimi = ({ width = '70px', height = '24px' }) => {
+const SedicesimoA = ({ width = '70px', height = '24px' }) => {
     const boxStyle = `text-black font-bold flex items-center justify-start bg-white ml-4 pl-1 overflow-hidden`;
     const containerStyle = { width, height };
     const resultBoxStyle = `flex flex-1 w-5 h-[24px] items-center justify-center bg-gray-500 text-black font-bold overflow-hidden`;
@@ -33,4 +33,4 @@ const ASedicesimi = ({ width = '70px', height = '24px' }) => {
     );
 };
 
-export default ASedicesimi;
+export default SedicesimoA;

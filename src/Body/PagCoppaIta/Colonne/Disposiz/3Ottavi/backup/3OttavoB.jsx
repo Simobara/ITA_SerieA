@@ -1,7 +1,7 @@
 import React from "react";
-import { Tornei } from "../../../../../START/app/3CoppaItaMatches";
+import { Tornei } from "../../../../../../START/app/3CoppaItaMatches";
 
-const BOttavi = ({ width = "70px", height = "24px" }) => {
+const OttavoB = ({ width = "70px", height = "24px" }) => {
   const boxStyle = `flex items-center justify-start bg-white text-black font-bold mr-4 pl-1 overflow-hidden`;
   const teamStyle = {
     backgroundColor: "#7f1d1d", // bg-red-900 equivalent
@@ -58,4 +58,4 @@ const BOttavi = ({ width = "70px", height = "24px" }) => {
   );
 };
 
-export default BOttavi;
+export default OttavoB;

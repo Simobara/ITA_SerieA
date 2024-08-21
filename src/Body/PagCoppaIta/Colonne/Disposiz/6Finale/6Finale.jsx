@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Tornei } from '../../../../../START/app/3CoppaItaMatches';
+import { ENDPOINTS } from '../config/endpoints';
 import ModCambioRis from '../modCambioRis/modCambioRis';
 import ModCambioSq from '../modCambioSq/modCambioSq';
 import { handleSaveTeamsNamee } from '../zExternal/handleSaveTeamsName';
@@ -17,9 +18,7 @@ const Finale = ({ width = '55px', height = '24px' }) => {
     const [showModalCambioSq, setShowModalCambioSq] = useState(false);
     const [showModalCambioRis, setShowModalCambioRis] = useState(false);
     
-    const ENDPOINTS = {
-        finale: '/api/coppaItaFinale/finale',
-      };
+    
 
     const boxStyle = `flex items-center justify-start bg-white text-black font-bold pl-1 overflow-hidden`;
     const containerStyle = { width, height };
@@ -27,8 +26,8 @@ const Finale = ({ width = '55px', height = '24px' }) => {
     
     const toggleModalCambioSq = (indexSide) => toggleModalCambioSqq (indexSide, setPosTeam, setShowModalCambioSq);
     const toggleModalCambioRis = () => toggleModalCambioRiss(setShowModalCambioRis);  
-    const handleSaveTeamName=(newTeamName)=> handleSaveTeamsNamee(newTeamName, oggettoPartita, posTeam, setOggettoPartita,ENDPOINTS.finale);
-    const handleSaveTeamsRis=(newTeamsRis) => handleSaveTeamsRiss(newTeamsRis, oggettoPartita, setOggettoPartita,ENDPOINTS.finale);
+    const handleSaveTeamName=(newTeamName)=> handleSaveTeamsNamee(newTeamName, oggettoPartita, posTeam, setOggettoPartita,ENDPOINTS.FINALE);
+    const handleSaveTeamsRis=(newTeamsRis) => handleSaveTeamsRiss(newTeamsRis, oggettoPartita, setOggettoPartita,ENDPOINTS.FINALE);
     
     
     
@@ -45,7 +44,7 @@ const Finale = ({ width = '55px', height = '24px' }) => {
                     ? import.meta.env.VITE_API_URL_PROD
                     : import.meta.env.VITE_API_URL_DEV;
                 console.log("Using API URL: ", API_BASE_URL);
-                const response = await axios.get(`${API_BASE_URL}/api/coppaItaFinale/finale`);
+                const response = await axios.get(`${API_BASE_URL}${ENDPOINTS.FINALE}`);
                 const data = response.data;
             
                 console.log("Resp status:", response.status);

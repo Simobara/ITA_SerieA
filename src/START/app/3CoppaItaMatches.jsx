@@ -138,25 +138,25 @@ const Tornei25 = {
     ],
 	// //*------------------------------------------------------------------------------ ------  8
     SqAOttavi: [
-        { id: 1, pos: '8%', 			team1: 'Juve',      team2: '',       	    ris: '' },
-        { id: 2, pos: '32%', 			team1: 'Fiorentina',team2: '', 	     	    ris: '' },
-        { id: 3, pos: '33%', 			team1: 'Atalanta', 	team2: '', 	     	    ris: '' },
-        { id: 4, pos: '9%', 			team1: 'Bologna', 	team2: 'CES',     	    ris: '' },
+        { id: 1, pos: '8%', 			team1: 'o-A1',      team2: 'o-A2',    	    ris: '' },
+        { id: 2, pos: '32%', 			team1: 'o-A3',      team2: 'o-A4', 	   	    ris: '' },
+        { id: 3, pos: '33%', 			team1: 'o-A5', 	    team2: 'o-A6', 	   	    ris: '' },
+        { id: 4, pos: '9%', 			team1: 'o-A7', 	    team2: 'o-A8',     	    ris: '' },
     ],
     SqBOttavi: [
-        { id: 1, pos: '8%', 			team1: 'Milan', 	team2: 'LEC',  	        ris: '' },
-        { id: 2, pos: '32%', 			team1: 'Roma', 		team2: 'COM',    	    ris: '' },
-        { id: 3, pos: '33%', 			team1: 'Inter', 	team2: 'PAR-Nap', 	    ris: '' },
-        { id: 4, pos: '9%', 			team1: 'Lazio', 	team2: '',       	    ris: '' },
+        { id: 1, pos: '8%', 			team1: 'o-B1', 	    team2: 'o-B2',  	    ris: '' },
+        { id: 2, pos: '32%', 			team1: 'o-B3', 		team2: 'o-B4',    	    ris: '' },
+        { id: 3, pos: '33%', 			team1: 'o-B5', 	    team2: 'o-B6', 	        ris: '' },
+        { id: 4, pos: '9%', 			team1: 'o-B7', 	    team2: 'o-B8',       	ris: '' },
     ],
 	// //*------------------------------------------------------------------------------ ------  4
     SqAQuarti: [
-        { id: 1, pos: '', 			team1: 'q-A1',      team2: 'q-A2',          ris: '' },
-        { id: 2, pos: '', 			team1: 'q-A3',      team2: 'q-A4',          ris: '' },
+        { id: 1, pos: '20%', 			team1: 'q-A1',      team2: 'q-A2',          ris: '' },
+        { id: 2, pos: '70%', 			team1: 'q-A3',      team2: 'q-A4',          ris: '' },
     ],
     SqBQuarti: [
-        { id: 1, pos: '', 			team1: 'q-B1',      team2: 'q-B2',          ris: '' },
-        { id: 2, pos: '', 			team1: 'q-B3', 	    team2: 'q-B4',          ris: '' },
+        { id: 1, pos: '20%', 			team1: 'q-B1',      team2: 'q-B2',          ris: '' },
+        { id: 2, pos: '70%', 			team1: 'q-B3', 	    team2: 'q-B4',          ris: '' },
     ],
 	// //*------------------------------------------------------------------------------ ------  2
     SqASemifinali: [
