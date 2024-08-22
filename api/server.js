@@ -100,9 +100,24 @@ app.use('/api', async (req, res, next) => {
   }
 
   await connectToDatabase(dbName);
-
-
   
+// Assicurati che i modelli siano registrati correttamente nel database corrente
+if (dbName === process.env.DB_NAME_SERIE_A) {
+  require('./routes/routesGiornataClouN');
+  require('./routes/routesGiornata');
+} else if (dbName === process.env.DB_NAME_COPPA_ITA) {
+  require('./routes/CoppaItalia/routesCoppaIta1Trentaduesimi');
+  require('./routes/CoppaItalia/routesCoppaIta2Sedicesimi');
+  require('./routes/CoppaItalia/routesCoppaIta3Ottavi');
+  require('./routes/CoppaItalia/routesCoppaIta4Quarti');
+  require('./routes/CoppaItalia/routesCoppaIta5Semifinali');
+  require('./routes/CoppaItalia/routesCoppaIta6Finale');
+}
+
+next();
+
+
+
   switch (true) {
     case req.path.startsWith('/giornate'):
          routerGiornateClou(req, res, next);

@@ -27,10 +27,20 @@ router.get("/coppaItaFinale/finale", async (req, res) => {
 // Endpoint per aggiornare il nome della squadra e il risultato
 router.post("/coppaItaFinale/finale", async (req, res) => {
   try {
-    const { _id, team1, team2, ris } = req.body;
+    let { _id, id, team1, team2, ris, pos } = req.body;
 
-    // Trova il record per ID e aggiorna i campi team1, team2 e ris
-    const finale = await CoppaItaFinale.findOneAndUpdate({ _id }, { team1, team2, ris }, { new: true, upsert: true });
+    // Se _id non è definito o è null, creiamo un nuovo ObjectId
+    if (!_id) {
+      _id = new mongoose.Types.ObjectId();
+    }
+
+    // Assicuriamoci che l'id sia un numero intero
+    if (!id || typeof id !== "number") {
+      return res.status(400).send({ error: "Invalid id" });
+    }
+
+    // Trova il record per ID e aggiorna i campi necessari
+    const finale = await CoppaItaFinale.findOneAndUpdate({ _id }, { id, team1, team2, ris, pos }, { new: true, upsert: true });
 
     console.log("Partita aggiornata o creata:", finale);
     res.send(finale);

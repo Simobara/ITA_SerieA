@@ -129,12 +129,22 @@ router.post(
         return res.status(400).send("Modello non trovato per l'endpoint richiesto.");
       }
 
-      const { _id, team1, team2, ris } = req.body;
+      let { _id, id, team1, team2, ris } = req.body;
 
-      // Trova il record per ID e aggiorna i campi team1, team2 e ris
-      const trentaduesimi = await model.findByIdAndUpdate(_id, { team1, team2, ris }, { new: true, upsert: true });
+      // Se _id non è definito o è null, creiamo un nuovo ObjectId
+      if (!_id) {
+        _id = new mongoose.Types.ObjectId();
+      }
 
-      console.log(`Partita aggiornata (${req.path}):`, trentaduesimi);
+      // Assicuriamoci che l'id sia un numero intero
+      if (!id || typeof id !== "number") {
+        return res.status(400).send({ error: "Invalid id" });
+      }
+
+      // Trova il record per ID e aggiorna i campi team1, team2, ris e id
+      const trentaduesimi = await model.findOneAndUpdate({ _id }, { id, team1, team2, ris }, { new: true, upsert: true });
+
+      console.log(`Partita aggiornata o creata (${req.path}):`, trentaduesimi);
       res.send(trentaduesimi);
     } catch (error) {
       console.error(`Errore durante l'aggiornamento della partita (${req.path}):`, error);
