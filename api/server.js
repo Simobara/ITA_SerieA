@@ -66,12 +66,12 @@ const secureAgent = new https.Agent({ keepAlive: true });
 const routerGiornateClou = require('./routes/routesGiornataClouN');
 const routerGiornata =     require('./routes/routesGiornata');
 
-const routerCIFinale =            require('./routes/CoppaItalia/routesCoppaIta6Finale');
-const routerCoppaItaSemifinali =  require('./routes/CoppaItalia/routesCoppaIta5Semifinali');
-const routerCoppaItaQuarti =      require('./routes/CoppaItalia/routesCoppaIta4Quarti'); 
-const routerCoppaItaOttavi =      require('./routes/CoppaItalia/routesCoppaIta3Ottavi');
-const routerCoppaItaSedicesimi =  require('./routes/CoppaItalia/routesCoppaIta2Sedicesimi');
-const routerCoppaItaTrentaduesimi =  require('./routes/CoppaItalia/routesCoppaIta1Trentaduesimi');
+const routerCoppaItaTrentaduesimi = require('./routes/CoppaItalia/routesCoppaIta1Trentaduesimi');
+const routerCoppaItaSedicesimi =    require('./routes/CoppaItalia/routesCoppaIta2Sedicesimi');
+const routerCoppaItaOttavi =        require('./routes/CoppaItalia/routesCoppaIta3Ottavi');
+const routerCoppaItaQuarti =        require('./routes/CoppaItalia/routesCoppaIta4Quarti'); 
+const routerCoppaItaSemifinali =    require('./routes/CoppaItalia/routesCoppaIta5Semifinali');
+const routerCIFinale =              require('./routes/CoppaItalia/routesCoppaIta6Finale');
 
 //--------------------------------------------------CAMPIONATO 
 app.use('/api', async (req, res, next) => {
