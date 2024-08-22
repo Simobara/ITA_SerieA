@@ -25,23 +25,34 @@ const schemaCoppaIta = new mongoose.Schema({
   },
 });
 
+// Creazione dei modelli per i trentaduesimi di finale
+const CoppaItaTrentaduesimiA1 = mongoose.model("CoppaItaTrentaduesimiA1", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_TRENTADUESIMI_A1);
+const CoppaItaTrentaduesimiA2 = mongoose.model("CoppaItaTrentaduesimiA2", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_TRENTADUESIMI_A2);
+const CoppaItaTrentaduesimiA3 = mongoose.model("CoppaItaTrentaduesimiA3", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_TRENTADUESIMI_A3);
+const CoppaItaTrentaduesimiA4 = mongoose.model("CoppaItaTrentaduesimiA4", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_TRENTADUESIMI_A4);
+const CoppaItaTrentaduesimiA5 = mongoose.model("CoppaItaTrentaduesimiA5", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_TRENTADUESIMI_A5);
+const CoppaItaTrentaduesimiA6 = mongoose.model("CoppaItaTrentaduesimiA6", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_TRENTADUESIMI_A6);
+const CoppaItaTrentaduesimiA7 = mongoose.model("CoppaItaTrentaduesimiA7", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_TRENTADUESIMI_A7);
+const CoppaItaTrentaduesimiA8 = mongoose.model("CoppaItaTrentaduesimiA8", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_TRENTADUESIMI_A8);
+
+const CoppaItaTrentaduesimiB1 = mongoose.model("CoppaItaTrentaduesimiB1", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_TRENTADUESIMI_B1);
+const CoppaItaTrentaduesimiB2 = mongoose.model("CoppaItaTrentaduesimiB2", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_TRENTADUESIMI_B2);
+const CoppaItaTrentaduesimiB3 = mongoose.model("CoppaItaTrentaduesimiB3", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_TRENTADUESIMI_B3);
+const CoppaItaTrentaduesimiB4 = mongoose.model("CoppaItaTrentaduesimiB4", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_TRENTADUESIMI_B4);
+const CoppaItaTrentaduesimiB5 = mongoose.model("CoppaItaTrentaduesimiB5", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_TRENTADUESIMI_B5);
+const CoppaItaTrentaduesimiB6 = mongoose.model("CoppaItaTrentaduesimiB6", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_TRENTADUESIMI_B6);
+const CoppaItaTrentaduesimiB7 = mongoose.model("CoppaItaTrentaduesimiB7", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_TRENTADUESIMI_B7);
+const CoppaItaTrentaduesimiB8 = mongoose.model("CoppaItaTrentaduesimiB8", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_TRENTADUESIMI_B8);
+
 // Creazione dei modelli per i sedicesimi di finale
 const CoppaItaSedicesimiA1 = mongoose.model("CoppaItaSedicesimiA1", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_SEDICESIMI_A1);
 const CoppaItaSedicesimiA2 = mongoose.model("CoppaItaSedicesimiA2", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_SEDICESIMI_A2);
 const CoppaItaSedicesimiA3 = mongoose.model("CoppaItaSedicesimiA3", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_SEDICESIMI_A3);
 const CoppaItaSedicesimiA4 = mongoose.model("CoppaItaSedicesimiA4", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_SEDICESIMI_A4);
-const CoppaItaSedicesimiA5 = mongoose.model("CoppaItaSedicesimiA5", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_SEDICESIMI_A5);
-const CoppaItaSedicesimiA6 = mongoose.model("CoppaItaSedicesimiA6", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_SEDICESIMI_A6);
-const CoppaItaSedicesimiA7 = mongoose.model("CoppaItaSedicesimiA7", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_SEDICESIMI_A7);
-const CoppaItaSedicesimiA8 = mongoose.model("CoppaItaSedicesimiA8", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_SEDICESIMI_A8);
 const CoppaItaSedicesimiB1 = mongoose.model("CoppaItaSedicesimiB1", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_SEDICESIMI_B1);
 const CoppaItaSedicesimiB2 = mongoose.model("CoppaItaSedicesimiB2", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_SEDICESIMI_B2);
 const CoppaItaSedicesimiB3 = mongoose.model("CoppaItaSedicesimiB3", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_SEDICESIMI_B3);
 const CoppaItaSedicesimiB4 = mongoose.model("CoppaItaSedicesimiB4", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_SEDICESIMI_B4);
-const CoppaItaSedicesimiB5 = mongoose.model("CoppaItaSedicesimiB5", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_SEDICESIMI_B5);
-const CoppaItaSedicesimiB6 = mongoose.model("CoppaItaSedicesimiB6", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_SEDICESIMI_B6);
-const CoppaItaSedicesimiB7 = mongoose.model("CoppaItaSedicesimiB7", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_SEDICESIMI_B7);
-const CoppaItaSedicesimiB8 = mongoose.model("CoppaItaSedicesimiB8", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_SEDICESIMI_B8);
 
 // Creazione dei modelli per gli ottavi di finale
 const CoppaItaOttaviA1 = mongoose.model("CoppaItaOttaviA1", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_OTTAVI_A1);
@@ -67,22 +78,30 @@ const CoppaItaSemifinaleB = mongoose.model("CoppaItaSemifinaleB", schemaCoppaIta
 const CoppaItaFinale = mongoose.model("CoppaItaFinale", schemaCoppaIta, process.env.COLLECTION_COPPA_ITA_FINALE);
 
 module.exports = {
+  CoppaItaTrentaduesimiA1,
+  CoppaItaTrentaduesimiA2,
+  CoppaItaTrentaduesimiA3,
+  CoppaItaTrentaduesimiA4,
+  CoppaItaTrentaduesimiA5,
+  CoppaItaTrentaduesimiA6,
+  CoppaItaTrentaduesimiA7,
+  CoppaItaTrentaduesimiA8,
+  CoppaItaTrentaduesimiB1,
+  CoppaItaTrentaduesimiB2,
+  CoppaItaTrentaduesimiB3,
+  CoppaItaTrentaduesimiB4,
+  CoppaItaTrentaduesimiB5,
+  CoppaItaTrentaduesimiB6,
+  CoppaItaTrentaduesimiB7,
+  CoppaItaTrentaduesimiB8,
   CoppaItaSedicesimiA1,
   CoppaItaSedicesimiA2,
   CoppaItaSedicesimiA3,
   CoppaItaSedicesimiA4,
-  CoppaItaSedicesimiA5,
-  CoppaItaSedicesimiA6,
-  CoppaItaSedicesimiA7,
-  CoppaItaSedicesimiA8,
   CoppaItaSedicesimiB1,
   CoppaItaSedicesimiB2,
   CoppaItaSedicesimiB3,
   CoppaItaSedicesimiB4,
-  CoppaItaSedicesimiB5,
-  CoppaItaSedicesimiB6,
-  CoppaItaSedicesimiB7,
-  CoppaItaSedicesimiB8,
   CoppaItaOttaviA1,
   CoppaItaOttaviA2,
   CoppaItaOttaviA3,

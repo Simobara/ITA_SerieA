@@ -117,7 +117,7 @@ const Tornei25 = {
         { id: 1, pos: '5%', 			team1: 'Lecce', 	team2: 'Mantova',       ris: '2-1' },
         { id: 2, pos: '15%', 			team1: 'Sassuolo', 	team2: 'Cittadella',	ris: '2-1' },
         { id: 3, pos: '30%', 			team1: 'Genoa', 	team2: 'Reggiana',  	ris: '1-0' },
-        { id: 4, pos: '40%', 			team1: 'Como',      team2: 'Sampdoria',		ris: '4-3' },
+        { id: 4, pos: '40%', 			team1: 'Como',      team2: 'Sampdoria',		ris: '3-4' },
         { id: 5, pos: 'bottom-36%', 	team1: 'Napoli',    team2: 'Modena', 		ris: '4-3' },
         { id: 6, pos: 'bottom-26%', 	team1: 'Parma',     team2: 'Palermo', 		ris: '0-1' },
         { id: 7, pos: 'bottom-11%', 	team1: 'Salernitana',team2:'Spezia',		ris: '5-4' },

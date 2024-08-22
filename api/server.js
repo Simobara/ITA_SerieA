@@ -71,8 +71,9 @@ const routerCoppaItaSemifinali =  require('./routes/CoppaItalia/routesCoppaIta5S
 const routerCoppaItaQuarti =      require('./routes/CoppaItalia/routesCoppaIta4Quarti'); 
 const routerCoppaItaOttavi =      require('./routes/CoppaItalia/routesCoppaIta3Ottavi');
 const routerCoppaItaSedicesimi =  require('./routes/CoppaItalia/routesCoppaIta2Sedicesimi');
+const routerCoppaItaTrentaduesimi =  require('./routes/CoppaItalia/routesCoppaIta1Trentaduesimi');
 
-//--------------------------------------------------CAMPIONATO //!CORRETTO
+//--------------------------------------------------CAMPIONATO 
 app.use('/api', async (req, res, next) => {
   await connectToDatabase();
   switch (true) {
@@ -83,21 +84,35 @@ app.use('/api', async (req, res, next) => {
          routerGiornata(req, res, next);
          break;
     //-----------------------------------------------COPPAITALIA
-    //-----------------------------------------------Finale
-    case req.path.startsWith('/coppaItaFinale'):
-         routerCIFinale(req, res, next);
+    //-----------------------------------------------Trentaduesimi
+    case req.path.startsWith('/coppaItaTrentaduesimiA1') || 
+         req.path.startsWith('/coppaItaTrentaduesimiA2') || 
+         req.path.startsWith('/coppaItaTrentaduesimiA3') || 
+         req.path.startsWith('/coppaItaTrentaduesimiA4') || 
+         req.path.startsWith('/coppaItaTrentaduesimiA5') || 
+         req.path.startsWith('/coppaItaTrentaduesimiA6') || 
+         req.path.startsWith('/coppaItaTrentaduesimiA7') || 
+         req.path.startsWith('/coppaItaTrentaduesimiA8') || 
+         req.path.startsWith('/coppaItaTrentaduesimiB1') || 
+         req.path.startsWith('/coppaItaTrentaduesimiB2') || 
+         req.path.startsWith('/coppaItaTrentaduesimiB3') || 
+         req.path.startsWith('/coppaItaTrentaduesimiB4') || 
+         req.path.startsWith('/coppaItaTrentaduesimiB5') || 
+         req.path.startsWith('/coppaItaTrentaduesimiB6') || 
+         req.path.startsWith('/coppaItaTrentaduesimiB7') || 
+         req.path.startsWith('/coppaItaTrentaduesimiB8'):
+         routerCoppaItaTrentaduesimi(req, res, next);
          break;
-    //-----------------------------------------------Semifinali
-    case req.path.startsWith('/coppaItaSemifinaleA') ||
-         req.path.startsWith('/coppaItaSemifinaleB'):
-         routerCoppaItaSemifinali(req, res, next);
-         break;
-    //-----------------------------------------------Quarti
-    case req.path.startsWith('/coppaItaQuartiA1') || 
-         req.path.startsWith('/coppaItaQuartiA2') || 
-         req.path.startsWith('/coppaItaQuartiB1') || 
-         req.path.startsWith('/coppaItaQuartiB2'):
-         routerCoppaItaQuarti(req, res, next);
+    //-----------------------------------------------Sedicesimi
+    case req.path.startsWith('/coppaItaSedicesimiA1') || 
+         req.path.startsWith('/coppaItaSedicesimiA2') || 
+         req.path.startsWith('/coppaItaSedicesimiA3') || 
+         req.path.startsWith('/coppaItaSedicesimiA4') || 
+         req.path.startsWith('/coppaItaSedicesimiB1') || 
+         req.path.startsWith('/coppaItaSedicesimiB2') || 
+         req.path.startsWith('/coppaItaSedicesimiB3') || 
+         req.path.startsWith('/coppaItaSedicesimiB4'):
+         routerCoppaItaSedicesimi(req, res, next);
          break;
     //-----------------------------------------------Ottavi
     case req.path.startsWith('/coppaItaOttaviA1') || 
@@ -110,27 +125,22 @@ app.use('/api', async (req, res, next) => {
          req.path.startsWith('/coppaItaOttaviB4'):
          routerCoppaItaOttavi(req, res, next);
          break;
-    //-----------------------------------------------Sedicesimi
-    case req.path.startsWith('/coppaItaSedicesimiA1') || 
-         req.path.startsWith('/coppaItaSedicesimiA2') || 
-         req.path.startsWith('/coppaItaSedicesimiA3') || 
-         req.path.startsWith('/coppaItaSedicesimiA4') || 
-         req.path.startsWith('/coppaItaSedicesimiA5') || 
-         req.path.startsWith('/coppaItaSedicesimiA6') || 
-         req.path.startsWith('/coppaItaSedicesimiA7') || 
-         req.path.startsWith('/coppaItaSedicesimiA8') || 
-         req.path.startsWith('/coppaItaSedicesimiB1') || 
-         req.path.startsWith('/coppaItaSedicesimiB2') || 
-         req.path.startsWith('/coppaItaSedicesimiB3') || 
-         req.path.startsWith('/coppaItaSedicesimiB4') || 
-         req.path.startsWith('/coppaItaSedicesimiB5') || 
-         req.path.startsWith('/coppaItaSedicesimiB6') || 
-         req.path.startsWith('/coppaItaSedicesimiB7') || 
-         req.path.startsWith('/coppaItaSedicesimiB8'):
-         routerCoppaItaSedicesimi(req, res, next);
+    //-----------------------------------------------Quarti
+    case req.path.startsWith('/coppaItaQuartiA1') || 
+         req.path.startsWith('/coppaItaQuartiA2') || 
+         req.path.startsWith('/coppaItaQuartiB1') || 
+         req.path.startsWith('/coppaItaQuartiB2'):
+         routerCoppaItaQuarti(req, res, next);
          break;
-
-    //-----------------------------------------------Trentaduesimi
+    //-----------------------------------------------Semifinali
+    case req.path.startsWith('/coppaItaSemifinaleA') ||
+         req.path.startsWith('/coppaItaSemifinaleB'):
+         routerCoppaItaSemifinali(req, res, next);
+         break;
+    //-----------------------------------------------Finale
+    case req.path.startsWith('/coppaItaFinale'):
+         routerCIFinale(req, res, next);
+         break;
     default:
       console.log('No matching route, passing to next middleware.');
       next();
