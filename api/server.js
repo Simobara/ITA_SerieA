@@ -19,9 +19,10 @@ console.log("----------------------------------");
 
 // Middleware CORS
 const allowedOrigins = [
-  'https://ita-serie-a.vercel.app',
-  'http://localhost:3000',
-  'http://another-allowed-origin.com'
+  'https://ita-serie-a.vercel.app',//VERIFICA ONLINE
+  'http://localhost:5173',//FASE DI DEVELOPMENT
+  'http://localhost:3000',//FASE DI PRODUCTION
+  'http://another-allowed-origin.com',///SAMPLE
 ];
 
 const corsOptions = {
