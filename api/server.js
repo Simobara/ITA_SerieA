@@ -18,11 +18,20 @@ console.log("VITE_API_URL_DEV:",  process.env.VITE_API_URL_DEV);
 console.log("----------------------------------");
 
 // Middleware CORS
+const allowedOrigins = [
+  'https://ita-serie-a.vercel.app',
+  'http://localhost:3000',
+  'http://another-allowed-origin.com'
+];
+
 const corsOptions = {
-  origin: '*',
-  // process.env.NODE_ENV === 'production'
-    // ? 'https://ita-serie-a.vercel.app' 
-    // : 'http://localhost:3000', 
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 };
