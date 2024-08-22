@@ -40,6 +40,8 @@ app.use(cors(corsOptions));
 app.use(express.json());//forza nuovo deploy
 
 let cachedDb = null;
+let cachedDbName = null;
+
 
 async function connectToDatabase(dbName) {
   if (cachedDb && cachedDb.name === dbName) {
@@ -60,6 +62,7 @@ async function connectToDatabase(dbName) {
     });
 
     cachedDb = connection;            // Memorizza la connessione nel cache
+    cachedDbName = dbName;            // Memorizza il nome del database corrente nel cache
     console.log(`Connected to MongoDB Atlas database: ${dbName}`);
 
     return cachedDb;
