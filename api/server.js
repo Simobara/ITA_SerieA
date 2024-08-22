@@ -19,9 +19,10 @@ console.log("----------------------------------");
 
 // Middleware CORS
 const corsOptions = {
-  origin: process.env.NODE_ENV === 'production'
-    ? 'https://ita-serie-a.vercel.app' 
-    : 'http://localhost:3000', 
+  origin: '*',
+  // process.env.NODE_ENV === 'production'
+    // ? 'https://ita-serie-a.vercel.app' 
+    // : 'http://localhost:3000', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 };
