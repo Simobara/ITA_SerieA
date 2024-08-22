@@ -93,6 +93,7 @@ app.use('/api', async (req, res, next) => {
          req.path.startsWith('/coppaItaTrentaduesimiA6') || 
          req.path.startsWith('/coppaItaTrentaduesimiA7') || 
          req.path.startsWith('/coppaItaTrentaduesimiA8') || 
+
          req.path.startsWith('/coppaItaTrentaduesimiB1') || 
          req.path.startsWith('/coppaItaTrentaduesimiB2') || 
          req.path.startsWith('/coppaItaTrentaduesimiB3') || 
@@ -108,6 +109,7 @@ app.use('/api', async (req, res, next) => {
          req.path.startsWith('/coppaItaSedicesimiA2') || 
          req.path.startsWith('/coppaItaSedicesimiA3') || 
          req.path.startsWith('/coppaItaSedicesimiA4') || 
+
          req.path.startsWith('/coppaItaSedicesimiB1') || 
          req.path.startsWith('/coppaItaSedicesimiB2') || 
          req.path.startsWith('/coppaItaSedicesimiB3') || 
@@ -119,6 +121,7 @@ app.use('/api', async (req, res, next) => {
          req.path.startsWith('/coppaItaOttaviA2') || 
          req.path.startsWith('/coppaItaOttaviA3') || 
          req.path.startsWith('/coppaItaOttaviA4') || 
+         
          req.path.startsWith('/coppaItaOttaviB1') || 
          req.path.startsWith('/coppaItaOttaviB2') || 
          req.path.startsWith('/coppaItaOttaviB3') || 
