@@ -19,10 +19,10 @@ console.log("----------------------------------");
 
 // Middleware CORS
 const allowedOrigins = [
-  'https://ita-serie-a.vercel.app',//VERIFICA ONLINE
-  'http://localhost:5173',//FASE DI DEVELOPMENT
-  'http://localhost:3000',//FASE DI PRODUCTION
-  'http://another-allowed-origin.com',///SAMPLE
+  'https://ita-serie-a.vercel.app',   //VERIFICA ONLINE
+  'http://localhost:5173',            //FASE DI DEVELOPMENT
+  'http://localhost:3000',            //FASE DI PRODUCTION
+  'http://another-allowed-origin.com',//SAMPLE
 ];
 
 const corsOptions = {
@@ -41,15 +41,14 @@ app.use(express.json());//forza nuovo deploy
 
 let cachedDb = null;
 
-async function connectToDatabase() {
-  if (cachedDb) {
+async function connectToDatabase(dbName) {
+  if (cachedDb && cachedDb.name === dbName) {
     return cachedDb;
   }
   
   const username = process.env.USERNAME;
   const password = process.env.PASSWORD;
   const clusterUrl = process.env.CLUSTER_URL;
-  const dbName = process.env.DB_NAME;
   const dbURI = `mongodb+srv://${username}:${password}@${clusterUrl}/${dbName}?retryWrites=true&w=majority&appName=Cluster0&connectTimeoutMS=10000`;
 
   try {
@@ -61,11 +60,11 @@ async function connectToDatabase() {
     });
 
     cachedDb = connection;            // Memorizza la connessione nel cache
-    console.log("Connected to MongoDB Atlas in dev/prod environment");
+    console.log(`Connected to MongoDB Atlas database: ${dbName}`);
 
     return cachedDb;
   } catch (err) {
-    console.error("Could not connect to MongoDB Atlas in production...", err);
+    console.error(`Could not connect to MongoDB Atlas database: ${dbName}`, err);
     throw new Error('Database connection failed');
   }
 }
@@ -86,7 +85,21 @@ const routerCIFinale =              require('./routes/CoppaItalia/routesCoppaIta
 
 //--------------------------------------------------CAMPIONATO 
 app.use('/api', async (req, res, next) => {
-  await connectToDatabase();
+  let dbName;
+  if (req.path.startsWith('/giornate') || 
+      req.path.startsWith('/giornata')) {
+    dbName = process.env.DB_NAME_SERIE_A;
+  } else if (req.path.startsWith('/coppaIta')) {
+    dbName = process.env.DB_NAME_COPPA_ITA;
+  } else {
+    console.log('No matching route, passing to next middleware.');
+    return next();
+  }
+
+  await connectToDatabase(dbName);
+
+
+  
   switch (true) {
     case req.path.startsWith('/giornate'):
          routerGiornateClou(req, res, next);

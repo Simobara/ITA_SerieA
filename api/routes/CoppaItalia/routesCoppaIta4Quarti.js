@@ -52,7 +52,7 @@ router.post(["/coppaItaQuartiA1/quartiA1", "/coppaItaQuartiA2/quartiA2", "/coppa
     const { _id, team1, team2, ris } = req.body;
 
     // Trova il record per ID e aggiorna i campi team1, team2 e ris
-    const quarti = await model.findByIdAndUpdate(_id, { team1, team2, ris }, { new: true });
+    const quarti = await model.findByIdAndUpdate(_id, { team1, team2, ris }, { new: true, upsert: true });
 
     console.log(`Partita aggiornata (${req.path}):`, quarti);
     res.send(quarti);

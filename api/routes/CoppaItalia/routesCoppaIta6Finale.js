@@ -30,9 +30,9 @@ router.post("/coppaItaFinale/finale", async (req, res) => {
     const { _id, team1, team2, ris } = req.body;
 
     // Trova il record per ID e aggiorna i campi team1, team2 e ris
-    const finale = await CoppaItaFinale.findByIdAndUpdate(_id, { team1, team2, ris }, { new: true });
+    const finale = await CoppaItaFinale.findOneAndUpdate({ _id }, { team1, team2, ris }, { new: true, upsert: true });
 
-    console.log("Partita aggiornata:", finale);
+    console.log("Partita aggiornata o creata:", finale);
     res.send(finale);
   } catch (error) {
     console.error("Errore durante l'aggiornamento della partita:", error);

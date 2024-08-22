@@ -21,7 +21,6 @@ const {
   CoppaItaSedicesimiB2,
   CoppaItaSedicesimiB3,
   CoppaItaSedicesimiB4,
-  
 } = require("../../schemas/schemaCoppaIta");
 
 // Funzione per determinare quale modello utilizzare in base all'URL
@@ -93,7 +92,7 @@ router.post(
       const { _id, team1, team2, ris } = req.body;
 
       // Trova il record per ID e aggiorna i campi team1, team2 e ris
-      const sedicesimi = await model.findByIdAndUpdate(_id, { team1, team2, ris }, { new: true });
+      const sedicesimi = await model.findByIdAndUpdate(_id, { team1, team2, ris }, { new: true, upsert: true });
 
       console.log(`Partita aggiornata (${req.path}):`, sedicesimi);
       res.send(sedicesimi);
