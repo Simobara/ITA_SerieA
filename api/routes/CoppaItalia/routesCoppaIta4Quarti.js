@@ -5,10 +5,12 @@
 // ENDPOINT: http://localhost:5000/api/coppaItaQuartiB2/quartiB2
 //! IL FILE E' CORRETTO
 
+const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
 
 const { CoppaItaQuartiA1, CoppaItaQuartiA2, CoppaItaQuartiB1, CoppaItaQuartiB2 } = require("../../schemas/schemaCoppaIta");
+const dropCollections = require("../../DropCollections/dropCollectionGroupColl");
 
 // Funzione per determinare quale modello utilizzare in base all'URL
 const getModel = (path) => {
@@ -65,6 +67,11 @@ router.post(["/coppaItaQuartiA1/quartiA1", "/coppaItaQuartiA2/quartiA2", "/coppa
     const quarti = await model.findOneAndUpdate({ _id }, { id, team1, team2, ris }, { new: true, upsert: true });
 
     console.log(`Partita aggiornata o creata (${req.path}):`, quarti);
+
+    // Cadono Collection non richieste nel database corrispondente
+    await dropCollections();
+    console.log(`dropCollections CoppaItalia`);
+
     res.send(quarti);
   } catch (error) {
     console.error(`Errore durante l'aggiornamento della partita (${req.path}):`, error);

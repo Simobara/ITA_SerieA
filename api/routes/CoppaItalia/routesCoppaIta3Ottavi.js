@@ -9,6 +9,7 @@
 // ENDPOINT: http://localhost:5000/api/coppaItaOttaviB4/ottaviB4
 //! IL FILE E' CORRETTO
 
+const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
 
@@ -22,6 +23,7 @@ const {
   CoppaItaOttaviB3,
   CoppaItaOttaviB4,
 } = require("../../schemas/schemaCoppaIta");
+const dropCollections = require("../../DropCollections/dropCollectionGroupColl");
 
 // Funzione per determinare quale modello utilizzare in base all'URL
 const getModel = (path) => {
@@ -105,6 +107,11 @@ router.post(
       const ottavi = await model.findOneAndUpdate({ _id }, { id, team1, team2, ris }, { new: true, upsert: true });
 
       console.log(`Partita aggiornata o creata (${req.path}):`, ottavi);
+
+      // Cadono Collection non richieste nel database corrispondente
+      await dropCollections();
+      console.log(`dropCollections CoppaItalia`);
+
       res.send(ottavi);
     } catch (error) {
       console.error(`Errore durante l'aggiornamento della partita (${req.path}):`, error);
