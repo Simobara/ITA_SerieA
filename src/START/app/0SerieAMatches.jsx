@@ -16,14 +16,14 @@ const calendario25 = {
 ],
   //*---  -----                                                                                                                ---  2
 	giornata2: [
-    { numero: 1,  day: 'sab', time: '18:30',          team1: 'Parma',       team2: 'Milan',            pron: '', results: '' },
-    { numero: 2,  day: 'sab', time: '18:30',          team1: 'Udinese',     team2: 'Lazio',            pron: '', results: '' },
+    { numero: 1,  day: 'sab', time: '18:30',          team1: 'Parma',       team2: 'Milan',            pron: 'x', results: '' },
+    { numero: 2,  day: 'sab', time: '18:30',          team1: 'Udinese',     team2: 'Lazio',            pron: '2', results: '' },
     { numero: 3,  day: 'sab', time: '20:45',          team1: 'Inter',       team2: 'Lecce',            pron: '', results: '' },
     { numero: 4,  day: 'sab', time: '20:45',          team1: 'Monza',       team2: 'Genoa',            pron: '', results: '' },
 
     { numero: 5,  day: 'dom', time: '18:30',          team1: 'Fiorentina',  team2: 'Venezia',          pron: '1', results: '' },
-    { numero: 6,  day: 'dom', time: '18:30',          team1: 'Torino',      team2: 'Atalanta',         pron: '', results: '' },
-    { numero: 7,  day: 'dom', time: '20:45',          team1: 'Napoli',      team2: 'Bologna',          pron: '', results: '' },
+    { numero: 6,  day: 'dom', time: '18:30',          team1: 'Torino',      team2: 'Atalanta',         pron: '2', results: '' },
+    { numero: 7,  day: 'dom', time: '20:45',          team1: 'Napoli',      team2: 'Bologna',          pron: '2', results: '' },
     { numero: 8,  day: 'dom', time: '20:45',          team1: 'Roma',        team2: 'Empoli',           pron: '', results: '' },
 
     { numero: 9,  day: 'lun', time: '18:30',          team1: 'Cagliari',    team2: 'Como',             pron: '1', results: '' },

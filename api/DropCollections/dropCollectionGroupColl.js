@@ -4,6 +4,9 @@ const dropGiornataCollections = require("./dropGiornataCollections");
 
 async function dropCollections() {
   try {
+    // dropCollectionsIfNeeded "giornataClouN" from DB_NAME_COPPA_ITA
+    await dropCollectionsIfNeeded("giornataClouN", process.env.DB_NAME_COPPA_ITA);
+
     await dropCollectionsIfNeeded("CoppaIta6Finale", process.env.DB_NAME_SERIE_A);
 
     await dropCollectionsIfNeeded("CoppaIta5SemifA", process.env.DB_NAME_SERIE_A);
@@ -48,8 +51,6 @@ async function dropCollections() {
     await dropCollectionsIfNeeded("CoppaIta1TrentaduesimiB6", process.env.DB_NAME_SERIE_A);
     await dropCollectionsIfNeeded("CoppaIta1TrentaduesimiB7", process.env.DB_NAME_SERIE_A);
     await dropCollectionsIfNeeded("CoppaIta1TrentaduesimiB8", process.env.DB_NAME_SERIE_A);
-    // dropCollectionsIfNeeded "giornataClouN" from DB_NAME_COPPA_ITA
-    await dropCollectionsIfNeeded("giornataClouN", process.env.DB_NAME_COPPA_ITA);
     // dropCollectionsIfNeeded "giornata" from DB_NAME_COPPA_ITA
     await dropGiornataCollections(process.env.DB_NAME_COPPA_ITA);
   } catch (error) {

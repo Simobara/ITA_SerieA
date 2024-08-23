@@ -8,9 +8,8 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
-
-const { CoppaItaQuartiA1, CoppaItaQuartiA2, CoppaItaQuartiB1, CoppaItaQuartiB2 } = require("../../schemas/schemaCoppaIta");
 const dropCollections = require("../../DropCollections/dropCollectionGroupColl");
+const { CoppaItaQuartiA1, CoppaItaQuartiA2, CoppaItaQuartiB1, CoppaItaQuartiB2 } = require("../../schemas/schemaCoppaIta");
 
 // Funzione per determinare quale modello utilizzare in base all'URL
 const getModel = (path) => {

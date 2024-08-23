@@ -19,7 +19,7 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
-
+const dropCollections = require("../../DropCollections/dropCollectionGroupColl");
 const {
   CoppaItaTrentaduesimiA1,
   CoppaItaTrentaduesimiA2,
@@ -38,7 +38,6 @@ const {
   CoppaItaTrentaduesimiB7,
   CoppaItaTrentaduesimiB8,
 } = require("../../schemas/schemaCoppaIta");
-const dropCollections = require("../../DropCollections/dropCollectionGroupColl");
 
 // Funzione per determinare quale modello utilizzare in base all'URL
 const getModel = (path) => {

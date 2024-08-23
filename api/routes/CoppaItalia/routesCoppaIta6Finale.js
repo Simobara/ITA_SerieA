@@ -4,8 +4,8 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
-const { CoppaItaFinale } = require("../../schemas/schemaCoppaIta");
 const dropCollections = require("../../DropCollections/dropCollectionGroupColl");
+const { CoppaItaFinale } = require("../../schemas/schemaCoppaIta");
 
 // Endpoint per prendere il nome della squadra
 router.get("/coppaItaFinale/finale", async (req, res) => {
