@@ -252,7 +252,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
           <div className="relative flex flex-row items-center ml-[1rem] xs:text-xs sm:text-xl">
             {/*symbol */}
             {isButtonClickable && !isPartitaInCoppiaRegSelected && (
-              <div className={`absolute ml-[4%] sm:pl-[-10%] sm:ml-[-12%] z-[20] bg-black ${!isPartitaModificabile ? "unselectable" : ""}`}>
+              <div className={`absolute  sm:pl-[-10%] sm:ml-[-12%] md:ml-[-4%] lg:ml-[-6%] ml-[-1%] z-[20] bg-black ${!isPartitaModificabile ? "unselectable" : ""}`}>
                 <div className="hover:cursor-pointer" onClick={toggleSymbol}>
                   {" "}
                   {isKQBtnActive ? "📍" : "✔️"}{" "}
@@ -276,14 +276,14 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
             </div>
             {/* segno in mezzo */}
             <div
-              className={`absolute flex flex-row sm:ml-[36%] md:ml-[42%] lg:ml-[42%] ml-[44%] rounded-lg bg-gray-900 mt-3 w-6 pt-[0.7rem] z-[4] 
+              className={`absolute flex flex-row sm:ml-[36%] md:ml-[42%] lg:ml-[42%] ml-[50%] rounded-lg bg-gray-900 mt-3 w-6 pt-[0.7rem] z-[4] 
                                 ${isKQBtnActive || !isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"} 
                                 ${selection === "X" ? "text-yellow-500/50" : ""}`}
               onClick={() => (!isSignOk && isPartitaModificabile ? handleSelection(partita.team1, "X") : undefined)}
             ></div>
             {/* {partita.team2} */}
             <div
-              className={`absolute flex flex-row sm:ml-[42%] md:ml-[55%] ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
+              className={`absolute flex flex-row sm:ml-[42%] md:ml-[55%] ml-[57%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
             >
               <div
                 className={`max-w-[9rem] whitespace-nowrap overflow-hidden ml-[1rem] text-xl
@@ -305,9 +305,9 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                 </div> */}
 
         {/* button eye */}
-        <div className="absolute flex ml-[70%] mr-[1rem] text-slate-700 z-[5]">{partita.pron}</div>
+        <div className="absolute flex sm:ml-[70%] md:ml-[70%] lg:ml-[75%] ml-[80%] text-slate-700 bg-black z-[5]">{partita.pron}</div>
         <button
-          className="absolute bg-black text-gray-800 hover:bg-sky-600 ml-[80%] sm:mr-[0] md:mr-[1rem] lg:mr-[0] xl:mr-[0] font-bold z-[10] hover:cursor-pointer select-none"
+          className="absolute bg-black text-gray-800 hover:bg-sky-600 sm:mr-[0] md:mr-[1rem] lg:mr-[0] xl:mr-[0] ml-[90%] font-bold z-[10] hover:cursor-pointer select-none"
           onClick={() => toggleEye()}
           data-partita-numero={partita.numero}
         >
