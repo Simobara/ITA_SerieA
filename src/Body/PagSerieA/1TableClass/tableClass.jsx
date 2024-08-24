@@ -53,14 +53,7 @@ const TableClass = () => {
   const getPunteggioVisualizzato = useGetPunteggioVisualizzato(sqSelected, getPunteggioVirtuale);
 
   const getSquadreConPunteggioVirtuale = useGetSquadreConPunteggioVirtuale(sqSelected, ArrayNomiSquadre, getPunteggioVirtuale);
-  const getSquadreOrdinate = useGetSquadreOrdinate(
-    sqSelected,
-    nomiSquadre,
-    completeClouSelected,
-    punteggiAggiornati,
-    getPunteggioVirtuale,
-    getPunteggioVisualizzato,
-  );
+  const getSquadreOrdinate = useGetSquadreOrdinate(sqSelected, nomiSquadre, completeClouSelected, punteggiAggiornati, getPunteggioVirtuale, getPunteggioVisualizzato);
   const isTeamInCoppiaRegSelected = useGetIsTeamInCoppiaRegSelected(completeClouSelected, indexSel, giornataN);
   const getPunteggioColonnaPTS = useGetPunteggioColonnaPTS(completeClouSelected, isTeamInCoppiaRegSelected, indexSel, giornataN);
 
@@ -236,9 +229,7 @@ const TableClass = () => {
                   className={`sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 pl-[1rem] text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
                 ${indiciDiffQ.includes(index) ? "borderAlto border-white" : ""}`}
                 >
-                  <div className="absolute transform -translate-x-4/3 -translate-y-7 text-left text-lg text-white mx-8 my-[-10] z-[10]">
-                    {numeriIndiciBorderWhite[index]}
-                  </div>
+                  <div className="absolute transform -translate-x-4/3 -translate-y-7 text-left text-lg text-white mx-8 my-[-10] z-[10]">{numeriIndiciBorderWhite[index]}</div>
                   {getPunteggioColonnaDomanda(squadra)}
                 </td>
                 {/* { COLONNA PTS} */}
@@ -264,13 +255,13 @@ const TableClass = () => {
         </table>
       )}
       {isMobile && (
-        <div className="table-container w-[100vw]">
+        <div className="table-container w-[98vw]">
           <div className="table-column">
             <table className="relative overflow-x-hidden overflow-y-hidden md:min-h-[57rem] max-w-[50%] ml-[0]">
               <thead>
                 <tr className="bg-black text-gray-600 text-center">
-                  <th className="w-[2%] sm:w-[0.5rem]" style={{ whiteSpace: "nowrap" }}></th>
-                  <th className="w-[20%] sm:pl-[1rem]">---- -SQUADRA</th>
+                  <th className="w-[0.5rem]" style={{ whiteSpace: "nowrap" }}></th>
+                  <th className="w-[20%] sm:pl-[1rem]">---SQUADRA</th>
                   <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem]">?</th>
                   <th className="w-[5%] sm:pl-[1rem] pl-[0.5rem] text-center">Ps</th>
                 </tr>
@@ -278,11 +269,13 @@ const TableClass = () => {
               <tbody className="bg-black text-cyan-800">
                 {firstHalf.map((squadra, index) => (
                   <tr key={index}>
-                    <td className={`text-center relative ${prendiColoriColonna0(index, squadreOrdinate)}`}>
+                    {/* // COLONNA COLORI SOTTO */}
+                    <td className={` relative ${prendiColoriColonna0(index, squadreOrdinate)}`}>
                       <div className="w-full h-full flex items-center justify-center ">{/* {index + 1} */}</div>
                     </td>
+                    {/* // COLONNA LOGO SOTTO */}
                     <td
-                      className={`w-[100%] bg-black xs:pl-[0] sm:pl-[1rem] md:pl-[1.5rem] md:pr-[2rem] py-[7px] md:py-2 sm:text-lg md:text-md lg:text-lg xl:px-4 flex justify-start relative sq-column
+                      className={`w-[100%] bg-black sm:pl-[1rem] md:pl-[1.5rem] pl-0 md:pr-[2rem] md:py-2 py-[7px] sm:text-lg md:text-md lg:text-lg xl:px-4 flex justify-start relative sq-column
                       ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ${s.BaseText1}` : ""}
                       ${isTeamMarkedWithX(squadra.name) ? `${s.Filter4} underlineX ` : sqSelected.includes(squadra.name + "Z") ? `${s.Filter4} underlineW` : sqSelected.includes(squadra.name + "Y") ? `${s.Filter4} underlineL` : ""}
                       ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineW ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}
@@ -297,7 +290,7 @@ const TableClass = () => {
                         ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Bg0}` : ""}
                         `}
                       >
-                        <img src={squadra.logo} alt={`${squadra.name} Logo`} className="w-7 h-7 mr-4" />
+                        <img src={squadra.logo} alt={`${squadra.name} Logo`} className="w-7 h-7 mr-[2px]" />
                         <span className={getTextTeam(squadra.name)}>{getTeamName(squadra.name)}</span>
                       </div>
                     </td>
@@ -335,8 +328,8 @@ const TableClass = () => {
             <table className="relative overflow-x-hidden overflow-y-hidden md:min-h-[57rem] max-w-[50%] ml-[0]">
               <thead>
                 <tr className="bg-black text-gray-600 text-center">
-                  <th className="w-[2%] sm:w-[0.5rem]" style={{ whiteSpace: "nowrap" }}></th>
-                  <th className="w-[20%] sm:pl-[1rem] "> ---- -SQUADRA </th>
+                  <th className="w-[0.5rem]" style={{ whiteSpace: "nowrap" }}></th>
+                  <th className="w-[20%] sm:pl-[1rem] "> ---SQUADRA </th>
                   <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem]">?</th>
                   <th className="w-[1rem] sm:pl-[1rem] pl-[0.5rem] text-center">Ps</th>
                 </tr>
@@ -363,7 +356,7 @@ const TableClass = () => {
                         ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Bg0}` : ""}
                         `}
                       >
-                        <img src={squadra.logo} alt={`${squadra.name} Logo`} className="w-7 h-7 mr-4" />
+                        <img src={squadra.logo} alt={`${squadra.name} Logo`} className="w-7 h-7 mr-[2px]" />
                         <span className={getTextTeam(squadra.name)}>{getTeamName(squadra.name)}</span>
                       </div>
                     </td>
