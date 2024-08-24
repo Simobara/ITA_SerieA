@@ -24,11 +24,11 @@ export function creaRisSq(calendario, nomeSquadra, number) {
       if (partita.team1 === nomeSquadra || partita.team2 === nomeSquadra) {
         const isCasa = partita.team1 === nomeSquadra;
         let resultsTrimmed = "";
-        if (partita.pron === "1") {
+        if (partita.pron === "1" && partita?.results.trim().length == 0) {
           resultsTrimmed = "9-8"; // Se 'pron' è '1', imposta il risultato su '9-8'
-        } else if (partita.pron === "2") {
+        } else if (partita.pron === "2" && partita?.results.trim().length == 0) {
           resultsTrimmed = "8-9"; // Aggiunto: se 'pron' è '2', imposta il risultato su '8-9'
-        } else if (partita.pron === "x") {
+        } else if (partita.pron === "x" && partita?.results.trim().length == 0) {
           resultsTrimmed = "9-9"; // Aggiunto: se 'pron' è 'X', imposta il risultato su '9-9'
         } else {
           resultsTrimmed = typeof partita.results === "string" ? partita.results.trim() : "";
