@@ -6,7 +6,7 @@
 
 .underlineC {
   text-decoration: underline;
-  text-decoration-color: var(--win-bg-color); /* Colore rosso per l'underline */
+  text-decoration-color: var(--win-color); /* Colore rosso per l'underline */
   text-decoration-thickness: 4px;
   overflow: hidden;
   /* opacity:1; */
@@ -14,14 +14,14 @@
 
 .underline-draw {
   text-decoration: underline;
-  text-decoration-color: var(--draw-bg-color); /* Colore rosso per l'underline */
+  text-decoration-color: var(--draw-color); /* Colore rosso per l'underline */
   text-decoration-thickness: 4px;
   overflow: hidden;
 }
 
 .underlineF {
   text-decoration: underline;
-  text-decoration-color: var(--win-bg-color); /* #c013b7 Colore rosso per l'underline */
+  text-decoration-color: var(--win-color); /* #c013b7 Colore rosso per l'underline */
   text-decoration-thickness: 4px;
   overflow: hidden;
 }

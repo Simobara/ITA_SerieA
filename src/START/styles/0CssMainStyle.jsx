@@ -23,7 +23,9 @@ export const s = {
   BrightnessDopoScelta: "brightness-60",
   BorderLineNextMatch:  "border-b-4 border-pink-900",
 
-  pin: "text-yellow-500 text-sm "
+  pinWin: "text-[var(--win-color)] text-sm ",
+  pinDraw: "text-[var(--draw-color)] text-sm ",
+  pinLose: "text-[var(--lose-color)] text-sm ",
 };
 
 //sezione classifica - sezione3
@@ -60,17 +62,17 @@ export const ts = {
   ColResAway:       "text-gray-700 font-light",
 
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
-  WinBg:            "bg-[var(--win-bg-color)] rounded-full",
-  WinText:           "!text-[var(--win-bg-color)]", 
+  WinBg:            "bg-[var(--win-color)] rounded-full",
+  WinText:           "!text-[var(--win-color)]", 
 
-  DrawBg:           "bg-[var(--draw-bg-color)] rounded-full", 
-  DrawText:         "!text-[var(--draw-bg-color)]", 
+  DrawBg:           "bg-[var(--draw-color)] rounded-full", 
+  DrawText:         "!text-[var(--draw-color)]", 
 
 
   // LoseBg:           "bg-[#020c2d] rounded-full",
-  LoseBg:           "bg-slate-900 rounded-full",
+  LoseBg:           "bg-[var(--lose-color)] rounded-full",
   // LoseText:         "!text-[#020c2d]",
-  LoseText:         "!text-slate-900",
+  LoseText:         "!text-[var(--lose-color)]",
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
   HoverSqHome:      "bg-red-700",
   HoverSqAway:      "bg-sky-800",

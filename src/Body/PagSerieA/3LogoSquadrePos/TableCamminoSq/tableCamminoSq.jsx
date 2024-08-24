@@ -82,6 +82,15 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
                 (risultatoParte1 === "8" && risultatoParte2 === "9") ||
                 (risultatoParte1 === "9" && risultatoParte2 === "9");
 
+              let pronosticoText = "";
+              if (risultatoParte1 === "9" && risultatoParte2 === "8") {
+                pronosticoText = "Win";
+              } else if (risultatoParte1 === "8" && risultatoParte2 === "9") {
+                pronosticoText = "Lose";
+              } else if (risultatoParte1 === "9" && risultatoParte2 === "9") {
+                pronosticoText = "Draw";
+              }
+
               let borderStyle = "";
               if (index === selectedIndexGiornata) {
                 borderStyle = `${s.BorderLineNextMatch}`;
@@ -103,7 +112,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
                   <td className={` sm:w-[12%] md:w-[20%] xl:w-[15%] w-[10%] text-center font-bold ${ts.ColResLine} ${ts.ColResBg} text-xl`}>
                     {isPronostico ? (
                       <div className="flex justify-center items-center">
-                        <span className={`${s.pin} font-black justify-center items-center `}>*</span>
+                        <span className={`${s[`pin${pronosticoText}`]} font-black justify-center items-center scale-150`}>*</span>
                       </div>
                     ) : (
                       <>

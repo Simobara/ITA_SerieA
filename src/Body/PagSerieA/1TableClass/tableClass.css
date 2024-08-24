@@ -36,7 +36,7 @@ td {
 
 .underlineW {
   text-decoration: underline;
-  text-decoration-color: var(--win-bg-color); /* Colore rosso per l'underline */
+  text-decoration-color: var(--win-color); /* Colore rosso per l'underline */
   text-decoration-thickness: 3px;
   overflow: hidden;
   /* filter: brightness(75%); */
@@ -45,7 +45,7 @@ td {
 
 .underlineX {
   text-decoration: underline;
-  text-decoration-color: var(--draw-bg-color); /* Colore rosso per l'underline */
+  text-decoration-color: var(--draw-color); /* Colore rosso per l'underline */
   text-decoration-thickness: var(--underline-thickness);
   overflow: hidden;
   /* filter: brightness(75%); */

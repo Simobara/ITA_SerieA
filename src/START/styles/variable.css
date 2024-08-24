@@ -1,6 +1,7 @@
 /* variables.css */
 :root {
-  --win-bg-color: hsl(297, 92%, 19%);
-  --draw-bg-color: #476501;
+  --win-color: #450335;
+  --draw-color: #476501;
+  --lose-color: #020f2d;
   --underline-thickness: 3px;
 }
