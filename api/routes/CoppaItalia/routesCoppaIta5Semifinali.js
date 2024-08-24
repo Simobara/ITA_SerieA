@@ -63,7 +63,7 @@ router.post(["/coppaItaSemifinaleA/semifinaleA", "/coppaItaSemifinaleB/semifinal
     console.log(`Partita aggiornata o creata (${req.path}):`, semifinali);
 
     // Cadono Collection non richieste nel database corrispondente
-    await dropCollections();
+    // await dropCollections();
     console.log(`dropCollections CoppaItalia`);
 
     res.send(semifinali);

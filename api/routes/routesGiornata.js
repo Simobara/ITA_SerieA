@@ -30,7 +30,7 @@ router.post("/giornata/:giornataNumber", async (req, res) => {
     await nuovaGiornata.save();
 
     // Cadono Collection non richieste nel database corrispondente vedi file: dropCollectionFileGiornata
-    await dropCollections();
+    // await dropCollections();
     console.log(`dropCollections Giornata`);
 
     res.send(nuovaGiornata);

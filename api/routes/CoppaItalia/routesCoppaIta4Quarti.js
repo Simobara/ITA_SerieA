@@ -68,7 +68,7 @@ router.post(["/coppaItaQuartiA1/quartiA1", "/coppaItaQuartiA2/quartiA2", "/coppa
     console.log(`Partita aggiornata o creata (${req.path}):`, quarti);
 
     // Cadono Collection non richieste nel database corrispondente
-    await dropCollections();
+    // await dropCollections();
     console.log(`dropCollections CoppaItalia`);
 
     res.send(quarti);

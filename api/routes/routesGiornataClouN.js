@@ -29,7 +29,7 @@ router.post("/giornate/clou/:N", async (req, res) => {
 
     console.log("Giornata clou selected e aggiornata:", giornataClouSelected);
     // Cadono Collection non richieste nel database corrispondente
-    await dropCollections();
+    // await dropCollections();
     console.log(`dropCollections GiornataClouN`);
 
     res.send(giornataClouSelected);

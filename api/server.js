@@ -88,7 +88,7 @@ const routerCoppaItaSedicesimi = require('./routes/CoppaItalia/routesCoppaIta2Se
 const routerCoppaItaOttavi = require('./routes/CoppaItalia/routesCoppaIta3Ottavi');
 const routerCoppaItaQuarti = require('./routes/CoppaItalia/routesCoppaIta4Quarti');
 const routerCoppaItaSemifinali = require('./routes/CoppaItalia/routesCoppaIta5Semifinali');
-const routerCIFinale = require('./routes/CoppaItalia/routesCoppaIta6Finale');
+const routerCoppaItaFinale = require('./routes/CoppaItalia/routesCoppaIta6Finale');
 
 //--------------------------------------------------CAMPIONATO
 app.use('/api', async (req, res, next) => {
@@ -106,22 +106,22 @@ app.use('/api', async (req, res, next) => {
 
 
     // Importa i modelli solo dopo esserti connesso al database corretto
-    if (dbName === process.env.DB_NAME_SERIE_A) {
-        const schemaGiornataClouN = require('./schemas/schemaGiornataClouN');
-    } else if (dbName === process.env.DB_NAME_COPPA_ITA) {
-        const {
-            CoppaItaTrentaduesimiA1, CoppaItaTrentaduesimiA2, CoppaItaTrentaduesimiA3, CoppaItaTrentaduesimiA4,
-            CoppaItaTrentaduesimiA5, CoppaItaTrentaduesimiA6, CoppaItaTrentaduesimiA7, CoppaItaTrentaduesimiA8,
-            CoppaItaTrentaduesimiB1, CoppaItaTrentaduesimiB2, CoppaItaTrentaduesimiB3, CoppaItaTrentaduesimiB4,
-            CoppaItaTrentaduesimiB5, CoppaItaTrentaduesimiB6, CoppaItaTrentaduesimiB7, CoppaItaTrentaduesimiB8,
-            CoppaItaSedicesimiA1, CoppaItaSedicesimiA2, CoppaItaSedicesimiA3, CoppaItaSedicesimiA4,
-            CoppaItaSedicesimiB1, CoppaItaSedicesimiB2, CoppaItaSedicesimiB3, CoppaItaSedicesimiB4,
-            CoppaItaOttaviA1, CoppaItaOttaviA2, CoppaItaOttaviA3, CoppaItaOttaviA4,
-            CoppaItaOttaviB1, CoppaItaOttaviB2, CoppaItaOttaviB3, CoppaItaOttaviB4,
-            CoppaItaQuartiA1, CoppaItaQuartiA2, CoppaItaQuartiB1, CoppaItaQuartiB2,
-            CoppaItaSemifinaleA, CoppaItaSemifinaleB, CoppaItaFinale
-        } = require('./schemas/schemaCoppaIta');
-    }
+    // if (dbName === process.env.DB_NAME_SERIE_A) {
+    //     const schemaGiornataClouN = require('./schemas/schemaGiornataClouN');
+    // } else if (dbName === process.env.DB_NAME_COPPA_ITA) {
+    //     const {
+    //         CoppaItaTrentaduesimiA1, CoppaItaTrentaduesimiA2, CoppaItaTrentaduesimiA3, CoppaItaTrentaduesimiA4,
+    //         CoppaItaTrentaduesimiA5, CoppaItaTrentaduesimiA6, CoppaItaTrentaduesimiA7, CoppaItaTrentaduesimiA8,
+    //         CoppaItaTrentaduesimiB1, CoppaItaTrentaduesimiB2, CoppaItaTrentaduesimiB3, CoppaItaTrentaduesimiB4,
+    //         CoppaItaTrentaduesimiB5, CoppaItaTrentaduesimiB6, CoppaItaTrentaduesimiB7, CoppaItaTrentaduesimiB8,
+    //         CoppaItaSedicesimiA1, CoppaItaSedicesimiA2, CoppaItaSedicesimiA3, CoppaItaSedicesimiA4,
+    //         CoppaItaSedicesimiB1, CoppaItaSedicesimiB2, CoppaItaSedicesimiB3, CoppaItaSedicesimiB4,
+    //         CoppaItaOttaviA1, CoppaItaOttaviA2, CoppaItaOttaviA3, CoppaItaOttaviA4,
+    //         CoppaItaOttaviB1, CoppaItaOttaviB2, CoppaItaOttaviB3, CoppaItaOttaviB4,
+    //         CoppaItaQuartiA1, CoppaItaQuartiA2, CoppaItaQuartiB1, CoppaItaQuartiB2,
+    //         CoppaItaSemifinaleA, CoppaItaSemifinaleB, CoppaItaFinale
+    //     } = require('./schemas/schemaCoppaIta');
+    // }
 
     // Usa switch per gestire le rotte
     switch (true) {
@@ -154,7 +154,7 @@ app.use('/api', async (req, res, next) => {
             break;
         //-----------------------------------------------Finale
         case req.path.startsWith('/coppaItaFinale'):
-            routerCIFinale(req, res, next);
+            routerCoppaItaFinale(req, res, next);
             break;
         default:
             console.log('No matching route, passing to next middleware.');

@@ -43,7 +43,7 @@ router.post("/coppaItaFinale/finale", async (req, res) => {
 
     console.log("Partita aggiornata o creata:", finale);
     // Cadono Collection non richieste nel database corrispondente
-    await dropCollections();
+    // await dropCollections();
     console.log(`dropCollections CoppaItalia`);
     res.send(finale);
   } catch (error) {

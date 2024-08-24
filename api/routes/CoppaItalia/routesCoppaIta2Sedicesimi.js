@@ -107,7 +107,7 @@ router.post(
       console.log(`Partita aggiornata o creata (${req.path}):`, sedicesimi);
 
       // Cadono Collection non richieste nel database corrispondente
-      await dropCollections();
+      // await dropCollections();
       console.log(`dropCollections CoppaItalia`);
 
       res.send(sedicesimi);
