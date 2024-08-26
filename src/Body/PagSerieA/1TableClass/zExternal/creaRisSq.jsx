@@ -26,8 +26,8 @@ export function creaRisSq(calendario, nomeSquadra, number) {
 
           // Verifica se i risultati contengono numeri validi
           const [score1, score2] = resultsTrimmed.split("-");
-          const isScore1Valid = !isNaN(score1) && score1.trim() !== "";
-          const isScore2Valid = !isNaN(score2) && score2.trim() !== "";
+          const isScore1Valid = !isNaN(parseInt(score1)) && score1.trim() !== "." && score1.trim() !== "";
+          const isScore2Valid = !isNaN(parseInt(score2)) && score2.trim() !== "." && score2.trim() !== "";
 
           if (!isScore1Valid || !isScore2Valid) {
             resultsTrimmed = ""; // Se uno dei risultati non è un numero valido, ignora il risultato
