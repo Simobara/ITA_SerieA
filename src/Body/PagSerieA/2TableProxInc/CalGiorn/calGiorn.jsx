@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { GiornataClouContext, GiornataNContext } from "../../../../Ap/Global/global";
-import { giornataClou } from "../../../../START/app/0SerieAMatches";
+import { fetchGiornataClou, giornataClou } from "../../../../START/app/0SerieAMatches";
 import { ButtonResetContext, CompleteDataContext, IndexSelectedContext, PartiteDefinNoModContext } from "../../../Global/global";
 import "./calGiorn.css";
 
@@ -25,7 +25,7 @@ const CalGiorn = ({ onReset }) => {
   }
 
   const handleSelectNumber = (number) => {
-    // Seleziona la nuova giornata e controlla se è diversa dalla corrente
+    console.log(`Giornata selezionata: ${number}`);
     if (number >= 1 && number <= totaleGiornate) {
       if (number !== indexSelected) {
         setButtonResetIsResetting(true);
@@ -38,6 +38,7 @@ const CalGiorn = ({ onReset }) => {
       scrollIntoView(number);
     }
   };
+
   const scroll = (direction) => {
     let newSelected = indexSelected;
     if (direction === "left" && indexSelected > 1) {
@@ -70,6 +71,13 @@ const CalGiorn = ({ onReset }) => {
   };
 
   // -------------------------------------------------------------------------------------------------------------
+  console.log("Valore di indexSelected:", indexSelected);
+
+  //Verifica il Contenuto di completeClouSelected:
+  // useEffect(() => {
+  //   console.log(`Dati per giornata ${indexSelected}:`, completeClouSelected[`giornata${indexSelected}`]);
+  // }, [indexSelected, completeClouSelected]);
+
   //QUESTO USE EFFECT TROVA LA CASELLA DELLA GIORNATA CLOU INIZIALMENTE
   useEffect(() => {
     setButtonResetIsResetting(false);
@@ -81,7 +89,7 @@ const CalGiorn = ({ onReset }) => {
       // console.log("giornataClouIndex", giornataClouIndex);
       // console.log("giornataClouSelected", giornataClouSelected)
     }
-  }, []);
+  }, [completeClouSelected]);
 
   // QUESTO USE EFFECT REIMPOSTA LO STATO E LE PARTITE ALLO STADIO ORIGINALE
   useEffect(() => {
@@ -126,7 +134,37 @@ const CalGiorn = ({ onReset }) => {
       //     setButtonResetIsResetting(true);
       // }
     }
-  }, [giornataClouSelected]); //resetAll
+  }, [giornataClouSelected, indexSel, giornataN]); //resetAll
+
+  useEffect(() => {
+    setIndexSelected(giornataN); // Aggiorna indexSelected quando giornataN cambia
+  }, [giornataN]);
+
+  useEffect(() => {
+    console.log("Index Selected:", indexSelected);
+    console.log("Giornata Clou Selected:", giornataClouSelected);
+    // rest of the code
+  }, [indexSelected, giornataClouSelected]);
+
+  // Questo useEffect gestisce il caricamento dei dati quando cambia la giornata
+  useEffect(() => {
+    const fetchMatches = async () => {
+      if (indexSelected === 9) {
+        console.log(`Caricamento dati da fetch per giornata 9`);
+        const data = await fetchGiornataClou(indexSelected);
+        setGiornataClouSelected(Array.isArray(data) ? data : []);
+        setMatches(Array.isArray(data) ? data : []);
+      } else {
+        console.log(`Caricamento dati locali per giornata ${indexSelected}`);
+        // Carica i dati locali dalla variabile `completeClouSelected`
+        const data = completeClouSelected[`giornata${indexSelected}`];
+        setGiornataClouSelected(Array.isArray(data) ? data : []);
+        setMatches(Array.isArray(data) ? data : []);
+      }
+    };
+
+    fetchMatches();
+  }, [indexSelected]);
 
   // -------------------------------------------------------------------------------------------------------------
   return (

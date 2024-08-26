@@ -4,8 +4,8 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
-const schemaGiornataClouN = require("../schemas/schemaGiornataClouN");
-const dropCollections = require("../DropCollections/dropCollectionGroupColl");
+const schemaGiornataClouN = require("../schemas/schemaGiornateClouN");
+// const dropCollections = require("../DropCollections/dropCollectionGroupColl");
 const GiornataClouN = mongoose.model("GiornataClouN", schemaGiornataClouN);
 
 router.get("/giornate/clou/:N", async (req, res) => {
@@ -30,7 +30,7 @@ router.post("/giornate/clou/:N", async (req, res) => {
     console.log("Giornata clou selected e aggiornata:", giornataClouSelected);
     // Cadono Collection non richieste nel database corrispondente
     // await dropCollections();
-    console.log(`dropCollections GiornataClouN`);
+    console.log(`done GiornataClouN`);
 
     res.send(giornataClouSelected);
   } catch (error) {

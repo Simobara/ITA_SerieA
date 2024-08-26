@@ -1,4 +1,4 @@
-import { calendario, giornataClou } from "../../START/app/0SerieAMatches";
+import { calendario } from "../../START/app/0SerieAMatches";
 
 // SquadraContext.js
 import { createContext, useState } from "react";
@@ -15,7 +15,7 @@ export const SquadraProvider = ({ children }) => {
 export const CoppiaPartitaContext = createContext();
 
 export const CoppiaPartitaProvider = ({ children }) => {
-  const [coppiaSelected, setCoppiaSelected] = useState([]);
+  const [coppiaSelected, setCoppiaSelected] = useState({});
 
   return <CoppiaPartitaContext.Provider value={{ coppiaSelected, setCoppiaSelected }}>{children}</CoppiaPartitaContext.Provider>;
 };
@@ -31,7 +31,6 @@ export const CoppiaPartitaRegistrataProvider = ({ children }) => {
 };
 
 //-----------------------------------------------------------------------
-
 
 //-----------------------------------------------------------------------
 export const CompleteDataContext = createContext();

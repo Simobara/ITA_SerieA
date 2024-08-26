@@ -38,8 +38,8 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
   useEffect(() => {
     const initializedPartite = giornataClouSelected.map((partita) => ({
       ...partita,
-      score1: "-",
-      score2: "-",
+      score1: ".",
+      score2: ".",
     }));
     setPartite(initializedPartite); // Inizializza con score1 e score2
     checkForDuplicates(initializedPartite); // Passa la nuova lista a checkForDuplicates
@@ -81,8 +81,8 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
                       value={partita.time}
                       onChange={(e) => handleTimeChange(index, e.target.value)}
                       className={`select-no-arrow appearance-none text-white rounded p-1 border-black
-                        ${partita.time === "12:30" ? "bg-yellow-300 !text-orange-600" : ""}  
-                        ${partita.time === "15:00" ? "bg-yellow-500 !text-orange-800" : ""}    
+                        ${partita.time === "12:30" ? "bg-yellow-300 !text-blue-300" : ""}  
+                        ${partita.time === "15:00" ? "bg-yellow-500 !text-orange-600" : ""}    
                         ${["18:00", "18:30"].includes(partita.time) ? "bg-blue-800" : ""}     
                         ${partita.time === "20:45" ? "bg-slate-900" : ""}     
                         ${["12:30", "15:00", "18:00", "18:30", "20:45"].includes(partita.time) ? "" : "bg-slate-500"}`}
@@ -134,10 +134,7 @@ const ModalModCurrGiornClou = ({ onClose, onSave }) => {
                     </select>
                   </div>
                   {/* <div className="flex-1 text-left">{partita.results}</div> */}
-                  <div
-                    onClick={() => incrementScore1(index)}
-                    className="w-[1rem] bg-slate-800 text-white flex items-center justify-center cursor-pointer mr-1 "
-                  >
+                  <div onClick={() => incrementScore1(index)} className="w-[1rem] bg-slate-800 text-white flex items-center justify-center cursor-pointer mr-1 ">
                     {partita.score1}
                   </div>
                   <div onClick={() => incrementScore2(index)} className="w-[1rem] bg-slate-800 text-white flex items-center justify-center cursor-pointer mr-4">

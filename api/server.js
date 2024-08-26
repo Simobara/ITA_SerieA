@@ -81,8 +81,8 @@ const agent = new http.Agent({ keepAlive: true });
 const secureAgent = new https.Agent({ keepAlive: true });
 
 //--------------------------------------------------ENDPOINTS
-const routerGiornateClou = require('./routes/routesGiornataClouN');
-const routerGiornata = require('./routes/routesGiornata');
+const routerGiornataClou = require('./routes/routesGiornataClou');
+const routerGiornateClouN = require('./routes/routesGiornateClouN');
 const routerCoppaItaTrentaduesimi = require('./routes/CoppaItalia/routesCoppaIta1Trentaduesimi');
 const routerCoppaItaSedicesimi = require('./routes/CoppaItalia/routesCoppaIta2Sedicesimi');
 const routerCoppaItaOttavi = require('./routes/CoppaItalia/routesCoppaIta3Ottavi');
@@ -125,11 +125,12 @@ app.use('/api', async (req, res, next) => {
 
     // Usa switch per gestire le rotte
     switch (true) {
-        case req.path.startsWith('/giornate'):
-            routerGiornateClou(req, res, next);
-            break;
         case req.path.startsWith('/giornata'):
-            routerGiornata(req, res, next);
+            routerGiornataClou(req, res, next);
+            break;
+
+        case req.path.startsWith('/giornate'):
+            routerGiornateClouN(req, res, next);
             break;
         //-----------------------------------------------COPPAITALIA
         //-----------------------------------------------Trentaduesimi

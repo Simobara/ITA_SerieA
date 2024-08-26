@@ -42,8 +42,13 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
   //     (p) => p.numero === partita.numero && !p.results
   //   );
   // console.log(giornataClouSelected, "giornataClouSelected");
-  const isPartitaModificabile = giornataClouSelected.some((p) => p.numero === partita.numero && (!p.results || p.rank));
-  const isPartitaInCoppiaRegSelected = coppiaRegSelected.some((coppia) => coppia.team1 === partita.team1 && coppia.team2 === partita.team2 && !partita.rank);
+  // Assicurati che giornataClouSelected sia sempre un array
+  const isPartitaModificabile = Array.isArray(giornataClouSelected) ? giornataClouSelected.some((p) => p.numero === partita.numero && (!p.results || p.rank)) : false;
+
+  const isPartitaInCoppiaRegSelected = Array.isArray(coppiaRegSelected)
+    ? coppiaRegSelected.some((coppia) => coppia.team1 === partita.team1 && coppia.team2 === partita.team2 && !partita.rank)
+    : false;
+
   const toggleSymbol = () => toggleSymboll(partita, isPartitaModificabile, setButtonResetIsResetting, setIsKQBtnActive, setIsSignOk);
   const toggleEye = () => toggleEyee(partita, occhioApertoPartita, setOcchioApertoPartita, setButtonResetIsResetting, handleCoppiaSelectTeam);
   const isEyeOpen = occhioApertoPartita === partita.numero;
@@ -87,7 +92,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
       giornataN,
     );
   const isBigTeam = (teamName) => isBigTeamm(teamName);
-  // ------------------------------------------------------------------------------------------------
+  // ------------------------------------------------------------------------------ useEffects last
   // console.log(sqSelected, "sqSelected");
   // const nonSelectable = partita.results ? "unselectable" : "";
   // const [, drag] = useDrag({
@@ -115,35 +120,153 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
 
   // ------------------------------------------------------------------------------------------------
 
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setIsTablet(window.matchMedia("(max-width: 768px)").matches);
+  //   }; // Attach the event listener when the component mounts
+  //   window.addEventListener("resize", handleResize);
+  //   return () => {
+  //     // Clean up the event listener when the component unmounts
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
+  // //Quando la finestra viene ridimensionata, la funzione handleResize aggiorna lo stato isTablet.
+
+  // //Filtra e aggiorna sqSelected e coppiaSelected rimuovendo le squadre e coppie legate alla partita corrente se i risultati non sono già definiti.
+  // useEffect(() => {
+  //   if (!resetAll || !Array.isArray(giornataClouSelected)) return;
+
+  //   setCoppiaSelected({});
+  //   if (resetAll) {
+  //     // Chiudi l'occhio per tutte le partite
+  //     setOcchioApertoPartita(null);
+  //     setIsKQBtnActive(false);
+  //     setIsSignOk(false);
+  //     setIsButtonClickable(false);
+  //     const numeriPartiteConRisultati = giornataClouSelected.filter((partita) => partita.results !== "").map((partita) => partita.numero);
+
+  //     giornataClouSelected.forEach((partitaClou) => {
+  //       if (!numeriPartiteConRisultati.includes(partitaClou.numero)) {
+  //         if (partita.numero === partitaClou.numero) {
+  //           setSelection("");
+  //           setSqSelected((currentSelected) => {
+  //             if (!Array.isArray(currentSelected)) {
+  //               // console.error("currentSelected is not an array:", currentSelected);
+  //               return [];
+  //             }
+  //             return currentSelected.filter(
+  //               (squadra) => squadra !== partita.team1 && squadra !== partita.team2 && !squadra.includes(partita.team1) && !squadra.includes(partita.team2),
+  //             );
+  //           });
+  //           setCoppiaSelected((currentSelected) => {
+  //             if (!Array.isArray(currentSelected)) {
+  //               return [];
+  //             }
+  //             return currentSelected.filter((coppia) => coppia.numeroPartita !== partitaClou.numero);
+  //           });
+  //         }
+  //       }
+  //     });
+  //   }
+  // }, [resetAll, giornataClouSelected, partita]);
+  // //Crea un nuovo Set chiamato newPartiteDefinNoMod contenente i numeri delle partite con risultati definiti.
+  // useEffect(() => {
+  //   if (Array.isArray(giornataClouSelected)) {
+  //     // Aggiorna partiteDefinNoMod quando cambia giornataClouSelected
+  //     const newPartiteDefinNoMod = new Set();
+  //     giornataClouSelected.forEach((partita) => {
+  //       if (partita.results) newPartiteDefinNoMod.add(partita.numero);
+  //     });
+  //     setPartiteDefinNoMod(newPartiteDefinNoMod);
+  //   }
+  // }, [giornataClouSelected, setPartiteDefinNoMod]);
+  // //Scorre giornataClouSelected e per ogni partita con un risultato nel formato "X-X", determina il tipo di selezione (1, 2 o X).
+  // useEffect(() => {
+  //   if (!Array.isArray(giornataClouSelected)) {
+  //     console.error("giornataClouSelected non è un array:", giornataClouSelected);
+  //     return;
+  //   }
+  //   const partiteRegistrata = []; // Array temporaneo per le partite registrate
+  //   giornataClouSelected.forEach((partitaGiornataClou) => {
+  //     if (/^\d+-\d+$/.test(partitaGiornataClou.results)) {
+  //       const score = partitaGiornataClou.results.split("-").map(Number);
+  //       let selectionType;
+
+  //       if (score[0] > score[1]) {
+  //         selectionType = "1";
+  //       } else if (score[0] < score[1]) {
+  //         selectionType = "2";
+  //       } else {
+  //         selectionType = "X";
+  //       }
+
+  //       handleSelection(partitaGiornataClou.team1, selectionType, partitaGiornataClou.numero);
+  //       partiteRegistrata.push({
+  //         team1: partitaGiornataClou.team1,
+  //         team2: partitaGiornataClou.team2,
+  //         numeroPartita: partitaGiornataClou.numero,
+  //         risultato: partitaGiornataClou.results,
+  //       });
+  //     }
+  //   });
+  //   setCoppiaRegSelected(partiteRegistrata);
+  // }, [giornataClouSelected, completeClouSelected]);
+  // //Se partita.results è definito, determina il tipo di selezione (1, 2 o X) in base al punteggio.
+  // //Aggiorna lo stato selection e rende il pulsante cliccabile (setIsButtonClickable(true)).
+  // useEffect(() => {
+  //   //determina i colori se la squadra vince perde pareggia
+  //   if (partita.results) {
+  //     const score = partita.results.split("-").map(Number);
+  //     let selectionType;
+  //     if (score[0] > score[1]) {
+  //       selectionType = "1";
+  //     } else if (score[0] < score[1]) {
+  //       selectionType = "2";
+  //     } else {
+  //       selectionType = "X";
+  //     }
+  //     setSelection(selectionType);
+  //     //   setIsKQBtnActive(true);
+  //     setIsButtonClickable(true);
+  //   }
+  // }, []);
+
+  // Questo useEffect gestisce il ridimensionamento della finestra per aggiornare lo stato isTablet
   useEffect(() => {
     const handleResize = () => {
       setIsTablet(window.matchMedia("(max-width: 768px)").matches);
-    }; // Attach the event listener when the component mounts
+    };
+
+    // Attacca l'event listener al montaggio del componente
     window.addEventListener("resize", handleResize);
+
+    // Pulizia dell'event listener quando il componente si smonta
     return () => {
-      // Clean up the event listener when the component unmounts
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  //Quando la finestra viene ridimensionata, la funzione handleResize aggiorna lo stato isTablet.
 
-  //Filtra e aggiorna sqSelected e coppiaSelected rimuovendo le squadre e coppie legate alla partita corrente se i risultati non sono già definiti.
+  // Filtra e aggiorna sqSelected e coppiaSelected rimuovendo le squadre e coppie legate alla partita corrente se i risultati non sono già definiti.
   useEffect(() => {
+    if (!resetAll || !Array.isArray(giornataClouSelected)) return;
+
     setCoppiaSelected({});
+
     if (resetAll) {
       // Chiudi l'occhio per tutte le partite
       setOcchioApertoPartita(null);
       setIsKQBtnActive(false);
       setIsSignOk(false);
       setIsButtonClickable(false);
+
       const numeriPartiteConRisultati = giornataClouSelected.filter((partita) => partita.results !== "").map((partita) => partita.numero);
+
       giornataClouSelected.forEach((partitaClou) => {
         if (!numeriPartiteConRisultati.includes(partitaClou.numero)) {
           if (partita.numero === partitaClou.numero) {
             setSelection("");
             setSqSelected((currentSelected) => {
               if (!Array.isArray(currentSelected)) {
-                // console.error("currentSelected is not an array:", currentSelected);
                 return [];
               }
               return currentSelected.filter(
@@ -161,18 +284,27 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
       });
     }
   }, [resetAll, giornataClouSelected, partita]);
-  //Crea un nuovo Set chiamato newPartiteDefinNoMod contenente i numeri delle partite con risultati definiti.
+
+  // Crea un nuovo Set chiamato newPartiteDefinNoMod contenente i numeri delle partite con risultati definiti.
   useEffect(() => {
-    // Aggiorna partiteDefinNoMod quando cambia giornataClouSelected
-    const newPartiteDefinNoMod = new Set();
-    giornataClouSelected.forEach((partita) => {
-      if (partita.results) newPartiteDefinNoMod.add(partita.numero);
-    });
-    setPartiteDefinNoMod(newPartiteDefinNoMod);
+    if (Array.isArray(giornataClouSelected)) {
+      const newPartiteDefinNoMod = new Set();
+      giornataClouSelected.forEach((partita) => {
+        if (partita.results) newPartiteDefinNoMod.add(partita.numero);
+      });
+      setPartiteDefinNoMod(newPartiteDefinNoMod);
+    }
   }, [giornataClouSelected, setPartiteDefinNoMod]);
-  //Scorre giornataClouSelected e per ogni partita con un risultato nel formato "X-X", determina il tipo di selezione (1, 2 o X).
+
+  // Scorre giornataClouSelected e per ogni partita con un risultato nel formato "X-X", determina il tipo di selezione (1, 2 o X).
   useEffect(() => {
+    if (!Array.isArray(giornataClouSelected)) {
+      console.error("giornataClouSelected non è un array:", giornataClouSelected);
+      return;
+    }
+
     const partiteRegistrata = []; // Array temporaneo per le partite registrate
+
     giornataClouSelected.forEach((partitaGiornataClou) => {
       if (/^\d+-\d+$/.test(partitaGiornataClou.results)) {
         const score = partitaGiornataClou.results.split("-").map(Number);
@@ -195,12 +327,12 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
         });
       }
     });
+
     setCoppiaRegSelected(partiteRegistrata);
   }, [giornataClouSelected, completeClouSelected]);
-  //Se partita.results è definito, determina il tipo di selezione (1, 2 o X) in base al punteggio.
-  //Aggiorna lo stato selection e rende il pulsante cliccabile (setIsButtonClickable(true)).
+
+  // Se partita.results è definito, determina il tipo di selezione (1, 2 o X) in base al punteggio. Aggiorna lo stato selection e rende il pulsante cliccabile.
   useEffect(() => {
-    //determina i colori se la squadra vince perde pareggia
     if (partita.results) {
       const score = partita.results.split("-").map(Number);
       let selectionType;
@@ -212,10 +344,9 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
         selectionType = "X";
       }
       setSelection(selectionType);
-      //   setIsKQBtnActive(true);
       setIsButtonClickable(true);
     }
-  }, []);
+  }, [partita.results]);
 
   // ------------------------------------------------------------------------------------------------
   return (

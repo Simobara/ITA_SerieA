@@ -17,13 +17,13 @@ const App = () => {
     <div className="h-screen xl:overflow-hidden">
       {/* {isAuthenticated ? ( */}
       <>
-        <GiornataClouProvider>
-          <GiornataNProvider>
+        <GiornataNProvider>
+          <GiornataClouProvider>
             <Header />
             <Body />
             <Footer />
-          </GiornataNProvider>
-        </GiornataClouProvider>
+          </GiornataClouProvider>
+        </GiornataNProvider>
       </>
       {/* ) : (
         <LoginPage onLogin={handleLogin} />

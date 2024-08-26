@@ -22,6 +22,7 @@ const LogoSquadrePos = () => {
     acc[squadra.name] = creaRisSq(calendario1, squadra.name);
     return acc;
   }, {});
+  console.log("datiSquadre:", datiSquadre); // Aggiungi questo log
 
   const handleLogoClick = (squadra) => {
     const url = `https://sport.virgilio.it/prossime-partite-calendario-${squadra.name.toLowerCase()}/`;
@@ -35,9 +36,14 @@ const LogoSquadrePos = () => {
   // }, [squadraAttiva1, squadraAttiva2]);
 
   useEffect(() => {
-    if (coppiaSelected) {
+    if (coppiaSelected && coppiaSelected.team1 && coppiaSelected.team2) {
+      console.log("coppiaSelected valid:", coppiaSelected);
       setSquadraAttiva1(coppiaSelected.team1);
       setSquadraAttiva2(coppiaSelected.team2);
+    } else {
+      // console.warn("coppiaSelected is missing team1 or team2", coppiaSelected);
+      setSquadraAttiva1("");
+      setSquadraAttiva2("");
     }
   }, [coppiaSelected]);
   // ------------------------------------------------------------------------------------------------

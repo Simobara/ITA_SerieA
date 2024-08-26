@@ -17,7 +17,7 @@ const Header = () => {
   const [showModalCal, setShowModalCal] = useState(false);
   const [showModalCoppaIta, setShowModalCoppaIta] = useState(false);
   const [showModalModCurrGiornClou, setShowModalModCurrGiornClou] = useState(false);
-  const [giornateClou, setGiornateClou] = useState([]);
+  // const [giornateClou, setGiornateClou] = useState([]);
 
   const { giornataN, setGiornataN } = useContext(GiornataNContext);
 
@@ -43,48 +43,50 @@ const Header = () => {
     setGiornataN((prev) => (prev > 1 ? prev - 1 : prev));
   };
 
-  const handleChange = (e) => {
-    setGiornataN(Number(e.target.value));
-  };
-  //------------------------------------------------------------------------------------------POST REQUEST GIORNATA CLOU N //! CORRETTO
-  //SetDayClou
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(`Giornata attuale numero: ${giornataN}`);
-    try {
-      const response = await axios.post(
-        `${import.meta.env.PROD ? import.meta.env.VITE_API_URL_PROD : import.meta.env.VITE_API_URL_DEV}/api/giornate/clou/${giornataN}`,
-        {
-          numero: giornataN,
-        },
-      );
-      console.log("Giornata clou aggiornata:", response.data);
-    } catch (error) {
-      console.error("Errore durante l'aggiornamento della giornata clou:", error);
-    }
-  };
-  //-------------------------------------------------------------------------------------------POST REQUEST GIORNATE N //! CORRETTO
-  const handleSave = async (giornataNumber) => {
+  // const handleChange = (e) => {
+  //   setGiornataN(Number(e.target.value));
+  // };
+  //------------------------------------------------------------------------------------------POST REQUEST GIORNATA CLOU//! CORRETTO
+  //ModGiornataClou
+  const handleSaveGiornataClou = async (giornataNumber) => {
     console.log(`Dati ricevuti in header.js per giornata ${giornataN}:`, { giornataNumber });
+
     try {
-      const response = await axios.post(
-        `${import.meta.env.PROD ? import.meta.env.VITE_API_URL_PROD : import.meta.env.VITE_API_URL_DEV}/api/giornata/${giornataN}`,
-        {
-          giornata: giornataNumber,
-        },
-      );
+      // Includi _id se esiste per l'aggiornamento
+      const dataToSend = {
+        _id: giornataNumber._id, // Aggiungi _id se presente
+        giornata: giornataNumber.giornata,
+      };
+
+      const response = await axios.post(`${import.meta.env.PROD ? import.meta.env.VITE_API_URL_PROD : import.meta.env.VITE_API_URL_DEV}/api/giornata/${giornataN}`, dataToSend);
       console.log("Risposta dal server:", response.data);
     } catch (error) {
       console.error("Errore durante l'invio dei dati:", error);
     }
   };
+
+  //-------------------------------------------------------------------------------------------POST REQUEST GIORNATE CLOU N//! CORRETTO
+  //SetGiornataClouN
+  const handleSubmitGiornataClouN = async (e) => {
+    e.preventDefault();
+    console.log(`Giornata attuale numero: ${giornataN}`);
+    try {
+      const response = await axios.post(`${import.meta.env.PROD ? import.meta.env.VITE_API_URL_PROD : import.meta.env.VITE_API_URL_DEV}/api/giornate/clou/${giornataN}`, {
+        numero: giornataN,
+      });
+      console.log("Giornata clou aggiornata:", response.data);
+    } catch (error) {
+      console.error("Errore durante l'aggiornamento della giornata clou:", error);
+    }
+  };
   //--------------------------------------------------------------------------------------------
+
   return (
     <header>
       <div className="flex h-[4rem] w-[100%] items-center bg-slate-950">
         <img src={LogoSerieA} alt="Calendar" className="mr-2" style={{ width: "50px", height: "auto" }} />
         <div className="flex-grow flex justify-start items-center ">
-          <form onSubmit={handleSubmit} className="flex flex-col items-center bg-slate-900">
+          <form onSubmit={handleSubmitGiornataClouN} className="flex flex-col items-center bg-slate-900">
             <div className="flex items-center space-x-0">
               <button type="button" onClick={handleDecrement} className="bg-slate-950 text-sky-700 text-2xl px-2 py-1 rounded hover:text-white">
                 &lt;
@@ -114,7 +116,7 @@ const Header = () => {
 
             {showModalCal && <PagCalendar onClose={toggleModalCal} />}
             {showModalCoppaIta && <PagCoppaIta onClose={toggleModalCoppaIta} />}
-            {showModalModCurrGiornClou && <ModalModCurrGiornClou onClose={toggleModalModCurrGiornClou} onSave={handleSave} />}
+            {showModalModCurrGiornClou && <ModalModCurrGiornClou onClose={toggleModalModCurrGiornClou} onSave={handleSaveGiornataClou} />}
           </div>
         </div>
       </div>

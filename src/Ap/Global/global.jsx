@@ -1,6 +1,5 @@
-import React, { createContext, useEffect, useState } from "react";
-import { giornataClou, giornataNum } from "../../START/app/0SerieAMatches";
-
+import React, { createContext, useContext, useEffect, useState } from "react";
+import { calendario, fetchGiornataClou, giornataNum } from "../../START/app/0SerieAMatches";
 //----------------------------------------------
 export const GiornataNContext = createContext();
 
@@ -19,11 +18,25 @@ export const GiornataNProvider = ({ children }) => {
 };
 
 //----------------------------------------------
-
 export const GiornataClouContext = createContext();
-//setta la giornata Clou: //! SerieAMatches
+
 export const GiornataClouProvider = ({ children }) => {
-  const [giornataClouSelected, setGiornataClouSelected] = useState(giornataClou);
+  const { giornataN } = useContext(GiornataNContext); // Ottieni giornataN dal contesto
+  const [giornataClouSelected, setGiornataClouSelected] = useState([]);
+
+  useEffect(() => {
+    const updateGiornataClou = async () => {
+      let data;
+      if (giornataN === 9) {
+        data = await fetchGiornataClou(giornataN);
+      } else {
+        data = calendario[`giornata${giornataN}`];
+      }
+      setGiornataClouSelected([]); // Imposta come array vuoto in caso di errore
+    };
+
+    updateGiornataClou();
+  }, [giornataN]);
 
   return <GiornataClouContext.Provider value={{ giornataClouSelected, setGiornataClouSelected }}>{children}</GiornataClouContext.Provider>;
 };

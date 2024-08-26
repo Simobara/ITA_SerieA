@@ -49,6 +49,14 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
       // console.log(giornataClouSelected);
     }
   }, [giornataClouSelected]);
+
+  // useEffect(() => {
+  //   console.log("datiSquadra in TableCamminoSq:", datiSquadra);
+  //   if (!datiSquadra) {
+  //     console.error("datiSquadra is undefined or null for:", squadra);
+  //   }
+  // }, [datiSquadra]);
+
   // ------------------------------------------------------------------------------------------------
 
   return (

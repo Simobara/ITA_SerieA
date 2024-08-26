@@ -32,8 +32,8 @@ const schemaPartita = new mongoose.Schema(
   },
   { _id: false }, // Disabilita l'_id per i subdocumenti
 );
-const schemaGiornata = new mongoose.Schema({
+const schemaGiornataClou = new mongoose.Schema({
   giornata: [schemaPartita],
 });
 
-module.exports = schemaGiornata;
+module.exports = schemaGiornataClou;
