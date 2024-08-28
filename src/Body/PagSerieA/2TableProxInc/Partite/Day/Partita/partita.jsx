@@ -442,7 +442,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
           data-partita-numero={partita.numero}
         >
           {/* 🗨️ ‍‍*/}
-          {isEyeOpen ? "👁️" : "_"}
+          {isEyeOpen ? "👁️" : ">"}
           {/* // */}
         </button>
       </div>
