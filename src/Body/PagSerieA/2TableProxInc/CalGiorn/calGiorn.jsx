@@ -149,7 +149,7 @@ const CalGiorn = ({ onReset }) => {
   // Questo useEffect gestisce il caricamento dei dati quando cambia la giornata
   useEffect(() => {
     const fetchMatches = async () => {
-      if (indexSelected === 9) {
+      if (indexSelected === 38) {
         console.log(`Caricamento dati da fetch per giornata 9`);
         const data = await fetchGiornataClou(indexSelected);
         setGiornataClouSelected(Array.isArray(data) ? data : []);

@@ -371,8 +371,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
             <div className={`{flex sm:pl-0 hover:cursor-context-menu z-10 select-none }`}>
               <div className={`{sm:pr-1 pl-0 ${!isPartitaInCoppiaRegSelected} ? ml-[-0.5rem] mr-[-2rem] : 'pl-4'}`}>
                 <span className="hover:bg-sky-900 text-gray-700 z-20" role="img" aria-label="" onClick={() => handleResetColors(partita.team1, partita.team2)}>
-                  ---
-                  {/* ,,, */}
+                  ~~{/* ,,, */}
                   {/* 〰️ */}
                 </span>
               </div>
@@ -443,7 +442,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
           data-partita-numero={partita.numero}
         >
           {/* 🗨️ ‍‍*/}
-          {isEyeOpen ? "👁️" : "..."}
+          {isEyeOpen ? "👁️" : "_"}
           {/* // */}
         </button>
       </div>

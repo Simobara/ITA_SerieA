@@ -65,10 +65,10 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
       <table>
         <thead>
           <tr className="bg-black text-white border border-black overflow-x-hidden text-xs">
-            <th className="text-center text-white w-[12%] sm:w-[15%] xl:w-[12%] "></th>
-            <th className="text-center text-cyan-700 w-[18%] sm:w-[25%] xl:w-[20%] font-bold mb-[1rem]">{/* C */}</th>
-            <th className="text-center text-cyan-700 w-[12%] sm:w-[15%] xl:w-[12%] font-bold">{/* F */}</th>
-            <th className="text-center text-white w-full "></th>
+            <th className="text-center text-white !w-[4%] sm:w-[15%] xl:w-[12%] "></th>
+            <th className="text-center text-cyan-700 w-[25%] sm:w-[25%] xl:w-[20%] font-bold mb-[1rem]">{/* C */}</th>
+            <th className="text-center text-cyan-700 w-[25%] sm:w-[15%] xl:w-[12%] font-bold">{/* F */}</th>
+            <th className="text-center text-white w-full"></th>
             <th className="text-left"></th>
           </tr>
         </thead>
@@ -79,12 +79,14 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
             {datiSquadra.map((partita, index) => {
               const casaClass = getSignForCasa(partita.casa);
               const fuoriClass = getSignForFuori(partita.fuori);
+
               const risultatoPulito = partita.risultato // Dividere il risultato in due parti
                 .trim()
                 .replace(/\s*-\s*/, "-");
               const risultatoParts = risultatoPulito.split("-");
               const risultatoParte1 = risultatoParts[0]; // Prima parte del risultato
               const risultatoParte2 = risultatoParts[1]; // Seconda parte del risultato
+
               const isPronostico =
                 (risultatoParte1 === "9" && risultatoParte2 === "8") ||
                 (risultatoParte1 === "8" && risultatoParte2 === "9") ||
@@ -117,7 +119,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
 
               return (
                 <tr key={index} className={`overflow-x-hidden xs:text-lg sm:text-md ${bgHoverClass} ${borderStyle}`}>
-                  <td className={` sm:w-[12%] md:w-[20%] xl:w-[15%] w-[10%] text-center font-bold ${ts.ColResLine} ${ts.ColResBg} text-xl`}>
+                  <td className={`!w-[4%] sm:w-[11%] md:w-[20%] xl:w-[15%] text-center font-bold ${ts.ColResLine} ${ts.ColResBg} text-xs sm:text-xl`}>
                     {isPronostico ? (
                       <div className="flex justify-center items-center">
                         <span className={`${s[`pin${pronosticoText}`]} font-black justify-center items-center scale-150`}>*</span>
@@ -130,9 +132,9 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
                       </>
                     )}
                   </td>
-                  <td className={`sm:w-[10%] md:w-[12%] xl:w-[15%] w-[7%] text-center xs:text-xl sm:text-base font-bold ${casaClass} ${ts.TextCF}`}>{partita.casa}</td>
-                  <td className={`sm:w-[10%] md:w-[12%] xl:w-[15%] w-[7%] text-center xs:text-xl sm:text-base font-bold ${fuoriClass} ${ts.TextCF}`}>{partita.fuori}</td>
-                  <td className={`sm:w-[45%] ml-[10%] text-xl pl-[10%] w-[10%] ${sqVsClass} `}>{isMobile == true ? sqVsFormatted.slice(0, 10) : sqVsFormatted}</td>
+                  <td className={`w-[25%] sm:w-[15%] md:w-[12%] xl:w-[15%] text-center xs:text-xl sm:text-base font-bold ${casaClass} ${ts.TextCF}`}>{partita.casa}</td>
+                  <td className={`w-[25%] sm:w-[15%] md:w-[12%] xl:w-[15%] text-center xs:text-xl sm:text-base font-bold ${fuoriClass} ${ts.TextCF}`}>{partita.fuori}</td>
+                  <td className={`w-full sm:w-[45%] ml-[10%] text-xl pl-[10%] ${sqVsClass} `}>{isMobile == true ? sqVsFormatted.slice(0, 10) : sqVsFormatted}</td>
                 </tr>
                 //implementare se la TEXTCF in casa e' con un squadra di B allora ... sono di colore verde acceso
               );

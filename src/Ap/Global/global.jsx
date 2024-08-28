@@ -27,12 +27,12 @@ export const GiornataClouProvider = ({ children }) => {
   useEffect(() => {
     const updateGiornataClou = async () => {
       let data;
-      if (giornataN === 9) {
+      if (giornataN === 38) {
         data = await fetchGiornataClou(giornataN);
       } else {
         data = calendario[`giornata${giornataN}`];
       }
-      setGiornataClouSelected([]); // Imposta come array vuoto in caso di errore
+      setGiornataClouSelected(data); // Imposta come array vuoto in caso di errore
     };
 
     updateGiornataClou();

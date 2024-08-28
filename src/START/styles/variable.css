@@ -1,7 +1,7 @@
 /* variables.css */
 :root {
-  --win-color: #450335;
-  --draw-color: #476501;
+  --win-color: #50054e;
+  --draw-color: #1a5d8d;
   --lose-color: #020f2d;
   --underline-thickness: 3px;
 }

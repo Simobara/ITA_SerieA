@@ -2,11 +2,12 @@ export const handleSaveClickk = (partite, onSave, onClose) => {
   const giornataSalvata = {
     _id: partite[0]._id || undefined, // Mantieni l'_id se esiste
     giornata: partite.map((partita) => {
-      // Tratta il "." come valore non valido
-      const score1 = partita.score1.trim();
-      const score2 = partita.score2.trim();
-      const isScore1Valid = !isNaN(parseInt(score1)) && score1 !== "." && score1 !== "";
-      const isScore2Valid = !isNaN(parseInt(score2)) && score2 !== "." && score2 !== "";
+      // Converti score1 e score2 in stringhe per evitare errori di tipo
+      const score1 = String(partita.score1).trim();
+      const score2 = String(partita.score2).trim();
+
+      const isScore1Valid = !isNaN(parseInt(score1)) && score1 !== ".";
+      const isScore2Valid = !isNaN(parseInt(score2)) && score2 !== ".";
 
       return {
         numero: partita.numero,

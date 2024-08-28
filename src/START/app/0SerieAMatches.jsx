@@ -4,6 +4,17 @@ import { calendario25 } from './0aCalendarioCurrent';
 
 
 
+
+
+
+
+//! -------------------------------------------------------------------------------------- -------------------------------------------
+export const currentYear = 2025;
+export const calendario = JSON.parse(JSON.stringify(calendario25));
+export const calendario1 = JSON.parse(JSON.stringify(calendario25));
+export const giornataNum = 1 //!NON TOCCARE QUESTO VALORE
+// Recupera i dati della giornata clou dal server
+
 export const fetchGiornataClou = async (giornataNum) => {
   try {
     const apiUrl = import.meta.env.PROD ? import.meta.env.VITE_API_URL_PROD : import.meta.env.VITE_API_URL_DEV;
@@ -16,17 +27,8 @@ export const fetchGiornataClou = async (giornataNum) => {
   }
 };
 
-
-
-//! -------------------------------------------------------------------------------------- -------------------------------------------
-export const currentYear = 2025;
-export const calendario = JSON.parse(JSON.stringify(calendario25));
-export const calendario1 = JSON.parse(JSON.stringify(calendario25));
-export const giornataNum = 1 //!NON TOCCARE QUESTO VALORE
-// Recupera i dati della giornata clou dal server
-
-// Condizione per verificare se giornataNum è 9
-export const giornataClou = giornataNum === 9 
+// Condizione per verificare se giornataNum è 38
+export const giornataClou = giornataNum === 38
   ? await fetchGiornataClou(giornataNum)
   : calendario[`giornata${giornataNum}`]; // Altrimenti utilizza i dati locali
 //! -------------------------------------------------------------------------------------- -------------------------------------------

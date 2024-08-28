@@ -1,7 +1,7 @@
 import { ts } from "../../../../../START/styles/0CssMainStyle";
 
 export const getSignForFuorii = (fuori) => {
-  if (fuori === "...") {
+  if (fuori === ".") {
     return `bg-black ${ts.TextCF}`;
   }
   if (fuori === " ") {

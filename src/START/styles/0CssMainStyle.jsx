@@ -59,7 +59,7 @@ export const ts = {
 
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
   ColResHome:       "!text-sky-800 font-semibold",
-  ColResAway:       "text-gray-700 font-light",
+  ColResAway:       "text-gray-800 font-light",
 
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
   WinBg:            "bg-[var(--win-color)] rounded-full",
@@ -68,10 +68,7 @@ export const ts = {
   DrawBg:           "bg-[var(--draw-color)] rounded-full", 
   DrawText:         "!text-[var(--draw-color)]", 
 
-
-  // LoseBg:           "bg-[#020c2d] rounded-full",
   LoseBg:           "bg-[var(--lose-color)] rounded-full",
-  // LoseText:         "!text-[#020c2d]",
   LoseText:         "!text-[var(--lose-color)]",
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
   HoverSqHome:      "bg-red-700",

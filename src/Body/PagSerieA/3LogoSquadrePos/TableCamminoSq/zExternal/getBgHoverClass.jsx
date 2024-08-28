@@ -4,7 +4,7 @@ export const getBgHoverClasss = (partita) => {
   if (partita.sqVs === "--- --- --- --- --- ---") {
     return "hover:no.hover";
   }
-  const conditions = ["+", "-", "=", "..."];
+  const conditions = ["+", "-", "=", "."];
   if (conditions.includes(partita.casa)) {
     return `${ts.TabHoverHome}`;
   } else if (conditions.includes(partita.fuori)) {

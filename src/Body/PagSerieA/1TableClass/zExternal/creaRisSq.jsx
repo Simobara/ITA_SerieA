@@ -26,25 +26,30 @@ export function creaRisSq(calendario, nomeSquadra, number) {
 
           // Verifica se i risultati contengono numeri validi
           const [score1, score2] = resultsTrimmed.split("-");
-          const isScore1Valid = !isNaN(parseInt(score1)) && score1.trim() !== "." && score1.trim() !== "";
-          const isScore2Valid = !isNaN(parseInt(score2)) && score2.trim() !== "." && score2.trim() !== "";
+          const isScore1Valid = !isNaN(parseInt(score1)) && score1.trim() !== "-" && score1.trim() !== "";
+          const isScore2Valid = !isNaN(parseInt(score2)) && score2.trim() !== "-" && score2.trim() !== "";
 
           if (!isScore1Valid || !isScore2Valid) {
             resultsTrimmed = ""; // Se uno dei risultati non è un numero valido, ignora il risultato
-          } else if (partita.pron === "1" && resultsTrimmed.length === 0) {
-            resultsTrimmed = "9-8"; // Se 'pron' è '1' e nessun risultato è presente, imposta su '9-8'
-          } else if (partita.pron === "2" && resultsTrimmed.length === 0) {
-            resultsTrimmed = "8-9"; // Se 'pron' è '2' e nessun risultato è presente, imposta su '8-9'
-          } else if (partita.pron.toLowerCase() === "x" && resultsTrimmed.length === 0) {
-            resultsTrimmed = "9-9"; // Se 'pron' è 'X' e nessun risultato è presente, imposta su '9-9'
+          }
+
+          // Gestione del pronostico
+          if (resultsTrimmed.length === 0) {
+            if (partita.pron === "1") {
+              resultsTrimmed = "9-8"; // Pronostico di vittoria
+            } else if (partita.pron === "2") {
+              resultsTrimmed = "8-9"; // Pronostico di sconfitta
+            } else if (partita.pron.toLowerCase() === "x") {
+              resultsTrimmed = "9-9"; // Pronostico di pareggio
+            }
           }
 
           // Se il risultato è ancora vuoto, considera la partita come senza risultato
           if (resultsTrimmed === "") {
             risultatiSquadra.push({
               risultato: "",
-              casa: isCasa ? "..." : "",
-              fuori: isCasa ? "" : "...",
+              casa: isCasa ? "." : "",
+              fuori: isCasa ? "" : ".",
               sqVs: isCasa ? partita.team2 : partita.team1,
             });
           } else {

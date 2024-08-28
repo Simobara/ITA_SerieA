@@ -6,6 +6,7 @@ export function calcPntSq(puntiSquadra) {
     let risultatoPartita = partita.risultato.trim();
     // Controlla se il risultato inizia con '8' o '9' e ignora l'aggiunta di punti se vero
     if (risultatoPartita.startsWith("8") || risultatoPartita.startsWith("9")) {
+      console.log("Risultato predefinito ignorato:", risultatoPartita);
       return;
     }
     if (risultatoCasa === "+") {
@@ -19,5 +20,6 @@ export function calcPntSq(puntiSquadra) {
       puntiTotali += 1;
     }
   });
+
   return puntiTotali;
 }
