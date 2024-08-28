@@ -15,8 +15,6 @@ import getPunteggioColonnaDomandaa from "./zExternal/getPunteggioColonnaDomanda"
 import useGetPunteggioColonnaPTS from "./zExternal/getPunteggioColonnaPTS";
 import useGetPunteggioVirtuale from "./zExternal/getPunteggioVirtuale";
 import useGetPunteggioVisualizzato from "./zExternal/getPunteggioVisualizzato";
-import useGetSquadreConPunteggioVirtuale from "./zExternal/getSquadreConPuntVirt";
-import useGetSquadreOrdinate from "./zExternal/getSquadreOrdinate";
 import getTeamNamee from "./zExternal/getTeamName";
 import { getTextTeam } from "./zExternal/isQTeam";
 import { isDrawingTeamInCoppiaRegSelectedd, isLosingTeamInCoppiaRegSelectedd, isWinningTeamInCoppiaRegSelectedd } from "./zExternal/isQTeamInCoppiaRegSelected";
@@ -52,21 +50,19 @@ const TableClass = () => {
   const getPunteggioVirtuale = useGetPunteggioVirtuale(sqSelected, completeClouSelected);
   const getPunteggioVisualizzato = useGetPunteggioVisualizzato(sqSelected, getPunteggioVirtuale);
 
-  const getSquadreConPunteggioVirtuale = useGetSquadreConPunteggioVirtuale(sqSelected, ArrayNomiSquadre, getPunteggioVirtuale);
-  const getSquadreOrdinate = useGetSquadreOrdinate(sqSelected, nomiSquadre, completeClouSelected, punteggiAggiornati, getPunteggioVirtuale, getPunteggioVisualizzato);
+  // const getSquadreConPunteggioVirtuale = useGetSquadreConPunteggioVirtuale(sqSelected, ArrayNomiSquadre, getPunteggioVirtuale);
+  // const getSquadreOrdinate = useGetSquadreOrdinate(sqSelected, nomiSquadre, completeClouSelected, punteggiAggiornati, getPunteggioVirtuale, getPunteggioVisualizzato);
   const isTeamInCoppiaRegSelected = useGetIsTeamInCoppiaRegSelected(completeClouSelected, indexSel, giornataN);
   const getPunteggioColonnaPTS = useGetPunteggioColonnaPTS(completeClouSelected, isTeamInCoppiaRegSelected, indexSel, giornataN);
 
   const isCoppiaSelected = useGetIsCoppiaSelected(coppiaSelected);
   const isPureNumber = (str) => /^\d+$/.test(str);
-
+  //useSquadreOrdinatee è la funzione che sostituisce sia useGetSquadreConPunteggioVirtuale che useGetSquadreOrdinate. Questa funzione calcola i punteggi virtuali e visualizzati per ogni squadra e poi ordina le squadre in base al punteggio virtuale, fornendo l'array delle squadre ordinate utilizzato nel componente principale.
   const squadreOrdinate = squadreOrdinatee(sqSelected, nomiSquadre, completeClouSelected, punteggiAggiornati, getPunteggioVirtuale, getPunteggioVisualizzato);
   const isTeamMarkedWithX = useGetIsTeamMarkedWithhX(sqSelected, completeClouSelected);
-  // prettier-ignore
+
   const aggPunteggioSqReg = () => aggPunteggioSqRegg(coppiaRegSelected, aggiungiPunti);
-  // prettier-ignore
   const aggiungiPunti = (nomeSquadra, punti) => aggiungiPuntii(nomeSquadra, punti, ArrayNomiSquadre);
-  // prettier-ignore
   const getPunteggioColonnaDomanda = (squadra) => getPunteggioColonnaDomandaa(squadra, completeClouSelected, indexSel, giornataN);
 
   const isWinningTeamInCoppiaRegSelected = (teamName) => isWinningTeamInCoppiaRegSelectedd(teamName, completeClouSelected, indexSel, giornataN);
