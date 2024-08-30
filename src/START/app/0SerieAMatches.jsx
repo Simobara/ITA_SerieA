@@ -16,6 +16,7 @@ export const giornataNum = 1 //!NON TOCCARE QUESTO VALORE
 // Recupera i dati della giornata clou dal server
 
 export const fetchGiornataClou = async (giornataNum) => {
+
   try {
     const apiUrl = import.meta.env.PROD ? import.meta.env.VITE_API_URL_PROD : import.meta.env.VITE_API_URL_DEV;
     const response = await axios.get(`${apiUrl}/api/giornata/${giornataNum}`);

@@ -82,6 +82,13 @@ export const handleSelectionn = (
       }
       return data;
     });
+    console.log(
+      {
+        ...completeClouSelected,
+        [`giornata${indexSel ? indexSel : giornataN}`]: result,
+      },
+      "sndfnkds",
+    );
     setCompleteClouSelected({
       ...completeClouSelected,
       [`giornata${indexSel ? indexSel : giornataN}`]: result,

@@ -28,7 +28,7 @@ const Partite = ({ resetAll, occhioApertoPartita, setOcchioApertoPartita }) => {
       ) : (
         giorniSettimana.map(
           ({ giorno, title }) =>
-            partitePerGiorno[giorno].length > 0  && (
+            partitePerGiorno[giorno].length > 0 && (
               <Day
                 key={giorno}
                 title={title}

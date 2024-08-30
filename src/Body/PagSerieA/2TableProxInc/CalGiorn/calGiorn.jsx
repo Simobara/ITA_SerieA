@@ -1,13 +1,14 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { GiornataClouContext, GiornataNContext } from "../../../../Ap/Global/global";
+import { CompleteDataContext, GiornataClouContext, GiornataNContext } from "../../../../Ap/Global/global";
 import { fetchGiornataClou, giornataClou } from "../../../../START/app/0SerieAMatches";
-import { ButtonResetContext, CompleteDataContext, IndexSelectedContext, PartiteDefinNoModContext } from "../../../Global/global";
+import { ButtonResetContext, IndexSelectedContext, PartiteDefinNoModContext, TestingContext } from "../../../Global/global";
 import "./calGiorn.css";
 
 const CalGiorn = ({ onReset }) => {
   const scrollContainer = useRef(null); // scrollContainer è una ref utilizzata per gestire lo scorrimento orizzontale delle giornate, assicurandosi che la casella selezionata sia sempre visibile. */
 
   const { indexSel, setIndexSel } = useContext(IndexSelectedContext);
+  const {testingClouSelected, setTestingClouSelected}=useContext(TestingContext)
   const [indexSelected, setIndexSelected] = useState(null);
   const [matches, setMatches] = useState([]);
   const { giornataClouSelected, setGiornataClouSelected } = useContext(GiornataClouContext);
@@ -24,7 +25,7 @@ const CalGiorn = ({ onReset }) => {
       .map((_, i) => boxRefs.current[i] || React.createRef());
   }
 
-  const handleSelectNumber = (number) => {
+  const handleSelectNumber = async (number) => {
     console.log(`Giornata selezionata: ${number}`);
     if (number >= 1 && number <= totaleGiornate) {
       if (number !== indexSelected) {
@@ -32,9 +33,28 @@ const CalGiorn = ({ onReset }) => {
         setIndexSelected(number);
         setIndexSel(number);
       }
-
-      setMatches(completeClouSelected[`giornata${number}`]);
-      setGiornataClouSelected(completeClouSelected[`giornata${number}`]);
+      if (number === 38 && completeClouSelected[`giornata${number}`].length === 0) {
+        const data = await fetchGiornataClou(number);
+        setTestingClouSelected(JSON.parse(
+          JSON.stringify({
+            ...testingClouSelected,
+            [`giornata${number}`]: data,
+          }),
+        ),);
+        setCompleteClouSelected(
+          JSON.parse(
+            JSON.stringify({
+              ...completeClouSelected,
+              [`giornata${number}`]: data,
+            }),
+          ),
+        );
+        setGiornataClouSelected(Array.isArray(data) ? data : []);
+        setMatches(Array.isArray(data) ? data : []);
+      } else {
+        setMatches(completeClouSelected[`giornata${number}`]);
+        setGiornataClouSelected(completeClouSelected[`giornata${number}`]);
+      }
       scrollIntoView(number);
     }
   };
@@ -109,9 +129,16 @@ const CalGiorn = ({ onReset }) => {
       }
     }
   }, []);
+useEffect(()=>{
+  if(giornataN===38 && !buttonResetIsResetting){
+    handleSelectNumber(giornataN);
+  }
 
+},[giornataN,buttonResetIsResetting])
+console.log(completeClouSelected,"completeClouSelectedcompleteClouSelected")
   //QUESTO USE EFFECT REIMPOSTA LA GIORNATA CLOU DOPO CHE CI SONO SCORRIMENTI NEL completeClouSelected
   useEffect(() => {
+   
     if (giornataClouSelected) {
       // const nuovaGiornataClou =
       //   Object.keys(completeClouSelected).findIndex(
@@ -151,9 +178,9 @@ const CalGiorn = ({ onReset }) => {
     const fetchMatches = async () => {
       if (indexSelected === 38) {
         console.log(`Caricamento dati da fetch per giornata 9`);
-        const data = await fetchGiornataClou(indexSelected);
-        setGiornataClouSelected(Array.isArray(data) ? data : []);
-        setMatches(Array.isArray(data) ? data : []);
+        // const data = await fetchGiornataClou(indexSelected);
+        // setGiornataClouSelected(Array.isArray(data) ? data : []);
+        // setMatches(Array.isArray(data) ? data : []);
       } else {
         console.log(`Caricamento dati locali per giornata ${indexSelected}`);
         // Carica i dati locali dalla variabile `completeClouSelected`
@@ -165,7 +192,7 @@ const CalGiorn = ({ onReset }) => {
 
     fetchMatches();
   }, [indexSelected]);
-
+  console.log(completeClouSelected, "completeClouSelected");
   // -------------------------------------------------------------------------------------------------------------
   return (
     <div className="unselectable flex items-center justify-center bg-black mt-[0rem] sm:mb-[0.5rem]">

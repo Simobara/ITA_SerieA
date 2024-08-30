@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { calendario, fetchGiornataClou, giornataNum } from "../../START/app/0SerieAMatches";
+
 //----------------------------------------------
 export const GiornataNContext = createContext();
 
@@ -16,27 +17,43 @@ export const GiornataNProvider = ({ children }) => {
 
   return <GiornataNContext.Provider value={{ giornataN, setGiornataN }}>{children}</GiornataNContext.Provider>;
 };
+export const CompleteDataContext = createContext();
 
+export const CompleteDataProvider = ({ children }) => {
+  const [completeClouSelected, setCompleteClouSelected] = useState(calendario);
+  return <CompleteDataContext.Provider value={{ completeClouSelected, setCompleteClouSelected }}>{children}</CompleteDataContext.Provider>;
+};
 //----------------------------------------------
 export const GiornataClouContext = createContext();
 
 export const GiornataClouProvider = ({ children }) => {
   const { giornataN } = useContext(GiornataNContext); // Ottieni giornataN dal contesto
+  
   const [giornataClouSelected, setGiornataClouSelected] = useState([]);
 
-  useEffect(() => {
-    const updateGiornataClou = async () => {
-      let data;
-      if (giornataN === 38) {
-        data = await fetchGiornataClou(giornataN);
-      } else {
-        data = calendario[`giornata${giornataN}`];
-      }
-      setGiornataClouSelected(data); // Imposta come array vuoto in caso di errore
-    };
+  // useEffect(() => {
+  //   const updateGiornataClou = async () => {
+     
+  //     let data;
+  //     if (giornataN === 38) {
+        
+  //       data = await fetchGiornataClou(giornataN);
+  //       // setCompleteClouSelected(
+  //       //   JSON.parse(
+  //       //     JSON.stringify({
+  //       //       ...calendario,
+  //       //       [`giornata${giornataN}`]: data,
+  //       //     }),
+  //       //   ),
+  //       // );
+  //     } else {
+  //       data = calendario[`giornata${giornataN}`];
+  //     }
+  //     setGiornataClouSelected(data); // Imposta come array vuoto in caso di errore
+  //   };
 
-    updateGiornataClou();
-  }, [giornataN]);
+  //   updateGiornataClou();
+  // }, [giornataN]);
 
   return <GiornataClouContext.Provider value={{ giornataClouSelected, setGiornataClouSelected }}>{children}</GiornataClouContext.Provider>;
 };

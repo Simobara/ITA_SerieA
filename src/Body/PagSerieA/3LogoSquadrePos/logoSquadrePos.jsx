@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { calendario1 } from "../../../START/app/0SerieAMatches";
 import { nomiSquadre, SqEndGruppo1, SqEndGruppo2 } from "../../../START/app/1main";
 import { ts } from "../../../START/styles/0CssMainStyle";
-import { CoppiaPartitaContext } from "../../Global/global";
+import { CoppiaPartitaContext, TestingContext } from "../../Global/global";
 import { creaRisSq } from "../1TableClass/zExternal/creaRisSq";
 import TableCamminoSq from "./TableCamminoSq/tableCamminoSq";
 import { renderLineaa } from "./zExternal/renderLinea";
@@ -10,6 +10,7 @@ import { renderLineaa } from "./zExternal/renderLinea";
 const LogoSquadrePos = () => {
   const [squadraAttiva1, setSquadraAttiva1] = useState("");
   const [squadraAttiva2, setSquadraAttiva2] = useState("");
+  const {testingClouSelected, setTestingClouSelected}=useContext(TestingContext)
   const { coppiaSelected } = useContext(CoppiaPartitaContext);
   //logoRefs: Un oggetto che viene utilizzato per creare riferimenti a ciascun logo delle squadre, permettendo operazioni dirette su questi elementi (come i click).
   const logoRefs = useRef({});
@@ -19,7 +20,7 @@ const LogoSquadrePos = () => {
 
   const datiSquadre = Object.keys(nomiSquadre).reduce((acc, key) => {
     const squadra = nomiSquadre[key];
-    acc[squadra.name] = creaRisSq(calendario1, squadra.name);
+    acc[squadra.name] = creaRisSq(testingClouSelected, squadra.name);
     return acc;
   }, {});
   console.log("datiSquadre:", datiSquadre); // Aggiungi questo log

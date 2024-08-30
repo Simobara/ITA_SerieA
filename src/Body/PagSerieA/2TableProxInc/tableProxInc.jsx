@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
-import { GiornataClouContext, GiornataNContext } from "../../../Ap/Global/global";
+import { CompleteDataContext, GiornataClouContext, GiornataNContext } from "../../../Ap/Global/global";
 import { calendario1 } from "../../../START/app/0SerieAMatches";
 import { ts } from "../../../START/styles/0CssMainStyle";
 import serieAItalia from "../../../assts/ChartSerieAItalia/serieAItalia.png";
-import { ButtonResetContext, CompleteDataContext, CoppiaPartitaContext, IndexSelectedContext } from "../../Global/global";
+import { ButtonResetContext,  CoppiaPartitaContext, IndexSelectedContext } from "../../Global/global";
 import CalGiorn from "./CalGiorn/calGiorn";
 import Partite from "./Partite/partite";
 import "./tableProxInc.css";

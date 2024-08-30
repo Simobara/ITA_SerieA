@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 // import { useDrag, useDrop } from "react-dnd";
-import { GiornataClouContext, GiornataNContext } from "../../../../../../Ap/Global/global";
+import { CompleteDataContext, GiornataClouContext, GiornataNContext } from "../../../../../../Ap/Global/global";
 import { ts } from "../../../../../../START/styles/0CssMainStyle";
 import {
   ButtonResetContext,
-  CompleteDataContext,
+
   CoppiaPartitaContext,
   CoppiaPartitaRegistrataContext,
   IndexSelectedContext,

@@ -1,4 +1,4 @@
-import { calendario } from "../../START/app/0SerieAMatches";
+import { calendario,calendario1 } from "../../START/app/0SerieAMatches";
 
 // SquadraContext.js
 import { createContext, useState } from "react";
@@ -33,11 +33,12 @@ export const CoppiaPartitaRegistrataProvider = ({ children }) => {
 //-----------------------------------------------------------------------
 
 //-----------------------------------------------------------------------
-export const CompleteDataContext = createContext();
 
-export const CompleteDataProvider = ({ children }) => {
-  const [completeClouSelected, setCompleteClouSelected] = useState(calendario);
-  return <CompleteDataContext.Provider value={{ completeClouSelected, setCompleteClouSelected }}>{children}</CompleteDataContext.Provider>;
+export const TestingContext = createContext();
+
+export const TestingDataProvider = ({ children }) => {
+  const [testingClouSelected, setTestingClouSelected] = useState(calendario1);
+  return <TestingContext.Provider value={{ testingClouSelected, setTestingClouSelected }}>{children}</TestingContext.Provider>;
 };
 //-----------------------------------------------------------------------
 

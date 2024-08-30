@@ -1,11 +1,13 @@
+import { CompleteDataProvider } from "../Ap/Global/global";
 import {
   ButtonResetProvider,
-  CompleteDataProvider,
+
   CoppiaPartitaProvider,
   CoppiaPartitaRegistrataProvider,
   IndexSelectedProvider,
   PartiteDefinNoModProvider,
   SquadraProvider,
+  TestingDataProvider,
 } from "./Global/global";
 import PagSerieA from "./PagSerieA/pagSerieA";
 
@@ -19,7 +21,9 @@ const Body = () => {
               <CompleteDataProvider>
                 <CoppiaPartitaProvider>
                   <CoppiaPartitaRegistrataProvider>
+                    <TestingDataProvider>
                     <PagSerieA />
+                    </TestingDataProvider>
                   </CoppiaPartitaRegistrataProvider>
                 </CoppiaPartitaProvider>
               </CompleteDataProvider>
