@@ -31,13 +31,13 @@ export const calendario25 = {
   ],
     //*---  -----                                                                                                                ---  3
       giornata3: [
-      { numero: 1,  day: 'ven', time: '18:30',          team1: 'Venezia',      team2: 'Torino',          pron: '1', results: '' },
-      { numero: 2,  day: 'ven', time: '20:45',          team1: 'Inter',        team2: 'Atalanta',        pron: '', results: '' },
+      { numero: 1,  day: 'ven', time: '18:30',          team1: 'Venezia',      team2: 'Torino',          pron: '1', results: '0-1' },
+      { numero: 2,  day: 'ven', time: '20:45',          team1: 'Inter',        team2: 'Atalanta',        pron: '', results: '4-0' },
       
-      { numero: 3,  day: 'sab', time: '18:30',          team1: 'Bologna',      team2: 'Empoli',          pron: '', results: '' },
-      { numero: 4,  day: 'sab', time: '18:30',          team1: 'Lecce',        team2: 'Cagliari',        pron: '1', results: '' },
-      { numero: 5,  day: 'sab', time: '20:45',          team1: 'Lazio',        team2: 'Milan',           pron: '', results: '' },
-      { numero: 6,  day: 'sab', time: '20:45',          team1: 'Napoli',       team2: 'Parma',           pron: '', results: '' },
+      { numero: 3,  day: 'sab', time: '18:30',          team1: 'Bologna',      team2: 'Empoli',          pron: '', results: '1-1' },
+      { numero: 4,  day: 'sab', time: '18:30',          team1: 'Lecce',        team2: 'Cagliari',        pron: '1', results: '1-0' },
+      { numero: 5,  day: 'sab', time: '20:45',          team1: 'Lazio',        team2: 'Milan',           pron: '', results: '2-2' },
+      { numero: 6,  day: 'sab', time: '20:45',          team1: 'Napoli',       team2: 'Parma',           pron: '', results: '2-1' },
       
       { numero: 7,  day: 'dom', time: '18:30',          team1: 'Fiorentina',   team2: 'Monza',           pron: '1', results: '' },
       { numero: 8,  day: 'dom', time: '18:30',          team1: 'Genoa',        team2: 'Verona',          pron: '1', results: '' },

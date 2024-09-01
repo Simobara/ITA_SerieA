@@ -8,7 +8,7 @@ const CalGiorn = ({ onReset }) => {
   const scrollContainer = useRef(null); // scrollContainer è una ref utilizzata per gestire lo scorrimento orizzontale delle giornate, assicurandosi che la casella selezionata sia sempre visibile. */
 
   const { indexSel, setIndexSel } = useContext(IndexSelectedContext);
-  const {testingClouSelected, setTestingClouSelected}=useContext(TestingContext)
+  const { testingClouSelected, setTestingClouSelected } = useContext(TestingContext);
   const [indexSelected, setIndexSelected] = useState(null);
   const [matches, setMatches] = useState([]);
   const { giornataClouSelected, setGiornataClouSelected } = useContext(GiornataClouContext);
@@ -33,14 +33,16 @@ const CalGiorn = ({ onReset }) => {
         setIndexSelected(number);
         setIndexSel(number);
       }
-      if (number === 38 && completeClouSelected[`giornata${number}`].length === 0) {
+      if (number >= 1 && completeClouSelected[`giornata${number}`].length === 0) {
         const data = await fetchGiornataClou(number);
-        setTestingClouSelected(JSON.parse(
-          JSON.stringify({
-            ...testingClouSelected,
-            [`giornata${number}`]: data,
-          }),
-        ),);
+        setTestingClouSelected(
+          JSON.parse(
+            JSON.stringify({
+              ...testingClouSelected,
+              [`giornata${number}`]: data,
+            }),
+          ),
+        );
         setCompleteClouSelected(
           JSON.parse(
             JSON.stringify({
@@ -129,16 +131,14 @@ const CalGiorn = ({ onReset }) => {
       }
     }
   }, []);
-useEffect(()=>{
-  if(giornataN===38 && !buttonResetIsResetting){
-    handleSelectNumber(giornataN);
-  }
-
-},[giornataN,buttonResetIsResetting])
-console.log(completeClouSelected,"completeClouSelectedcompleteClouSelected")
+  useEffect(() => {
+    if (giornataN >= 1 && !buttonResetIsResetting) {
+      handleSelectNumber(giornataN);
+    }
+  }, [giornataN, buttonResetIsResetting]);
+  console.log(completeClouSelected, "completeClouSelectedcompleteClouSelected");
   //QUESTO USE EFFECT REIMPOSTA LA GIORNATA CLOU DOPO CHE CI SONO SCORRIMENTI NEL completeClouSelected
   useEffect(() => {
-   
     if (giornataClouSelected) {
       // const nuovaGiornataClou =
       //   Object.keys(completeClouSelected).findIndex(
@@ -176,8 +176,8 @@ console.log(completeClouSelected,"completeClouSelectedcompleteClouSelected")
   // Questo useEffect gestisce il caricamento dei dati quando cambia la giornata
   useEffect(() => {
     const fetchMatches = async () => {
-      if (indexSelected === 38) {
-        console.log(`Caricamento dati da fetch per giornata 9`);
+      if (indexSelected >= 1) {
+        console.log(`Caricamento dati da fetch per giornata 38`);
         // const data = await fetchGiornataClou(indexSelected);
         // setGiornataClouSelected(Array.isArray(data) ? data : []);
         // setMatches(Array.isArray(data) ? data : []);
