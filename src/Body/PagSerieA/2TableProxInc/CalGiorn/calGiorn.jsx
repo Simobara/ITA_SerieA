@@ -27,13 +27,13 @@ const CalGiorn = ({ onReset }) => {
 
   const handleSelectNumber = async (number) => {
     console.log(`Giornata selezionata: ${number}`);
-    if (number >= 1 && number <= totaleGiornate) {
+    if (number && number <= totaleGiornate) {
       if (number !== indexSelected) {
         setButtonResetIsResetting(true);
         setIndexSelected(number);
         setIndexSel(number);
       }
-      if (number >= 1 && completeClouSelected[`giornata${number}`].length === 0) {
+      if (number === 38 && completeClouSelected[`giornata${number}`].length === 0) {
         const data = await fetchGiornataClou(number);
         setTestingClouSelected(
           JSON.parse(
@@ -132,7 +132,7 @@ const CalGiorn = ({ onReset }) => {
     }
   }, []);
   useEffect(() => {
-    if (giornataN >= 1 && !buttonResetIsResetting) {
+    if (giornataN === 38 && !buttonResetIsResetting) {
       handleSelectNumber(giornataN);
     }
   }, [giornataN, buttonResetIsResetting]);

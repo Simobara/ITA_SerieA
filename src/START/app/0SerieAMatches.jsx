@@ -29,7 +29,7 @@ export const fetchGiornataClou = async (giornataNum) => {
 };
 
 // Condizione per verificare se giornataNum è 38
-export const giornataClou = giornataNum >= 1
+export const giornataClou = giornataNum === 38
   ? await fetchGiornataClou(giornataNum)
   : calendario[`giornata${giornataNum}`]; // Altrimenti utilizza i dati locali
 //! -------------------------------------------------------------------------------------- -------------------------------------------
