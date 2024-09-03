@@ -39,24 +39,24 @@ export const calendario25 = {
       { numero: 5,  day: 'sab', time: '20:45',          team1: 'Lazio',        team2: 'Milan',           pron: '', results: '2-2' },
       { numero: 6,  day: 'sab', time: '20:45',          team1: 'Napoli',       team2: 'Parma',           pron: '', results: '2-1' },
       
-      { numero: 7,  day: 'dom', time: '18:30',          team1: 'Fiorentina',   team2: 'Monza',           pron: '1', results: '' },
-      { numero: 8,  day: 'dom', time: '18:30',          team1: 'Genoa',        team2: 'Verona',          pron: '1', results: '' },
-      { numero: 9,  day: 'dom', time: '20:45',          team1: 'Juve',         team2: 'Roma',            pron: '', results: '' },
-      { numero: 10, day: 'dom', time: '20:45',          team1: 'Udinese',      team2: 'Como',            pron: '1', results: '' },
+      { numero: 7,  day: 'dom', time: '18:30',          team1: 'Fiorentina',   team2: 'Monza',           pron: '1', results: '2-2' },
+      { numero: 8,  day: 'dom', time: '18:30',          team1: 'Genoa',        team2: 'Verona',          pron: '1', results: '0-2' },
+      { numero: 9,  day: 'dom', time: '20:45',          team1: 'Juve',         team2: 'Roma',            pron: '', results: '0-0' },
+      { numero: 10, day: 'dom', time: '20:45',          team1: 'Udinese',      team2: 'Como',            pron: '1', results: '1-0' },
   ],
     //*----------------------------------------------SETTEMBRE     -  3 -    -------------------------------------------------------- 4 
       giornata4: [
-      { numero: 1,  day: 'sab', time: '18:30',          team1: 'Atalanta',     team2: 'Fiorentina',      pron: '', results: '' },
-      { numero: 2,  day: 'sab', time: '18:30',          team1: 'Cagliari',     team2: 'Napoli',          pron: '', results: '' },
-      { numero: 3,  day: 'sab', time: '20:45',          team1: 'Como',         team2: 'Bologna',         pron: '', results: '' },
+      { numero: 1,  day: 'sab', time: '18:30',          team1: 'Atalanta',     team2: 'Fiorentina',      pron: '2', results: '' },
+      { numero: 2,  day: 'sab', time: '18:30',          team1: 'Cagliari',     team2: 'Napoli',          pron: '1', results: '' },
+      { numero: 3,  day: 'sab', time: '20:45',          team1: 'Como',         team2: 'Bologna',         pron: '1', results: '' },
   
-      { numero: 4,  day: 'dom', time: '12:30',          team1: 'Empoli',       team2: 'Juve',            pron: '', results: '' },
-      { numero: 5,  day: 'dom', time: '15:00',          team1: 'Genoa',        team2: 'Roma',            pron: '', results: '' },
+      { numero: 4,  day: 'dom', time: '12:30',          team1: 'Empoli',       team2: 'Juve',            pron: '2', results: '' },
+      { numero: 5,  day: 'dom', time: '15:00',          team1: 'Genoa',        team2: 'Roma',            pron: '2', results: '' },
       { numero: 6,  day: 'dom', time: '15:00',          team1: 'Lazio',        team2: 'Verona',          pron: '1', results: '' },
-      { numero: 7,  day: 'dom', time: '18:00',          team1: 'Milan',        team2: 'Venezia',         pron: '', results: '' },
-      { numero: 8,  day: 'dom', time: '20:45',          team1: 'Monza',        team2: 'Inter',           pron: '', results: '' },
+      { numero: 7,  day: 'dom', time: '18:00',          team1: 'Milan',        team2: 'Venezia',         pron: 'x', results: '' },
+      { numero: 8,  day: 'dom', time: '20:45',          team1: 'Monza',        team2: 'Inter',           pron: '2', results: '' },
   
-      { numero: 9,  day: 'lun', time: '18:00',          team1: 'Parma',        team2: 'Udinese',         pron: '', results: '' },
+      { numero: 9,  day: 'lun', time: '18:00',          team1: 'Parma',        team2: 'Udinese',         pron: '1', results: '' },
       { numero: 10, day: 'lun', time: '20:45',          team1: 'Torino',       team2: 'Lecce',           pron: '1', results: '' },
   ],
     //*---  -----                                                                                                                ---  5
