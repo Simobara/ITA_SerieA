@@ -29,7 +29,7 @@
 //         if (partita.pron === "1") {
 //           resultsTrimmed = "9-8"; // Se 'pron' è '1', imposta il risultato su '9-8'
 //         } else if (partita.pron === "2") {
-//           resultsTrimmed = "8-9"; // Aggiunto: se 'pron' è '2', imposta il risultato su '8-9'
+//           resultsTrimmed = "8-9"; // Aggiunto: se 'pron' è '2', imposta il risultato su ''
 //         } else if (partita.pron === "x") {
 //           resultsTrimmed = "9-9"; // Aggiunto: se 'pron' è 'X', imposta il risultato su '9-9'
 //         } else {
