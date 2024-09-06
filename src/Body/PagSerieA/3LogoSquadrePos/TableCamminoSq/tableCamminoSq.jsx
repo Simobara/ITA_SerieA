@@ -132,13 +132,13 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
                       </>
                     )}
                   </td>
-                  <td className={`w-[25%] sm:w-[15%] md:w-[12%] xl:w-[15%] text-center xs:text-xl sm:text-base font-bold ${isPronostico ? "" : casaClass} ${ts.TextCF}`}>
+                  <td className={`w-[25%] sm:w-[15%] md:w-[12%] xl:w-[15%] text-center xs:text-xl sm:text-base font-bold ${isPronostico ? "" : casaClass} ${ts.TextCF} last-text`}>
                     {partita.casa}
                   </td>
-                  <td className={`w-[25%] sm:w-[15%] md:w-[12%] xl:w-[15%] text-center xs:text-xl sm:text-base font-bold ${isPronostico ? "" : fuoriClass} ${ts.TextCF}`}>
+                  <td className={`w-[25%] sm:w-[15%] md:w-[12%] xl:w-[15%] text-center xs:text-xl sm:text-base font-bold ${isPronostico ? "" : fuoriClass} ${ts.TextCF} last-text`}>
                     {partita.fuori}
                   </td>
-                  <td className={`w-full sm:w-[45%] ml-[10%] text-xl pl-[10%] ${sqVsClass} `}>{isMobile == true ? sqVsFormatted.slice(0, 10) : sqVsFormatted}</td>
+                  <td className={`w-full sm:w-[45%] ml-[10%] text-xl pl-[10%] ${sqVsClass} last-text`}>{isMobile == true ? sqVsFormatted.slice(0, 10) : sqVsFormatted}</td>
                 </tr>
                 //implementare se la TEXTCF in casa e' con un squadra di B allora ... sono di colore verde acceso
               );

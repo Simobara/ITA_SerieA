@@ -35,8 +35,8 @@ export const ts = {
 
   TextCF:           "text-slate-600",
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
-  TabHoverHome:     "hover:bg-[#03325C]",
-  TabHoverAway:     "hover:bg-slate-700",
+  TabHoverHome:     "hover:bg-fuchsia-900",
+  TabHoverAway:     "hover:bg-[#03325C]",
 
   BgSquadraCasa:    "bg-[#03325C]",
   BgSquadraFuori:   "bg-slate-700",
@@ -75,5 +75,5 @@ export const ts = {
   HoverSqAway:      "bg-sky-800",
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
 
-  //ottima tonalita'=[#020c2d]
+  //ottima tonalita'=[#020c2d][#03325C]",
 };
