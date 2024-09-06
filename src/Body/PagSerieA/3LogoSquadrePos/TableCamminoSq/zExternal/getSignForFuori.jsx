@@ -13,7 +13,7 @@ export const getSignForFuorii = (fuori) => {
     case "=":
       return `${ts.DrawBg} ${ts.DrawText}`;
     case "-":
-      return `${ts.LoseBg} ${ts.LoseText}`;
+      return `${ts.LoseBg} ${ts.LoseText} `;
     default:
       return `${ts.Bg0}`;
   }
