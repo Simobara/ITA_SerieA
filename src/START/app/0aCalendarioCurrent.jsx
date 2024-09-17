@@ -56,8 +56,8 @@ export const calendario25 = {
       { numero: 7,  day: 'dom', time: '18:00',          team1: 'Cagliari',     team2: 'Napoli',          pron: 'x', results: '0-4' },
       { numero: 8,  day: 'dom', time: '20:45',          team1: 'Monza',        team2: 'Inter',           pron: 'x', results: '1-1' },
   
-      { numero: 9,  day: 'lun', time: '18:30',          team1: 'Parma',        team2: 'Udinese',         pron: 'x', results: '' },
-      { numero: 10, day: 'lun', time: '20:45',          team1: 'Lazio',        team2: 'Verona',          pron: '1', results: '' },
+      { numero: 9,  day: 'lun', time: '18:30',          team1: 'Parma',        team2: 'Udinese',         pron: 'x', results: '2-3' },
+      { numero: 10, day: 'lun', time: '20:45',          team1: 'Lazio',        team2: 'Verona',          pron: '1', results: '2-1' },
   ],
     //*---  -----                                                                                                                ---  5
       giornata5: [
