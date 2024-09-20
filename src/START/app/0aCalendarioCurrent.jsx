@@ -68,7 +68,7 @@ export const calendario25 = {
       { numero: 4,  day: 'sab', time: '18:00',          team1: 'Juve',         team2: 'Napoli',          pron: '2', results: '' },
       { numero: 5,  day: 'sab', time: '20:45',          team1: 'Lecce',        team2: 'Parma',           pron: '', results: '' },
 
-      { numero: 6,  day: 'dom', time: '12:30',          team1: 'Fiorentina',   team2: 'Lazio',           pron: '2', results: '' },
+      { numero: 6,  day: 'dom', time: '12:30',          team1: 'Fiorentina',   team2: 'Lazio',           pron: '', results: '' },
       { numero: 7,  day: 'dom', time: '15:00',          team1: 'Monza',        team2: 'Bologna',         pron: '', results: '' },
       { numero: 8,  day: 'dom', time: '18:00',          team1: 'Roma',         team2: 'Udinese',         pron: '1', results: '' },
       { numero: 9,  day: 'dom', time: '20:45',          team1: 'Inter',        team2: 'Milan',           pron: '1', results: '' },
