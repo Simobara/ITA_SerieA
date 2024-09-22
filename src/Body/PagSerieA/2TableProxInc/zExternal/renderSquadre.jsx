@@ -44,7 +44,7 @@ export const renderSquadre = () => {
         const sharedStyle = {
           width: "35px",
           height: "35px",
-          backgroundColor: "#FF00FF",
+          backgroundColor: "#caee00",
           borderRadius: "50%",
           position: "absolute",
           top: `calc(${squadra.style.top} - 1%)`,
@@ -58,7 +58,7 @@ export const renderSquadre = () => {
         const innerCircleStyle = {
           width: "25px",
           height: "25px",
-          backgroundColor: "transparent",
+          backgroundColor: "#FF00FF",
           opacity: 0.8,
           zIndex: "-1",
           borderRadius: "50%",
