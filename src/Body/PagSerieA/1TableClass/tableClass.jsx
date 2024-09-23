@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { CompleteDataContext, GiornataClouContext, GiornataNContext } from "../../../Ap/Global/global";
 import { nomiSquadre } from "../../../START/app/1main";
 import { s } from "../../../START/styles/0CssMainStyle";
-import {  CoppiaPartitaContext, CoppiaPartitaRegistrataContext, IndexSelectedContext, SquadraContext } from "../../Global/global";
+import { CoppiaPartitaContext, CoppiaPartitaRegistrataContext, IndexSelectedContext, SquadraContext } from "../../Global/global";
 import "./tableClass.css";
 import aggPunteggioSqRegg from "./zExternal/addPunteggioSqReg";
 import aggiungiPuntii from "./zExternal/addPunti";
@@ -85,7 +85,6 @@ const TableClass = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
   //Itera su tutte le squadre, calcolando e assegnando i punteggi iniziali basati sui risultati di ciascuna squadra.
   //Forza un aggiornamento dello stato dei punteggi per riflettere le nuove assegnazioni nel rendering del componente.
   useEffect(() => {
@@ -106,7 +105,6 @@ const TableClass = () => {
     // Forza un aggiornamento dello stato per riflettere i nuovi punteggi nel rendering del componente
     setPunteggiAggiornati((prevPunteggi) => [...prevPunteggi]); // Assicurati che questa logica abbia senso nel tuo contesto
   }, [indexSel, completeClouSelected]);
-
   //Calcola gli indici delle squadre che hanno una differenza di punteggio significativa (>= 3) con la squadra precedente nella lista ordinata.
   useEffect(() => {
     let nuoviIndici = [];
@@ -125,7 +123,6 @@ const TableClass = () => {
     setIndiciDiffQ(nuoviIndici);
     setNumeriIndiciBorderWhite(numeriCorrispondenti);
   }, [squadreOrdinate, coppiaRegSelected, completeClouSelected]);
-
   //Calcola le differenze di punteggio significative (>= 3) tra squadre adiacenti nella lista di punteggi aggiornati ordinati.
   useEffect(() => {
     let nuoviIndici = [];
@@ -151,7 +148,6 @@ const TableClass = () => {
     }
     aggPunteggioSqReg();
   }, [coppiaRegSelected, completeClouSelected]);
-
   //Aggiorna lo stato punteggiAggiornati con questi nuovi punteggi.
   //Calcola le differenze di punteggio significative (>= 3) tra squadre adiacenti nella lista di nuovi punteggi.
   useEffect(() => {

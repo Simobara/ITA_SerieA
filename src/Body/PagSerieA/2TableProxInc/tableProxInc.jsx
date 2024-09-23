@@ -3,7 +3,7 @@ import { CompleteDataContext, GiornataClouContext, GiornataNContext } from "../.
 import { calendario1 } from "../../../START/app/0SerieAMatches";
 import { ts } from "../../../START/styles/0CssMainStyle";
 import serieAItalia from "../../../assts/ChartSerieAItalia/serieAItalia.png";
-import { ButtonResetContext,  CoppiaPartitaContext, IndexSelectedContext } from "../../Global/global";
+import { ButtonResetContext, CoppiaPartitaContext, IndexSelectedContext } from "../../Global/global";
 import CalGiorn from "./CalGiorn/calGiorn";
 import Partite from "./Partite/partite";
 import "./tableProxInc.css";

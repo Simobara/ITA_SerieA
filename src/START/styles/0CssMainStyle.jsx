@@ -4,8 +4,8 @@ import './variable.css';
 export const s = {
   Bg0:              "bg-transparent",
   Bg1:              "bg-gray-700",
-  Bg2:              "bg-gray-700/70", // colore per hover qunado seleziono squadre
-  Bg3:              "bg-gray-800/70",
+  Bg2:              "bg-gray-500/90", //700/70 combo precedente // colore per hover qunado seleziono squadre
+  Bg3:              "bg-gray-800/90", //800/70 combo precedente
 
   Filter:           "filter brightness-[50%]",
   Filter1:          "filter brightness-[80%]",
