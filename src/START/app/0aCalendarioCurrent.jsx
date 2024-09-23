@@ -77,17 +77,17 @@ export const calendario25 = {
   ],
     //*                                                           --  6 ---                                                      ---  6
       giornata6: [
-      { numero: 1,  day: 'ven', time: '20:45',          team1: 'Milan',        team2: 'Lecce',           pron: '', results: '' },
+      { numero: 1,  day: 'ven', time: '20:45',          team1: 'Milan',        team2: 'Lecce',           pron: '1', results: '' },
       
       { numero: 2,  day: 'sab', time: '15:00',          team1: 'Udinese',      team2: 'Inter',           pron: '', results: '' },
-      { numero: 3,  day: 'sab', time: '18:00',          team1: 'Genoa',        team2: 'Juve',            pron: '', results: '' },
-      { numero: 4,  day: 'sab', time: '20:45',          team1: 'Bologna',      team2: 'Atalanta',        pron: '', results: '' },
+      { numero: 3,  day: 'sab', time: '18:00',          team1: 'Genoa',        team2: 'Juve',            pron: '2', results: '' },
+      { numero: 4,  day: 'sab', time: '20:45',          team1: 'Bologna',      team2: 'Atalanta',        pron: 'X', results: '' },
   
       { numero: 5,  day: 'dom', time: '12:30',          team1: 'Torino',       team2: 'Lazio',           pron: '', results: '' },
       { numero: 6,  day: 'dom', time: '15:00',          team1: 'Como',         team2: 'Verona',          pron: '1', results: '' },
-      { numero: 7,  day: 'dom', time: '15:00',          team1: 'Roma',        team2: 'Venezia',          pron: '', results: '' },
-      { numero: 8,  day: 'dom', time: '18:00',          team1: 'Empoli',       team2: 'Fiorentina',      pron: '', results: '' },
-      { numero: 9,  day: 'dom', time: '20:45',          team1: 'Napoli',       team2: 'Monza',           pron: '1', results: '' },
+      { numero: 7,  day: 'dom', time: '15:00',          team1: 'Roma',        team2: 'Venezia',          pron: '1', results: '' },
+      { numero: 8,  day: 'dom', time: '18:00',          team1: 'Empoli',       team2: 'Fiorentina',      pron: '1', results: '' },
+      { numero: 9,  day: 'dom', time: '20:45',          team1: 'Napoli',       team2: 'Monza',           pron: '2', results: '' },
 
       { numero: 10, day: 'lun', time: '20:45',          team1: 'Parma',        team2: 'Cagliari',        pron: '1', results: '' },
   
