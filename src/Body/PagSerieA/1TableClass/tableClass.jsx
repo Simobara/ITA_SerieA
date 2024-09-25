@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { CompleteDataContext, GiornataClouContext, GiornataNContext } from "../../../Ap/Global/global";
 import { nomiSquadre } from "../../../START/app/1main";
 import { s } from "../../../START/styles/0CssMainStyle";
-import { CoppiaPartitaContext, CoppiaPartitaRegistrataContext, IndexSelectedContext, SquadraContext } from "../../Global/global";
+import {  CoppiaPartitaContext, CoppiaPartitaRegistrataContext, IndexSelectedContext, SquadraContext } from "../../Global/global";
 import "./tableClass.css";
 import aggPunteggioSqRegg from "./zExternal/addPunteggioSqReg";
 import aggiungiPuntii from "./zExternal/addPunti";
@@ -85,6 +85,7 @@ const TableClass = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
   //Itera su tutte le squadre, calcolando e assegnando i punteggi iniziali basati sui risultati di ciascuna squadra.
   //Forza un aggiornamento dello stato dei punteggi per riflettere le nuove assegnazioni nel rendering del componente.
   useEffect(() => {
@@ -105,6 +106,7 @@ const TableClass = () => {
     // Forza un aggiornamento dello stato per riflettere i nuovi punteggi nel rendering del componente
     setPunteggiAggiornati((prevPunteggi) => [...prevPunteggi]); // Assicurati che questa logica abbia senso nel tuo contesto
   }, [indexSel, completeClouSelected]);
+
   //Calcola gli indici delle squadre che hanno una differenza di punteggio significativa (>= 3) con la squadra precedente nella lista ordinata.
   useEffect(() => {
     let nuoviIndici = [];
@@ -123,6 +125,7 @@ const TableClass = () => {
     setIndiciDiffQ(nuoviIndici);
     setNumeriIndiciBorderWhite(numeriCorrispondenti);
   }, [squadreOrdinate, coppiaRegSelected, completeClouSelected]);
+
   //Calcola le differenze di punteggio significative (>= 3) tra squadre adiacenti nella lista di punteggi aggiornati ordinati.
   useEffect(() => {
     let nuoviIndici = [];
@@ -148,6 +151,7 @@ const TableClass = () => {
     }
     aggPunteggioSqReg();
   }, [coppiaRegSelected, completeClouSelected]);
+
   //Aggiorna lo stato punteggiAggiornati con questi nuovi punteggi.
   //Calcola le differenze di punteggio significative (>= 3) tra squadre adiacenti nella lista di nuovi punteggi.
   useEffect(() => {
@@ -173,79 +177,218 @@ const TableClass = () => {
 
   // --------------------------------------------------------------------------------------
 
-  const renderTableRow = (squadra, index, totalLength) => (
-    <tr key={index}>
-      <td className={`text-center relative ${prendiColoriColonna0(index, squadreOrdinate)}`}>
-        <div className="w-full h-full flex items-center justify-center" />
-      </td>
-      <td className={`w-[100%] bg-black xs:pl-[0] sm:pl-[1rem] md:pl-[1.5rem] md:pr-[2rem] py-[8px] md:py-2 sm:text-lg md:text-md lg:text-lg xl:px-4 flex justify-start relative sq-column
-        ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ${s.BaseText1}` : ""}
-        ${isTeamMarkedWithX(squadra.name) ? `${s.Filter4} underlineX` : 
-          sqSelected.includes(squadra.name + "Z") ? `${s.Filter4} underlineW` : 
-          sqSelected.includes(squadra.name + "Y") ? `${s.Filter4} underlineL` : ""}
-        ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineW ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}
-        ${isLosingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineL ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}
-        ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineX ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}`}
-      >
-        <div className={`flex items-center bg-black
-          ${isCoppiaSelected(squadra.name) || isWinningTeamInCoppiaRegSelected(squadra.name) || 
-            isLosingTeamInCoppiaRegSelected(squadra.name) || isDrawingTeamInCoppiaRegSelected(squadra.name) ? s.Bg0 : ""}`}
-        >
-          <img src={squadra.logo} alt={`${squadra.name} Logo`} className="w-7 h-7 mr-4" />
-          <span className={getTextTeam(squadra.name)}>{getTeamName(squadra.name)}</span>
-        </div>
-      </td>
-      <td className={`sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 pl-[1rem] text-center font-extrabold bg-black text-cyan-500/80 md:text-md lg:text-lg z-4
-        ${indiciDiffQ.includes(index) ? "borderAlto border-white" : ""}`}
-      >
-        <div className="absolute transform -translate-x-4/3 -translate-y-7 text-left text-lg text-white mx-8 my-[-10] z-[10]">
-          {numeriIndiciBorderWhite[index]}
-        </div>
-        {getPunteggioColonnaDomanda(squadra)}
-      </td>
-      <td className={`sm:pl-[1.5rem] md:pl-[1rem] lg:pl-2 pl-[1rem] xl:mr-4 text-left font-bold bg-black md:text-md lg:text-lg
-        ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2}` : ""}
-        ${indiciDiffPts.includes(index) ? "borderAlto border-gray-600/80" : ""}
-        ${getPunteggioColonnaDomanda(squadra) !== " " ? "text-cyan-500/80" : "text-cyan-500/80"}
-        ${isWinningTeamInCoppiaRegSelected(squadra.name) || isLosingTeamInCoppiaRegSelected(squadra.name) || 
-          isDrawingTeamInCoppiaRegSelected(squadra.name) ? 
-          `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? s.BaseText : s.Bg3}` : ""}`}
-      >
-        <div className="innerBorder" />
-        <div className="absolute transform -translate-x-4/3 -translate-y-8 text-center text-md text-gray-600/80 mx-8 my-[-10] z-30">
-          {!numeriIndiciBorderWhite[index] && differenzePunti[index]}
-        </div>
-        {getPunteggioColonnaPTS(squadra)}
-      </td>
-    </tr>
-  );
-
-  const renderTable = (squadre, isMobile = false) => (
-    <table className={`relative overflow-auto ${isMobile ? "max-w-[50%] ml-[0]" : "min-h-[57rem]"}`}>
-      <thead>
-        <tr className="bg-black text-gray-600 text-center">
-          <th className="w-[0.5rem]" style={{ whiteSpace: "nowrap" }}>--</th>
-          <th className="w-[1rem] sm:pl-[1rem] md:pl-[0] lg:pl-[1rem] lg:pr-[1rem]">--- SQUADRA ---</th>
-          <th className="w-[1rem] sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[1rem] lg:pr-[1rem] pl-[1rem]">?</th>
-          <th className="w-[1rem] sm:pl-[1rem] md:pl-[0.5rem] md:text-center lg:pl-[0] pl-[0.5rem] text-right">PTS</th>
-        </tr>
-      </thead>
-      <tbody className="bg-black text-cyan-800">
-        {squadre.map((squadra, index) => renderTableRow(squadra, index, squadre.length))}
-      </tbody>
-    </table>
-  );
-
   return (
     <>
-      {isBigScreen && renderTable(squadreOrdinate)}
+      {isBigScreen && (
+        <table className="relative overflow-auto min-h-[57rem]">
+          <thead>
+            <tr className="bg-black text-gray-600 text-center">
+              <th className=" w-[0.5rem]" style={{ whiteSpace: "nowrap" }}>
+                --
+              </th>
+              <th className=" w-[1rem] sm:pl-[1rem] md:pl-[0] lg:pl-[1rem] lg:pr-[1rem]">--- SQUADRA ---</th>
+              <th className=" w-[1rem] sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[1rem] lg:pr-[1rem] pl-[1rem]">?</th>
+              <th className=" w-[1rem] sm:pl-[1rem] md:pl-[0.5rem] md:text-center lg:pl-[0] pl-[0.5rem] text-right ">PTS</th>
+              {/* <th className=" w-[2%]"> </th> */}
+              {/* Altre colonne commentate */}
+            </tr>
+          </thead>
+          <tbody className="bg-black text-cyan-800">
+            {squadreOrdinate.map((squadra, index) => (
+              // console.log('Rendering squadra:', squadra.name);
+              <tr key={index}>
+                <td className={`text-center relative ${prendiColoriColonna0(index)}`}>
+                  <div className="w-full h-full flex items-center justify-center ">{/* {index + 1} */}</div>
+                </td>
+                {/* { COLONNA SQUADRE} */}
+                <td
+                  className={`w-[100%] bg-black xs:pl-[0] sm:pl-[1rem] md:pl-[1.5rem] md:pr-[2rem] py-[8px] md:py-2 sm:text-lg md:text-md lg:text-lg xl:px-4 flex justify-start relative sq-column
+            ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ${s.BaseText1}` : ""}
+            ${isTeamMarkedWithX(squadra.name) ? `${s.Filter4} underlineX ` : sqSelected.includes(squadra.name + "Z") ? `${s.Filter4} underlineW` : sqSelected.includes(squadra.name + "Y") ? `${s.Filter4} underlineL` : ""}
+            ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineW ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}
+            ${isLosingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineL ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}
+            ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineX ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}          
+                  >
+              }`}
+                >
+                  {/* { div delle singole squadre non importa} */}
+                  <div
+                    className={`flex items-center bg-black
+              ${isCoppiaSelected(squadra.name) ? `${s.Bg0}` : ""}
+              ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Bg0}` : ""}
+              ${isLosingTeamInCoppiaRegSelected(squadra.name) ? `${s.Bg0}` : ""}
+              ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Bg0}` : ""}
+              `}
+                  >
+                    <img src={squadra.logo} alt={`${squadra.name} Logo`} className="w-7 h-7 mr-4" />
+                    <span className={getTextTeam(squadra.name)}>{getTeamName(squadra.name)}</span>
+                  </div>
+                </td>
+                {/* { COLONNA ?} */}
+                <td
+                  className={`sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 pl-[1rem] text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
+                ${indiciDiffQ.includes(index) ? "borderAlto border-white" : ""}`}
+                >
+                  <div className="absolute transform -translate-x-4/3 -translate-y-7 text-left text-lg text-white mx-8 my-[-10] z-[10]">{numeriIndiciBorderWhite[index]}</div>
+                  {getPunteggioColonnaDomanda(squadra)}
+                </td>
+                {/* { COLONNA PTS} */}
+                <td
+                  className={`sm:pl-[1.5rem] md:pl-[1rem] lg:pl-2 pl-[1rem] xl:mr-4 text-left font-bold bg-black md:text-md  lg:text-lg
+              ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ` : ""}
+              ${indiciDiffPts.includes(index) ? "borderAlto border-gray-600/80 " : ""}
+              ${getPunteggioColonnaDomanda(squadra) !== " " ? `  text-cyan-500/80` : "text-cyan-500/80"}
+              ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}
+              ${isLosingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}
+              ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""} 
+							`}
+                >
+                  <div className="innerBorder"></div>
+                  <div className={`absolute transform -translate-x-4/3 -translate-y-8 text-center text-md text-gray-600/80 mx-8 my-[-10] z-30`}>
+                    {!numeriIndiciBorderWhite[index] && differenzePunti[index]}
+                  </div>
+                  {getPunteggioColonnaPTS(squadra)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
       {isMobile && (
         <div className="table-container">
           <div className="table-column">
-            {renderTable(firstHalf, true)}
+            <table className="relative overflow-x-hidden overflow-y-hidden md:min-h-[57rem] max-w-[50%] ml-[0]">
+              <thead>
+                <tr className="bg-black text-gray-600 text-center">
+                  <th className="w-[0.5rem]" style={{ whiteSpace: "nowrap" }}></th>
+                  <th className="w-[20%] sm:pl-[1rem]">--- -SQUADRA</th>
+                  <th className="w-[8%] sm:pl-[1rem] pl-[0.5rem]">?</th>
+                  <th className="w-[8%] sm:pl-[1rem] pl-[0.5rem] text-center">Ps</th>
+                </tr>
+              </thead>
+              <tbody className="bg-black text-cyan-800">
+                {firstHalf.map((squadra, index) => (
+                  <tr key={index}>
+                    {/* // COLONNA COLORI SOTTO */}
+                    <td className={` relative ${prendiColoriColonna0(index, squadreOrdinate)}`}>
+                      <div className="w-full h-full flex items-center justify-center ">{/* {index + 1} */}</div>
+                    </td>
+                    {/* // COLONNA LOGO SOTTO */}
+                    <td
+                      className={`w-[100%] bg-black sm:pl-[1rem] md:pl-[1.5rem] pl-0 md:pr-[2rem] md:py-2 py-[7px] sm:text-lg md:text-md lg:text-lg xl:px-4 flex justify-start relative sq-column
+                      ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ${s.BaseText1}` : ""}
+                      ${isTeamMarkedWithX(squadra.name) ? `${s.Filter4} underlineX ` : sqSelected.includes(squadra.name + "Z") ? `${s.Filter4} underlineW` : sqSelected.includes(squadra.name + "Y") ? `${s.Filter4} underlineL` : ""}
+                      ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineW ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}
+                      ${isLosingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineL ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}
+                      ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineX ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}`}
+                    >
+                      <div
+                        className={`flex items-center bg-black
+                        ${isCoppiaSelected(squadra.name) ? `${s.Bg0}` : ""}
+                        ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Bg0}` : ""}
+                        ${isLosingTeamInCoppiaRegSelected(squadra.name) ? `${s.Bg0}` : ""}
+                        ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Bg0}` : ""}
+                        `}
+                      >
+                        <img src={squadra.logo} alt={`${squadra.name} Logo`} className="w-7 h-7 mr-[2px]" />
+                        <span className={getTextTeam(squadra.name)}>{getTeamName(squadra.name)}</span>
+                      </div>
+                    </td>
+                    <td
+                      className={`sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 pl-[0.5rem] text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
+                          ${indiciDiffQ.includes(index) ? "borderAlto border-white" : ""}`}
+                    >
+                      <div className="absolute transform -translate-x-4/3 -translate-y-7 sm:-translate-y-6 md:-translate-y-8 text-center md:text-lg text-md text-white mx-2 sm:mx-3 md:mx-0 lg:mx-2 my-[-10] z-[10]">
+                        {numeriIndiciBorderWhite[index]}
+                      </div>
+                      {getPunteggioColonnaDomanda(squadra)}
+                    </td>
+                    {/* // COLONNA PTS SOTTO */}
+                    <td
+                      className={`sm:pl-[1.5rem] md:pl-[1rem] lg:pl-2 pl-[0.5rem] xl:mr-4 text-left font-bold bg-black md:text-md  lg:text-lg
+                        ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ` : ""}
+                        ${indiciDiffPts.includes(index) ? "borderAlto border-gray-600/80 " : ""}
+                        ${getPunteggioColonnaDomanda(squadra) !== " " ? `  text-cyan-500/80` : "text-cyan-500/80"}
+                        ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}
+                        ${isLosingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}
+                        ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}`}
+                    >
+                      <div className="innerBorder"></div>
+                      <div className={`absolute transform -translate-x-4/3 -translate-y-7 text-left text-md text-gray-600/80 mx-8 sm:my-[-10] z-30`}>
+                        {!numeriIndiciBorderWhite[index] && differenzePunti[index]}
+                      </div>
+                      {getPunteggioColonnaPTS(squadra)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
           <div className="table-column">
-            {renderTable(secondHalf, true)}
+            <table className="relative overflow-x-hidden overflow-y-hidden md:min-h-[57rem] max-w-[50%] ml-[0]">
+              <thead>
+                <tr className="bg-black text-gray-600 text-center">
+                  <th className="w-[0.5rem]" style={{ whiteSpace: "nowrap" }}></th>
+                  <th className="w-[20%] sm:pl-[1rem] "> --- -SQUADRA </th>
+                  <th className="w-[8%] sm:pl-[1rem] pl-[0.5rem]">?</th>
+                  <th className="w-[8%] sm:pl-[1rem] pl-[0.5rem] text-center">Ps</th>
+                </tr>
+              </thead>
+              <tbody className="bg-black text-cyan-800">
+                {secondHalf.map((squadra, index) => (
+                  <tr key={index}>
+                    <td className={`text-center relative ${prendiColoriColonna0(index + half, squadreOrdinate)}`}>
+                      <div className="w-full h-full flex items-center justify-center ">{/* {index + 1} */}</div>
+                    </td>
+                    <td
+                      className={`flex w-[100%] bg-black xs:pl-[0] sm:pl-[1rem] py-[7px] sm:text-lg justify-start relative sq-column
+                      ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ${s.BaseText1}` : ""}
+                      ${isTeamMarkedWithX(squadra.name) ? `${s.Filter4} underlineX ` : sqSelected.includes(squadra.name + "Z") ? `${s.Filter4} underlineW` : sqSelected.includes(squadra.name + "Y") ? `${s.Filter4} underlineL` : ""}
+                      ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineW ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}
+                      ${isLosingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineL ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}
+                      ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineX ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}`}
+                    >
+                      <div
+                        className={`flex items-center bg-black
+                        ${isCoppiaSelected(squadra.name) ? `${s.Bg0}` : ""}
+                        ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Bg0}` : ""}
+                        ${isLosingTeamInCoppiaRegSelected(squadra.name) ? `${s.Bg0}` : ""}
+                        ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Bg0}` : ""}
+                        `}
+                      >
+                        <img src={squadra.logo} alt={`${squadra.name} Logo`} className="w-7 h-7 mr-[2px]" />
+                        <span className={getTextTeam(squadra.name)}>{getTeamName(squadra.name)}</span>
+                      </div>
+                    </td>
+                    <td
+                      className={`sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 pl-[0.5rem] text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
+                          ${indiciDiffQ.includes(index + half) ? "borderAlto border-white" : ""}`}
+                    >
+                      <div className="absolute transform -translate-x-4/3 -translate-y-7 sm:-translate-y-6 md:-translate-y-8 text-center md:text-lg text-md text-white mx-2 sm:mx-3 md:mx-0 lg:mx-2 my-[-10] z-[10]">
+                        {numeriIndiciBorderWhite[index + half]}
+                      </div>
+                      {getPunteggioColonnaDomanda(squadra)}
+                    </td>
+                    {/* //colonna PTS SOTTO*/}
+                    <td
+                      className={`sm:pl-[1.5rem] md:pl-[1rem] lg:pl-2 pl-[0.5rem] xl:mr-4 text-left font-bold bg-black md:text-md  lg:text-lg
+                        ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ` : ""}
+                        ${indiciDiffPts.includes(index + half) ? "borderAlto border-gray-600/80 " : ""}
+                        ${getPunteggioColonnaDomanda(squadra) !== " " ? `  text-cyan-500/80` : "text-cyan-500/80"}
+                        ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}
+                        ${isLosingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}
+                        ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}`}
+                    >
+                      <div className="innerBorder"></div>
+                      <div className={`absolute transform -translate-x-4/3 -translate-y-7 text-left text-md text-gray-600/80 mx-8 sm:my-[-10] z-30`}>
+                        {!numeriIndiciBorderWhite[index + half] && differenzePunti[index + half]}
+                      </div>
+                      {getPunteggioColonnaPTS(squadra)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       )}
