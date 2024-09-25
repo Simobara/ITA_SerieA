@@ -24,7 +24,7 @@ const PagSerieA = () => {
             <TableProxInc />
           </div>
         </div>
-        <div className="overflow-y-scroll sm:overflow-x-hidden sm:overflow-y-auto min-w-[98vw] sm:min-w-full sm:max-h-[50vh] md:min-w-[100%] md:max-h-[50vh] lg:min-w-[30rem] lg:min-h-[95vh] lg:w-auto xl:max-w-[100%] xl:max-h-[95vh] max-w-[15rem] max-h-[50vh]">
+        <div className="overflow-y-scroll sm:overflow-x-hidden sm:overflow-y-auto min-w-[98vw] sm:min-w-full sm:max-h-[50vh] md:min-w-[68%] md:max-h-[50vh] lg:min-w-[30rem] lg:min-h-[95vh] lg:w-auto xl:max-w-[100%] xl:max-h-[95vh] max-w-[15rem] max-h-[50vh]">
           <div className="border border-l-0 rounded-[20px] border-gray-900 bg-black unselectable">
             <LogoSquadrePos />
           </div>
