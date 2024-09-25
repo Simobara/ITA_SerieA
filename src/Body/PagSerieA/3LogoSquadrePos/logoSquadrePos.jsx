@@ -1,5 +1,4 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { calendario1 } from "../../../START/app/0SerieAMatches";
 import { nomiSquadre, SqEndGruppo1, SqEndGruppo2 } from "../../../START/app/1main";
 import { ts } from "../../../START/styles/0CssMainStyle";
 import { CoppiaPartitaContext, TestingContext } from "../../Global/global";
@@ -10,7 +9,7 @@ import { renderLineaa } from "./zExternal/renderLinea";
 const LogoSquadrePos = () => {
   const [squadraAttiva1, setSquadraAttiva1] = useState("");
   const [squadraAttiva2, setSquadraAttiva2] = useState("");
-  const {testingClouSelected, setTestingClouSelected}=useContext(TestingContext)
+  const { testingClouSelected, setTestingClouSelected } = useContext(TestingContext);
   const { coppiaSelected } = useContext(CoppiaPartitaContext);
   //logoRefs: Un oggetto che viene utilizzato per creare riferimenti a ciascun logo delle squadre, permettendo operazioni dirette su questi elementi (come i click).
   const logoRefs = useRef({});

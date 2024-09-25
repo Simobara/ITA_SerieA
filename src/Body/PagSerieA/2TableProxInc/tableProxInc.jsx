@@ -71,7 +71,7 @@ const TableProxInc = () => {
     <>
       <div className="relative">
         {!isMobile && (
-          <div className="unselectable flex justify-center h-[26.8rem] overflow-x-hidden hide-scrollbar ">
+          <div className="unselectable flex justify-center h-auto md:max-h-[26.8rem] overflow-x-hidden hide-scrollbar ">
             <div className="relative h-[42rem] w-[100%] ml-[0rem] mr-[0rem]">
               <img src={serieAItalia} alt="serieAItalia" className="unselectable relative h-[110%] w-[100%] mt-[-4rem] filter brightness-35" />
               {coppiaSelected && renderSquadre()}
