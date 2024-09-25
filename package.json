@@ -18,9 +18,9 @@
     "nodemailer": "^6.9.14",
     "postcss": "^8.4.32",
     "react": "^17.0.0",
+    "react-dom": "^17.0.0",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
-    "react-dom": "^17.0.0",
     "twilio": "^4.19.0"
   },
   "devDependencies": {
