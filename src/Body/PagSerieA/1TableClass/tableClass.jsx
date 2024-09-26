@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { CompleteDataContext, GiornataClouContext, GiornataNContext } from "../../../Ap/Global/global";
 import { nomiSquadre } from "../../../START/app/1main";
 import { s } from "../../../START/styles/0CssMainStyle";
-import {  CoppiaPartitaContext, CoppiaPartitaRegistrataContext, IndexSelectedContext, SquadraContext } from "../../Global/global";
+import { CoppiaPartitaContext, CoppiaPartitaRegistrataContext, IndexSelectedContext, SquadraContext } from "../../Global/global";
 import "./tableClass.css";
 import aggPunteggioSqRegg from "./zExternal/addPunteggioSqReg";
 import aggiungiPuntii from "./zExternal/addPunti";
