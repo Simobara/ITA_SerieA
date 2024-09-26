@@ -180,7 +180,7 @@ const TableClass = () => {
   return (
     <>
       {isBigScreen && (
-        <table className="relative overflow-auto min-h-[57rem]">
+        <table className="relative overflow-auto min-h-[57rem] md:h-[60.7rem] lg:h-[57rem]">
           <thead>
             <tr className="bg-black text-gray-600 text-center">
               <th className=" w-[0.5rem]" style={{ whiteSpace: "nowrap" }}>
