@@ -73,7 +73,7 @@ export const calendario25 = {
       { numero: 8,  day: 'dom', time: '18:00',          team1: 'Roma',         team2: 'Udinese',         pron: '1', results: '3-0' },
       { numero: 9,  day: 'dom', time: '20:45',          team1: 'Inter',        team2: 'Milan',           pron: '1', results: '1-2' },
 
-      { numero: 10, day: 'lun', time: '20:45',          team1: 'Atalanta',     team2: 'Como',            pron: '', results: '1-0' },
+      { numero: 10, day: 'lun', time: '20:45',          team1: 'Atalanta',     team2: 'Como',            pron: '', results: '2-3' },
   ],
     //*                                                           --  6 ---                                                      ---  6
       giornata6: [
