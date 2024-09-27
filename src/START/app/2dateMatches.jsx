@@ -1,4 +1,4 @@
-
+ 
  //?--- --- --- --- --- METTERE A POSTO I NUMERI DELLE DATE
 
 //const DateIncontri24 = [
@@ -504,7 +504,9 @@ const DateIncontri25 = [
             { date: 30, details: { event: 'giornata6',          teams: '' } }
         ],
         ItaCoppaItalia: [
-            {}
+            { date: 25, details: { event: 'sedicesimi',          teams: '' } },
+            { date: 26, details: { event: 'sedicesimi',          teams: '' } },
+            { date: 27, details: { event: 'sedicesimi',          teams: '' } },
         ],
         EuroChampionsLeague: [
             { date: 17, details: { event: '1giornata',          teams: '' } },
