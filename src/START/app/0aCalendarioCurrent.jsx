@@ -89,7 +89,7 @@ export const calendario25 = {
       { numero: 8,  day: 'dom', time: '18:00',          team1: 'Empoli',       team2: 'Fiorentina',      pron: '1', results: '0-0' },
       { numero: 9,  day: 'dom', time: '20:45',          team1: 'Napoli',       team2: 'Monza',           pron: 'X', results: '2-0' },
 
-      { numero: 10, day: 'lun', time: '20:45',          team1: 'Parma',        team2: 'Cagliari',        pron: '1', results: '1-0' },
+      { numero: 10, day: 'lun', time: '20:45',          team1: 'Parma',        team2: 'Cagliari',        pron: '1', results: '2-3' },
   
   ],
     //*---  -----                                     OTTOBRE                                                                    ---  7
