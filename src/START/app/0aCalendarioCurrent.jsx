@@ -94,18 +94,18 @@ export const calendario25 = {
   ],
     //*---  -----                                     OTTOBRE                                                                    ---  7
       giornata7: [
-      { numero: 1,  day: 'ven', time: '18:30',          team1: 'Napoli',       team2: 'Como',            pron: '1', results: '' },
-      { numero: 2,  day: 'ven', time: '20:45',          team1: 'Verona',       team2: 'Venezia',         pron: '', results: '' },
+      { numero: 1,  day: 'ven', time: '18:30',          team1: 'Napoli',       team2: 'Como',            pron: '1', results: '3-1' },
+      { numero: 2,  day: 'ven', time: '20:45',          team1: 'Verona',       team2: 'Venezia',         pron: '', results: '2-1' },
 
-      { numero: 3,  day: 'sab', time: '15:00',          team1: 'Udinese',      team2: 'Lecce',           pron: '1', results: '' },
-      { numero: 4,  day: 'sab', time: '18:00',          team1: 'Atalanta',     team2: 'Genoa',           pron: 'X', results: '' },
-      { numero: 5,  day: 'sab', time: '20:45',          team1: 'Inter',        team2: 'Torino',          pron: '1', results: '' },
+      { numero: 3,  day: 'sab', time: '15:00',          team1: 'Udinese',      team2: 'Lecce',           pron: '1', results: '1-0' },
+      { numero: 4,  day: 'sab', time: '18:00',          team1: 'Atalanta',     team2: 'Genoa',           pron: 'X', results: '5-1' },
+      { numero: 5,  day: 'sab', time: '20:45',          team1: 'Inter',        team2: 'Torino',          pron: '1', results: '3-2' },
       
-      { numero: 6,  day: 'dom', time: '12:30',          team1: 'Juve',         team2: 'Cagliari',        pron: '1', results: '' },
-      { numero: 7,  day: 'dom', time: '15:00',          team1: 'Bologna',      team2: 'Parma',           pron: '1', results: '' },
-      { numero: 8,  day: 'dom', time: '15:00',          team1: 'Lazio',        team2: 'Empoli',          pron: '1', results: '' },
-      { numero: 9,  day: 'dom', time: '18:00',          team1: 'Monza',        team2: 'Roma',            pron: '2', results: '' },
-      { numero: 10, day: 'dom', time: '20:45',          team1: 'Fiorentina',   team2: 'Milan',           pron: 'X', results: '' },  
+      { numero: 6,  day: 'dom', time: '12:30',          team1: 'Juve',         team2: 'Cagliari',        pron: '1', results: '1-1' },
+      { numero: 7,  day: 'dom', time: '15:00',          team1: 'Bologna',      team2: 'Parma',           pron: '1', results: '0-0' },
+      { numero: 8,  day: 'dom', time: '15:00',          team1: 'Lazio',        team2: 'Empoli',          pron: '1', results: '2-1' },
+      { numero: 9,  day: 'dom', time: '18:00',          team1: 'Monza',        team2: 'Roma',            pron: '2', results: '1-1' },
+      { numero: 10, day: 'dom', time: '20:45',          team1: 'Fiorentina',   team2: 'Milan',           pron: 'X', results: '2-1' },  
   ],
     //*---  -----                                                                                                                ---  8
       giornata8: [
