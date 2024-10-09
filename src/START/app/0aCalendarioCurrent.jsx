@@ -109,18 +109,18 @@ export const calendario25 = {
   ],
     //*---  -----                                                                                                                ---  8
       giornata8: [
-      { numero: 1,  day: 'sab', time: '15:00',          team1: 'Como',         team2: 'Parma',           pron: '', results: '' },
+      { numero: 1,  day: 'sab', time: '15:00',          team1: 'Como',         team2: 'Parma',           pron: 'X', results: '' },
       { numero: 2,  day: 'sab', time: '15:00',          team1: 'Genoa',        team2: 'Bologna',         pron: '2', results: '' },
       { numero: 3,  day: 'sab', time: '18:00',          team1: 'Milan',        team2: 'Udinese',         pron: '1', results: '' },
-      { numero: 4,  day: 'sab', time: '20:45',          team1: 'Juve',          team2: 'Lazio',           pron: '', results: '' },
+      { numero: 4,  day: 'sab', time: '20:45',          team1: 'Juve',          team2: 'Lazio',           pron: '2', results: '' },
 
       { numero: 5,  day: 'dom', time: '12:30',          team1: 'Empoli',       team2: 'Napoli',          pron: 'X', results: '' },
-      { numero: 6,  day: 'dom', time: '15:00',          team1: 'Lecce',        team2: 'Fiorentina',      pron: '', results: '' },
-      { numero: 7,  day: 'dom', time: '15:00',          team1: 'Venezia',      team2: 'Atalanta',        pron: '', results: '' },      
+      { numero: 6,  day: 'dom', time: '15:00',          team1: 'Lecce',        team2: 'Fiorentina',      pron: '1', results: '' },
+      { numero: 7,  day: 'dom', time: '15:00',          team1: 'Venezia',      team2: 'Atalanta',        pron: 'X', results: '' },      
       { numero: 8,  day: 'dom', time: '18:00',          team1: 'Cagliari',     team2: 'Torino',          pron: '1', results: '' },
       { numero: 9,  day: 'dom', time: '20:45 ',          team1: 'Roma',         team2: 'Inter',           pron: '2', results: '' },
 
-      { numero: 10, day: 'lun', time: '20:45',          team1: 'Verona',       team2: 'Monza',           pron: '2', results: '' },
+      { numero: 10, day: 'lun', time: '20:45',          team1: 'Verona',       team2: 'Monza',           pron: 'X', results: '' },
   
   ],
     //*--------------------------------------------------------    -  9 -    -------------------------------------------------------  9
