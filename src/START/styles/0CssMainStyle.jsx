@@ -5,7 +5,7 @@ export const s = {
   Bg0:              "bg-transparent",
   Bg1:              "bg-gray-700",
   Bg2:              "bg-slate-700/80", //gray700/70 combo precedente // colore per hover qunado seleziono squadre
-  Bg3:              "bg-slate-800/60", //gray800/70 combo precedente
+  Bg3:              "bg-slate-800/60", //gray800/70 combo precedente 
 
   Filter:           "filter brightness-[50%]",
   Filter1:          "filter brightness-[80%]",
@@ -35,17 +35,17 @@ export const ts = {
 
   TextCF:           "text-blue-500",
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
-  TabHoverHome:     "hover:bg-fuchsia-900",
-  TabHoverAway:     "hover:bg-[#03325C]",
+  TabHoverHome:     "hover:bg-fuchsia-900/70",
+  TabHoverAway:     "hover:bg-slate-600/70",
 
-  BgSquadraCasa:    "bg-[#03325C]",
+  BgSquadraCasa:    "bg-slate-800",
   BgSquadraFuori:   "bg-slate-700",
 
   SqCasaZChart:     "!z-10",
   SqFuoriZChart:    "!z-5",
 
   //--- --- --- --- --- --- --- --- --- --- --- --- ---
-  ATeamBg:          "bg-slate-700 border-t-2 border-l-4 border-cyan-500 rounded-t-sm rounded-l-3xl rounded-tr-xl",
+  ATeamBg:          "bg-slate-700/70 border-t-2 border-l-4 border-cyan-500 rounded-t-sm rounded-l-3xl rounded-tr-xl",
 
   //--- --- --- --- --- --- --- --- --- --- --- --- ---
   ATeamText:        "text-black tracking-wider font-white",
