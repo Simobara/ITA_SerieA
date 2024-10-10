@@ -35,20 +35,20 @@ export const ts = {
 
   TextCF:           "text-blue-500",
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
-  TabHoverHome:     "hover:bg-fuchsia-900/70",
-  TabHoverAway:     "hover:bg-slate-600/70",
+  TabHoverHome:     "hover:bg-fuchsia-900", //parte3 hover delle squadre tabella
+  TabHoverAway:     "hover:bg-slate-700",
 
-  BgSquadraCasa:    "bg-slate-900",
+  BgSquadraCasa:    "bg-[#022F51]", //parte3 indici squadre tabella
   BgSquadraFuori:   "bg-slate-700",
 
   SqCasaZChart:     "!z-10",
   SqFuoriZChart:    "!z-5",
 
   //--- --- --- --- --- --- --- --- --- --- --- --- ---
-  ATeamBg:          "bg-slate-800/80 border-t-2 border-l-4 border-cyan-500 rounded-t-sm rounded-l-3xl rounded-tr-xl",
+  ATeamBg:          "bg-[#03325C]/70 border-t-2 border-l-4 border-cyan-500 rounded-t-sm rounded-l-3xl rounded-tr-xl",
 
   //--- --- --- --- --- --- --- --- --- --- --- --- ---
-  ATeamText:        "text-black tracking-wider font-white",
+  ATeamText:        "text-black/90 tracking-wider font-white",
 
   BTeamText:        "text-gray-600",
 
@@ -75,5 +75,5 @@ export const ts = {
   HoverSqAway:      "bg-sky-800",
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
 
-  //ottima tonalita'=[#020c2d][#03325C]",
+  //ottima tonalita'=[#020c2d][#03325C][#022F51][#022745]",
 };
