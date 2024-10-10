@@ -21,7 +21,7 @@ export const s = {
 
   BorderPartite:        "border-pink-900",
   BrightnessDopoScelta: "brightness-60",
-  BorderLineNextMatch:  "border-b-4 border-pink-900",
+  BorderLineNextMatch:  "border-b-2 border-pink-700 border-dashed",
 
   pinWin: "text-[var(--win-color)] text-sm ",
   pinDraw: "text-[var(--draw-color)] text-sm ",
