@@ -35,7 +35,7 @@ export const ts = {
 
   TextCF:           "text-blue-500",
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
-  TabHoverHome:     "hover:bg-fuchsia-900", //parte3 hover delle squadre tabella
+  TabHoverHome:     "hover:bg-[var(--win-color)]", //parte3 hover delle squadre tabella
   TabHoverAway:     "hover:bg-slate-700",
 
   BgSquadraCasa:    "bg-[#022545]", //parte3 indici squadre tabella
