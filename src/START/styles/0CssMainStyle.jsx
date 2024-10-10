@@ -45,7 +45,7 @@ export const ts = {
   SqFuoriZChart:    "!z-5",
 
   //--- --- --- --- --- --- --- --- --- --- --- --- ---
-  ATeamBg:          "bg-[#03325C] border-t-2 border-l-4 border-cyan-500 rounded-t-sm rounded-l-3xl rounded-tr-xl",
+  ATeamBg:          "bg-[#022F51] border-t-2 border-l-4 border-cyan-500 rounded-t-sm rounded-l-3xl rounded-tr-xl",
 
   //--- --- --- --- --- --- --- --- --- --- --- --- ---
   ATeamText:        "text-black tracking-wider font-white",
