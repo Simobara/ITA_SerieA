@@ -4,8 +4,8 @@ import './variable.css';
 export const s = {
   Bg0:              "bg-transparent",
   Bg1:              "bg-gray-700",
-  Bg2:              "bg-slate-700/90", // colore per hover qunado seleziono squadre
-  Bg3:              "bg-slate-800/90",  
+  Bg2:              "bg-slate-700/70", // colore per hover qunado seleziono squadre
+  Bg3:              "bg-slate-800/70",  
 
   Filter:           "filter brightness-[50%]",
   Filter1:          "filter brightness-[80%]",
@@ -35,11 +35,11 @@ export const ts = {
 
   TextCF:           "text-blue-500",
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
-  TabHoverHome:     "hover:bg-[var(--win-color)]", //parte3 hover delle squadre tabella
-  TabHoverAway:     "hover:bg-slate-700",
+  TabHoverHome:     "hover:bg-[var(--win-color)]", //parte3 - hover delle squadre tabella
+  TabHoverAway:     "hover:bg-gray-500",
 
-  BgSquadraCasa:    "bg-[#022545]", //parte3 indici squadre tabella
-  BgSquadraFuori:   "bg-slate-700",
+  BgSquadraCasa:    "bg-[#022545]", //parte3 - titolo squadre tabella
+  BgSquadraFuori:   "bg-[var(--away-color)]",
 
   SqCasaZChart:     "!z-10",
   SqFuoriZChart:    "!z-5",
@@ -59,7 +59,7 @@ export const ts = {
 
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
   ColResHome:       "!text-sky-800 font-semibold",
-  ColResAway:       "text-gray-800 font-light",
+  ColResAway:       "text-[var(--away-color)] font-light",
 
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
   WinBg:            "bg-[var(--win-color)] rounded-full",

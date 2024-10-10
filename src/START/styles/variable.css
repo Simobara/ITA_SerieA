@@ -2,8 +2,9 @@
 :root {
   --win-color: #b40057;
   --draw-color: #567401;
-  --lose-color: #110f0f;
+  --lose-color: #1c1818;
   --underline-thickness: 3px;
+  --away-color: #393838;
 }
 /* 020c2d */
 /* 010939 */
