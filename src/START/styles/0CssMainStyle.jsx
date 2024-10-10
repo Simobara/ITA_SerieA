@@ -45,7 +45,7 @@ export const ts = {
   SqFuoriZChart:    "!z-5",
 
   //--- --- --- --- --- --- --- --- --- --- --- --- ---
-  ATeamBg:          "bg-[#03325C]/70 border-t-2 border-l-4 border-cyan-500 rounded-t-sm rounded-l-3xl rounded-tr-xl",
+  ATeamBg:          "bg-[#03325C]/80 border-t-2 border-l-4 border-cyan-500 rounded-t-sm rounded-l-3xl rounded-tr-xl",
 
   //--- --- --- --- --- --- --- --- --- --- --- --- ---
   ATeamText:        "text-black/90 tracking-wider font-white",
@@ -75,5 +75,5 @@ export const ts = {
   HoverSqAway:      "bg-sky-800",
   //--- --- --- --- --- --- --- --- --- --- --- --- --- ---
 
-  //ottima tonalita'=[#020c2d][#03325C][#022F51][#022745]",
+  //ottima tonalita'=[#03325C][#022F51][#022745][#020c2d]",
 };
