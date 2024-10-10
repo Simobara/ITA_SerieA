@@ -38,14 +38,14 @@ export const ts = {
   TabHoverHome:     "hover:bg-fuchsia-900", //parte3 hover delle squadre tabella
   TabHoverAway:     "hover:bg-slate-700",
 
-  BgSquadraCasa:    "bg-[#022745]", //parte3 indici squadre tabella
+  BgSquadraCasa:    "bg-[#022F51]/80", //parte3 indici squadre tabella
   BgSquadraFuori:   "bg-slate-700",
 
   SqCasaZChart:     "!z-10",
   SqFuoriZChart:    "!z-5",
 
   //--- --- --- --- --- --- --- --- --- --- --- --- ---
-  ATeamBg:          "bg-[#022F51] border-t-2 border-l-4 border-cyan-500 rounded-t-sm rounded-l-3xl rounded-tr-xl",
+  ATeamBg:          "bg-[#03325C]/90 border-t-2 border-l-4 border-cyan-500 rounded-t-sm rounded-l-3xl rounded-tr-xl",
 
   //--- --- --- --- --- --- --- --- --- --- --- --- ---
   ATeamText:        "text-black tracking-wider font-white",
