@@ -38,7 +38,7 @@ export const ts = {
   TabHoverHome:     "hover:bg-fuchsia-900/70",
   TabHoverAway:     "hover:bg-slate-600/70",
 
-  BgSquadraCasa:    "bg-slate-800",
+  BgSquadraCasa:    "bg-slate-900",
   BgSquadraFuori:   "bg-slate-700",
 
   SqCasaZChart:     "!z-10",
