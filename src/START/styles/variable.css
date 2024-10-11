@@ -2,7 +2,7 @@
 :root {
   --win-color: #b40057;
   --draw-color: #567401;
-  --lose-color: #222222;
+  --lose-color: #1f1f1f;
   --underline-thickness: 3px;
   --away-color: #393838;
 }
