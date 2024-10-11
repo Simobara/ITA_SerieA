@@ -1,3 +1,20 @@
+import { ATeams, BTeams } from "../../../../START/funct/FilterTeamByCat";
+
+// Funzioni per verificare se una squadra è in Serie A o B
+const isATeam = (teamName) => {
+  if (typeof teamName === "string") {
+    return ATeams.includes(teamName.toUpperCase());
+  }
+  return false;
+};
+
+const isBTeam = (teamName) => {
+  if (typeof teamName === "string") {
+    return BTeams.includes(teamName.toUpperCase());
+  }
+  return false;
+};
+
 export function creaRisSq(calendario, nomeSquadra, number) {
   const risultatiSquadra = [];
   const totaleGiornate = 38;
@@ -21,7 +38,7 @@ export function creaRisSq(calendario, nomeSquadra, number) {
     if (Array.isArray(giornata)) {
       giornata.forEach((partita) => {
         if (partita.team1 === nomeSquadra || partita.team2 === nomeSquadra) {
-          const isCasa = partita.team1 === nomeSquadra;
+          const isCasa = partita.team1 === nomeSquadra; // Verifica se la squadra gioca in casa
           let resultsTrimmed = partita?.results.trim() || "";
 
           // Verifica se i risultati contengono numeri validi
@@ -33,7 +50,31 @@ export function creaRisSq(calendario, nomeSquadra, number) {
             resultsTrimmed = ""; // Se uno dei risultati non è un numero valido, ignora il risultato
           }
 
-          // Gestione del pronostico
+          // Logica per squadre di Serie A contro Serie B
+          if (resultsTrimmed === "" && isCasa) {
+            const avversario = partita.team2; // Se è in casa, l'avversario è team2
+            const isATeamCurrent = isATeam(nomeSquadra); // Verifica se la squadra corrente è di Serie A
+            const isBTeamOpponent = isBTeam(avversario); // Verifica se l'avversario è di Serie B
+
+            if (isATeamCurrent && isBTeamOpponent && partita.pron.trim() === "") {
+              resultsTrimmed = "9-8"; // Imposta il risultato 9-8 a favore di ATeam quando gioca in casa contro un BTeam
+              partita.pron = "1"; // Aggiorna anche il pronostico come vittoria per la squadra A
+            }
+          }
+
+          // Nuova logica per squadre di Serie B che giocano in casa contro un'altra squadra di Serie B
+          if (resultsTrimmed === "" && isCasa) {
+            const avversario = partita.team2; // Se è in casa, l'avversario è team2
+            const isBTeamCurrent = isBTeam(nomeSquadra); // Verifica se la squadra corrente è di Serie B
+            const isBTeamOpponent = isBTeam(avversario); // Verifica se l'avversario è di Serie B
+
+            if (isBTeamCurrent && isBTeamOpponent && partita.pron.trim() === "") {
+              resultsTrimmed = "9-8"; // Imposta il risultato 9-8 a favore di BTeam quando gioca in casa contro un altro BTeam
+              partita.pron = "1"; // Aggiorna anche il pronostico come vittoria per la squadra B
+            }
+          }
+
+          // Gestione del pronostico esistente
           if (resultsTrimmed.length === 0) {
             if (partita.pron === "1") {
               resultsTrimmed = "9-8"; // Pronostico di vittoria
