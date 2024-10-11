@@ -57,6 +57,6 @@ export const nomiSquadre = {
 //! -------------------------------------------------------------------------------------- -------------------------------------------
 export const SqEndGruppo1 = 6; //taglio della fine prima linea
 export const SqEndGruppo2 = 12; //taglio della fine seconda linea
-export const ItalianeInChampions = 5;
+export const ItalianeInChampions = 4;
 export const ItalianeInEuropaLeague = 2;
 //! -------------------------------------------------------------------------------------- -------------------------------------------
