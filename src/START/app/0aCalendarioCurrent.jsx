@@ -125,7 +125,7 @@ export const calendario25 = {
   ],
     //*--------------------------------------------------------    -  9 -    -------------------------------------------------------  9
       giornata9: [
-      { numero: 1,  day: 'ven', time: '18:30',          team1: 'Udinese',      team2: 'Cagliari',        pron: 'X', results: '' },
+      { numero: 1,  day: 'ven', time: '18:30',          team1: 'Udinese',      team2: 'Cagliari',        pron: '1', results: '' },
       { numero: 2,  day: 'ven', time: '20:45',          team1: 'Torino',       team2: 'Como',            pron: '1', results: '' },
 
       { numero: 3,  day: 'sab', time: '15:00',          team1: 'Napoli',       team2: 'Lecce',           pron: 'X', results: '' },
