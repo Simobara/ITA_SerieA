@@ -109,7 +109,7 @@ export const calendario25 = {
   ],
     //*---  -----                                                                                                                ---  8
       giornata8: [
-      { numero: 1,  day: 'sab', time: '15:00',          team1: 'Como',         team2: 'Parma',           pron: '1', results: '' },
+      { numero: 1,  day: 'sab', time: '15:00',          team1: 'Como',         team2: 'Parma',           pron: '2', results: '' },
       { numero: 2,  day: 'sab', time: '15:00',          team1: 'Genoa',        team2: 'Bologna',         pron: '2', results: '' },
       { numero: 3,  day: 'sab', time: '18:00',          team1: 'Milan',        team2: 'Udinese',         pron: '1', results: '' },
       { numero: 4,  day: 'sab', time: '20:45',          team1: 'Juve',         team2: 'Lazio',           pron: '2', results: '' },
@@ -128,7 +128,7 @@ export const calendario25 = {
       { numero: 1,  day: 'ven', time: '18:30',          team1: 'Udinese',      team2: 'Cagliari',        pron: '1', results: '' },
       { numero: 2,  day: 'ven', time: '20:45',          team1: 'Torino',       team2: 'Como',            pron: '1', results: '' },
 
-      { numero: 3,  day: 'sab', time: '15:00',          team1: 'Napoli',       team2: 'Lecce',           pron: 'X', results: '' },
+      { numero: 3,  day: 'sab', time: '15:00',          team1: 'Napoli',       team2: 'Lecce',           pron: '2', results: '' },
       { numero: 4,  day: 'sab', time: '18:00',          team1: 'Bologna',      team2: 'Milan',           pron: '2',  results: '' },
       { numero: 5,  day: 'sab', time: '20:45',          team1: 'Atalanta',     team2: 'Verona',          pron: '1',  results: '' },
 
