@@ -120,7 +120,7 @@ export const calendario25 = {
       { numero: 8,  day: 'dom', time: '18:00',          team1: 'Cagliari',     team2: 'Torino',          pron: '1', results: '' },
       { numero: 9,  day: 'dom', time: '20:45 ',         team1: 'Roma',         team2: 'Inter',           pron: '2', results: '' },
 
-      { numero: 10, day: 'lun', time: '20:45',          team1: 'Verona',       team2: 'Monza',           pron: '2', results: '' },
+      { numero: 10, day: 'lun', time: '20:45',          team1: 'Verona',       team2: 'Monza',           pron: 'X', results: '' },
   
   ],
     //*--------------------------------------------------------    -  9 -    -------------------------------------------------------  9
@@ -134,7 +134,7 @@ export const calendario25 = {
 
       { numero: 6,  day: 'dom', time: '12:30',          team1: 'Parma',        team2: 'Empoli',          pron: '2', results: '' },
       { numero: 7,  day: 'dom', time: '15:00',          team1: 'Lazio',        team2: 'Genoa',           pron: '1',  results: '' },
-      { numero: 8,  day: 'dom', time: '15:00',          team1: 'Monza',        team2: 'Venezia',         pron: 'X', results: '' },
+      { numero: 8,  day: 'dom', time: '15:00',          team1: 'Monza',        team2: 'Venezia',         pron: '1', results: '' },
       { numero: 9,  day: 'dom', time: '18:00',          team1: 'Inter',        team2: 'Juve',            pron: '1',  results: '' },
       { numero: 10, day: 'dom', time: '20:45',          team1: 'Fiorentina',   team2: 'Roma',            pron: 'X',  results: '' },  
   ],
