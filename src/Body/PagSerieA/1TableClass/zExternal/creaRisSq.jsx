@@ -52,25 +52,25 @@ export function creaRisSq(calendario, nomeSquadra, number) {
 
           // Logica per squadre di Serie A contro Serie B
           if (resultsTrimmed === "" && isCasa) {
-            const avversario = partita.team2; // Se è in casa, l'avversario è team2
-            const isATeamCurrent = isATeam(nomeSquadra); // Verifica se la squadra corrente è di Serie A
-            const isBTeamOpponent = isBTeam(avversario); // Verifica se l'avversario è di Serie B
+            const avversario = partita.team2;
+            const isATeamCurrent = isATeam(nomeSquadra);
+            const isBTeamOpponent = isBTeam(avversario);
 
             if (isATeamCurrent && isBTeamOpponent && partita.pron.trim() === "") {
-              resultsTrimmed = "9-8"; // Imposta il risultato 9-8 a favore di ATeam quando gioca in casa contro un BTeam
-              partita.pron = "1"; // Aggiorna anche il pronostico come vittoria per la squadra A
+              resultsTrimmed = "9-8";
+              partita.pron = "1Ab"; // Aggiorna anche il pronostico come vittoria per la squadra A
             }
           }
 
           // Nuova logica per squadre di Serie B che giocano in casa contro un'altra squadra di Serie B
           if (resultsTrimmed === "" && isCasa) {
-            const avversario = partita.team2; // Se è in casa, l'avversario è team2
-            const isBTeamCurrent = isBTeam(nomeSquadra); // Verifica se la squadra corrente è di Serie B
-            const isBTeamOpponent = isBTeam(avversario); // Verifica se l'avversario è di Serie B
+            const avversario = partita.team2;
+            const isBTeamCurrent = isBTeam(nomeSquadra);
+            const isBTeamOpponent = isBTeam(avversario);
 
             if (isBTeamCurrent && isBTeamOpponent && partita.pron.trim() === "") {
-              resultsTrimmed = "9-8"; // Imposta il risultato 9-8 a favore di BTeam quando gioca in casa contro un altro BTeam
-              partita.pron = "1"; // Aggiorna anche il pronostico come vittoria per la squadra B
+              resultsTrimmed = "9-8";
+              partita.pron = "1bb"; // Aggiorna anche il pronostico come vittoria per la squadra B
             }
           }
 

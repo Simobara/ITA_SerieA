@@ -4,7 +4,6 @@ import { CompleteDataContext, GiornataClouContext, GiornataNContext } from "../.
 import { ts } from "../../../../../../START/styles/0CssMainStyle";
 import {
   ButtonResetContext,
-
   CoppiaPartitaContext,
   CoppiaPartitaRegistrataContext,
   IndexSelectedContext,
@@ -435,7 +434,11 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                 </div> */}
 
         {/* button eye */}
-        <div className="absolute flex sm:ml-[70%] md:ml-[70%] lg:ml-[75%] ml-[80%] text-slate-700 bg-black z-[5]">{partita.pron}</div>
+        <div
+          className={`absolute flex sm:ml-[70%] md:ml-[70%] lg:ml-[75%] ml-[80%] bg-black z-[5] ${partita.pron === "1Ab" || partita.pron === "1bb" ? "text-slate-700" : "text-fuchsia-900/60"}`}
+        >
+          {partita.pron}
+        </div>
         <button
           className="absolute bg-black text-gray-800 hover:bg-sky-600 sm:mr-[0] md:mr-[1rem] lg:mr-[0] xl:mr-[0] ml-[90%] font-bold z-[10] hover:cursor-pointer select-none"
           onClick={() => toggleEye()}
