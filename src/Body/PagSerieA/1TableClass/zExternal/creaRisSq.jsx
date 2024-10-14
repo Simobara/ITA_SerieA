@@ -58,7 +58,7 @@ export function creaRisSq(calendario, nomeSquadra, number) {
 
             if (isATeamCurrent && isBTeamOpponent && partita.pron.trim() === "") {
               resultsTrimmed = "9-8";
-              partita.pron = "1A "; // Aggiorna anche il pronostico come vittoria per la squadra A
+              partita.pron = "1A"; // Aggiorna anche il pronostico come vittoria per la squadra A
             }
           }
 
@@ -70,7 +70,7 @@ export function creaRisSq(calendario, nomeSquadra, number) {
 
             if (isBTeamCurrent && isBTeamOpponent && partita.pron.trim() === "") {
               resultsTrimmed = "9-8";
-              partita.pron = "1b "; // Aggiorna anche il pronostico come vittoria per la squadra B
+              partita.pron = "1b"; // Aggiorna anche il pronostico come vittoria per la squadra B
             }
           }
 
