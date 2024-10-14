@@ -38,26 +38,15 @@ const TableProxInc = () => {
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-  // --------------------------------------------------------------------------------------
   useEffect(() => {
-    if (!buttonResetIsResetting) {
-      setButtonResetIsResetting(false);
-    }
+    // Imposta un timer per eseguire handleReset dopo 3 secondi
+    const timeoutId = setTimeout(() => {
+      handleReset();
+    }, 50); // 3000 millisecondi = 3 secondi
+
+    // Pulizia del timeout se il componente si smonta o giornataN cambia prima che i 3 secondi siano trascorsi
+    return () => clearTimeout(timeoutId);
   }, []);
-
-  
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    handleReset();
-  }, [giornataN]);
 
   const handleReset = () => {
     setCompleteClouSelected(JSON.parse(JSON.stringify(calendario1)));
@@ -66,8 +55,27 @@ const TableProxInc = () => {
     setIndexSel(giornataN);
     setTimeout(() => {
       setButtonResetIsResetting(false);
-    }, 3000);
+    }, 300);
   };
+  // --------------------------------------------------------------------------------------
+  useEffect(() => {
+    if (!buttonResetIsResetting) {
+      setButtonResetIsResetting(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    handleReset();
+  }, [giornataN]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   // --------------------------------------------------------------------------------------
   return (
     <>
