@@ -38,15 +38,6 @@ const TableProxInc = () => {
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-  const handleReset = () => {
-    setCompleteClouSelected(JSON.parse(JSON.stringify(calendario1)));
-    setResetAll([]);
-    setGiornataClouSelected(JSON.parse(JSON.stringify(calendario1))[`giornata${giornataN}`]);
-    setIndexSel(giornataN);
-    setTimeout(() => {
-      setButtonResetIsResetting(false);
-    }, 300);
-  };
   // --------------------------------------------------------------------------------------
   useEffect(() => {
     if (!buttonResetIsResetting) {
@@ -54,10 +45,7 @@ const TableProxInc = () => {
     }
   }, []);
 
-  useEffect(() => {
-    handleReset();
-  }, [giornataN]);
-
+  
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -66,6 +54,20 @@ const TableProxInc = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    handleReset();
+  }, [giornataN]);
+
+  const handleReset = () => {
+    setCompleteClouSelected(JSON.parse(JSON.stringify(calendario1)));
+    setResetAll([]);
+    setGiornataClouSelected(JSON.parse(JSON.stringify(calendario1))[`giornata${giornataN}`]);
+    setIndexSel(giornataN);
+    setTimeout(() => {
+      setButtonResetIsResetting(false);
+    }, 3000);
+  };
   // --------------------------------------------------------------------------------------
   return (
     <>
