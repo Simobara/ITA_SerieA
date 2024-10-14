@@ -435,7 +435,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
 
         {/* button eye */}
         <div
-          className={`absolute flex sm:ml-[70%] md:ml-[70%] lg:ml-[75%] ml-[80%] bg-black z-[5] ${partita.pron === "1 Ab" || partita.pron === "1 bb" ? "font-medium text-slate-700" : "text-sky-900/60"}`}
+          className={`absolute flex sm:ml-[70%] md:ml-[70%] lg:ml-[75%] ml-[80%] bg-black z-[5] ${partita.pron === "1 Ab " || partita.pron === "1 bb " ? "font-medium text-slate-700" : "text-sky-900/60"}`}
         >
           {partita.pron}
         </div>
