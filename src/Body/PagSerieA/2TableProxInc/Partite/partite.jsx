@@ -21,7 +21,7 @@ const Partite = ({ resetAll, occhioApertoPartita, setOcchioApertoPartita }) => {
 
   return (
     <div
-      className={`relative overflow-x-hidden overflow-y-scroll hide-scrollbar flex flex-col items-left xs:text-xs sm:text-xl border border-x-0 rounded-3xl ${s.BorderPartite} py-[0] sm:py-[0] md:py-[-2%] lg:py-[5%] min-w-[17rem] max-h-[26rem] sm:my-[-0.5rem]`}
+      className={`relative overflow-x-hidden overflow-y-scroll hide-scrollbar flex flex-col items-left text-sm xs:text-xs sm:text-xl border border-x-0 rounded-3xl ${s.BorderPartite} py-[0] sm:py-[0] md:py-[-2%] lg:py-[5%] min-w-[17rem] max-h-[26rem] sm:my-[-0.5rem]`}
     >
       {isLoading ? (
         <div>Caricamento in corso...</div>
