@@ -195,7 +195,7 @@ const CalGiorn = ({ onReset }) => {
   console.log(completeClouSelected, "completeClouSelected");
   // -------------------------------------------------------------------------------------------------------------
   return (
-    <div className="unselectable flex items-center justify-center bg-black my-[-0.8rem] sm:mt-[0rem] sm:mb-[0.5rem]">
+    <div className="unselectable flex items-center justify-center bg-black my-[-1rem] sm:mt-[0rem] sm:mb-[0.5rem]">
       <button
         onClick={() => scroll("left")}
         disabled={indexSelected === 1} // Disabilita se selected è 1
