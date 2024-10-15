@@ -351,7 +351,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
   return (
     <>
       <div
-        className={`font-bold flex items-center justify-center my-[-0.12rem] sm:my-[0rem] text-xs sm:text-sm
+        className={`font-bold flex items-center justify-center my-[-0.12rem] sm:my-[0rem] text-sm
                 ${isPartitaModificabile ? "" : "unselectable"}`}
       >
         <div className="flex items-center justify-center xs:text-xs sm:text-sm relative">
@@ -392,7 +392,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
             {/* partita.team1 */}
             <div className={`{absolute flex flex-row sm:ml-[-2%] md:ml-[10%] ml-[10%] ${!isPartitaModificabile ? "unselectable" : "hover:cursor-pointer"}`}>
               <div
-                className={`max-w-[9rem] whitespace-nowrap overflow-hidden z-[1] text-xl
+                className={`max-w-[9rem] whitespace-nowrap overflow-hidden z-[1] text-md sm:text-xl
                                 ${getTextTeam(partita.team1)} 
                                 ${isKQBtnActive || !isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}
                                 ${isBigTeam(partita.team1) ? `my-1 ${ts.ATeamText} ${ts.ATeamBg} font-bold` : ""} 
@@ -416,7 +416,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
               className={`absolute flex flex-row sm:ml-[42%] md:ml-[55%] ml-[57%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
             >
               <div
-                className={`max-w-[9rem] whitespace-nowrap overflow-hidden ml-[1rem] text-xl
+                className={`max-w-[9rem] whitespace-nowrap overflow-hidden ml-[1rem] text-md sm:text-xl
                                 ${getTextTeam(partita.team2)} 
                                 ${isKQBtnActive || !isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}
                                 ${isBigTeam(partita.team2) ? "font-bold" : ""} 
