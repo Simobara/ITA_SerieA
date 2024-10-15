@@ -355,8 +355,9 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                 ${isPartitaModificabile ? "" : "unselectable"}`}
       >
         <div className="flex items-center justify-center xs:text-xs sm:text-sm relative">
-          <div className="ml-[-5rem] sm:ml-[-2rem]  md:ml-[-4rem] lg:ml-[-1rem] sm:mr-1 p-[0.354rem] py-[-0.5rem] w-30 text-gray-800">
+          <div className="ml-[-4.5rem] sm:ml-[-2rem]  md:ml-[-4rem] lg:ml-[-1rem] sm:mr-1 p-[0.354rem] py-[-0.5rem] w-30 text-gray-800">
             {/* <span role="img" aria-label="Menu">☰</span> */}
+            {/*time */}
             <span>{partita.time}</span>
           </div>
           <div className="w-15 ml-[2px] text-gray-600 font-normal"> </div>
