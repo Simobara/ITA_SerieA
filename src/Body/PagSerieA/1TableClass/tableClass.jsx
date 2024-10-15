@@ -268,7 +268,7 @@ const TableClass = () => {
                   <th className="w-[8%] sm:pl-[1rem] pl-[0.5rem] text-center">Ps</th>
                 </tr>
               </thead>
-              <tbody className="bg-black text-cyan-800" style={{ position: "relative", top: "-1.8rem", zIndex: 1 }}>
+              <tbody className="bg-black text-cyan-800" style={{ position: "relative", top: "-1.5rem", zIndex: 1 }}>
                 {firstHalf.map((squadra, index) => (
                   <tr key={index}>
                     {/* // COLONNA COLORI SOTTO */}
@@ -337,7 +337,7 @@ const TableClass = () => {
                   <th className="w-[8%] sm:pl-[1rem] pl-[0.5rem] text-center">Ps</th>
                 </tr>
               </thead>
-              <tbody className="bg-black text-cyan-800" style={{ position: "relative", top: "-1.8rem", zIndex: 1 }}>
+              <tbody className="bg-black text-cyan-800" style={{ position: "relative", top: "-1.5rem", zIndex: 1 }}>
                 {secondHalf.map((squadra, index) => (
                   <tr key={index}>
                     {/* // COLONNA COLORI SOTTO - COLONNA 2*/}
