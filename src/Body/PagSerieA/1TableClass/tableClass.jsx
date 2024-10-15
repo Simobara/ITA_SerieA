@@ -255,7 +255,7 @@ const TableClass = () => {
         </table>
       )}
       {isMobile && (
-        <div className="table-container max-h-[44.5vh]">
+        <div className="table-container max-h-[40.5vh]">
           <div className="table-column">
             <table className="relative overflow-x-hidden overflow-y-hidden md:min-h-[57rem] max-w-[50%] ml-[0]">
               <thead style={{ visibility: "hidden" }}>
@@ -268,16 +268,16 @@ const TableClass = () => {
                   <th className="w-[8%] sm:pl-[1rem] pl-[0.5rem] text-center">Ps</th>
                 </tr>
               </thead>
-              <tbody className="bg-black text-cyan-800" style={{ position: "relative", top: "-2rem", zIndex: 1 }}>
+              <tbody className="bg-black text-cyan-800" style={{ position: "relative", top: "-1.8rem", zIndex: 1 }}>
                 {firstHalf.map((squadra, index) => (
                   <tr key={index}>
                     {/* // COLONNA COLORI SOTTO */}
                     <td className={` relative ${prendiColoriColonna0(index, squadreOrdinate)}`}>
-                      <div className="w-full h-full flex items-center justify-center ">{/* {index + 1} */}</div>
+                      <div className="w-full h-full flex items-center justify-center">{/* {index + 1} */}</div>
                     </td>
-                    {/* // COLONNA LOGO SOTTO */}
+                    {/* // COLONNA LOGO+SQUADRE SOTTO */}
                     <td
-                      className={`w-[100%] bg-black sm:pl-[1rem] md:pl-[1.5rem] pl-0 md:pr-[2rem] md:py-2 py-[7px] sm:text-lg md:text-md lg:text-lg xl:px-4 flex justify-start relative sq-column
+                      className={`w-[100%] bg-black py-[5px] pl-0 sm:pl-[1rem] md:pl-[1.5rem] md:pr-[2rem] md:py-2 sm:text-lg md:text-md lg:text-lg xl:px-4 flex justify-start relative sq-column
                       ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ${s.BaseText1}` : ""}
                       ${isTeamMarkedWithX(squadra.name) ? `${s.Filter4} underlineX ` : sqSelected.includes(squadra.name + "Z") ? `${s.Filter4} underlineW` : sqSelected.includes(squadra.name + "Y") ? `${s.Filter4} underlineL` : ""}
                       ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineW ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}
@@ -296,6 +296,7 @@ const TableClass = () => {
                         <span className={getTextTeam(squadra.name)}>{getTeamName(squadra.name)}</span>
                       </div>
                     </td>
+                    {/* // COLONNA ? SOTTO */}
                     <td
                       className={`sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 pl-[0.5rem] text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
                           ${indiciDiffQ.includes(index) ? "borderAlto border-white" : ""}`}
@@ -336,14 +337,16 @@ const TableClass = () => {
                   <th className="w-[8%] sm:pl-[1rem] pl-[0.5rem] text-center">Ps</th>
                 </tr>
               </thead>
-              <tbody className="bg-black text-cyan-800" style={{ position: "relative", top: "-2rem", zIndex: 1 }}>
+              <tbody className="bg-black text-cyan-800" style={{ position: "relative", top: "-1.8rem", zIndex: 1 }}>
                 {secondHalf.map((squadra, index) => (
                   <tr key={index}>
+                    {/* // COLONNA COLORI SOTTO - COLONNA 2*/}
                     <td className={`text-center relative ${prendiColoriColonna0(index + half, squadreOrdinate)}`}>
                       <div className="w-full h-full flex items-center justify-center ">{/* {index + 1} */}</div>
                     </td>
+                    {/* // COLONNA LOGO+SQUADRE SOTTO */}
                     <td
-                      className={`flex w-[100%] bg-black xs:pl-[0] sm:pl-[1rem] py-[7px] sm:text-lg justify-start relative sq-column
+                      className={`w-[100%] bg-black py-[5px] pl-0 sm:pl-[1rem] md:pl-[1.5rem] md:pr-[2rem] md:py-2 sm:text-lg md:text-md lg:text-lg xl:px-4 flex justify-start relative sq-column
                       ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ${s.BaseText1}` : ""}
                       ${isTeamMarkedWithX(squadra.name) ? `${s.Filter4} underlineX ` : sqSelected.includes(squadra.name + "Z") ? `${s.Filter4} underlineW` : sqSelected.includes(squadra.name + "Y") ? `${s.Filter4} underlineL` : ""}
                       ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineW ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}
@@ -362,6 +365,7 @@ const TableClass = () => {
                         <span className={getTextTeam(squadra.name)}>{getTeamName(squadra.name)}</span>
                       </div>
                     </td>
+                    {/* // COLONNA ? SOTTO - COLONNA 2*/}
                     <td
                       className={`sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 pl-[0.5rem] text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
                           ${indiciDiffQ.includes(index + half) ? "borderAlto border-white" : ""}`}
@@ -371,7 +375,7 @@ const TableClass = () => {
                       </div>
                       {getPunteggioColonnaDomanda(squadra)}
                     </td>
-                    {/* //colonna PTS SOTTO*/}
+                    {/* // COLONNA PTS SOTTO - COLONNA 2*/}
                     <td
                       className={`sm:pl-[1.5rem] md:pl-[1rem] lg:pl-2 pl-[0.5rem] xl:mr-4 text-left font-bold bg-black md:text-md  lg:text-lg
                         ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ` : ""}
