@@ -112,44 +112,44 @@ export const calendario25 = {
       { numero: 1,  day: 'sab', time: '15:00',          team1: 'Como',         team2: 'Parma',           pron: ' ',  results: '' },
       { numero: 2,  day: 'sab', time: '15:00',          team1: 'Genoa',        team2: 'Bologna',         pron: '2', results: '' },
       { numero: 3,  day: 'sab', time: '18:00',          team1: 'Milan',        team2: 'Udinese',         pron: '1', results: '' },
-      { numero: 4,  day: 'sab', time: '20:45',          team1: 'Juve',         team2: 'Lazio',           pron: '2', results: '' },
+      { numero: 4,  day: 'sab', time: '20:45',          team1: 'Juve',         team2: 'Lazio',           pron: ' ', results: '' },
 
       { numero: 5,  day: 'dom', time: '12:30',          team1: 'Empoli',       team2: 'Napoli',          pron: '2', results: '' },
-      { numero: 6,  day: 'dom', time: '15:00',          team1: 'Lecce',        team2: 'Fiorentina',      pron: 'X', results: '' },
+      { numero: 6,  day: 'dom', time: '15:00',          team1: 'Lecce',        team2: 'Fiorentina',      pron: '1', results: '' },
       { numero: 7,  day: 'dom', time: '15:00',          team1: 'Venezia',      team2: 'Atalanta',        pron: '2', results: '' },      
-      { numero: 8,  day: 'dom', time: '18:00',          team1: 'Cagliari',     team2: 'Torino',          pron: '1', results: '' },
+      { numero: 8,  day: 'dom', time: '18:00',          team1: 'Cagliari',     team2: 'Torino',          pron: 'X', results: '' },
       { numero: 9,  day: 'dom', time: '20:45 ',         team1: 'Roma',         team2: 'Inter',           pron: '2', results: '' },
 
-      { numero: 10, day: 'lun', time: '20:45',          team1: 'Verona',       team2: 'Monza',           pron: 'X', results: '' },
+      { numero: 10, day: 'lun', time: '20:45',          team1: 'Verona',       team2: 'Monza',           pron: '1X', results: '' },
   
   ],
     //*--------------------------------------------------------    -  9 -    -------------------------------------------------------  9
       giornata9: [
-      { numero: 1,  day: 'ven', time: '18:30',          team1: 'Udinese',      team2: 'Cagliari',        pron: '1', results: '' },
+      { numero: 1,  day: 'ven', time: '18:30',          team1: 'Udinese',      team2: 'Cagliari',        pron: 'X', results: '' },
       { numero: 2,  day: 'ven', time: '20:45',          team1: 'Torino',       team2: 'Como',            pron: '1', results: '' },
 
-      { numero: 3,  day: 'sab', time: '15:00',          team1: 'Napoli',       team2: 'Lecce',           pron: '', results: '' },
-      { numero: 4,  day: 'sab', time: '18:00',          team1: 'Bologna',      team2: 'Milan',           pron: '2', results: '' },
+      { numero: 3,  day: 'sab', time: '15:00',          team1: 'Napoli',       team2: 'Lecce',           pron: 'X', results: '' },
+      { numero: 4,  day: 'sab', time: '18:00',          team1: 'Bologna',      team2: 'Milan',           pron: '1', results: '' },
       { numero: 5,  day: 'sab', time: '20:45',          team1: 'Atalanta',     team2: 'Verona',          pron: 'X', results: '' },
 
-      { numero: 6,  day: 'dom', time: '12:30',          team1: 'Parma',        team2: 'Empoli',          pron: '2', results: '' },
+      { numero: 6,  day: 'dom', time: '12:30',          team1: 'Parma',        team2: 'Empoli',          pron: '1', results: '' },
       { numero: 7,  day: 'dom', time: '15:00',          team1: 'Lazio',        team2: 'Genoa',           pron: '1', results: '' },
       { numero: 8,  day: 'dom', time: '15:00',          team1: 'Monza',        team2: 'Venezia',         pron: '1', results: '' },
-      { numero: 9,  day: 'dom', time: '18:00',          team1: 'Inter',        team2: 'Juve',            pron: '2', results: '' },
-      { numero: 10, day: 'dom', time: '20:45',          team1: 'Fiorentina',   team2: 'Roma',            pron: '2', results: '' },  
+      { numero: 9,  day: 'dom', time: '18:00',          team1: 'Inter',        team2: 'Juve',            pron: 'X2', results: '' },
+      { numero: 10, day: 'dom', time: '20:45',          team1: 'Fiorentina',   team2: 'Roma',            pron: 'X', results: '' },  
   ],
     //*---  -----                                                                                                                --- 10
       giornata10: [
-      { numero: 1,  day: 'mar', time: '18:30',          team1: 'Cagliari',     team2: 'Bologna',         pron: ' ', results: '' },
+      { numero: 1,  day: 'mar', time: '18:30',          team1: 'Cagliari',     team2: 'Bologna',         pron: '2', results: '' },
       { numero: 2,  day: 'mar', time: '18:30',          team1: 'Lecce',        team2: 'Verona',          pron: '1', results: '' },
-      { numero: 3,  day: 'mar', time: '20:45',          team1: 'Milan',        team2: 'Napoli',          pron: '', results: '' },
+      { numero: 3,  day: 'mar', time: '20:45',          team1: 'Milan',        team2: 'Napoli',          pron: 'X', results: '' },
 
       { numero: 4,  day: 'mer', time: '18:30',          team1: 'Empoli',       team2: 'Inter',           pron: '2', results: '' },
-      { numero: 5,  day: 'mer', time: '18:30',          team1: 'Venezia',      team2: 'Udinese',         pron: '2', results: '' },
+      { numero: 5,  day: 'mer', time: '18:30',          team1: 'Venezia',      team2: 'Udinese',         pron: '1', results: '' },
       { numero: 6,  day: 'mer', time: '20:45',          team1: 'Atalanta',     team2: 'Monza',           pron: '1', results: '' },
       { numero: 7,  day: 'mer', time: '20:45',          team1: 'Juve',         team2: 'Parma',           pron: '1', results: '' },
 
-      { numero: 8,  day: 'gio', time: '18:30',          team1: 'Genoa',        team2: 'Fiorentina',      pron: ' ', results: '' },
+      { numero: 8,  day: 'gio', time: '18:30',          team1: 'Genoa',        team2: 'Fiorentina',      pron: '1', results: '' },
       { numero: 9,  day: 'gio', time: '20:45',          team1: 'Como',         team2: 'Lazio',           pron: '1', results: '' },
       { numero: 10, day: 'gio', time: '20:45',          team1: 'Roma',         team2: 'Torino',          pron: 'X', results: '' },
   ],

@@ -255,18 +255,20 @@ const TableClass = () => {
         </table>
       )}
       {isMobile && (
-        <div className="table-container">
+        <div className="table-container max-h-[44.5vh]">
           <div className="table-column">
             <table className="relative overflow-x-hidden overflow-y-hidden md:min-h-[57rem] max-w-[50%] ml-[0]">
-              <thead>
+              <thead style={{ visibility: "hidden" }}>
                 <tr className="bg-black text-gray-600 text-center">
                   <th className="w-[0.5rem]" style={{ whiteSpace: "nowrap" }}></th>
-                  <th className="w-[20%] sm:pl-[1rem]">--- -SQUADRA</th>
+                  <th className="w-[20%] sm:pl-[1rem]" style={{ visibility: "hidden" }}>
+                    --- -SQUADRA
+                  </th>
                   <th className="w-[8%] sm:pl-[1rem] pl-[0.5rem]">?</th>
                   <th className="w-[8%] sm:pl-[1rem] pl-[0.5rem] text-center">Ps</th>
                 </tr>
               </thead>
-              <tbody className="bg-black text-cyan-800">
+              <tbody className="bg-black text-cyan-800" style={{ position: "relative", top: "-2rem", zIndex: 1 }}>
                 {firstHalf.map((squadra, index) => (
                   <tr key={index}>
                     {/* // COLONNA COLORI SOTTO */}
@@ -326,7 +328,7 @@ const TableClass = () => {
           </div>
           <div className="table-column">
             <table className="relative overflow-x-hidden overflow-y-hidden md:min-h-[57rem] max-w-[50%] ml-[0]">
-              <thead>
+              <thead style={{ visibility: "hidden" }}>
                 <tr className="bg-black text-gray-600 text-center">
                   <th className="w-[0.5rem]" style={{ whiteSpace: "nowrap" }}></th>
                   <th className="w-[20%] sm:pl-[1rem] "> --- -SQUADRA </th>
@@ -334,7 +336,7 @@ const TableClass = () => {
                   <th className="w-[8%] sm:pl-[1rem] pl-[0.5rem] text-center">Ps</th>
                 </tr>
               </thead>
-              <tbody className="bg-black text-cyan-800">
+              <tbody className="bg-black text-cyan-800" style={{ position: "relative", top: "-2rem", zIndex: 1 }}>
                 {secondHalf.map((squadra, index) => (
                   <tr key={index}>
                     <td className={`text-center relative ${prendiColoriColonna0(index + half, squadreOrdinate)}`}>
