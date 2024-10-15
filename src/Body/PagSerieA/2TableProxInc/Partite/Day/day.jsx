@@ -8,7 +8,7 @@ const Day = ({ title, partite = [], resetAll, occhioApertoPartita, setOcchioAper
 
   return (
     <>
-      <div className="text-sky-900 bg-gray-900 text-sm font-bold uppercase text-start sm:py-[0] my-[-0.8rem] sm:my-[-0.4rem] ml-[1rem] md:ml-[2rem] md:lg-[1rem] xl:ml-[2rem] pl-[0.5rem] w-[4.5rem] sm:pt-0 pt-[0.2rem] mt-[-1%] sm:mt-0">
+      <div className="text-sky-900 bg-gray-900 text-sm font-bold uppercase text-start sm:py-[0] my-[-0.8rem] sm:my-[-0.4rem] ml-[1rem] md:ml-[2rem] md:lg-[1rem] xl:ml-[2rem] pl-[0.5rem] w-[4.5rem] sm:pt-0 pt-[0.2rem] mt-[-0.5%] sm:mt-0">
         {title}
         {/* <div className="h-px bg-transparent "></div> */}
       </div>
