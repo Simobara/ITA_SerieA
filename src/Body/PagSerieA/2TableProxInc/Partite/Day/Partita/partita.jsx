@@ -351,7 +351,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
   return (
     <>
       <div
-        className={`font-bold flex items-center justify-center mx-[1rem] 
+        className={`font-bold flex items-center justify-center my-[-0.2rem] sm:my-[0rem]
                 ${isPartitaModificabile ? "" : "unselectable"}`}
       >
         <div className="flex items-center justify-center xs:text-xs sm:text-sm relative">
