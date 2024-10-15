@@ -255,7 +255,7 @@ const TableClass = () => {
         </table>
       )}
       {isMobile && (
-        <div className="table-container max-h-[40.5vh]">
+        <div className="table-container max-h-[42.5vh]">
           <div className="table-column">
             <table className="relative overflow-x-hidden overflow-y-hidden md:min-h-[57rem] max-w-[50%] ml-[0]">
               <thead style={{ visibility: "hidden" }}>
