@@ -382,7 +382,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
           <div className="relative flex flex-row items-center ml-[1rem] xs:text-xs sm:text-xl">
             {/*symbol */}
             {isButtonClickable && !isPartitaInCoppiaRegSelected && (
-              <div className={`absolute ml-[101%] sm:pl-[-10%] sm:ml-[-12%] md:ml-[-4%] lg:ml-[-6%]  z-[20] bg-black ${!isPartitaModificabile ? "unselectable" : ""}`}>
+              <div className={`absolute ml-[102%] sm:pl-[-10%] sm:ml-[-12%] md:ml-[-4%] lg:ml-[-6%]  z-[20] bg-black ${!isPartitaModificabile ? "unselectable" : ""}`}>
                 <div className="hover:cursor-pointer" onClick={toggleSymbol}>
                   {" "}
                   {isKQBtnActive ? "📍" : "✔️"}{" "}
