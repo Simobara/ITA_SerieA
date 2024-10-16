@@ -118,27 +118,29 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
               const bgHoverClass = getBgHoverClass(partita);
 
               return (
-                <tr key={index} className={`overflow-x-hidden xs:text-lg sm:text-md ${bgHoverClass} ${borderStyle}`}>
-                  <td className={`!w-[4%] sm:w-[11%] md:w-[20%] xl:w-[15%] text-center font-bold ${ts.ColResLine} ${ts.ColResBg} text-xs sm:text-xl`}>
+                <tr key={index} className={`overflow-x-hidden ${bgHoverClass} ${borderStyle}`}>
+                  <td className={`!w-[4%] sm:w-[11%] md:w-[20%] xl:w-[15%] text-center font-bold ${ts.ColResLine} ${ts.ColResBg} `}>
                     {isPronostico ? (
                       <div className="flex justify-center items-center">
                         <span className={`${s[`pin${pronosticoText}`]} font-black justify-center items-center scale-150`}>*</span>
                       </div>
                     ) : (
                       <>
-                        <span className={`${ts.ColResHome} text-xl`}>{risultatoParte1}</span>
+                        <span className={`${ts.ColResHome} text-lg sm:text-xl`}>{risultatoParte1}</span>
                         {risultatoParte1 && risultatoParte2 && "-"}
-                        <span className={`${ts.ColResAway} text-xl`}>{risultatoParte2}</span>
+                        <span className={`${ts.ColResAway} text-lg sm:text-xl`}>{risultatoParte2}</span>
                       </>
                     )}
                   </td>
-                  <td className={`w-[25%] sm:w-[15%] md:w-[12%] xl:w-[15%] text-center xs:text-xl sm:text-base font-bold ${isPronostico ? "" : casaClass} ${ts.TextCF} last-text`}>
+                  <td className={`w-[25%] sm:w-[15%] md:w-[12%] xl:w-[15%] text-center text-lg sm:text-xl font-bold ${isPronostico ? "" : casaClass} ${ts.TextCF} `}>
                     {partita.casa}
                   </td>
-                  <td className={`w-[25%] sm:w-[15%] md:w-[12%] xl:w-[15%] text-center xs:text-xl sm:text-base font-bold ${isPronostico ? "" : fuoriClass} ${ts.TextCF} last-text`}>
+                  <td className={`w-[25%] sm:w-[15%] md:w-[12%] xl:w-[15%] text-center text-lg sm:text-xl font-bold ${isPronostico ? "" : fuoriClass} ${ts.TextCF} last-text`}>
                     {partita.fuori}
                   </td>
-                  <td className={`w-full sm:w-[45%] ml-[10%] text-xl pl-[10%] ${sqVsClass} last-text`}>{isMobile == true ? sqVsFormatted.slice(0, 10) : sqVsFormatted}</td>
+                  <td className={`w-full sm:w-[45%] ml-[10%] text-lg sm:text-xl pl-[2%] sm:pl-[10%] ${sqVsClass} last-text`}>
+                    {isMobile == true ? sqVsFormatted.slice(0, 10) : sqVsFormatted}
+                  </td>
                 </tr>
                 //implementare se la TEXTCF in casa e' con un squadra di B allora ... sono di colore verde acceso
               );
