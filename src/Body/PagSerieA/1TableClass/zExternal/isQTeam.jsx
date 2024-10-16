@@ -17,7 +17,7 @@ export const isBTeam = (teamName) => {
 
 export const getTextTeam = (teamName) => {
   if (isATeam(teamName)) {
-    return `font-black ${ts.ATeamBg} ${ts.ATeamText} my-[-1rem] py-1`;
+    return `font-black ${ts.ATeamBg} ${ts.ATeamText} my-[-1rem] py-[0.2rem]`;
   } else if (isBTeam(teamName)) {
     return `font-light ${ts.BTeamText}`;
   } else {
