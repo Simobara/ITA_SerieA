@@ -195,7 +195,7 @@ const CalGiorn = ({ onReset }) => {
   console.log(completeClouSelected, "completeClouSelected");
   // -------------------------------------------------------------------------------------------------------------
   return (
-    <div className="unselectable flex items-center justify-center bg-black my-[-0.7rem] sm:mt-[0rem] sm:mb-[0.5rem]">
+    <div className="ml-[1.4rem] sm:ml-0 unselectable flex items-center justify-center bg-black my-[-0.7rem] sm:mt-[0rem] sm:mb-[0.5rem]">
       <button
         onClick={() => scroll("left")}
         disabled={indexSelected === 1} // Disabilita se selected è 1
@@ -211,7 +211,7 @@ const CalGiorn = ({ onReset }) => {
               key={number}
               ref={boxRefs.current[number - 1]} // Assegna il ref corrispondente
               onClick={() => handleSelectNumber(number)}
-              className={`w-12 h-12 flex items-center justify-center m-1 cursor-pointer 
+              className={`w-12 h-12 flex items-center justify-center m-[0.2rem] sm:m-1 cursor-pointer 
                             ${indexSelected === number ? "bg-black" : "bg-black"} 
                             ${Math.abs(indexSelected - number) <= 3 && indexSelected !== number ? "hover:bg-sky-800" : ""}`}
             >
