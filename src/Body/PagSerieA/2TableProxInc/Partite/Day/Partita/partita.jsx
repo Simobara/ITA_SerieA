@@ -409,7 +409,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
               </div>
             )}
             {/* partita.team1 */}
-            <div className={`{absolute flex flex-row ml-[17%] sm:ml-[-2%] md:ml-[10%] ${!isPartitaModificabile ? "unselectable" : "hover:cursor-pointer"}`}>
+            <div className={`{absolute w-[4.5rem] flex flex-row ml-[19%] sm:ml-[-2%] md:ml-[10%] ${!isPartitaModificabile ? "unselectable" : "hover:cursor-pointer"}`}>
               <div
                 className={`pl-0 max-w-[9rem] whitespace-nowrap overflow-hidden z-[1] text-lg sm:text-xl
                                 ${getTextTeam(partita.team1)} 
@@ -432,7 +432,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
             ></div>
             {/* {partita.team2} */}
             <div
-              className={`absolute flex flex-row ml-[51%] sm:ml-[42%] md:ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
+              className={`absolute w-[5.5rem] flex flex-row ml-[50%] sm:ml-[42%] md:ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
             >
               <div
                 className={`max-w-[9rem] whitespace-nowrap overflow-hidden ml-[1rem] text-lg sm:text-xl
