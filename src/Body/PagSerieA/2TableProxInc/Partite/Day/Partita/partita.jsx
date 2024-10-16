@@ -94,16 +94,17 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
 
   // Funzione per calcolare la classe dinamica per il time span
   const getClassNamesForTime = (time) => {
-    if (time === "15:00") {
-      return "!text-orange-400";
-    } else if (time === "18:00") {
-      return "!text-blue-900/80";
-    } else if (time === "18:30") {
-      return "!text-blue-900/50";
-    } else if (time === "12:30") {
-      return "!text-yellow-200";
+    switch (time) {
+      case "12:30":
+        return "!text-yellow-200";
+      case "15:00":
+        return "!text-orange-400";
+      case "18:00":
+      case "18:30":
+        return "!text-blue-900/50";
+      default:
+        return "";
     }
-    return "";
   };
 
   // ------------------------------------------------------------------------------ useEffects last

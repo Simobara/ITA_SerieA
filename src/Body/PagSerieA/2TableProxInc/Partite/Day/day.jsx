@@ -11,9 +11,9 @@ const Day = ({ titleDayy, partite = [], resetAll, occhioApertoPartita, setOcchio
     const dayLower = titleDayy.toLowerCase();
     let bgColor = "bg-gray-900"; // Default background
     if (dayLower === "sab") {
-      bgColor = "bg-green-500";
+      bgColor = "bg-green-900/80";
     } else if (dayLower === "dom") {
-      bgColor = "bg-red-500";
+      bgColor = "bg-red-900/80";
     }
 
     // Restituisco la stringa con tutte le classi
