@@ -441,7 +441,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
           {partita.pron}
         </div>
         <button
-          className="absolute bg-black text-gray-800 hover:bg-sky-600 ml-[93%] sm:mr-[0] md:mr-[1rem] lg:mr-[0] xl:mr-[0]  font-bold z-[10] hover:cursor-pointer select-none text-lg"
+          className="absolute bg-black text-gray-800 hover:bg-sky-600 ml-[93%] sm:mr-[0] md:mr-[1rem] lg:mr-[0] xl:mr-[0]  font-bold z-[30] hover:cursor-pointer select-none text-lg"
           onClick={() => toggleEye()}
           data-partita-numero={partita.numero}
         >
