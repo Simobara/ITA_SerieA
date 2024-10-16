@@ -372,7 +372,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                 ${isPartitaModificabile ? "" : "unselectable"}`}
       >
         <div className="relative flex items-center justify-center xs:text-xs sm:text-sm ">
-          <div className=" ml-[-1rem] sm:ml-[-2rem]  md:ml-[-4rem] lg:ml-[-1rem] sm:mr-1 p-[0.14rem] sm:p-[0.354rem] w-[2.5rem] text-gray-800">
+          <div className=" ml-[-1rem] sm:ml-[-2rem]  md:ml-[-4rem] lg:ml-[-1rem] sm:mr-1 p-[0.12rem] sm:p-[0.354rem] w-[2.5rem] text-gray-800">
             {/* <span role="img" aria-label="Menu">☰</span> */}
             {/*time */}
             <span className={`font-medium pl-[65%] sm:pl-[0] ${getClassNamesForTime(partita.time)}`}>{partita.time}</span>

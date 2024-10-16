@@ -17,7 +17,7 @@ const Day = ({ titleDayy, partite = [], resetAll, occhioApertoPartita, setOcchio
     }
 
     // Restituisco la stringa con tutte le classi
-    return `${bgColor} text-white text-sm font-bold text-start sm:py-[0] ml-[1rem] my-[-1.2rem] sm:my-[-0.4rem] sm:ml-0 md:ml-[2rem] md:lg-[1rem] xl:ml-[2rem] pt-[0] sm:pl-[0.5rem] w-[2.5rem] sm:w-[4.5rem] sm:pt-0 mt-0`;
+    return `${bgColor} text-white text-sm font-bold text-start sm:py-[0] ml-[1rem] my-[-1.4rem] sm:my-[-0.4rem] sm:ml-0 md:ml-[2rem] md:lg-[1rem] xl:ml-[2rem] pt-[0] sm:pl-[0.5rem] w-[2.5rem] sm:w-[4.5rem] sm:pt-0 mt-0`;
   };
 
   return (
