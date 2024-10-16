@@ -199,7 +199,7 @@ const CalGiorn = ({ onReset }) => {
       <button
         onClick={() => scroll("left")}
         disabled={indexSelected === 1} // Disabilita se selected è 1
-        className={`text-gray-900 p-2 hover:bg-sky-800 hover:text-white focus:outline-none ${indexSelected === 1 ? "opacity-10 cursor-not-allowed" : ""}`}
+        className={`overflow-hidden text-gray-900 p-2 hover:bg-sky-800 hover:text-white focus:outline-none ${indexSelected === 1 ? "opacity-10 cursor-not-allowed" : ""}`}
       >
         {"<<<"}
       </button>
@@ -228,7 +228,7 @@ const CalGiorn = ({ onReset }) => {
       <button
         onClick={() => scroll("right")}
         disabled={indexSelected === totaleGiornate} // Disabilita se selected è totaleGiornate
-        className={`text-gray-900 p-2 hover:bg-sky-800 hover:text-white focus:outline-none ${indexSelected === 38 ? "opacity-20 cursor-not-allowed" : ""}`}
+        className={`overflow-hidden text-gray-900 hover:bg-sky-800 hover:text-white focus:outline-none ${indexSelected === 38 ? "opacity-20 cursor-not-allowed" : ""}`}
       >
         {">>>"}
       </button>

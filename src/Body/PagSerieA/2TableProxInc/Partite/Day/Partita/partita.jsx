@@ -351,11 +351,11 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
   return (
     <>
       <div
-        className={`font-bold flex items-center justify-center my-[-0.15rem] sm:my-[0rem]
+        className={`font-bold flex items-center justify-center my-[0.08rem]
                 ${isPartitaModificabile ? "" : "unselectable"}`}
       >
         <div className="flex items-center justify-center xs:text-xs sm:text-sm relative">
-          <div className="ml-[-4.5rem] sm:ml-[-2rem]  md:ml-[-4rem] lg:ml-[-1rem] sm:mr-1 p-[0.354rem] py-[-0.5rem] w-30 text-gray-800">
+          <div className=" ml-[-2rem] sm:ml-[-2rem]  md:ml-[-4rem] lg:ml-[-1rem] sm:mr-1 p-[0.354rem] py-[-0.5rem] w-30 text-gray-800">
             {/* <span role="img" aria-label="Menu">☰</span> */}
             {/*time */}
             <span>{partita.time}</span>
@@ -368,11 +368,12 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                         <div className="text-xl font-bold"></div>
                     </div> */}
           {!isPartitaInCoppiaRegSelected && (
-            <div className={`{flex sm:pl-0 hover:cursor-context-menu z-10 select-none }`}>
-              <div className={`{sm:pr-1 pl-0 ${!isPartitaInCoppiaRegSelected} ? ml-[-0.5rem] mr-[-2rem] : 'pl-4'}`}>
-                <span className="hover:bg-sky-900 text-gray-700 z-20" role="img" aria-label="" onClick={() => handleResetColors(partita.team1, partita.team2)}>
-                  ~~{/* ,,, */}
+            <div className={`{sm:relative absolute flex ml-[1rem] sm:pl-0 hover:cursor-context-menu z-10 select-none }`}>
+              <div className={`{sm:pr-1 pl-3 ${!isPartitaInCoppiaRegSelected} ? ml-[-0.5rem] mr-[-2rem] : 'pl-4'}`}>
+                <span className="text-xs hover:bg-sky-900 text-pink-900/40 z-20" role="img" aria-label="" onClick={() => handleResetColors(partita.team1, partita.team2)}>
+                  {/* ,,, */}
                   {/* 〰️ */}
+                  🗑
                 </span>
               </div>
             </div>
@@ -382,7 +383,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
           <div className="relative flex flex-row items-center ml-[1rem] xs:text-xs sm:text-xl">
             {/*symbol */}
             {isButtonClickable && !isPartitaInCoppiaRegSelected && (
-              <div className={`absolute  sm:pl-[-10%] sm:ml-[-12%] md:ml-[-4%] lg:ml-[-6%] ml-[-1%] z-[20] bg-black ${!isPartitaModificabile ? "unselectable" : ""}`}>
+              <div className={`absolute ml-[99.9%] sm:pl-[-10%] sm:ml-[-12%] md:ml-[-4%] lg:ml-[-6%]  z-[20] bg-black ${!isPartitaModificabile ? "unselectable" : ""}`}>
                 <div className="hover:cursor-pointer" onClick={toggleSymbol}>
                   {" "}
                   {isKQBtnActive ? "📍" : "✔️"}{" "}
@@ -390,9 +391,9 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
               </div>
             )}
             {/* partita.team1 */}
-            <div className={`{absolute flex flex-row sm:ml-[-2%] md:ml-[10%] ml-[10%] ${!isPartitaModificabile ? "unselectable" : "hover:cursor-pointer"}`}>
+            <div className={`{absolute flex flex-row ml-[20%] sm:ml-[-2%] md:ml-[10%] ${!isPartitaModificabile ? "unselectable" : "hover:cursor-pointer"}`}>
               <div
-                className={`max-w-[9rem] whitespace-nowrap overflow-hidden z-[1] text-lg sm:text-xl
+                className={`pl-0 max-w-[9rem] whitespace-nowrap overflow-hidden z-[1] text-lg sm:text-xl
                                 ${getTextTeam(partita.team1)} 
                                 ${isKQBtnActive || !isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}
                                 ${isBigTeam(partita.team1) ? `my-1 ${ts.ATeamText} ${ts.ATeamBg} font-bold` : ""} 
@@ -406,14 +407,14 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
             </div>
             {/* segno in mezzo */}
             <div
-              className={`absolute flex flex-row sm:ml-[36%] md:ml-[42%] lg:ml-[42%] ml-[50%] rounded-lg bg-gray-900 mt-3 w-6 pt-[0.7rem] z-[4] 
+              className={`absolute flex flex-row ml-[52%] sm:ml-[36%] md:ml-[42%] lg:ml-[42%] rounded-lg bg-gray-900 mt-3 w-6 pt-[0.8rem] z-[4] mb-[6px]
                                 ${isKQBtnActive || !isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"} 
                                 ${selection === "X" ? "text-yellow-500/50" : ""}`}
               onClick={() => (!isSignOk && isPartitaModificabile ? handleSelection(partita.team1, "X") : undefined)}
             ></div>
             {/* {partita.team2} */}
             <div
-              className={`absolute flex flex-row sm:ml-[42%] md:ml-[55%] ml-[57%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
+              className={`absolute flex flex-row ml-[56%] sm:ml-[42%] md:ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
             >
               <div
                 className={`max-w-[9rem] whitespace-nowrap overflow-hidden ml-[1rem] text-lg sm:text-xl
@@ -436,12 +437,12 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
 
         {/* button eye */}
         <div
-          className={`absolute flex sm:ml-[70%] md:ml-[70%] lg:ml-[75%] ml-[80%] bg-black z-[5] ${partita.pron === "1+" || partita.pron === "1-" ? "font-medium text-slate-700" : "text-sky-900/60"}`}
+          className={`absolute flex ml-[70%] sm:ml-[70%] md:ml-[70%] lg:ml-[75%]  bg-black z-[5] ${partita.pron === "1+" || partita.pron === "1-" ? "font-medium text-slate-700" : "text-sky-900/60"}`}
         >
           {partita.pron}
         </div>
         <button
-          className="absolute bg-black text-gray-800 hover:bg-sky-600 sm:mr-[0] md:mr-[1rem] lg:mr-[0] xl:mr-[0] ml-[90%] font-bold z-[10] hover:cursor-pointer select-none"
+          className="absolute bg-black text-gray-800 hover:bg-sky-600 mr-[-0.3rem] sm:mr-[0] md:mr-[1rem] lg:mr-[0] xl:mr-[0] ml-[90%] font-bold z-[10] hover:cursor-pointer select-none text-lg"
           onClick={() => toggleEye()}
           data-partita-numero={partita.numero}
         >
