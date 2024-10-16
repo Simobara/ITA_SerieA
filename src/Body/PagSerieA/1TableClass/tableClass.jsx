@@ -202,7 +202,7 @@ const TableClass = () => {
                 </td>
                 {/* { COLONNA SQUADRE} */}
                 <td
-                  className={`w-[100%] bg-black xs:pl-[0] sm:pl-[1rem] md:pl-[1.5rem] md:pr-[2rem] py-[8px] md:py-2 sm:text-lg md:text-md lg:text-lg xl:px-4 flex justify-start relative sq-column
+                  className={`w-[100%] bg-black xs:pl-[0] sm:pl-[1rem] md:pl-[1.5rem] md:pr-[2rem] py-[4px] md:py-2 sm:text-lg md:text-md lg:text-lg xl:px-4 flex justify-start relative sq-column
             ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ${s.BaseText1}` : ""}
             ${isTeamMarkedWithX(squadra.name) ? `${s.Filter4} underlineX ` : sqSelected.includes(squadra.name + "Z") ? `${s.Filter4} underlineW` : sqSelected.includes(squadra.name + "Y") ? `${s.Filter4} underlineL` : ""}
             ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter4} underlineW ${isCoppiaSelected(squadra.name) ? "" : s.Bg3}` : ""}
@@ -229,7 +229,7 @@ const TableClass = () => {
                   className={`sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 pl-[1rem] text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
                 ${indiciDiffQ.includes(index) ? "borderAlto border-white" : ""}`}
                 >
-                  <div className="absolute transform -translate-x-4/3 -translate-y-7 text-left text-lg text-white mx-8 my-[-10] z-[10]">{numeriIndiciBorderWhite[index]}</div>
+                  <div className="absolute transform -translate-x-4/3 -translate-y-5 text-left text-lg text-white mx-8 my-[-10] z-[10]">{numeriIndiciBorderWhite[index]}</div>
                   {getPunteggioColonnaDomanda(squadra)}
                 </td>
                 {/* { COLONNA PTS} */}
@@ -244,7 +244,7 @@ const TableClass = () => {
 							`}
                 >
                   <div className="innerBorder"></div>
-                  <div className={`absolute transform -translate-x-4/3 -translate-y-8 text-center text-md text-gray-600/80 mx-8 my-[-10] z-30`}>
+                  <div className={`absolute transform -translate-x-4/3 -translate-y-5 text-center text-md text-gray-600/80 mx-8 my-[-10] z-30`}>
                     {!numeriIndiciBorderWhite[index] && differenzePunti[index]}
                   </div>
                   {getPunteggioColonnaPTS(squadra)}
@@ -255,7 +255,7 @@ const TableClass = () => {
         </table>
       )}
       {isMobile && (
-        <div className="table-container h-[44vh] max-h-[44vh] ">
+        <div className="table-container h-[43.5vh] max-h-[44vh] ">
           <div className="table-column">
             <table className="relative overflow-x-hidden overflow-y-hidden md:min-h-[57rem] max-w-[50%] ml-[0]">
               <thead style={{ visibility: "hidden" }}>
@@ -301,7 +301,7 @@ const TableClass = () => {
                       className={`sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 pl-[0rem] text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
                           ${indiciDiffQ.includes(index) ? "borderAlto border-white" : ""}`}
                     >
-                      <div className="absolute transform -translate-x-4/3 -translate-y-7 sm:-translate-y-6 md:-translate-y-8 text-center md:text-lg text-md text-white mx-2 sm:mx-3 md:mx-0 lg:mx-2 my-[-10] z-[10]">
+                      <div className="absolute transform -translate-x-4/3 -translate-y-5 sm:-translate-y-6 md:-translate-y-8 text-center md:text-lg text-md text-white mx-2 sm:mx-3 md:mx-0 lg:mx-2 my-[-10] z-[10]">
                         {numeriIndiciBorderWhite[index]}
                       </div>
                       {getPunteggioColonnaDomanda(squadra)}
@@ -317,7 +317,7 @@ const TableClass = () => {
                         ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}`}
                     >
                       <div className="innerBorder"></div>
-                      <div className={`absolute transform -translate-x-4/3 -translate-y-7 text-left text-md text-gray-600/80 mx-8 sm:my-[-10] z-30`}>
+                      <div className={`absolute transform -translate-x-4/3 -translate-y-5 text-left text-md text-gray-600/80 mx-8 sm:my-[-10] z-30`}>
                         {!numeriIndiciBorderWhite[index] && differenzePunti[index]}
                       </div>
                       {getPunteggioColonnaPTS(squadra)}
@@ -370,7 +370,7 @@ const TableClass = () => {
                       className={`sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 pl-[0rem] text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
                           ${indiciDiffQ.includes(index + half) ? "borderAlto border-white" : ""}`}
                     >
-                      <div className="absolute transform -translate-x-4/3 -translate-y-7 sm:-translate-y-6 md:-translate-y-8 text-center md:text-lg text-md text-white mx-2 sm:mx-3 md:mx-0 lg:mx-2 my-[-10] z-[10]">
+                      <div className="absolute transform -translate-x-4/3 -translate-y-5 sm:-translate-y-6 md:-translate-y-8 text-center md:text-lg text-md text-white mx-2 sm:mx-3 md:mx-0 lg:mx-2 my-[-10] z-[10]">
                         {numeriIndiciBorderWhite[index + half]}
                       </div>
                       {getPunteggioColonnaDomanda(squadra)}
@@ -386,7 +386,7 @@ const TableClass = () => {
                         ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}`}
                     >
                       <div className="innerBorder"></div>
-                      <div className={`absolute transform -translate-x-4/3 -translate-y-7 text-left text-md text-gray-600/80 mx-8 sm:my-[-10] z-30`}>
+                      <div className={`absolute transform -translate-x-4/3 -translate-y-5 text-left text-md text-gray-600/80 mx-8 sm:my-[-10] z-30`}>
                         {!numeriIndiciBorderWhite[index + half] && differenzePunti[index + half]}
                       </div>
                       {getPunteggioColonnaPTS(squadra)}
