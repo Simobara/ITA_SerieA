@@ -91,6 +91,21 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
       giornataN,
     );
   const isBigTeam = (teamName) => isBigTeamm(teamName);
+
+  // Funzione per calcolare la classe dinamica per il time span
+  const getClassNamesForTime = (time) => {
+    if (time === "15:00") {
+      return "!text-orange-400";
+    } else if (time === "18:00") {
+      return "!text-blue-900/80";
+    } else if (time === "18:30") {
+      return "!text-blue-900/50";
+    } else if (time === "12:30") {
+      return "!text-yellow-200";
+    }
+    return "";
+  };
+
   // ------------------------------------------------------------------------------ useEffects last
   // console.log(sqSelected, "sqSelected");
   // const nonSelectable = partita.results ? "unselectable" : "";
@@ -351,14 +366,14 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
   return (
     <>
       <div
-        className={`font-bold flex items-center justify-center my-[-0.14rem]
+        className={`font-bold flex items-center justify-center 
                 ${isPartitaModificabile ? "" : "unselectable"}`}
       >
-        <div className="flex items-center justify-center xs:text-xs sm:text-sm relative">
-          <div className=" ml-[-1rem] sm:ml-[-2rem]  md:ml-[-4rem] lg:ml-[-1rem] sm:mr-1 p-[0.354rem] py-[-0.5rem] w-[2.5rem] text-gray-800">
+        <div className="relative flex items-center justify-center xs:text-xs sm:text-sm ">
+          <div className=" ml-[-1rem] sm:ml-[-2rem]  md:ml-[-4rem] lg:ml-[-1rem] sm:mr-1 p-[0.354rem] w-[2.5rem] text-gray-800">
             {/* <span role="img" aria-label="Menu">☰</span> */}
             {/*time */}
-            <span className="pl-[60%] sm:pl-[0]">{partita.time}</span>
+            <span className={`font-medium pl-[60%] sm:pl-[0] ${getClassNamesForTime(partita.time)}`}>{partita.time}</span>
           </div>
           <div className="w-15 ml-[2px] text-gray-600 font-normal"> </div>
           {/* <div className="p-2 w-15">

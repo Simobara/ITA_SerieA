@@ -27,11 +27,11 @@ const Partite = ({ resetAll, occhioApertoPartita, setOcchioApertoPartita }) => {
         <div>Caricamento in corso...</div>
       ) : (
         giorniSettimana.map(
-          ({ giorno, title }) =>
+          ({ giorno, titleDayy }) =>
             partitePerGiorno[giorno].length > 0 && (
               <Day
                 key={giorno}
-                title={title}
+                titleDayy={titleDayy}
                 partite={partitePerGiorno[giorno]}
                 day={giorno}
                 resetAll={resetAll}
