@@ -126,6 +126,15 @@ const TableClass = () => {
     setNumeriIndiciBorderWhite(numeriCorrispondenti);
   }, [squadreOrdinate, coppiaRegSelected, completeClouSelected]);
 
+  //Chiama una funzione per aggiornare i punteggi delle squadre basate sulle coppie selezionate (coppiaRegSelected).
+  useEffect(() => {
+    if (coppiaRegSelected) {
+      // console.log("COMP TABLECLASS/coppiaRegSelected", coppiaRegSelected)
+    }
+    aggPunteggioSqReg();
+  }, [coppiaRegSelected, completeClouSelected]);
+
+  //useEFFECT CALCOLO BORDER YELLOW -700
   //Calcola le differenze di punteggio significative (>= 3) tra squadre adiacenti nella lista di punteggi aggiornati ordinati.
   useEffect(() => {
     let nuoviIndici = [];
@@ -144,13 +153,6 @@ const TableClass = () => {
     setIndiciDiffPts(nuoviIndici);
     setDifferenzePunti(nuoveDifferenze);
   }, [punteggiAggiornati, completeClouSelected]);
-  //Chiama una funzione per aggiornare i punteggi delle squadre basate sulle coppie selezionate (coppiaRegSelected).
-  useEffect(() => {
-    if (coppiaRegSelected) {
-      // console.log("COMP TABLECLASS/coppiaRegSelected", coppiaRegSelected)
-    }
-    aggPunteggioSqReg();
-  }, [coppiaRegSelected, completeClouSelected]);
 
   //Aggiorna lo stato punteggiAggiornati con questi nuovi punteggi.
   //Calcola le differenze di punteggio significative (>= 3) tra squadre adiacenti nella lista di nuovi punteggi.
@@ -318,7 +320,7 @@ const TableClass = () => {
                         ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}`}
                     >
                       <div className="innerBorder"></div>
-                      <div className={`absolute transform -translate-x-4/3 -translate-y-5 text-left text-md border-gray-700 text-gray-800 ml-[0.6rem] sm:mx-8 sm:my-[-10] z-30`}>
+                      <div className={`absolute transform -translate-x-4/3 -translate-y-5 text-left text-md border-gray-700 text-yellow-500 ml-[0.6rem] sm:mx-8 sm:my-[-10] z-50`}>
                         {!numeriIndiciBorderWhite[index] && differenzePunti[index]}
                       </div>
                       {getPunteggioColonnaPTS(squadra)}
@@ -389,7 +391,7 @@ const TableClass = () => {
                     >
                       <div className="innerBorder"></div>
                       <div
-                        className={`absolute transform -translate-x-4/3 -translate-y-5 text-left text-md border-gray-700 text-gray-800 ml-[0.6rem]  mx-2 sm:mx-8 sm:my-[-10] z-50`}
+                        className={`absolute transform -translate-x-4/3 -translate-y-5 text-left text-md border-gray-700 text-yellow-500 ml-[0.6rem]  mx-2 sm:mx-8 sm:my-[-10] z-50`}
                       >
                         {!numeriIndiciBorderWhite[index + half] && differenzePunti[index + half]}
                       </div>
