@@ -109,7 +109,7 @@ const TableCamminoSq = ({ squadra, datiSquadra }) => {
               const sqVsFormatted = formattedSqVs.charAt(0).toUpperCase() + formattedSqVs.slice(1);
 
               const sqVsClass = isATeam(partita.sqVs)
-                ? `font-black py-[0.18rem] sm:py-[-4] ml-[-4] ${ts.ATeamBg} ${ts.ATeamText} !border-l-0 `
+                ? `font-black py-[0.02rem] sm:py-[-4] ml-[-4] ${ts.ATeamBg} ${ts.ATeamText} !border-l-0 `
                 : isBTeam(partita.sqVs)
                   ? `font-light ${ts.BTeamText}`
                   : partita.sqVs === "--- --- --- --- --- ---"
