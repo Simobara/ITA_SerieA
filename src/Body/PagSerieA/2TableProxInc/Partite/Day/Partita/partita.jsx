@@ -372,7 +372,8 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                 ${isPartitaModificabile ? "" : "unselectable"}`}
       >
         <div className="relative flex items-center justify-center xs:text-xs sm:text-sm ">
-          <div className=" ml-[-1rem] sm:ml-[-2rem]  md:ml-[-4rem] lg:ml-[-1rem] sm:mr-1 p-[0.12rem] sm:p-[0.354rem] w-[2.5rem] text-gray-800">
+          {/*orario  */}
+          <div className=" mb-[0.2rem] sm:mb-[0] ml-[-1rem] sm:ml-[-2rem]  md:ml-[-4rem] lg:ml-[-1rem] sm:mr-1 p-[0.12rem] sm:p-[0.354rem] w-[1rem] text-gray-800">
             {/* <span role="img" aria-label="Menu">☰</span> */}
             {/*time */}
             <span className={`font-medium pl-[65%] sm:pl-[0] ${getClassNamesForTime(partita.time)}`}>{partita.time}</span>
@@ -385,7 +386,8 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                         <div className="text-xl font-bold"></div>
                     </div> */}
           {!isPartitaInCoppiaRegSelected && (
-            <div className={`{sm:relative absolute  flex ml-[5rem] sm:pl-0 hover:cursor-context-menu z-10 select-none }`}>
+            <div className={`{sm:relative absolute  flex ml-[3.3rem] sm:pl-0 hover:cursor-context-menu z-10 select-none }`}>
+              {/*tasto cancella ~  ml-[4rem] sopra */}
               <div className={`{sm:pr-1 pl-3 ${!isPartitaInCoppiaRegSelected} ? ml-[-0.5rem] mr-[-2rem] : 'pl-4'}`}>
                 <span className="text-xl hover:bg-sky-900 text-gray-700/70 z-20" role="img" aria-label="" onClick={() => handleResetColors(partita.team1, partita.team2)}>
                   {/* ,,, */}
@@ -399,7 +401,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
           <div className="relative flex flex-row items-center ml-[1rem] xs:text-xs sm:text-xl">
             {/*symbol */}
             {isButtonClickable && !isPartitaInCoppiaRegSelected && (
-              <div className={`absolute ml-[101%] sm:pl-[-10%] sm:ml-[-12%] md:ml-[-4%] lg:ml-[-6%]  z-[20] bg-black ${!isPartitaModificabile ? "unselectable" : ""}`}>
+              <div className={`absolute ml-[100%] sm:pl-[-10%] sm:ml-[-12%] md:ml-[-4%] lg:ml-[-6%]  z-[20] bg-black ${!isPartitaModificabile ? "unselectable" : ""}`}>
                 <div className="hover:cursor-pointer" onClick={toggleSymbol}>
                   {" "}
                   {isKQBtnActive ? "📍" : "✔️"}{" "}
@@ -407,7 +409,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
               </div>
             )}
             {/* partita.team1 */}
-            <div className={`{absolute flex flex-row ml-[20%] sm:ml-[-2%] md:ml-[10%] ${!isPartitaModificabile ? "unselectable" : "hover:cursor-pointer"}`}>
+            <div className={`{absolute flex flex-row ml-[17%] sm:ml-[-2%] md:ml-[10%] ${!isPartitaModificabile ? "unselectable" : "hover:cursor-pointer"}`}>
               <div
                 className={`pl-0 max-w-[9rem] whitespace-nowrap overflow-hidden z-[1] text-lg sm:text-xl
                                 ${getTextTeam(partita.team1)} 
@@ -423,14 +425,14 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
             </div>
             {/* segno in mezzo */}
             <div
-              className={`absolute flex flex-row ml-[52%] sm:ml-[36%] md:ml-[42%] lg:ml-[42%] rounded-lg bg-gray-900 mt-3 w-6 pt-[0.8rem] z-[4] mb-[6px]
+              className={`absolute flex flex-row ml-[46%] sm:ml-[36%] md:ml-[42%] lg:ml-[42%] rounded-lg bg-gray-900 mt-3 w-6 pt-[0.8rem] z-[4] mb-[6px]
                                 ${isKQBtnActive || !isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"} 
                                 ${selection === "X" ? "text-yellow-500/50" : ""}`}
               onClick={() => (!isSignOk && isPartitaModificabile ? handleSelection(partita.team1, "X") : undefined)}
             ></div>
             {/* {partita.team2} */}
             <div
-              className={`absolute flex flex-row ml-[56%] sm:ml-[42%] md:ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
+              className={`absolute flex flex-row ml-[51%] sm:ml-[42%] md:ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
             >
               <div
                 className={`max-w-[9rem] whitespace-nowrap overflow-hidden ml-[1rem] text-lg sm:text-xl
@@ -453,12 +455,12 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
 
         {/* button eye */}
         <div
-          className={`absolute flex ml-[74%] sm:ml-[70%] md:ml-[70%] lg:ml-[75%]  bg-black z-[5] ${partita.pron === "1+" || partita.pron === "1-" ? "font-medium text-slate-700" : "text-sky-900/60"}`}
+          className={`absolute flex ml-[62%] sm:ml-[70%] md:ml-[70%] lg:ml-[75%]  bg-black z-[5] text-lg font-bold ${partita.pron === "1+" || partita.pron === "1-" ? " text-slate-700" : "text-sky-800/60"}`}
         >
           {partita.pron}
         </div>
         <button
-          className="absolute bg-black text-gray-800 hover:bg-sky-600 ml-[93%] sm:mr-[0] md:mr-[1rem] lg:mr-[0] xl:mr-[0]  font-bold z-[30] hover:cursor-pointer select-none text-lg"
+          className="absolute bg-black text-gray-800 hover:bg-sky-600 ml-[90%] sm:mr-[0] md:mr-[1rem] lg:mr-[0] xl:mr-[0]  font-bold z-[30] hover:cursor-pointer select-none text-lg"
           onClick={() => toggleEye()}
           data-partita-numero={partita.numero}
         >
