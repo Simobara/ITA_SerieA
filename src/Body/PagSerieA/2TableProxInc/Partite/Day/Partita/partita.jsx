@@ -355,10 +355,10 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                 ${isPartitaModificabile ? "" : "unselectable"}`}
       >
         <div className="flex items-center justify-center xs:text-xs sm:text-sm relative">
-          <div className=" ml-[-2rem] sm:ml-[-2rem]  md:ml-[-4rem] lg:ml-[-1rem] sm:mr-1 p-[0.354rem] py-[-0.5rem] w-30 text-gray-800">
+          <div className=" ml-[-1rem] sm:ml-[-2rem]  md:ml-[-4rem] lg:ml-[-1rem] sm:mr-1 p-[0.354rem] py-[-0.5rem] w-[2.5rem] text-gray-800">
             {/* <span role="img" aria-label="Menu">☰</span> */}
             {/*time */}
-            <span>{partita.time}</span>
+            <span className="pl-[60%] sm:pl-[0]">{partita.time}</span>
           </div>
           <div className="w-15 ml-[2px] text-gray-600 font-normal"> </div>
           {/* <div className="p-2 w-15">
@@ -368,12 +368,12 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                         <div className="text-xl font-bold"></div>
                     </div> */}
           {!isPartitaInCoppiaRegSelected && (
-            <div className={`{sm:relative absolute flex ml-[1rem] sm:pl-0 hover:cursor-context-menu z-10 select-none }`}>
+            <div className={`{sm:relative absolute flex ml-[7rem] sm:pl-0 hover:cursor-context-menu z-10 select-none }`}>
               <div className={`{sm:pr-1 pl-3 ${!isPartitaInCoppiaRegSelected} ? ml-[-0.5rem] mr-[-2rem] : 'pl-4'}`}>
-                <span className="text-xs hover:bg-sky-900 text-pink-900/40 z-20" role="img" aria-label="" onClick={() => handleResetColors(partita.team1, partita.team2)}>
+                <span className="text-lg hover:bg-sky-900 text-pink-900/40 z-20" role="img" aria-label="" onClick={() => handleResetColors(partita.team1, partita.team2)}>
                   {/* ,,, */}
                   {/* 〰️ */}
-                  🗑
+                  ~~
                 </span>
               </div>
             </div>
@@ -383,7 +383,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
           <div className="relative flex flex-row items-center ml-[1rem] xs:text-xs sm:text-xl">
             {/*symbol */}
             {isButtonClickable && !isPartitaInCoppiaRegSelected && (
-              <div className={`absolute ml-[99.9%] sm:pl-[-10%] sm:ml-[-12%] md:ml-[-4%] lg:ml-[-6%]  z-[20] bg-black ${!isPartitaModificabile ? "unselectable" : ""}`}>
+              <div className={`absolute ml-[99%] sm:pl-[-10%] sm:ml-[-12%] md:ml-[-4%] lg:ml-[-6%]  z-[20] bg-black ${!isPartitaModificabile ? "unselectable" : ""}`}>
                 <div className="hover:cursor-pointer" onClick={toggleSymbol}>
                   {" "}
                   {isKQBtnActive ? "📍" : "✔️"}{" "}
@@ -442,7 +442,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
           {partita.pron}
         </div>
         <button
-          className="absolute bg-black text-gray-800 hover:bg-sky-600 mr-[-0.3rem] sm:mr-[0] md:mr-[1rem] lg:mr-[0] xl:mr-[0] ml-[90%] font-bold z-[10] hover:cursor-pointer select-none text-lg"
+          className="absolute bg-black text-gray-800 hover:bg-sky-600 ml-[92%] sm:mr-[0] md:mr-[1rem] lg:mr-[0] xl:mr-[0]  font-bold z-[10] hover:cursor-pointer select-none text-lg"
           onClick={() => toggleEye()}
           data-partita-numero={partita.numero}
         >
