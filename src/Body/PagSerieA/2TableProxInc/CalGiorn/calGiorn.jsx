@@ -199,7 +199,7 @@ const CalGiorn = ({ onReset }) => {
       <button
         onClick={() => scroll("left")}
         disabled={indexSelected === 1} // Disabilita se selected è 1
-        className={`overflow-hidden text-gray-900 p-2 hover:bg-sky-800 hover:text-white focus:outline-none ${indexSelected === 1 ? "opacity-10 cursor-not-allowed" : ""}`}
+        className={`overflow-hidden text-gray-900 hover:bg-sky-800 hover:text-white focus:outline-none ${indexSelected === 1 ? "opacity-10 cursor-not-allowed" : ""}`}
       >
         {"<<<"}
       </button>
