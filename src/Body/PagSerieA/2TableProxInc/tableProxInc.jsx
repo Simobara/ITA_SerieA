@@ -55,7 +55,7 @@ const TableProxInc = () => {
     setIndexSel(giornataN);
     setTimeout(() => {
       setButtonResetIsResetting(false);
-    }, 300);
+    }, 50);
   };
   // --------------------------------------------------------------------------------------
   useEffect(() => {
@@ -115,7 +115,7 @@ const TableProxInc = () => {
               onClick={() => setIsModalInserOpen(true)}
             > 📝 </button> */}
         <div className="sticky flex flex-col overflow-x-hidden sm:overflow-y-auto overflow-hidden bg-black z-[4] min-h-[20rem] md:min-h-[30rem]">
-          <CalGiorn onReset={resetAll} />
+          <CalGiorn onReset={handleReset} />
           <Partite resetAll={resetAll} occhioApertoPartita={occhioApertoPartita} setOcchioApertoPartita={setOcchioApertoPartita} />
         </div>
         {/* </div> */}
