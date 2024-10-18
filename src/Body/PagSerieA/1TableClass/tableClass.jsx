@@ -300,7 +300,7 @@ const TableClass = () => {
                     </td>
                     {/* // COLONNA ? SOTTO */}
                     <td
-                      className={`py-1 pl-[0.5rem] sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
+                      className={`my-1 py-1 pl-[0.5rem] sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
                           ${indiciDiffQ.includes(index) ? "borderAlto border-yellow-700 my-2" : ""}`}
                     >
                       {/* // questo e' il numero bianco */}
@@ -311,7 +311,7 @@ const TableClass = () => {
                     </td>
                     {/* // COLONNA PTS SOTTO */}
                     <td
-                      className={`pl-[0.5rem] sm:pl-[1.5rem] md:pl-[1rem] lg:pl-2  xl:mr-4 text-left font-bold bg-black md:text-md  lg:text-lg
+                      className={`my-1 pl-[0.5rem] sm:pl-[1.5rem] md:pl-[1rem] lg:pl-2  xl:mr-4 text-left font-bold bg-black md:text-md  lg:text-lg
                         ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ` : ""}
                         ${indiciDiffPts.includes(index) ? "borderAlto border-yellow-700 my-2" : ""}
                         ${getPunteggioColonnaDomanda(squadra) !== " " ? `  text-cyan-500/80` : "text-cyan-500/80"}
@@ -320,7 +320,7 @@ const TableClass = () => {
                         ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}`}
                     >
                       <div className="innerBorder"></div>
-                      <div className={`absolute transform -translate-x-4/3 -translate-y-5 text-left text-md border-gray-700 text-yellow-500 ml-[0.6rem] sm:mx-8 sm:my-[-10] z-50`}>
+                      <div className={`absolute transform -translate-x-4/3 -translate-y-5 text-left text-md border-white text-yellow-500 ml-[0.6rem] sm:mx-8 sm:my-[-10] z-50`}>
                         {!numeriIndiciBorderWhite[index] && differenzePunti[index]}
                       </div>
                       {getPunteggioColonnaPTS(squadra)}
@@ -370,7 +370,7 @@ const TableClass = () => {
                     </td>
                     {/* // COLONNA ? SOTTO - COLONNA 2*/}
                     <td
-                      className={`py-1 pl-[0.5rem] sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
+                      className={`my-1 py-1 pl-[0.5rem] sm:pl-[1rem] md:pl-[1.5rem] lg:pl-[0.5rem] xl:pl-0 text-center font-extrabold bg-black text-cyan-500/80 md:text-md  lg:text-lg z-4	
                           ${indiciDiffQ.includes(index + half) ? "borderAlto border-yellow-700 my-2" : ""}`}
                     >
                       {/* // questo e' il numero bianco COLONNA 2*/}
@@ -381,7 +381,7 @@ const TableClass = () => {
                     </td>
                     {/* // COLONNA PTS SOTTO - COLONNA 2*/}
                     <td
-                      className={`pl-[0.5rem] sm:pl-[1.5rem] md:pl-[1rem] lg:pl-2 xl:mr-4 text-left font-bold bg-black md:text-md  lg:text-lg
+                      className={`my-1 pl-[0.5rem] sm:pl-[1.5rem] md:pl-[1rem] lg:pl-2 xl:mr-4 text-left font-bold bg-black md:text-md  lg:text-lg
                         ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ` : ""}
                         ${indiciDiffPts.includes(index + half) ? "borderAlto border-yellow-700 my-2" : ""}
                         ${getPunteggioColonnaDomanda(squadra) !== " " ? `  text-cyan-500/80` : "text-cyan-500/80"}
@@ -391,7 +391,7 @@ const TableClass = () => {
                     >
                       <div className="innerBorder"></div>
                       <div
-                        className={`absolute transform -translate-x-4/3 -translate-y-5 text-left text-md border-gray-700 text-yellow-500 ml-[0.6rem]  mx-2 sm:mx-8 sm:my-[-10] z-50`}
+                        className={`absolute transform -translate-x-4/3 -translate-y-5 text-left text-md border-white text-yellow-500 ml-[0.6rem]  mx-2 sm:mx-8 sm:my-[-10] z-50`}
                       >
                         {!numeriIndiciBorderWhite[index + half] && differenzePunti[index + half]}
                       </div>

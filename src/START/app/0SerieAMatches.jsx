@@ -1,22 +1,30 @@
-import axios from 'axios';
-import { calendario25 } from './0aCalendarioCurrent';
-
-
-
-
-
-
-
+import axios from "axios";
+import { calendario25 } from "./0aCalendarioCurrent";
 
 //! -------------------------------------------------------------------------------------- -------------------------------------------
 export const currentYear = 2025;
 export const calendario = JSON.parse(JSON.stringify(calendario25));
 export const calendario1 = JSON.parse(JSON.stringify(calendario25));
-export const giornataNum = 1 //!NON TOCCARE QUESTO VALORE
+export const giornataNum = 1; //!NON TOCCARE QUESTO VALORE
 // Recupera i dati della giornata clou dal server
 
+export const getDefultDay = async () => {
+  try {
+    const response = await axios.get(`http://localhost:5000/default-day/get-deafault-giornata`);
+    return response.data.data;
+  } catch (error) {
+    console.error("Error resetting the database:", error);
+  }
+};
+export const getAllMatchesList = async () => {
+  try {
+    const response = await axios.get(`http://localhost:5000/calendar/get-all-matches`);
+    return response.data.data;
+  } catch (error) {
+    console.error("Error resetting the database:", error);
+  }
+};
 export const fetchGiornataClou = async (giornataNum) => {
-
   try {
     const apiUrl = import.meta.env.PROD ? import.meta.env.VITE_API_URL_PROD : import.meta.env.VITE_API_URL_DEV;
     const response = await axios.get(`${apiUrl}/api/giornata/${giornataNum}`);
@@ -29,8 +37,6 @@ export const fetchGiornataClou = async (giornataNum) => {
 };
 
 // Condizione per verificare se giornataNum è 38
-export const giornataClou = giornataNum === 38
-  ? await fetchGiornataClou(giornataNum)
-  : calendario[`giornata${giornataNum}`]; // Altrimenti utilizza i dati locali
 //! -------------------------------------------------------------------------------------- -------------------------------------------
-
+const allMatches = getAllMatchesList();
+export const giornataClou = allMatches[giornataNum]?.matches || [];

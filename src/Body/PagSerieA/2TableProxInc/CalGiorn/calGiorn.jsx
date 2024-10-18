@@ -93,7 +93,6 @@ const CalGiorn = ({ onReset }) => {
   };
 
   // -------------------------------------------------------------------------------------------------------------
-  console.log("Valore di indexSelected:", indexSelected);
 
   //Verifica il Contenuto di completeClouSelected:
   // useEffect(() => {
@@ -102,8 +101,8 @@ const CalGiorn = ({ onReset }) => {
 
   //QUESTO USE EFFECT TROVA LA CASELLA DELLA GIORNATA CLOU INIZIALMENTE
   useEffect(() => {
-    setButtonResetIsResetting(false);
-    const giornataClouIndex = Object.keys(completeClouSelected).findIndex((giornata) => completeClouSelected[giornata] === giornataClou) + 1;
+    // setButtonResetIsResetting(false);
+    const giornataClouIndex = Object.keys(completeClouSelected).findIndex((giornata) => completeClouSelected[giornata - 1] === giornataClou) + 1;
     if (giornataClouIndex) {
       setIndexSelected(giornataClouIndex);
       scrollIntoView(giornataClouIndex);
@@ -115,28 +114,23 @@ const CalGiorn = ({ onReset }) => {
 
   // QUESTO USE EFFECT REIMPOSTA LO STATO E LE PARTITE ALLO STADIO ORIGINALE
   useEffect(() => {
-    setButtonResetIsResetting(false);
+    // setButtonResetIsResetting(false);
     if (onReset) {
-      const giornataClouIndex = Object.keys(completeClouSelected).findIndex((giornata) => completeClouSelected[giornata] === giornataClou) + 1;
+      const giornataClouIndex = Object.keys(completeClouSelected).findIndex((giornata) => completeClouSelected[giornata - 1] === giornataClou) + 1;
       if (indexSelected === giornataClouIndex) {
         // Se sei nella giornata clou, mantieni la selezione corrente
         // Esempio: potresti voler aggiornare solo parte dello stato
-        setMatches(completeClouSelected[`giornata${indexSelected}`]);
-        setGiornataClouSelected(completeClouSelected[`giornata${indexSelected}`]);
+        setMatches(completeClouSelected[indexSelected - 1].matches);
+        setGiornataClouSelected(completeClouSelected[indexSelected - 1].matches);
       } else {
         // Se sei in una giornata diversa dalla clou, reimposta tutto
-        setIndexSelected(null);
-        setMatches([]);
-        setGiornataClouSelected(giornataClou);
+        // setIndexSelected(null);
+        // setMatches([]);
+        // setGiornataClouSelected(giornataClou);
       }
     }
   }, []);
-  useEffect(() => {
-    if (giornataN === 38 && !buttonResetIsResetting) {
-      handleSelectNumber(giornataN);
-    }
-  }, [giornataN, buttonResetIsResetting]);
-  console.log(completeClouSelected, "completeClouSelectedcompleteClouSelected");
+
   //QUESTO USE EFFECT REIMPOSTA LA GIORNATA CLOU DOPO CHE CI SONO SCORRIMENTI NEL completeClouSelected
   useEffect(() => {
     if (giornataClouSelected) {
@@ -170,24 +164,17 @@ const CalGiorn = ({ onReset }) => {
   useEffect(() => {
     console.log("Index Selected:", indexSelected);
     console.log("Giornata Clou Selected:", giornataClouSelected);
+
     // rest of the code
   }, [indexSelected, giornataClouSelected]);
 
   // Questo useEffect gestisce il caricamento dei dati quando cambia la giornata
   useEffect(() => {
     const fetchMatches = async () => {
-      if (indexSelected >= 1) {
-        console.log(`Caricamento dati da fetch per giornata 38`);
-        // const data = await fetchGiornataClou(indexSelected);
-        // setGiornataClouSelected(Array.isArray(data) ? data : []);
-        // setMatches(Array.isArray(data) ? data : []);
-      } else {
-        console.log(`Caricamento dati locali per giornata ${indexSelected}`);
-        // Carica i dati locali dalla variabile `completeClouSelected`
-        const data = completeClouSelected[`giornata${indexSelected}`];
-        setGiornataClouSelected(Array.isArray(data) ? data : []);
-        setMatches(Array.isArray(data) ? data : []);
-      }
+      // Carica i dati locali dalla variabile `completeClouSelected`
+      const data = completeClouSelected[indexSelected - 1].matches;
+      setGiornataClouSelected(data);
+      setMatches(data);
     };
 
     fetchMatches();
