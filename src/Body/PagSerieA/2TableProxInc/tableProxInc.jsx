@@ -63,7 +63,7 @@ const TableProxInc = () => {
       setButtonResetIsResetting(false);
     }
   }, []);
-  console.log(buttonResetIsResetting, "buttonResetIsResetting");
+
   useEffect(() => {
     handleReset();
   }, [giornataN]);

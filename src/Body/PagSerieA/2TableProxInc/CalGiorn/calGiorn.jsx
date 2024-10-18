@@ -91,7 +91,6 @@ const CalGiorn = ({ onReset }) => {
     }
     return Array.from({ length: end - start + 1 }, (_, i) => start + i);
   };
-
   // -------------------------------------------------------------------------------------------------------------
 
   //Verifica il Contenuto di completeClouSelected:
@@ -218,6 +217,9 @@ const CalGiorn = ({ onReset }) => {
         className={`overflow-hidden text-gray-900 hover:bg-sky-800 hover:text-white focus:outline-none ${indexSelected === 38 ? "opacity-20 cursor-not-allowed" : ""}`}
       >
         {">>>"}
+      </button>
+      <button className="absolute left-[92%] p-1 font-bold bg-transparent rounded-full hover:bg-red-900 z-10" onClick={() => onReset()}>
+        📍
       </button>
     </div>
   );
