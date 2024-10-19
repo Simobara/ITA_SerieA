@@ -11,7 +11,7 @@ const Day = ({ titleDayy, partite = [], resetAll, occhioApertoPartita, setOcchio
     const dayLower = titleDayy.toLowerCase();
     let bgColor = "bg-gray-900"; // Default background
     if (dayLower === "sab") {
-      bgColor = "bg-green-900/80";
+      bgColor = "bg-green-900/40";
     } else if (dayLower === "dom") {
       bgColor = "bg-red-900/80";
     }
