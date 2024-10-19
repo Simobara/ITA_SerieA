@@ -432,7 +432,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
             ></div>
             {/* {partita.team2} */}
             <div
-              className={`absolute w-[5.5rem] flex flex-row ml-[50%] sm:ml-[42%] md:ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
+              className={`absolute w-[5.8rem] flex flex-row ml-[50%] sm:ml-[42%] md:ml-[55%] z-[2] ${!isPartitaModificabile ? "hover:cursor-not-allowed unselectable" : "hover:cursor-pointer"}`}
             >
               <div
                 className={`max-w-[9rem] whitespace-nowrap overflow-hidden ml-[1rem] text-lg sm:text-xl
