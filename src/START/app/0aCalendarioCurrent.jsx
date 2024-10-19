@@ -111,7 +111,7 @@ export const calendario25 = {
       giornata8: [
       { numero: 1,  day: 'sab', time: '15:00',          team1: 'Como',         team2: 'Parma',           pron: ' ', results: '1-1' },
       { numero: 2,  day: 'sab', time: '15:00',          team1: 'Genoa',        team2: 'Bologna',         pron: '2', results: '2-2' },
-      { numero: 3,  day: 'sab', time: '18:00',          team1: 'Milan',        team2: 'Udinese',         pron: '1', results: '' },
+      { numero: 3,  day: 'sab', time: '18:00',          team1: 'Milan',        team2: 'Udinese',         pron: '1', results: '1-0' },
       { numero: 4,  day: 'sab', time: '20:45',          team1: 'Juve',         team2: 'Lazio',           pron: ' ', results: '' },
 
       { numero: 5,  day: 'dom', time: '12:30',          team1: 'Empoli',       team2: 'Napoli',          pron: '2', results: '' },
