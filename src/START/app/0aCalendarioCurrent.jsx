@@ -140,18 +140,18 @@ export const calendario25 = {
   ],
     //*---  -----                                                                                                                --- 10
       giornata10: [
-      { numero: 1,  day: 'mar', time: '18:30',          team1: 'Cagliari',     team2: 'Bologna',         pron: '2', results: '' },
-      { numero: 2,  day: 'mar', time: '18:30',          team1: 'Lecce',        team2: 'Verona',          pron: '1', results: '' },
-      { numero: 3,  day: 'mar', time: '20:45',          team1: 'Milan',        team2: 'Napoli',          pron: 'X', results: '' },
+      { numero: 1,  day: 'mar', time: '18:30',          team1: 'Cagliari',     team2: 'Bologna',         pron: '', results: '' },
+      { numero: 2,  day: 'mar', time: '18:30',          team1: 'Lecce',        team2: 'Verona',          pron: '', results: '' },
+      { numero: 3,  day: 'mar', time: '20:45',          team1: 'Milan',        team2: 'Napoli',          pron: '', results: '' },
 
-      { numero: 4,  day: 'mer', time: '18:30',          team1: 'Empoli',       team2: 'Inter',           pron: '2', results: '' },
-      { numero: 5,  day: 'mer', time: '18:30',          team1: 'Venezia',      team2: 'Udinese',         pron: '1', results: '' },
-      { numero: 6,  day: 'mer', time: '20:45',          team1: 'Atalanta',     team2: 'Monza',           pron: '1', results: '' },
-      { numero: 7,  day: 'mer', time: '20:45',          team1: 'Juve',         team2: 'Parma',           pron: '1', results: '' },
+      { numero: 4,  day: 'mer', time: '18:30',          team1: 'Empoli',       team2: 'Inter',           pron: '', results: '' },
+      { numero: 5,  day: 'mer', time: '18:30',          team1: 'Venezia',      team2: 'Udinese',         pron: '', results: '' },
+      { numero: 6,  day: 'mer', time: '20:45',          team1: 'Atalanta',     team2: 'Monza',           pron: '', results: '' },
+      { numero: 7,  day: 'mer', time: '20:45',          team1: 'Juve',         team2: 'Parma',           pron: '', results: '' },
 
-      { numero: 8,  day: 'gio', time: '18:30',          team1: 'Genoa',        team2: 'Fiorentina',      pron: '1', results: '' },
-      { numero: 9,  day: 'gio', time: '20:45',          team1: 'Como',         team2: 'Lazio',           pron: '1', results: '' },
-      { numero: 10, day: 'gio', time: '20:45',          team1: 'Roma',         team2: 'Torino',          pron: 'X', results: '' },
+      { numero: 8,  day: 'gio', time: '18:30',          team1: 'Genoa',        team2: 'Fiorentina',      pron: '', results: '' },
+      { numero: 9,  day: 'gio', time: '20:45',          team1: 'Como',         team2: 'Lazio',           pron: '', results: '' },
+      { numero: 10, day: 'gio', time: '20:45',          team1: 'Roma',         team2: 'Torino',          pron: '', results: '' },
   ],
     //*---  ----                                      NOVEMBRE                                                                   --- 11
       giornata11: [
