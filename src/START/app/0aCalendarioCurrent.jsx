@@ -140,9 +140,9 @@ export const calendario25 = {
   ],
     //*---  -----                                                                                                                --- 10
       giornata10: [
-      { numero: 1,  day: 'mar', time: '18:30',          team1: 'Cagliari',     team2: 'Bologna',         pron: '', results: '' },
-      { numero: 2,  day: 'mar', time: '18:30',          team1: 'Lecce',        team2: 'Verona',          pron: '', results: '' },
-      { numero: 3,  day: 'mar', time: '20:45',          team1: 'Milan',        team2: 'Napoli',          pron: '', results: '' },
+      { numero: 1,  day: 'mar', time: '18:30',          team1: 'Cagliari',     team2: 'Bologna',         pron: '', results: '0-2' },
+      { numero: 2,  day: 'mar', time: '18:30',          team1: 'Lecce',        team2: 'Verona',          pron: '', results: '1-0' },
+      { numero: 3,  day: 'mar', time: '20:45',          team1: 'Milan',        team2: 'Napoli',          pron: '', results: '0-2' },
 
       { numero: 4,  day: 'mer', time: '18:30',          team1: 'Empoli',       team2: 'Inter',           pron: '', results: '' },
       { numero: 5,  day: 'mer', time: '18:30',          team1: 'Venezia',      team2: 'Udinese',         pron: '', results: '' },
