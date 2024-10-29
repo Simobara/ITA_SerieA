@@ -129,7 +129,7 @@ export const calendario25 = {
       { numero: 2,  day: 'ven', time: '20:45',          team1: 'Torino',       team2: 'Como',            pron: '1', results: '1-0' },
 
       { numero: 3,  day: 'sab', time: '15:00',          team1: 'Napoli',       team2: 'Lecce',           pron: 'X', results: '1-0' },
-      { numero: 4,  day: 'sab', time: '18:00',          team1: 'Bologna',      team2: 'Milan',           pron: '', results: '0-1' },
+      { numero: 4,  day: 'sab', time: '18:00',          team1: 'Bologna',      team2: 'Milan',           pron: '2', results: '0-1' },
       { numero: 5,  day: 'sab', time: '20:45',          team1: 'Atalanta',     team2: 'Verona',          pron: 'X', results: '6-1' },
 
       { numero: 6,  day: 'dom', time: '12:30',          team1: 'Parma',        team2: 'Empoli',          pron: '1', results: '1-1' },
