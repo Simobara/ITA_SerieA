@@ -144,10 +144,10 @@ export const calendario25 = {
       { numero: 2,  day: 'mar', time: '18:30',          team1: 'Lecce',        team2: 'Verona',          pron: '', results: '1-0' },
       { numero: 3,  day: 'mar', time: '20:45',          team1: 'Milan',        team2: 'Napoli',          pron: '', results: '0-2' },
 
-      { numero: 4,  day: 'mer', time: '18:30',          team1: 'Empoli',       team2: 'Inter',           pron: '', results: '' },
-      { numero: 5,  day: 'mer', time: '18:30',          team1: 'Venezia',      team2: 'Udinese',         pron: '', results: '' },
-      { numero: 6,  day: 'mer', time: '20:45',          team1: 'Atalanta',     team2: 'Monza',           pron: '', results: '' },
-      { numero: 7,  day: 'mer', time: '20:45',          team1: 'Juve',         team2: 'Parma',           pron: '', results: '' },
+      { numero: 4,  day: 'mer', time: '18:30',          team1: 'Empoli',       team2: 'Inter',           pron: '', results: '0-3' },
+      { numero: 5,  day: 'mer', time: '18:30',          team1: 'Venezia',      team2: 'Udinese',         pron: '', results: '3-2' },
+      { numero: 6,  day: 'mer', time: '20:45',          team1: 'Atalanta',     team2: 'Monza',           pron: '', results: '2-0' },
+      { numero: 7,  day: 'mer', time: '20:45',          team1: 'Juve',         team2: 'Parma',           pron: '', results: '2-2' },
 
       { numero: 8,  day: 'gio', time: '18:30',          team1: 'Genoa',        team2: 'Fiorentina',      pron: '', results: '' },
       { numero: 9,  day: 'gio', time: '20:45',          team1: 'Como',         team2: 'Lazio',           pron: '', results: '' },
