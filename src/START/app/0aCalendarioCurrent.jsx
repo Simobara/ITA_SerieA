@@ -149,14 +149,14 @@ export const calendario25 = {
       { numero: 6,  day: 'mer', time: '20:45',          team1: 'Atalanta',     team2: 'Monza',           pron: '', results: '2-0' },
       { numero: 7,  day: 'mer', time: '20:45',          team1: 'Juve',         team2: 'Parma',           pron: '', results: '2-2' },
 
-      { numero: 8,  day: 'gio', time: '18:30',          team1: 'Genoa',        team2: 'Fiorentina',      pron: '', results: '' },
-      { numero: 9,  day: 'gio', time: '20:45',          team1: 'Como',         team2: 'Lazio',           pron: '', results: '' },
-      { numero: 10, day: 'gio', time: '20:45',          team1: 'Roma',         team2: 'Torino',          pron: '', results: '' },
+      { numero: 8,  day: 'gio', time: '18:30',          team1: 'Genoa',        team2: 'Fiorentina',      pron: '', results: '0-1' },
+      { numero: 9,  day: 'gio', time: '20:45',          team1: 'Como',         team2: 'Lazio',           pron: '', results: '1-5' },
+      { numero: 10, day: 'gio', time: '20:45',          team1: 'Roma',         team2: 'Torino',          pron: '', results: '1-0' },
   ],
     //*---  ----                                      NOVEMBRE                                                                   --- 11
       giornata11: [
       { numero: 1,  day: 'sab', time: '15:00',          team1: 'Bologna',      team2: 'Lecce',           pron: '', results: '' },
-      { numero: 2, day: 'sab', time: '18:00',          team1: 'Udinese',      team2: 'Juve',            pron: '', results: '' }, 
+      { numero: 2,  day: 'sab', time: '18:00',          team1: 'Udinese',      team2: 'Juve',            pron: '', results: '' }, 
       { numero: 3,  day: 'sab', time: '20:45',          team1: 'Monza',        team2: 'Milan',           pron: '', results: '' },
   
       { numero: 4,  day: 'dom', time: '12:30',          team1: 'Napoli',       team2: 'Atalanta',        pron: '', results: '' },
