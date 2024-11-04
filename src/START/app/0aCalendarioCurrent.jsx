@@ -155,18 +155,18 @@ export const calendario25 = {
   ],
     //*---  ----                                      NOVEMBRE                                                                   --- 11
       giornata11: [
-      { numero: 1,  day: 'sab', time: '15:00',          team1: 'Bologna',      team2: 'Lecce',           pron: '', results: '' },
-      { numero: 2,  day: 'sab', time: '18:00',          team1: 'Udinese',      team2: 'Juve',            pron: '', results: '' }, 
-      { numero: 3,  day: 'sab', time: '20:45',          team1: 'Monza',        team2: 'Milan',           pron: '', results: '' },
+      { numero: 1,  day: 'sab', time: '15:00',          team1: 'Bologna',      team2: 'Lecce',           pron: '', results: '1-0' },
+      { numero: 2,  day: 'sab', time: '18:00',          team1: 'Udinese',      team2: 'Juve',            pron: '', results: '0-2' }, 
+      { numero: 3,  day: 'sab', time: '20:45',          team1: 'Monza',        team2: 'Milan',           pron: '', results: '0-1' },
   
-      { numero: 4,  day: 'dom', time: '12:30',          team1: 'Napoli',       team2: 'Atalanta',        pron: '', results: '' },
-      { numero: 5,  day: 'dom', time: '15:00',          team1: 'Torino',       team2: 'Fiorentina',      pron: '', results: '' },
-      { numero: 6,  day: 'dom', time: '18:00',          team1: 'Verona',       team2: 'Roma',            pron: '', results: '' },
-      { numero: 7,  day: 'dom', time: '20:45',          team1: 'Inter',        team2: 'Venezia',         pron: '', results: '' },
+      { numero: 4,  day: 'dom', time: '12:30',          team1: 'Napoli',       team2: 'Atalanta',        pron: '', results: '0-3' },
+      { numero: 5,  day: 'dom', time: '15:00',          team1: 'Torino',       team2: 'Fiorentina',      pron: '', results: '0-1' },
+      { numero: 6,  day: 'dom', time: '18:00',          team1: 'Verona',       team2: 'Roma',            pron: '', results: '3-2' },
+      { numero: 7,  day: 'dom', time: '20:45',          team1: 'Inter',        team2: 'Venezia',         pron: '', results: '1-0' },
 
-      { numero: 8,  day: 'lun', time: '18:30',          team1: 'Empoli',       team2: 'Como',            pron: '', results: '' },
-      { numero: 9,  day: 'lun', time: '18:00',          team1: 'Parma',        team2: 'Genoa',           pron: '', results: '' },
-      { numero: 10, day: 'lun', time: '20:45',          team1: 'Lazio',        team2: 'Cagliari',        pron: '', results: '' },
+      { numero: 8,  day: 'lun', time: '18:30',          team1: 'Empoli',       team2: 'Como',            pron: '', results: '1-0' },
+      { numero: 9,  day: 'lun', time: '18:00',          team1: 'Parma',        team2: 'Genoa',           pron: '', results: '0-1' },
+      { numero: 10, day: 'lun', time: '20:45',          team1: 'Lazio',        team2: 'Cagliari',        pron: '', results: '2-1' },
   ],
     //*                                                          --- 12 ---                                                      --- 12
       giornata12: [ 
