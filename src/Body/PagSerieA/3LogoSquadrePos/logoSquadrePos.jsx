@@ -102,7 +102,11 @@ const LogoSquadrePos = () => {
                 }
               }}
             >
-              TOP
+              <img
+                src="/0frecciaTop.png"
+                alt="Scroll to Top"
+                className="w-8 h-8 cursor-pointer" // Classe per dimensionare e aggiungere un puntatore a mano
+              />
             </div>
             <TableCamminoSq squadra={squadraAttiva2} datiSquadra={datiSquadre[squadraAttiva2]} />
           </div>

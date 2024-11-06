@@ -49,6 +49,9 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
   //     console.warn("topRef non impostato");
   //   }
   // };
+
+  // se necessito un riferimento specifico lo faccio sul bottone della pagina direttamente a quella partita
+  //per il momento mi interessa che il botton scrorra
   const scrollToBottom = () => {
     if (window.matchMedia("(max-width: 768px)").matches) {
       window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
