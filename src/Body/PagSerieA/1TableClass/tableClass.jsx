@@ -320,7 +320,7 @@ const TableClass = () => {
                         ${isDrawingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}`}
                     >
                       <div className="innerBorder"></div>
-                      <div className={`absolute transform -translate-x-4/3 -translate-y-3 text-left text-md border-white text-yellow-500 ml-[0.6rem] sm:mx-8 sm:my-[-10] z-50`}>
+                      <div className={`absolute transform -translate-x-4/3 -translate-y-3 text-left text-md border-white text-fuchsia-900 ml-[0.6rem] sm:mx-8 sm:my-[-10] z-50`}>
                         {!numeriIndiciBorderWhite[index] && differenzePunti[index]}
                       </div>
                       {getPunteggioColonnaPTS(squadra)}
@@ -391,7 +391,7 @@ const TableClass = () => {
                     >
                       <div className="innerBorder"></div>
                       <div
-                        className={`absolute transform -translate-x-4/3 -translate-y-3 text-left text-md border-white text-yellow-500 ml-[0.6rem]  mx-2 sm:mx-8 sm:my-[-10] z-50`}
+                        className={`absolute transform -translate-x-4/3 -translate-y-3 text-left text-md border-white text-fuchsia-900 ml-[0.6rem]  mx-2 sm:mx-8 sm:my-[-10] z-50`}
                       >
                         {!numeriIndiciBorderWhite[index + half] && differenzePunti[index + half]}
                       </div>
