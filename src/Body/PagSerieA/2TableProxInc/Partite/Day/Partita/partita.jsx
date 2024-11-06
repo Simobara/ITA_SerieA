@@ -40,13 +40,18 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
   const { topRef } = useContext(ScrollContext);
 
   // Definisci la funzione scrollToTop
-  const scrollToTop = () => {
-    console.log("scrollToTop chiamato da Partita");
-    if (topRef) {
-      console.log("topRef trovato:", topRef);
-      topRef.scrollIntoView({ behavior: "smooth" });
-    } else {
-      console.warn("topRef non impostato");
+  // const scrollToTop = () => {
+  //   console.log("scrollToTop chiamato da Partita");
+  //   if (topRef) {
+  //     console.log("topRef trovato:", topRef);
+  //     topRef.scrollIntoView({ behavior: "smooth" });
+  //   } else {
+  //     console.warn("topRef non impostato");
+  //   }
+  // };
+  const scrollToBottom = () => {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
     }
   };
 
@@ -62,7 +67,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
     : false;
 
   const toggleSymbol = () => toggleSymboll(partita, isPartitaModificabile, setButtonResetIsResetting, setIsKQBtnActive, setIsSignOk);
-  const toggleEye = () => toggleEyee(partita, occhioApertoPartita, setOcchioApertoPartita, setButtonResetIsResetting, handleCoppiaSelectTeam, scrollToTop);
+  const toggleEye = () => toggleEyee(partita, occhioApertoPartita, setOcchioApertoPartita, setButtonResetIsResetting, handleCoppiaSelectTeam, scrollToBottom);
   const isEyeOpen = occhioApertoPartita === partita.numero;
   const handleSelection = (selectedTeam, selectionType, numeroPartita) =>
     handleSelectionn(

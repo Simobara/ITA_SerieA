@@ -39,12 +39,12 @@ const LogoSquadrePos = () => {
   //   console.log("SQATTIVA 2", squadraAttiva2);
   // }, [squadraAttiva1, squadraAttiva2]);
 
-  useEffect(() => {
-    if (setTopRef) {
-      setTopRef(topRef.current);
-      console.log("topRef impostato:", topRef.current); // Debug
-    }
-  }, [setTopRef]);
+  // useEffect(() => {
+  //   if (setTopRef) {
+  //     setTopRef(topRef.current);
+  //     console.log("topRef impostato:", topRef.current); // Debug
+  //   }
+  // }, [setTopRef]);
 
   useEffect(() => {
     if (coppiaSelected && coppiaSelected.team1 && coppiaSelected.team2) {

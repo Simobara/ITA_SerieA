@@ -1,9 +1,9 @@
-export const toggleEyee = (partita, occhioApertoPartita, setOcchioApertoPartita, setButtonResetIsResetting, handleCoppiaSelectTeam, scrollToTop) => {
+export const toggleEyee = (partita, occhioApertoPartita, setOcchioApertoPartita, setButtonResetIsResetting, handleCoppiaSelectTeam, scrollToBottom) => {
   if (occhioApertoPartita === partita.numero) {
     setOcchioApertoPartita(null);
   } else {
     setOcchioApertoPartita(partita.numero);
-    scrollToTop();
+    scrollToBottom();
   }
   setButtonResetIsResetting(true);
   handleCoppiaSelectTeam(partita);
