@@ -8,6 +8,7 @@ import {
   CoppiaPartitaRegistrataContext,
   IndexSelectedContext,
   PartiteDefinNoModContext,
+  ScrollContext,
   SquadraContext,
 } from "../../../../../Global/global";
 import "./partita.css";
@@ -36,6 +37,18 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
   const { partiteDefinNoMod, setPartiteDefinNoMod } = useContext(PartiteDefinNoModContext);
   const { completeClouSelected, setCompleteClouSelected } = useContext(CompleteDataContext);
   const { buttonResetIsResetting, setButtonResetIsResetting } = useContext(ButtonResetContext);
+  const { topRef } = useContext(ScrollContext);
+
+  // Definisci la funzione scrollToTop
+  const scrollToTop = () => {
+    console.log("scrollToTop chiamato da Partita");
+    if (topRef) {
+      console.log("topRef trovato:", topRef);
+      topRef.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.warn("topRef non impostato");
+    }
+  };
 
   //   const isPartitaModificabile = giornataClouSelected.some(
   //     (p) => p.numero === partita.numero && !p.results
@@ -49,7 +62,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
     : false;
 
   const toggleSymbol = () => toggleSymboll(partita, isPartitaModificabile, setButtonResetIsResetting, setIsKQBtnActive, setIsSignOk);
-  const toggleEye = () => toggleEyee(partita, occhioApertoPartita, setOcchioApertoPartita, setButtonResetIsResetting, handleCoppiaSelectTeam);
+  const toggleEye = () => toggleEyee(partita, occhioApertoPartita, setOcchioApertoPartita, setButtonResetIsResetting, handleCoppiaSelectTeam, scrollToTop);
   const isEyeOpen = occhioApertoPartita === partita.numero;
   const handleSelection = (selectedTeam, selectionType, numeroPartita) =>
     handleSelectionn(

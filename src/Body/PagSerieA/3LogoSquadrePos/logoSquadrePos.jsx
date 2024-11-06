@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { nomiSquadre, SqEndGruppo1, SqEndGruppo2 } from "../../../START/app/1main";
 import { ts } from "../../../START/styles/0CssMainStyle";
-import { CoppiaPartitaContext, TestingContext } from "../../Global/global";
+import { CoppiaPartitaContext, ScrollContext, TestingContext } from "../../Global/global";
 import { creaRisSq } from "../1TableClass/zExternal/creaRisSq";
 import TableCamminoSq from "./TableCamminoSq/tableCamminoSq";
 import { renderLineaa } from "./zExternal/renderLinea";
@@ -11,6 +11,10 @@ const LogoSquadrePos = () => {
   const [squadraAttiva2, setSquadraAttiva2] = useState("");
   const { testingClouSelected, setTestingClouSelected } = useContext(TestingContext);
   const { coppiaSelected } = useContext(CoppiaPartitaContext);
+
+  const { setTopRef } = useContext(ScrollContext); // Recupera la funzione per impostare il riferimento
+  const topRef = useRef(null); // Crea il riferimento locale per "TOP"
+
   //logoRefs: Un oggetto che viene utilizzato per creare riferimenti a ciascun logo delle squadre, permettendo operazioni dirette su questi elementi (come i click).
   const logoRefs = useRef({});
   // refContainer: Un riferimento al contenitore principale delle squadre, utilizzato per eventuali manipolazioni o accessi diretti a questo elemento DOM.
@@ -34,6 +38,13 @@ const LogoSquadrePos = () => {
   //   console.log("SQATTIVA 1", squadraAttiva1);
   //   console.log("SQATTIVA 2", squadraAttiva2);
   // }, [squadraAttiva1, squadraAttiva2]);
+
+  useEffect(() => {
+    if (setTopRef) {
+      setTopRef(topRef.current);
+      console.log("topRef impostato:", topRef.current); // Debug
+    }
+  }, [setTopRef]);
 
   useEffect(() => {
     if (coppiaSelected && coppiaSelected.team1 && coppiaSelected.team2) {
@@ -81,8 +92,16 @@ const LogoSquadrePos = () => {
           </div>
         )}
         {squadraAttiva2 && (
-          <div className={`${ts.BgSquadraFuori} text-black  w-[50%] max-w-[50%] overflow-x-hidden overflow-y-auto z-1`}>
-            <div href="#topbottom" className="absolute top-[11rem] ml-[35%] z-[50] py-[20px] bg-white">
+          <div className={`${ts.BgSquadraFuori} text-black w-[50%] max-w-[50%] overflow-x-hidden overflow-y-auto z-1`}>
+            <div
+              ref={topRef}
+              className="absolute top-[11rem] ml-[35%] z-[50] py-[20px] bg-white sm:hidden" // sm:hidden nasconde l'elemento su schermi >= 640px
+              onClick={() => {
+                if (window.matchMedia("(max-width: 768px)").matches) {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+            >
               TOP
             </div>
             <TableCamminoSq squadra={squadraAttiva2} datiSquadra={datiSquadre[squadraAttiva2]} />

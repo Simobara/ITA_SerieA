@@ -1,4 +1,4 @@
-import { calendario,calendario1 } from "../../START/app/0SerieAMatches";
+import { calendario1 } from "../../START/app/0SerieAMatches";
 
 // SquadraContext.js
 import { createContext, useState } from "react";
@@ -71,3 +71,12 @@ export const IndexSelectedProvider = ({ children }) => {
 };
 
 //-----------------------------------------------------------------------
+//scroll context
+export const ScrollContext = createContext();
+
+// Fornisce il riferimento topRef per gestire lo scroll //! topRef
+export const ScrollProvider = ({ children }) => {
+  const [topRef, setTopRef] = useState(null);
+
+  return <ScrollContext.Provider value={{ topRef, setTopRef }}>{children}</ScrollContext.Provider>;
+};
