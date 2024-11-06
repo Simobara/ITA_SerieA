@@ -95,7 +95,7 @@ const LogoSquadrePos = () => {
           <div className={`${ts.BgSquadraFuori} text-black w-[50%] max-w-[50%] overflow-x-hidden overflow-y-auto z-1`}>
             <div
               ref={topRef}
-              className="absolute top-[11rem] ml-[35%] z-[50] py-[20px] bg-white sm:hidden" // sm:hidden nasconde l'elemento su schermi >= 640px
+              className="absolute top-[11rem] ml-[6%] z-[50] py-[20px] sm:hidden" // sm:hidden nasconde l'elemento su schermi >= 640px
               onClick={() => {
                 if (window.matchMedia("(max-width: 768px)").matches) {
                   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -105,7 +105,7 @@ const LogoSquadrePos = () => {
               <img
                 src="/0frecciaTop.png"
                 alt="Scroll to Top"
-                className="w-8 h-8 cursor-pointer" // Classe per dimensionare e aggiungere un puntatore a mano
+                className="w-11 h-11 cursor-pointer" // Classe per dimensionare e aggiungere un puntatore a mano
               />
             </div>
             <TableCamminoSq squadra={squadraAttiva2} datiSquadra={datiSquadre[squadraAttiva2]} />
