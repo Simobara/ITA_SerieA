@@ -82,6 +82,9 @@ const LogoSquadrePos = () => {
         )}
         {squadraAttiva2 && (
           <div className={`${ts.BgSquadraFuori} text-black  w-[50%] max-w-[50%] overflow-x-hidden overflow-y-auto z-1`}>
+            <div href="#topbottom" className="absolute top-[11rem] ml-[35%] z-[50] py-[20px] bg-white">
+              TOP
+            </div>
             <TableCamminoSq squadra={squadraAttiva2} datiSquadra={datiSquadre[squadraAttiva2]} />
           </div>
         )}
