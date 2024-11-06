@@ -275,7 +275,7 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
                         <div className="text-xl font-bold"></div>
                     </div> */}
           {!isPartitaInCoppiaRegSelected && (
-            <div className={`{sm:relative absolute flex ml-[29.3rem] sm:pl-0 hover:cursor-context-menu z-10 select-none }`}>
+            <div className={`{sm:relative absolute flex ml-[29.3rem] sm:ml-[3.3rem] sm:pl-0 hover:cursor-context-menu z-10 select-none }`}>
               {/*tasto cancella ~  ml-[4rem] sopra */}
               <div className={`{sm:pr-1 pl-3 ${!isPartitaInCoppiaRegSelected} ? ml-[-0.5rem] mr-[-2rem] : 'pl-4'}`}>
                 <span className="text-xl hover:bg-sky-900 text-gray-700/70 z-20" role="img" aria-label="" onClick={() => handleResetColors(partita.team1, partita.team2)}>
