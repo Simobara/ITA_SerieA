@@ -100,9 +100,9 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
       case "15:00":
         return "!text-orange-400";
       case "18:00":
-        return "!text-blue-900";
+        return "!text-blue-500";
       case "18:30":
-        return "!text-blue-900/50";
+        return "!text-blue-700";
       default:
         return "";
     }
