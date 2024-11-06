@@ -313,7 +313,7 @@ const TableClass = () => {
                     <td
                       className={`my-1 pl-[0.5rem] sm:pl-[1.5rem] md:pl-[1rem] lg:pl-2  xl:mr-4 text-left font-bold bg-black md:text-md  lg:text-lg
                         ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ` : ""}
-                        ${indiciDiffPts.includes(index) ? "borderAlto border-yellow-700 my-2" : ""}
+                        ${indiciDiffPts.includes(index) ? "borderAlto border-fuchsia-900 my-2" : ""}
                         ${getPunteggioColonnaDomanda(squadra) !== " " ? `  text-cyan-500/80` : "text-cyan-500/80"}
                         ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}
                         ${isLosingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}
@@ -383,7 +383,7 @@ const TableClass = () => {
                     <td
                       className={`my-1 pl-[0.5rem] sm:pl-[1.5rem] md:pl-[1rem] lg:pl-2 xl:mr-4 text-left font-bold bg-black md:text-md  lg:text-lg
                         ${isCoppiaSelected(squadra.name) ? `${s.Bg2} ${s.Filter2} ` : ""}
-                        ${indiciDiffPts.includes(index + half) ? "borderAlto border-yellow-700 my-2" : ""}
+                        ${indiciDiffPts.includes(index + half) ? "borderAlto border-fuchsia-900 my-2" : ""}
                         ${getPunteggioColonnaDomanda(squadra) !== " " ? `  text-cyan-500/80` : "text-cyan-500/80"}
                         ${isWinningTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}
                         ${isLosingTeamInCoppiaRegSelected(squadra.name) ? `${s.Filter3} ${s.BaseText} ${isCoppiaSelected(squadra.name) ? `${s.BaseText}` : `${s.Bg3}`}` : ""}
