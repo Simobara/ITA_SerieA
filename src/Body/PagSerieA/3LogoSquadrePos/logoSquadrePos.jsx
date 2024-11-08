@@ -95,7 +95,7 @@ const LogoSquadrePos = () => {
           <div className={`${ts.BgSquadraFuori} text-black w-[50%] max-w-[50%] overflow-x-hidden overflow-y-auto z-1`}>
             <div
               ref={topRef}
-              className="absolute top-[11rem] ml-[6%] z-[50] py-[20px] sm:hidden" // sm:hidden nasconde l'elemento su schermi >= 640px
+              className="absolute top-[15rem] ml-[42%] z-[50] py-[20px] sm:hidden" // sm:hidden nasconde l'elemento su schermi >= 640px
               onClick={() => {
                 if (window.matchMedia("(max-width: 768px)").matches) {
                   window.scrollTo({ top: 0, behavior: "smooth" });
