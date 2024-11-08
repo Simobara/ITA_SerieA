@@ -170,7 +170,7 @@ export const calendario25 = {
   ],
     //*                                                          --- 12 ---                                                      --- 12
       giornata12: [ 
-      { numero: 1,  day: 'gio', time: '20:45',          team1: 'Genoa',        team2: 'Como',            pron: 'X', results: '' },
+      { numero: 1,  day: 'gio', time: '20:45',          team1: 'Genoa',        team2: 'Como',            pron: 'X', results: '1-1' },
 
       { numero: 2,  day: 'ven', time: '18:30',          team1: 'Venezia',      team2: 'Parma',           pron: '1', results: '' },
       { numero: 3,  day: 'ven', time: '20:45',          team1: 'Lecce',        team2: 'Empoli',          pron: '2', results: '' },
