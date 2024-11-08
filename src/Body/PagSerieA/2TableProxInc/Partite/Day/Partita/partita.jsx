@@ -157,6 +157,12 @@ const Partita = ({ partita, resetAll, occhioApertoPartita, setOcchioApertoPartit
   //     },
   // });
 
+  useEffect(() => {
+    if (occhioApertoPartita === partita.numero) {
+      scrollToBottom();
+    }
+  }, [occhioApertoPartita]);
+
   // Questo useEffect gestisce il ridimensionamento della finestra per aggiornare lo stato isTablet
   useEffect(() => {
     const handleResize = () => {
