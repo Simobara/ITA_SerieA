@@ -181,7 +181,7 @@ export const calendario25 = {
       { numero: 7,  day: 'dom', time: '15:00',          team1: 'Fiorentina',   team2: 'Verona',          pron: '1', results: '3-1' },
       { numero: 8,  day: 'dom', time: '15:00',          team1: 'Roma',         team2: 'Bologna',         pron: 'X', results: '2-3' },
       { numero: 9,  day: 'dom', time: '18:00',          team1: 'Monza',        team2: 'Lazio',           pron: '2', results: '0-1' },
-      { numero: 10, day: 'dom', time: '20:45',          team1: 'Inter',        team2: 'Napoli',          pron: 'X', results: '' },  
+      { numero: 10, day: 'dom', time: '20:45',          team1: 'Inter',        team2: 'Napoli',          pron: 'X', results: '1-1' },  
   ],
     //*---  -----                                                                                                                --- 13
       giornata13: [
