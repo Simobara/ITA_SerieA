@@ -185,15 +185,15 @@ export const calendario25 = {
   ],
     //*---  -----                                                                                                                --- 13
       giornata13: [
-      { numero: 1,  day: 'sab', time: '15:00',          team1: 'Verona',       team2: 'Inter',           pron: '', results: '' },
-      { numero: 2,  day: 'sab', time: '18:00',          team1: 'Milan',        team2: 'Juve',            pron: '', results: '' },
+      { numero: 1,  day: 'sab', time: '15:00',          team1: 'Verona',       team2: 'Inter',           pron: '2', results: '' },
+      { numero: 2,  day: 'sab', time: '18:00',          team1: 'Milan',        team2: 'Juve',            pron: 'X', results: '' },
       { numero: 3,  day: 'sab', time: '20:45',          team1: 'Parma',        team2: 'Atalanta',        pron: '', results: '' },
 
       { numero: 4,  day: 'dom', time: '12:30',          team1: 'Genoa',        team2: 'Cagliari',        pron: '', results: '' },
-      { numero: 5,  day: 'dom', time: '15:00',          team1: 'Como',         team2: 'Fiorentina',      pron: '', results: '' },
+      { numero: 5,  day: 'dom', time: '15:00',          team1: 'Como',         team2: 'Fiorentina',      pron: 'X', results: '' },
       { numero: 6,  day: 'dom', time: '15:00',          team1: 'Torino',       team2: 'Monza',           pron: '', results: '' },
       { numero: 7,  day: 'dom', time: '18:00',          team1: 'Napoli',       team2: 'Roma',            pron: '', results: '' },
-      { numero: 8,  day: 'dom', time: '20:45',          team1: 'Lazio',        team2: 'Bologna',         pron: '', results: '' },
+      { numero: 8,  day: 'dom', time: '20:45',          team1: 'Lazio',        team2: 'Bologna',         pron: '1', results: '' },
       
       { numero: 9,  day: 'lun', time: '18:30',          team1: 'Empoli',       team2: 'Udinese',         pron: '', results: '' }, 
       { numero: 10, day: 'lun', time: '20:45',          team1: 'Venezia',      team2: 'Lecce',           pron: '', results: '' },
